@@ -828,6 +828,26 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1973810433399384278, guid: 203a8a480de8bf342adc1d17f14f6bc0,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 1973810433399384278, guid: 203a8a480de8bf342adc1d17f14f6bc0,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 1973810433605302615, guid: 203a8a480de8bf342adc1d17f14f6bc0,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 1973810433605302615, guid: 203a8a480de8bf342adc1d17f14f6bc0,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 1973810433987756558, guid: 203a8a480de8bf342adc1d17f14f6bc0,
         type: 3}
       propertyPath: m_WasSpriteAssigned

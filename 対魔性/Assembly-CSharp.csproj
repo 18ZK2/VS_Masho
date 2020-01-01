@@ -63,9 +63,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Brushes\Tint Brush Smooth\Scripts\TintTextureGenerator.cs" />
+    <Compile Include="Assets\GridInformation\Scripts\GridInformation.cs" />
+    <Compile Include="Assets\Tiles\Animated Tile\Scripts\AnimatedTile.cs" />
+    <Compile Include="Assets\Tiles\Hexagonal Rule Tile\HexagonalRuleTile.cs" />
+    <Compile Include="Assets\Tiles\Isometric Rule Tile\IsometricRuleTile.cs" />
+    <Compile Include="Assets\Tiles\Pipeline Tile\Scripts\PipelineTile.cs" />
+    <Compile Include="Assets\Tiles\Random Tile\Scripts\RandomTile.cs" />
+    <Compile Include="Assets\Tiles\Rule Override Tile\Scripts\RuleOverrideTile.cs" />
+    <Compile Include="Assets\Tiles\Rule Tile\Scripts\RuleTile.cs" />
+    <Compile Include="Assets\Tiles\Terrain Tile\Scripts\TerrainTile.cs" />
+    <Compile Include="Assets\Tiles\Weighted Random Tile\WeightedRandomTile.cs" />
     <Compile Include="Assets\かわべ\Code\PixenRenderBase.cs" />
     <Compile Include="Assets\かわべ\Code\SpearRenderOrderContloller.cs" />
+    <None Include="Assets\Tiles\Rule Tile\ScriptTemplates\NewCustomRuleTile.cs.txt" />
     <None Include="Assets\かわべ\shader\Rusty.shader" />
+    <None Include="Assets\Brushes\Tint Brush Smooth\Shaders\TintedTilemap.shader" />
     <None Include="Assets\かわべ\Kawabe.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
