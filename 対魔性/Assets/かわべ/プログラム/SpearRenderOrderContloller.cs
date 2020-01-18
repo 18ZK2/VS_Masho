@@ -5,6 +5,8 @@ using UnityEngine;
 public class SpearRenderOrderContloller : MonoBehaviour
 {
     [SerializeField] GameObject spear = null;
+    [SerializeField] Transform boostPos = null;
+    [SerializeField] GameObject[] effects = null;
     private SpriteRenderer[] SpearChildRenderers;
     // Start is called before the first frame update
     void Start()
@@ -17,6 +19,12 @@ public class SpearRenderOrderContloller : MonoBehaviour
     {
         
     }
+    
+    public void ParticleShot(int i)
+    {
+        GameObject effect = Instantiate(effects[i], boostPos.position, transform.rotation);
+    }
+
     public void SetLayer(int order)
     {
         foreach (var cs in SpearChildRenderers)
