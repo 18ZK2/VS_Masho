@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 1289151199832835307}
   - component: {fileID: 1414741464950366016}
   - component: {fileID: 5130888674918294713}
-  m_Layer: 0
+  - component: {fileID: 8759275955806168885}
+  m_Layer: 9
   m_Name: GrabbingBeamElement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,10 +94,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -118,7 +119,23 @@ SpringJoint2D:
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
-  m_AutoConfigureDistance: 1
+  m_AutoConfigureDistance: 0
   m_Distance: 0.005
-  m_DampingRatio: 0.2
-  m_Frequency: 1
+  m_DampingRatio: 1
+  m_Frequency: 6
+--- !u!58 &8759275955806168885
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6766992695889908129}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1
