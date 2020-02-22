@@ -7,9 +7,10 @@ public class PlayerEffectContloller : MonoBehaviour
 {
     public bool isFrip;
     [SerializeField] const int effectSize = 3;
+    [SerializeField] Color damageColor = Color.white;
     [SerializeField] Transform[] effectPos = new Transform[effectSize];
     [SerializeField] GameObject[] effects = new GameObject[effectSize];
-    [SerializeField] Color damageColor = Color.white;
+    
 
     Animator anm;
     Rigidbody2D rb;
@@ -42,7 +43,10 @@ public class PlayerEffectContloller : MonoBehaviour
     }
     private void FlipBody()
     {
-        if (!isFrip) return;
+        if (!isFrip)
+        {
+            return;
+        }
         //体の反転
         if (pc.bodyVec.x < 0f)
         {
@@ -76,6 +80,21 @@ public class PlayerEffectContloller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
+        //腕の画像切り替え
+        if (Input.GetMouseButtonDown(0)||Input.GetMouseButton(0))
+        {
+            
+            anm.SetFloat("armState", 1);
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            anm.SetFloat("armState", 0);
+        }
+        else
+        {
+            anm.SetFloat("armState", 0);
+        }
         FlipBody();
         arm.transform.rotation = Quaternion.Euler(0, 0, pc.armRot.eulerAngles.z) * Quaternion.Euler(0, 0, 90f);
         ChangeBodyColor();

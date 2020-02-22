@@ -12,6 +12,7 @@ public class GrabbingHead : MonoBehaviour
     bool isActive = false;
     Rigidbody2D rb;
     SpringJoint2D joint;
+    ParticleSystem ps;
 
     IEnumerator SleepHead()
     {
@@ -26,6 +27,7 @@ public class GrabbingHead : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         joint = GetComponent<SpringJoint2D>();
+        ps = GetComponent<ParticleSystem>();
         StartCoroutine(SleepHead());
     }
 
@@ -36,6 +38,7 @@ public class GrabbingHead : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        ps.TriggerSubEmitter(0);
         if (isActive && collision.gameObject.tag=="Stage")
         {
             GetComponent<SpriteRenderer>().color = HeadColor;

@@ -11,8 +11,8 @@ public class PlayerContloller : MonoBehaviour
     public float walkspeed;
 
     [SerializeField] float dashPow = 0;
-    [SerializeField] Material mat = null;
     [SerializeField] GameObject cam = null;
+    [SerializeField] GrabbingBeam gb = null;
 
     bool dash;
     //左右移動用
@@ -20,7 +20,7 @@ public class PlayerContloller : MonoBehaviour
 
     Animator anm;
     Rigidbody2D rb;
-    [SerializeField] GrabbingBeam gb;
+    
 
     private void Dash()
     {
@@ -32,7 +32,6 @@ public class PlayerContloller : MonoBehaviour
     {
         anm = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        //gb = GetComponentInChildren<GrabbingBeam>();
         
     }
 
@@ -70,7 +69,6 @@ public class PlayerContloller : MonoBehaviour
         cam.transform.position = Vector3.Lerp(cam.transform.position, transform.position, 2.0f * Time.deltaTime);
         Vector3 cp = cam.transform.position;
         cam.transform.position = new Vector3(cp.x, cp.y, -10);
-
     }
 
     private void FixedUpdate()

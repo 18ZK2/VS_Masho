@@ -18,7 +18,7 @@ public class GrabbingBeam : MonoBehaviour
 
     public void MakeBeams(Vector2 vec)
     {
-        GameObject ele; ;
+        GameObject ele;
         SpringJoint2D eleJoint;
         Rigidbody2D eleBody = null;
         for (int i = 0; i < beamLength; i++)
@@ -27,7 +27,7 @@ public class GrabbingBeam : MonoBehaviour
 
             //紐の要素を作り、後ろの要素と結合させる。
 
-            ele = Instantiate(element, transform);
+            ele = Instantiate(element, transform.position, Quaternion.identity);
             eleJoint = ele.GetComponent<SpringJoint2D>();
             eleBody = ele.GetComponent<Rigidbody2D>();
 
@@ -48,7 +48,7 @@ public class GrabbingBeam : MonoBehaviour
 
             }
         }
-        GameObject h = Instantiate(head, transform);
+        GameObject h = Instantiate(head, transform.position,Quaternion.identity);
         list.Add(h);
         h.transform.parent = null;
         gHead = h.GetComponent<GrabbingHead>();
