@@ -77,7 +77,6 @@
     <Compile Include="Assets\かわべ\素材\プログラム\PixenRenderBase.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\PlayerContloller.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\PlayerEffectContloller.cs" />
-    <Compile Include="Assets\かわべ\素材\プログラム\SpearRenderOrderContloller.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\TitleTextContloller.cs" />
     <None Include="Assets\Tiles\Rule Tile\ScriptTemplates\NewCustomRuleTile.cs.txt" />
     <None Include="Assets\かわべ\素材\プログラム\shader\Water.shader" />

@@ -19071,9 +19071,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4614439bdb9f1d94bbba161376480876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bodyVec: {x: 0, y: 0, z: 0}
-  armRot: {x: 0, y: 0, z: 0, w: 0}
-  walkspeed: 1000
+  speed: 0
   dashPow: 1000
   cam: {fileID: 0}
   gb: {fileID: 2518188734018106463}
@@ -19089,7 +19087,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd1951cb449d3bb4db7bbdbedb4863e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFrip: 0
   damageColor: {r: 1, g: 1, b: 1, a: 1}
   effectPos:
   - {fileID: 6754370050539322289}
@@ -19517,7 +19514,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 14, y: 63}
+  m_Size: {x: 20, y: 55}
   m_Direction: 0
 --- !u!1 &7870232221635339818
 GameObject:
@@ -19746,6 +19743,11 @@ PrefabInstance:
       propertyPath: playerBody
       value: 
       objectReference: {fileID: 3639848490810303892}
+    - target: {fileID: 4346594741461253137, guid: 56a4d0e1d0709134b8ef8f3f18bcc419,
+        type: 3}
+      propertyPath: shotPow
+      value: 1500
+      objectReference: {fileID: 0}
     - target: {fileID: 4346594741461253138, guid: 56a4d0e1d0709134b8ef8f3f18bcc419,
         type: 3}
       propertyPath: m_LocalPosition.x

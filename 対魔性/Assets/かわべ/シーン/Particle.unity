@@ -184,18 +184,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 63626375}
   m_CullTransparentMesh: 0
---- !u!114 &92212285 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2518188734018106463, guid: eb5886033ec61c34394f67c1d3f45fb5,
-    type: 3}
-  m_PrefabInstance: {fileID: 733340777}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfd4c0fe785f43f4c9d623ddb08a55a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &163817018
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,17 +784,22 @@ PrefabInstance:
     - target: {fileID: 2518188734018106463, guid: eb5886033ec61c34394f67c1d3f45fb5,
         type: 3}
       propertyPath: beamLength
-      value: 4
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2518188734018106463, guid: eb5886033ec61c34394f67c1d3f45fb5,
+        type: 3}
+      propertyPath: shotPow
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 5684424019440655106, guid: eb5886033ec61c34394f67c1d3f45fb5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 255
+      value: -797
       objectReference: {fileID: 0}
     - target: {fileID: 5684424019440655106, guid: eb5886033ec61c34394f67c1d3f45fb5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 968
+      value: -241
       objectReference: {fileID: 0}
     - target: {fileID: 5684424019440655106, guid: eb5886033ec61c34394f67c1d3f45fb5,
         type: 3}
@@ -877,7 +870,12 @@ PrefabInstance:
         type: 3}
       propertyPath: gb
       value: 
-      objectReference: {fileID: 92212285}
+      objectReference: {fileID: 0}
+    - target: {fileID: 1565937435066247770, guid: eb5886033ec61c34394f67c1d3f45fb5,
+        type: 3}
+      propertyPath: speed
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 3639848490810303892, guid: eb5886033ec61c34394f67c1d3f45fb5,
         type: 3}
       propertyPath: m_Constraints
@@ -912,6 +910,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingLayerID
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7794455631842471072, guid: eb5886033ec61c34394f67c1d3f45fb5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb5886033ec61c34394f67c1d3f45fb5, type: 3}

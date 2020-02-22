@@ -6,29 +6,27 @@ using UnityEngine;
 public class PlayerEffectContloller : MonoBehaviour
 {
     public bool isFrip;
+
     [SerializeField] const int effectSize = 3;
     [SerializeField] Color damageColor = Color.white;
     [SerializeField] Transform[] effectPos = new Transform[effectSize];
     [SerializeField] GameObject[] effects = new GameObject[effectSize];
     
-
     Animator anm;
     Rigidbody2D rb;
-    Transform arm, body;
     SpriteRenderer armSR;
     SpriteRenderer[] bodyRenderer;
+
+    Transform arm, body;
     PlayerContloller pc;
 
     private void RotateBody()
     {
         body.Rotate(body.forward, pc.armRot.eulerAngles.z);
-        //body.localRotation = Quaternion.Euler(0, 0, pc.armRot.eulerAngles.z);
-        
     }
     private void ResetRotateBody()
     {
         body.localRotation = Quaternion.Euler(0f, 0f, 0f);
-
     }
     private void ParticleShot(int i)
     {
@@ -43,10 +41,7 @@ public class PlayerEffectContloller : MonoBehaviour
     }
     private void FlipBody()
     {
-        if (!isFrip)
-        {
-            return;
-        }
+        if (!isFrip) return;
         //体の反転
         if (pc.bodyVec.x < 0f)
         {
@@ -70,8 +65,7 @@ public class PlayerEffectContloller : MonoBehaviour
     {
         anm = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        arm = transform.Find("体/左腕");
-        armSR = arm.GetComponent<SpriteRenderer>();
+        arm = transform.Find("体/左腕"); armSR = arm.GetComponent<SpriteRenderer>();
         bodyRenderer = GetComponentsInChildren<SpriteRenderer>();
         body = transform.Find("体");
         pc = GetComponent<PlayerContloller>();
@@ -80,25 +74,18 @@ public class PlayerEffectContloller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+
         //腕の画像切り替え
-        if (Input.GetMouseButtonDown(0)||Input.GetMouseButton(0))
-        {
-            
-            anm.SetFloat("armState", 1);
-        }
-        else if (Input.GetMouseButtonUp(0))
-        {
-            anm.SetFloat("armState", 0);
-        }
-        else
-        {
-            anm.SetFloat("armState", 0);
-        }
-        FlipBody();
+        if (Input.GetMouseButtonDown(0) || Input.GetMouseButton(0)) anm.SetFloat("armState", 1);
+        else if (Input.GetMouseButtonUp(0)) anm.SetFloat("armState", 0);
+        else anm.SetFloat("armState", 0);
+        
+        anm.SetFloat("speed", Mathf.Abs(rb.velocity.x) / pc.speed);
+
+        //腕を回す
         arm.transform.rotation = Quaternion.Euler(0, 0, pc.armRot.eulerAngles.z) * Quaternion.Euler(0, 0, 90f);
+        FlipBody();
         ChangeBodyColor();
-        anm.SetFloat("speed", Mathf.Abs(rb.velocity.x) / pc.walkspeed);
     }
 
     

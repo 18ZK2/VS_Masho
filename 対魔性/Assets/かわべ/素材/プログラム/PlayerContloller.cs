@@ -5,15 +5,16 @@ using UnityEngine;
 //プレイヤーの操作について
 public class PlayerContloller : MonoBehaviour
 {
+
+    public float speed;
+    [System.NonSerialized] public Vector3 bodyVec;
+    [System.NonSerialized] public Quaternion armRot;
     
-    public Vector3 bodyVec;
-    public Quaternion armRot;
-    public float walkspeed;
 
     [SerializeField] float dashPow = 0;
     [SerializeField] GameObject cam = null;
-    [SerializeField] GrabbingBeam gb = null;
 
+    GrabbingBeam gb = null;
     bool dash;
     //左右移動用
     Vector2 walkVec;
@@ -32,6 +33,7 @@ public class PlayerContloller : MonoBehaviour
     {
         anm = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        gb = transform.Find("体/左腕").GetComponentInChildren<GrabbingBeam>();
         
     }
 
@@ -80,7 +82,7 @@ public class PlayerContloller : MonoBehaviour
             rb.AddForce(Vector2.up * rb.mass * rb.gravityScale * 10f, ForceMode2D.Force);
         }
         //走る
-        rb.AddForce(walkVec*walkspeed);
+        rb.AddForce(walkVec*speed);
 
         //ダッシュ
         anm.SetBool("dash", dash);

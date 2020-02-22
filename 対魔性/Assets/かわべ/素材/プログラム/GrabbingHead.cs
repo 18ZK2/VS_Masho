@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class GrabbingHead : MonoBehaviour
 {
-    public bool touched = false;
-
+    [System.NonSerialized] public string touchedObjectTag;
     [SerializeField] float sleeptime = 0.5f;
-    [SerializeField] Color HeadColor = Color.red;
 
     bool isActive = false;
     Rigidbody2D rb;
@@ -38,12 +36,12 @@ public class GrabbingHead : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        ps.TriggerSubEmitter(0);
-        if (isActive && collision.gameObject.tag=="Stage")
+        //変数isActiveがfalseならオブジェクトに触れても反応しない
+        if (!isActive) return;
+        else
         {
-            GetComponent<SpriteRenderer>().color = HeadColor;
-                rb.bodyType = RigidbodyType2D.Static;
-                touched = true;
+            ps.TriggerSubEmitter(0);
+            touchedObjectTag = collision.gameObject.tag;
         }
     }
 }

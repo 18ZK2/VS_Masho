@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class GrabbingBeam : MonoBehaviour
 {
-    public int beamLength = 0;
-    public float shotPow = 0;
-
-    [SerializeField] float preShotPowRate = 300;
+    
+    [SerializeField] int beamLength = 0;
+    [SerializeField] float shotPow = 0;
     [SerializeField] GameObject element = null;
     [SerializeField] GameObject head=null;
-    [SerializeField] List<GameObject> list = new List<GameObject>();
     [SerializeField] Rigidbody2D armBody = null,playerBody = null;
 
-    float autoShotPow = 0;
+    List<GameObject> list = new List<GameObject>();
     GrabbingHead gHead;
 
     public void MakeBeams(Vector2 vec)
     {
+        //ワイヤーを生成
         GameObject ele;
         SpringJoint2D eleJoint;
         Rigidbody2D eleBody = null;
+        //ワイヤーの紐要素を作成し変数listに追加
         for (int i = 0; i < beamLength; i++)
         {
 
@@ -48,17 +48,21 @@ public class GrabbingBeam : MonoBehaviour
 
             }
         }
+
+        //ワイヤーの他オブジェクトにくっつく部分を作成
         GameObject h = Instantiate(head, transform.position,Quaternion.identity);
         list.Add(h);
         h.transform.parent = null;
         gHead = h.GetComponent<GrabbingHead>();
+        //ワイヤーの末端に接続
         h.GetComponent<SpringJoint2D>().connectedBody = eleBody;
-        h.GetComponent<Rigidbody2D>().AddForce(vec * autoShotPow, ForceMode2D.Impulse);
+        //発射
+        h.GetComponent<Rigidbody2D>().AddForce(vec * shotPow, ForceMode2D.Impulse);
 
     }
     public void DeleteBeams()
     {
-        //ビームを削除
+        //ワイヤーを削除
         foreach(GameObject g in list)
         {
             if (gameObject.name != g.gameObject.name) Destroy(g.gameObject);
@@ -69,21 +73,26 @@ public class GrabbingBeam : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (shotPow == 0) autoShotPow = preShotPowRate * beamLength;
-        else autoShotPow = shotPow;
+
     }
-
-
 
     // Update is called once per frame
     private void Update()
     {
-        if (gHead!=null && list[0] != null && gHead.touched)
+        if (gHead == null || list[0] == null) return;
+
+        switch (gHead.touchedObjectTag)
         {
-            //ステージとキャラを固定する
-            list[0].GetComponent<SpringJoint2D>().connectedBody = playerBody;
+            //以下にワイヤーの末端が触れた時の挙動
+            case "Stage":
+                //ステージとキャラを固定する
+                list[0].GetComponent<SpringJoint2D>().connectedBody = playerBody;
+                //末端を固定
+                list[beamLength].GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+                break;
+            default:
+                break;
 
         }
     }
-
 }
