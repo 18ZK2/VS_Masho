@@ -5,7 +5,8 @@ using UnityEngine;
 //プレイヤーの操作について
 public class PlayerContloller : MonoBehaviour
 {
-
+    public int PlayerHp=15;
+    public int MaxPlayerHp = 40;
     public float speed;
     [System.NonSerialized] public Vector3 bodyVec;
     [System.NonSerialized] public Quaternion armRot;
