@@ -23,7 +23,10 @@ public class RecoveryItem : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            PlayerContloller.PlayerHp+=1;
+            if (PlayerContloller.PlayerHp < PlayerContloller.MaxPlayerHp) //HPが最大でない
+            {
+                PlayerContloller.PlayerHp += 1;
+            }
             Destroy(gameObject);
         }
         

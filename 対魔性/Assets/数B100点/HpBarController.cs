@@ -22,9 +22,8 @@ public class HpBarController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   
         Hp = PlayerContloller.PlayerHp;
-        
         slider.value = Hp;
     }
 }
