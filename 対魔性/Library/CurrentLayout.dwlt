@@ -114,7 +114,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 498}
   m_MaxSize: {x: 14004, y: 14048}
   vertical: 0
-  controlID: 611
+  controlID: 91
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 498}
   m_MaxSize: {x: 10002, y: 14048}
   vertical: 1
-  controlID: 518
+  controlID: 104
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 224}
   m_MaxSize: {x: 8006, y: 4024}
   vertical: 0
-  controlID: 519
+  controlID: 105
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -210,8 +210,8 @@ MonoBehaviour:
     y: 0
     width: 1152
     height: 549
-  m_MinSize: {x: 204, y: 224}
-  m_MaxSize: {x: 4004, y: 4024}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 14}
@@ -381,9 +381,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: fcf9ffff
-      m_LastClickedID: -1540
-      m_ExpandedIDs: 44faffff
+      m_SelectedIDs: 8efbffff
+      m_LastClickedID: -1138
+      m_ExpandedIDs: d6fbffff182d0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -439,9 +439,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -299.6852, y: -161.00076, z: -6.75}
+    m_Target: {x: 493.0901, y: 457.181, z: -6.75}
     speed: 2
-    m_Value: {x: -299.6852, y: -161.00076, z: -6.75}
+    m_Value: {x: 493.0901, y: 457.181, z: -6.75}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -557,14 +557,14 @@ MonoBehaviour:
   m_LastFolders:
   - "Assets/\u6570B100\u70B9"
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: "C:\\Users\\\u3066\u3089\u307D\u3093\\Desktop\\VS_Masho\\\u5BFE\u9B54\u6027"
+  m_LastProjectPath: "E:\\unity\\VS_Masho\\\u5BFE\u9B54\u6027"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 407}
-    m_SelectedIDs: f42f0000
-    m_LastClickedID: 12276
-    m_ExpandedIDs: 00000000542d0000702d0000ea2d00004c2e00009a2e0000382f000046300000a8300000143100003632000000ca9a3b
+    m_SelectedIDs: 30290000
+    m_LastClickedID: 10544
+    m_ExpandedIDs: 0000000084260000aa2600002627000088270000d62700007428000082290000e4290000502a0000722b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -592,7 +592,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000542d0000702d0000ea2d00004c2e00009a2e0000382f000046300000a8300000143100003632000000ca9a3b
+    m_ExpandedIDs: 0000000084260000aa2600002627000088270000d62700007428000082290000e4290000502a0000722b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
