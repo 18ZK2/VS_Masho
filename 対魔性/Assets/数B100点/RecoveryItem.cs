@@ -6,6 +6,7 @@ public class RecoveryItem : MonoBehaviour
 {
     GameObject Player;
     PlayerContloller PlayerContloller;
+    int HealPonit = 1; //回復量
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +26,7 @@ public class RecoveryItem : MonoBehaviour
         {
             if (PlayerContloller.PlayerHp < PlayerContloller.MaxPlayerHp) //HPが最大でない
             {
-                PlayerContloller.PlayerHp += 1;
+                PlayerContloller.PlayerHp += HealPonit;
             }
             Destroy(gameObject);
         }

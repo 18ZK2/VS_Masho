@@ -9,9 +9,7 @@ public class HpBarController : MonoBehaviour
     GameObject Player,ThisgameObject;
     PlayerContloller PlayerContloller;
     Slider slider;
-    public int Hp;
-    int MaxHp;
-    int Width; //HPバーのサイズ
+    float Width; //HPバーのサイズ
     // Start is called before the first frame update
     void Start()
     {
@@ -19,16 +17,21 @@ public class HpBarController : MonoBehaviour
         PlayerContloller = Player.GetComponent<PlayerContloller>();
         ThisgameObject = GameObject.Find("PlayerHealth");
         slider = GameObject.Find("PlayerHealth").GetComponent<Slider>();
-        MaxHp = PlayerContloller.MaxPlayerHp;
-        slider.maxValue = MaxHp;
+        slider.maxValue = PlayerContloller.MaxPlayerHp;
+        Width = 800.0f;
     }
-
+    
     // Update is called once per frame
     void Update()
     {
-        Width = PlayerContloller.MaxPlayerHp * 20; //横幅=最大体力かけ20
+        slider.maxValue = PlayerContloller.MaxPlayerHp;
+        if (PlayerContloller.MaxPlayerHp < PlayerContloller.PlayerHp) //最大体力変更時max<NowHpとなったとき
+        {
+            PlayerContloller.PlayerHp = PlayerContloller.MaxPlayerHp;
+        }
+
+        Width = 19.0f * Mathf.Log(PlayerContloller.MaxPlayerHp + 5.0f, 1.10f);  //横幅=最大体力かけ20
         ThisgameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(Width,30); //HPサイズ変更
-        Hp = PlayerContloller.PlayerHp;
-        slider.value = Hp;
+        slider.value = PlayerContloller.PlayerHp;
     }
 }
