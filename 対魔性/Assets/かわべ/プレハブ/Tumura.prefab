@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8469106255070098786}
   - component: {fileID: 8469106255070098787}
-  m_Layer: 15
+  m_Layer: 10
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8469106255239338543}
   - component: {fileID: 8469106255239338540}
-  m_Layer: 15
+  m_Layer: 10
   m_Name: Foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8469106255286831439}
   - component: {fileID: 8469106255286831436}
-  m_Layer: 15
+  m_Layer: 10
   m_Name: Tumura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 8469106256992280162}
   - component: {fileID: 8469106256992280165}
   - component: {fileID: 3706688064428934785}
-  m_Layer: 15
+  m_Layer: 10
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}

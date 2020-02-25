@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3976111699996665643}
   - component: {fileID: 5294052122029560331}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8867374678258514275}
   - component: {fileID: 6332882823820375445}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 1144847515834557238}
   - component: {fileID: 8432503516786773799}
   - component: {fileID: 4860066602047178258}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Chocomin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,8 +248,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1733803553
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -272,7 +272,7 @@ GameObject:
   m_Component:
   - component: {fileID: 788688095272720699}
   - component: {fileID: 6521616641733332846}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rarm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -351,7 +351,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5732057730144866806}
   - component: {fileID: 3226736651801023448}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,7 +430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2948926268375235421}
   - component: {fileID: 7092946128634613024}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Larm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
