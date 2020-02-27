@@ -35,6 +35,7 @@ public class EnemyContloller : MonoBehaviour
         if (isDamage)
         {
             HP -= attackPow;
+            HP = Mathf.Round(HP * 10.0f) / 10.0f; //10倍して四捨五入->10で割る
             StartCoroutine(Immortal());
         }
 
@@ -49,12 +50,13 @@ public class EnemyContloller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (HP < 0)
+        if (HP < 1)
         {
-            if (dropItem.Length != 0)
+            //死ぬとき
+            if (dropItem.Length != 0)//ドロップアイテムが設定されているとき
             {
-                int i = (int)Random.Range(0, dropItem.Length);
-                bool isDrop = dropProba[i] > Random.Range(0, 1);
+                int i = Random.Range(0, dropItem.Length);//落とすアイテムの種類を抽選
+                bool isDrop = dropProba[i] > Random.Range(0f, 1f);//落とすかどうかを抽選
                 if (isDrop) Instantiate(dropItem[i], transform);
             }
             if (mustDrop != null) Instantiate(mustDrop, transform);

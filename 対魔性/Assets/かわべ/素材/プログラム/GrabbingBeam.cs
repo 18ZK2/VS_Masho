@@ -6,7 +6,7 @@ public class GrabbingBeam : MonoBehaviour
 {
     
     [SerializeField] int beamLength = 0;
-    [SerializeField] float shotPow = 0, attachPt = 0.1f;
+    [SerializeField] float shotPow = 0, attackPt = 0.10f;
     [SerializeField] GameObject element = null;
     [SerializeField] GameObject head=null;
     [SerializeField] Rigidbody2D armBody = null,playerBody = null;
@@ -93,7 +93,7 @@ public class GrabbingBeam : MonoBehaviour
                     list[beamLength].GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
                     break;
                 case "Enemy":
-                    gHead.touchedObject.GetComponent<EnemyContloller>().Damage(attachPt);
+                    gHead.touchedObject.GetComponent<EnemyContloller>().Damage(attackPt);
                     break;
                 default:
                     break;
