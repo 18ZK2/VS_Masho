@@ -6,7 +6,7 @@ public class GrabbingBeam : MonoBehaviour
 {
     
     [SerializeField] int beamLength = 0;
-    [SerializeField] float shotPow = 0;
+    [SerializeField] float shotPow = 0, attachPt = 0.1f;
     [SerializeField] GameObject element = null;
     [SerializeField] GameObject head=null;
     [SerializeField] Rigidbody2D armBody = null,playerBody = null;
@@ -81,18 +81,24 @@ public class GrabbingBeam : MonoBehaviour
     {
         if (gHead == null || list[0] == null) return;
 
-        switch (gHead.touchedObjectTag)
+        if (gHead.touchedObject != null)
         {
-            //以下にワイヤーの末端が触れた時の挙動
-            case "Stage":
-                //ステージとキャラを固定する
-                list[0].GetComponent<SpringJoint2D>().connectedBody = playerBody;
-                //末端を固定
-                list[beamLength].GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-                break;
-            default:
-                break;
+            switch (gHead.touchedObject.tag)
+            {
+                //以下にワイヤーの末端が触れた時の挙動
+                case "Stage":
+                    //ステージとキャラを固定する
+                    list[0].GetComponent<SpringJoint2D>().connectedBody = playerBody;
+                    //末端を固定
+                    list[beamLength].GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+                    break;
+                case "Enemy":
+                    gHead.touchedObject.GetComponent<EnemyContloller>().Damage(attachPt);
+                    break;
+                default:
+                    break;
 
+            }
         }
     }
 }

@@ -5,14 +5,18 @@ using UnityEngine;
 //プレイヤーの操作について
 public class PlayerContloller : MonoBehaviour
 {
-    public int PlayerHp=15;
-    public int MaxPlayerHp = 40;
+    public float PlayerHp=15;
+    public float MaxPlayerHp = 40;
     public float speed;
+
+    [System.NonSerialized] public bool isDamage = true;
     [System.NonSerialized] public Vector3 bodyVec;
     [System.NonSerialized] public Quaternion armRot;
-    
 
+    [SerializeField] float camSpeed = 0.5f;
     [SerializeField] float dashPow = 0;
+    //ダメージ後の無敵時間
+    [SerializeField] float immortalTime = 0.5f;
     [SerializeField] GameObject cam = null;
 
     GrabbingBeam gb = null;
@@ -22,8 +26,26 @@ public class PlayerContloller : MonoBehaviour
 
     Animator anm;
     Rigidbody2D rb;
-    
 
+    private IEnumerator Immortal()
+    {
+        isDamage = false;
+        yield return new WaitForSeconds(immortalTime);
+        isDamage = true;
+        StopCoroutine(Immortal());
+    }
+    private void VecZero()
+    {
+        rb.velocity = Vector2.zero;
+    }
+    public void Damage(float attackPt)
+    {
+        if (isDamage)
+        {
+            PlayerHp -= attackPt;
+            StartCoroutine(Immortal());
+        }
+    }
     private void Dash()
     {
         rb.AddForce(bodyVec.normalized * dashPow, ForceMode2D.Impulse);
@@ -69,7 +91,7 @@ public class PlayerContloller : MonoBehaviour
     private void LateUpdate()
     {
         //プレイヤーの移動が終わった後にカメラを移動
-        cam.transform.position = Vector3.Lerp(cam.transform.position, transform.position, 2.0f * Time.deltaTime);
+        cam.transform.position = Vector3.Lerp(cam.transform.position, transform.position, camSpeed * Time.deltaTime);
         Vector3 cp = cam.transform.position;
         cam.transform.position = new Vector3(cp.x, cp.y, -10);
     }

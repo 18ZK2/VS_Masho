@@ -11,7 +11,9 @@ public class PlayerEffectContloller : MonoBehaviour
     [SerializeField] Color damageColor = Color.white;
     [SerializeField] Transform[] effectPos = new Transform[effectSize];
     [SerializeField] GameObject[] effects = new GameObject[effectSize];
-    
+
+    float beforHP;
+
     Animator anm;
     Rigidbody2D rb;
     SpriteRenderer armSR;
@@ -69,6 +71,8 @@ public class PlayerEffectContloller : MonoBehaviour
         bodyRenderer = GetComponentsInChildren<SpriteRenderer>();
         body = transform.Find("体");
         pc = GetComponent<PlayerContloller>();
+
+        beforHP = pc.PlayerHp;
     }
 
     // Update is called once per frame
@@ -86,6 +90,14 @@ public class PlayerEffectContloller : MonoBehaviour
         arm.transform.rotation = Quaternion.Euler(0, 0, pc.armRot.eulerAngles.z) * Quaternion.Euler(0, 0, 90f);
         FlipBody();
         ChangeBodyColor();
+
+        if (beforHP > pc.PlayerHp)
+        {
+            beforHP = pc.PlayerHp;
+            anm.SetTrigger("damage");
+        }
+
+        anm.SetBool("immortal", !pc.isDamage);
     }
 
     

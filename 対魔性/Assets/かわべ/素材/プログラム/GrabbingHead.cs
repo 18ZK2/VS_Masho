@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GrabbingHead : MonoBehaviour
 {
-    [System.NonSerialized] public string touchedObjectTag;
+    [System.NonSerialized] public GameObject touchedObject;
     [SerializeField] float sleeptime = 0.5f;
 
     bool isActive = false;
@@ -41,7 +41,7 @@ public class GrabbingHead : MonoBehaviour
         else
         {
             ps.TriggerSubEmitter(0);
-            touchedObjectTag = collision.gameObject.tag;
+            touchedObject = collision.gameObject;
         }
     }
 }

@@ -47,10 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beamLength: 3
   shotPow: 0
-  preShotPowRate: 300
+  attachPt: 0.1
   element: {fileID: 6766992695889908129, guid: 08111be2dc6b08f4686380da8687994b, type: 3}
   head: {fileID: 8304747799941178365, guid: 78ae403398cab464482c901b74150969, type: 3}
-  list: []
   armBody: {fileID: 0}
   playerBody: {fileID: 0}
 --- !u!199 &2569662063847750703
