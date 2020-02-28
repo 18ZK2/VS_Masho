@@ -356,7 +356,7 @@ GameObject:
   - component: {fileID: 944223535}
   - component: {fileID: 944223534}
   - component: {fileID: 944223533}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tilemap
   m_TagString: Stage
   m_Icon: {fileID: 0}
@@ -394,7 +394,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a65248ca63bf54c4e8187f2729278677, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -38119,6 +38119,11 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 2117439534}
+    - target: {fileID: 1565937435066247770, guid: eb5886033ec61c34394f67c1d3f45fb5,
+        type: 3}
+      propertyPath: speed
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 5684424020220122160, guid: eb5886033ec61c34394f67c1d3f45fb5,
         type: 3}
       propertyPath: m_LocalRotation.x

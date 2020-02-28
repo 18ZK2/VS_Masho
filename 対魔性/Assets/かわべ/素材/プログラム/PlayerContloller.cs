@@ -99,10 +99,13 @@ public class PlayerContloller : MonoBehaviour
     private void FixedUpdate()
     {
         //浮遊
-        Vector2 origin = new Vector2(transform.position.x, transform.position.y - 33);
-        if (Physics2D.Raycast(origin,Vector2.down,8f))
-        {
-            rb.AddForce(Vector2.up * rb.mass * rb.gravityScale * 10f, ForceMode2D.Force);
+        Vector2 origin = new Vector2(transform.position.x, transform.position.y);
+        RaycastHit2D[] hit2Ds = Physics2D.RaycastAll(origin, Vector2.down *40f, 40f, LayerMask.GetMask("Stage"));
+        foreach (var r in hit2Ds){
+            if (r.collider != null)
+            {
+                rb.AddForce(Vector2.up * rb.mass * rb.gravityScale * 10f, ForceMode2D.Force);
+            }
         }
         //走る
         rb.AddForce(walkVec*speed);
