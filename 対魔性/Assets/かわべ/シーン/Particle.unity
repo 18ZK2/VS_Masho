@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 22052929}
   - component: {fileID: 22052928}
   m_Layer: 12
-  m_Name: New Sprite (12)
+  m_Name: New Sprite
   m_TagString: Stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -958,7 +958,7 @@ GameObject:
   - component: {fileID: 216676636}
   - component: {fileID: 216676639}
   m_Layer: 12
-  m_Name: New Sprite (1)
+  m_Name: New Sprite
   m_TagString: Stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1388,6 +1388,28 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1470143377}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &466020791 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5684424019440655109, guid: eb5886033ec61c34394f67c1d3f45fb5,
+    type: 3}
+  m_PrefabInstance: {fileID: 733340777}
+  m_PrefabAsset: {fileID: 0}
+--- !u!70 &466020798
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466020791}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00715065, y: 0.12853622}
+  m_Size: {x: 20.060959, y: 54.72602}
+  m_Direction: 0
 --- !u!1 &543002070
 GameObject:
   m_ObjectHideFlags: 0
@@ -1732,7 +1754,7 @@ GameObject:
   - component: {fileID: 731074049}
   - component: {fileID: 731074048}
   m_Layer: 12
-  m_Name: New Sprite (8)
+  m_Name: New Sprite
   m_TagString: Stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2129,7 +2151,7 @@ GameObject:
   - component: {fileID: 812736922}
   - component: {fileID: 812736921}
   m_Layer: 12
-  m_Name: New Sprite (4)
+  m_Name: 'New Sprite '
   m_TagString: Stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2263,7 +2285,7 @@ GameObject:
   - component: {fileID: 839804958}
   - component: {fileID: 839804957}
   m_Layer: 12
-  m_Name: New Sprite (2)
+  m_Name: New Sprite
   m_TagString: Stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2391,7 +2413,7 @@ GameObject:
   - component: {fileID: 864850965}
   - component: {fileID: 864850964}
   m_Layer: 12
-  m_Name: New Sprite (5)
+  m_Name: 'New Sprite '
   m_TagString: Stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2519,7 +2541,7 @@ GameObject:
   - component: {fileID: 896986684}
   - component: {fileID: 896986683}
   m_Layer: 12
-  m_Name: New Sprite (10)
+  m_Name: New Sprite
   m_TagString: Stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2975,7 +2997,7 @@ GameObject:
   - component: {fileID: 1126490752}
   - component: {fileID: 1126490751}
   m_Layer: 12
-  m_Name: New Sprite (3)
+  m_Name: New Sprite
   m_TagString: Stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3103,7 +3125,7 @@ GameObject:
   - component: {fileID: 1186056643}
   - component: {fileID: 1186056642}
   m_Layer: 12
-  m_Name: New Sprite (7)
+  m_Name: New Sprite
   m_TagString: Stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3231,7 +3253,7 @@ GameObject:
   - component: {fileID: 1308068209}
   - component: {fileID: 1308068208}
   m_Layer: 12
-  m_Name: New Sprite (13)
+  m_Name: New Sprite
   m_TagString: Stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3359,7 +3381,7 @@ GameObject:
   - component: {fileID: 1323964842}
   - component: {fileID: 1323964841}
   m_Layer: 12
-  m_Name: New Sprite (9)
+  m_Name: New Sprite
   m_TagString: Stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3918,7 +3940,7 @@ GameObject:
   - component: {fileID: 1438551853}
   - component: {fileID: 1438551852}
   m_Layer: 12
-  m_Name: New Sprite (11)
+  m_Name: 'New Sprite '
   m_TagString: Stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9073,7 +9095,7 @@ GameObject:
   - component: {fileID: 1941529436}
   - component: {fileID: 1941529435}
   m_Layer: 12
-  m_Name: New Sprite (6)
+  m_Name: New Sprite
   m_TagString: Stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
