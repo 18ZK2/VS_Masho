@@ -9,9 +9,8 @@ public class PlayerContloller : MonoBehaviour
     public float MaxPlayerHp = 40;
     public float speed;
 
-    private const int MAX_DASH_COUNT = 2;
+    private const int MAX_DASH_COUNT = 1;
     private int Dashcount = 0;
-    private bool isDash = false;
 
     [System.NonSerialized] public bool isDamage = true;
     [System.NonSerialized] public Vector3 bodyVec;
@@ -42,6 +41,7 @@ public class PlayerContloller : MonoBehaviour
     {
         rb.velocity = Vector2.zero;
     }
+
     public void Damage(float attackPt)
     {
         if (isDamage)
@@ -54,7 +54,6 @@ public class PlayerContloller : MonoBehaviour
     {
         rb.AddForce(bodyVec.normalized * dashPow, ForceMode2D.Impulse);
         Dashcount++;
-        isDash = false;
     }
 
     // Start is called before the first frame update
@@ -72,7 +71,7 @@ public class PlayerContloller : MonoBehaviour
 
         //横方向入力
         walkVec = Vector2.right * Input.GetAxis("Horizontal");
-        dash = (Input.GetMouseButton(1) && Dashcount < MAX_DASH_COUNT) || Input.GetMouseButtonDown(1);
+        dash = (Input.GetMouseButton(1) || Input.GetMouseButtonDown(1))&& Dashcount < MAX_DASH_COUNT;
 
         //マウスの入力から向かうべき向きを作る
         //bodyVecが向かうべきベクトル
@@ -110,6 +109,7 @@ public class PlayerContloller : MonoBehaviour
         foreach (var r in hit2Ds){
             if (r.collider != null)
             {
+                Dashcount = 0;
                 rb.AddForce(Vector2.up * rb.mass * rb.gravityScale * 10f, ForceMode2D.Force);
             }
         }
@@ -118,12 +118,5 @@ public class PlayerContloller : MonoBehaviour
 
         //ダッシュ
         anm.SetBool("dash", dash);
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.name=="New Sprite")
-        {
-            Dashcount = 0;
-        }
     }
 }

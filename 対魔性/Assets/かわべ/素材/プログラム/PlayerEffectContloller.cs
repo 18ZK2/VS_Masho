@@ -78,6 +78,18 @@ public class PlayerEffectContloller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //無敵判定の点滅
+        anm.SetBool("immortal", !pc.isDamage);
+
+        //ノックバック
+        if (beforHP > pc.PlayerHp)
+        {
+            beforHP = pc.PlayerHp;
+            anm.SetTrigger("damage");
+        }else if (beforHP < pc.PlayerHp)
+        {
+            beforHP = pc.PlayerHp;
+        }
 
         //腕の画像切り替え
         if (Input.GetMouseButtonDown(0) || Input.GetMouseButton(0)) anm.SetFloat("armState", 1);
@@ -90,15 +102,5 @@ public class PlayerEffectContloller : MonoBehaviour
         arm.transform.rotation = Quaternion.Euler(0, 0, pc.armRot.eulerAngles.z) * Quaternion.Euler(0, 0, 90f);
         FlipBody();
         ChangeBodyColor();
-
-        if (beforHP > pc.PlayerHp)
-        {
-            beforHP = pc.PlayerHp;
-            anm.SetTrigger("damage");
-        }
-
-        anm.SetBool("immortal", !pc.isDamage);
-    }
-
-    
+    } 
 }

@@ -6,14 +6,26 @@ public class GrabbingBeam : MonoBehaviour
 {
     
     [SerializeField] int beamLength = 0;
-    [SerializeField] float shotPow = 0, attackPt = 0.10f;
+    [SerializeField] float shotPow = 0, attackPt = 0.10f, whipPow = 10f, grabTime = 1.5f;
     [SerializeField] GameObject element = null;
-    [SerializeField] GameObject head=null;
+    [SerializeField] GameObject head = null;
     [SerializeField] Rigidbody2D armBody = null,playerBody = null;
+    [SerializeField] PlayerContloller pc = null;
 
     List<GameObject> list = new List<GameObject>();
     GrabbingHead gHead;
+    GameObject touchedEnemy;
 
+    bool whipMode = false;
+    
+    Rigidbody2D headRigid;
+
+    IEnumerator GrabTime()
+    {
+        yield return new WaitForSeconds(grabTime);
+        DeleteBeams();
+        StopCoroutine(GrabTime());
+    }
     public void MakeBeams(Vector2 vec)
     {
         //ワイヤーを生成
@@ -54,14 +66,32 @@ public class GrabbingBeam : MonoBehaviour
         list.Add(h);
         h.transform.parent = null;
         gHead = h.GetComponent<GrabbingHead>();
+        headRigid = h.GetComponent<Rigidbody2D>();
         //ワイヤーの末端に接続
         h.GetComponent<SpringJoint2D>().connectedBody = eleBody;
         //発射
-        h.GetComponent<Rigidbody2D>().AddForce(vec * shotPow, ForceMode2D.Impulse);
+        headRigid.AddForce(vec * shotPow, ForceMode2D.Impulse);
 
     }
     public void DeleteBeams()
     {
+        if (list.Count < 1) return;
+        whipMode = false;
+        headRigid = null;
+        
+        //エネミーの後処理
+        if (touchedEnemy != null)
+        {
+            touchedEnemy.GetComponent<Animator>().enabled = true;
+            touchedEnemy.GetComponent<EnemyContloller>().isDamage = true;
+            SpringJoint2D[] sps = touchedEnemy.GetComponents<SpringJoint2D>();
+            foreach (var s in sps) Destroy(s);
+            Rigidbody2D erb = touchedEnemy.GetComponent<Rigidbody2D>();
+            erb.mass *= 10f;
+            //エネミー発射
+            erb.AddForce(pc.bodyVec * shotPow/50f, ForceMode2D.Impulse);
+            touchedEnemy = null;
+        }
         //ワイヤーを削除
         foreach(GameObject g in list)
         {
@@ -73,14 +103,17 @@ public class GrabbingBeam : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
     private void Update()
     {
         if (gHead == null || list[0] == null) return;
-
+        if (whipMode)
+        {
+            //ワイヤーの先をマウスポインタ―の方向へ動かせる
+            headRigid.AddForce(pc.bodyVec * whipPow, ForceMode2D.Force);
+        }
         if (gHead.touchedObject != null)
         {
             switch (gHead.touchedObject.tag)
@@ -93,12 +126,41 @@ public class GrabbingBeam : MonoBehaviour
                     list[beamLength].GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
                     break;
                 case "Enemy":
-                    gHead.touchedObject.GetComponent<EnemyContloller>().Damage(attackPt);
+
+                    whipMode = true;
+
+                    touchedEnemy = gHead.touchedObject;
+                    gHead.touchedObject = null;
+                    //触れた敵は自身の攻撃に
+                    touchedEnemy.layer = 9;
+                    touchedEnemy.tag = "PlayerAttack";
+                    //攻撃
+                    touchedEnemy.GetComponent<EnemyContloller>().Damage(attackPt);
+                    //グラップと敵をつなぐ準備
+                    touchedEnemy.GetComponent<Rigidbody2D>().mass /= 10f;
+                    SpringJoint2D tsp = touchedEnemy.AddComponent<SpringJoint2D>();
+                    tsp.autoConfigureDistance = false;
+                    tsp.distance = 0.05f;
+                    tsp.frequency = gHead.GetComponent<SpringJoint2D>().frequency;
+                    //グラップと敵を接続
+                    tsp.connectedBody = headRigid;
+                    //ヘッドの当たり判定をトリガーに
+                    gHead.GetComponent<CircleCollider2D>().isTrigger = true;
+                    //アニメーションを止める
+                    //目的はマヒさせたいだけ
+                    //もっと普遍的な方法求む
+                    touchedEnemy.GetComponent<Animator>().enabled = false;
+                    //掴み可能時間設定
+                    StartCoroutine(GrabTime());
+
                     break;
                 default:
                     break;
 
             }
         }
+        //  敵死亡時
+        if (touchedEnemy == null && gHead.GetComponent<CircleCollider2D>().isTrigger) DeleteBeams();
+
     }
 }

@@ -40,6 +40,7 @@ public class GrabbingHead : MonoBehaviour
         if (!isActive) return;
         else
         {
+            isActive = false;
             ps.TriggerSubEmitter(0);
             touchedObject = collision.gameObject;
         }

@@ -17,12 +17,7 @@ public class TumuraContloller : MonoBehaviour
 
     private void RotBody()
     {
-        
         transform.Rotate(transform.up, 180);
-    }
-    private void ResetSpeed()
-    {
-        rb.velocity = Vector2.zero + rb.velocity.y*Vector2.up;
     }
     private void Turn()
     {
