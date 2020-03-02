@@ -8,9 +8,10 @@ public class PlayerContloller : MonoBehaviour
     public float PlayerHp=15;
     public float MaxPlayerHp = 40;
     public float speed;
+    public float seconds;
 
-    private const int MAX_DASH_COUNT = 1;
-    private int Dashcount = 0;
+    public const float MAX_STAMINA = 2;
+    public int Dashstamina= 0;
 
     [System.NonSerialized] public bool isDamage = true;
     [System.NonSerialized] public Vector3 bodyVec;
@@ -53,7 +54,7 @@ public class PlayerContloller : MonoBehaviour
     private void Dash()
     {
         rb.AddForce(bodyVec.normalized * dashPow, ForceMode2D.Impulse);
-        Dashcount++;
+        Dashstamina++;
     }
 
     // Start is called before the first frame update
@@ -71,7 +72,7 @@ public class PlayerContloller : MonoBehaviour
 
         //横方向入力
         walkVec = Vector2.right * Input.GetAxis("Horizontal");
-        dash = (Input.GetMouseButton(1) || Input.GetMouseButtonDown(1))&& Dashcount < MAX_DASH_COUNT;
+        dash = (Input.GetMouseButton(1) || Input.GetMouseButtonDown(1))&& Dashstamina <MAX_STAMINA;
 
         //マウスの入力から向かうべき向きを作る
         //bodyVecが向かうべきベクトル
@@ -90,8 +91,10 @@ public class PlayerContloller : MonoBehaviour
         {
             gb.DeleteBeams();
         }
-
+        
+       
     }
+    
 
     private void LateUpdate()
     {
@@ -109,7 +112,7 @@ public class PlayerContloller : MonoBehaviour
         foreach (var r in hit2Ds){
             if (r.collider != null)
             {
-                Dashcount = 0;
+                Dashstamina = 0;
                 rb.AddForce(Vector2.up * rb.mass * rb.gravityScale * 10f, ForceMode2D.Force);
             }
         }
