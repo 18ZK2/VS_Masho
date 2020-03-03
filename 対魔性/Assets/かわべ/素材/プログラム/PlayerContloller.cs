@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //プレイヤーの操作について
 public class PlayerContloller : MonoBehaviour
@@ -10,8 +12,8 @@ public class PlayerContloller : MonoBehaviour
     public float speed;
     public float seconds;
 
-    public const float MAX_STAMINA = 2;
-    public int Dashstamina= 0;
+    public int MAX_STAMINA = 200;
+    public int Dashstamina= 200;
 
     [System.NonSerialized] public bool isDamage = true;
     [System.NonSerialized] public Vector3 bodyVec;
@@ -30,6 +32,15 @@ public class PlayerContloller : MonoBehaviour
 
     Animator anm;
     Rigidbody2D rb;
+    public IEnumerator stamina_gauge()
+    {
+        yield return new WaitForSeconds(1.0f);
+       for(int i = 0; i < 100; i++)
+        {
+            Dashstamina = Dashstamina + 2;
+        }
+        
+    }
 
     private IEnumerator Immortal()
     {
@@ -54,7 +65,7 @@ public class PlayerContloller : MonoBehaviour
     private void Dash()
     {
         rb.AddForce(bodyVec.normalized * dashPow, ForceMode2D.Impulse);
-        Dashstamina++;
+        Dashstamina -=100;
     }
 
     // Start is called before the first frame update
@@ -69,10 +80,10 @@ public class PlayerContloller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Debug.Log(Dashstamina);
         //横方向入力
         walkVec = Vector2.right * Input.GetAxis("Horizontal");
-        dash = (Input.GetMouseButton(1) || Input.GetMouseButtonDown(1))&& Dashstamina <MAX_STAMINA;
+        dash = (Input.GetMouseButton(1) || Input.GetMouseButtonDown(1))&& Dashstamina >=100;
 
         //マウスの入力から向かうべき向きを作る
         //bodyVecが向かうべきベクトル
@@ -91,9 +102,18 @@ public class PlayerContloller : MonoBehaviour
         {
             gb.DeleteBeams();
         }
+        if (Dashstamina == MAX_STAMINA || Input.GetMouseButtonDown(1))
+        {
+            StopCoroutine("stamina_gauge");
+        }
+        if (Input.GetMouseButtonUp(1))
+        {
+            StartCoroutine("stamina_gauge",60);
+        }
         
        
     }
+
     
 
     private void LateUpdate()
@@ -112,7 +132,7 @@ public class PlayerContloller : MonoBehaviour
         foreach (var r in hit2Ds){
             if (r.collider != null)
             {
-                Dashstamina = 0;
+                
                 rb.AddForce(Vector2.up * rb.mass * rb.gravityScale * 10f, ForceMode2D.Force);
             }
         }
