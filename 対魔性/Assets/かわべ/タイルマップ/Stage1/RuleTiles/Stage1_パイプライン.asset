@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: "Stage1_\u30D1\u30A4\u30D7\u30E9\u30A4\u30F3"
   m_EditorClassIdentifier: 
   m_Sprites:
-  - {fileID: 21300096, guid: 441a8d8d2367f554386daab785f5040b, type: 3}
-  - {fileID: 21300100, guid: 441a8d8d2367f554386daab785f5040b, type: 3}
-  - {fileID: 21300032, guid: 441a8d8d2367f554386daab785f5040b, type: 3}
-  - {fileID: 21300102, guid: 441a8d8d2367f554386daab785f5040b, type: 3}
-  - {fileID: 21300096, guid: 441a8d8d2367f554386daab785f5040b, type: 3}
+  - {fileID: 21300012, guid: 05dda20c9f89b0c408d172ccf2bb2cae, type: 3}
+  - {fileID: 21300014, guid: 05dda20c9f89b0c408d172ccf2bb2cae, type: 3}
+  - {fileID: 21300002, guid: 05dda20c9f89b0c408d172ccf2bb2cae, type: 3}
+  - {fileID: 21300016, guid: 05dda20c9f89b0c408d172ccf2bb2cae, type: 3}
+  - {fileID: 21300012, guid: 05dda20c9f89b0c408d172ccf2bb2cae, type: 3}

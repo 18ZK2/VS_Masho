@@ -23,7 +23,7 @@ TagManager:
   - Stage
   - StageDecolation_Front
   - StageDecolation_Back
-  - 
+  - Master_Front
   - 
   - 
   - 
@@ -58,4 +58,7 @@ TagManager:
     locked: 0
   - name: StageDecolation_Front
     uniqueID: 1882311813
+    locked: 0
+  - name: Master_Front
+    uniqueID: 678949121
     locked: 0

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: F.Pype
   m_EditorClassIdentifier: 
   m_Sprites:
-  - {fileID: 21300052, guid: 441a8d8d2367f554386daab785f5040b, type: 3}
-  - {fileID: 21300074, guid: 441a8d8d2367f554386daab785f5040b, type: 3}
-  - {fileID: 21300052, guid: 441a8d8d2367f554386daab785f5040b, type: 3}
-  - {fileID: 21300068, guid: 441a8d8d2367f554386daab785f5040b, type: 3}
-  - {fileID: 21300096, guid: 441a8d8d2367f554386daab785f5040b, type: 3}
+  - {fileID: 21300018, guid: 05dda20c9f89b0c408d172ccf2bb2cae, type: 3}
+  - {fileID: 21300020, guid: 05dda20c9f89b0c408d172ccf2bb2cae, type: 3}
+  - {fileID: 21300018, guid: 05dda20c9f89b0c408d172ccf2bb2cae, type: 3}
+  - {fileID: 21300022, guid: 05dda20c9f89b0c408d172ccf2bb2cae, type: 3}
+  - {fileID: 21300012, guid: 05dda20c9f89b0c408d172ccf2bb2cae, type: 3}
