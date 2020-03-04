@@ -37,6 +37,7 @@ public class PlayerContloller : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
        for(int i = 0; i < 100; i++)
         {
+            yield return new WaitForSeconds(0.02f);
             Dashstamina = Dashstamina + 2;
         }
         
@@ -108,7 +109,7 @@ public class PlayerContloller : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(1))
         {
-            StartCoroutine("stamina_gauge",60);
+            StartCoroutine("stamina_gauge");
         }
         
        
