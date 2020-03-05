@@ -52,9 +52,6 @@
     <UnityVersion>2018.4.12f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2018.4.12f1\Editor\Data\Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -80,6 +77,7 @@
     <Compile Include="Assets\かわべ\素材\プログラム\Enemy\TumuraContloller.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\GrabbingBeam.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\GrabbingHead.cs" />
+    <Compile Include="Assets\かわべ\素材\プログラム\Needle.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\PixenRenderBase.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\PlayerContloller.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\PlayerEffectContloller.cs" />
@@ -96,19 +94,19 @@
     <None Include="Assets\かわべ\マテリアル\フォント\Kawabe.txt" />
     <None Include="Assets\かわべ\素材\プログラム\shader\TitleText.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>E:/unity/対魔性/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>E:/unity/対魔性/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>E:/unity/対魔性/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>E:/unity/対魔性/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>E:/unity/対魔性/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -312,13 +310,13 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.12f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>E:/unity/対魔性/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>E:/unity/対魔性/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>E:/unity/対魔性/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.12f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
