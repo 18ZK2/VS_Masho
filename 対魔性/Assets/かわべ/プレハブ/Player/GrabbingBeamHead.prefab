@@ -9545,9 +9545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa345cdfa328cd642a5c2cb7de41e9af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touched: 0
   sleeptime: 0.01
-  HeadColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!58 &6280232219736979948
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -14209,8 +14207,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1774480827
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_RenderMode: 5
   m_SortMode: 0
