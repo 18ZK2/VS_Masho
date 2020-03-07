@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: "Assets/\u304B\u308F\u3079/\u30B7\u30FC\u30F3/Particle.unity"
     guid: e5d0a2bc80114e943b8c1e849b4e3719
   - enabled: 1
