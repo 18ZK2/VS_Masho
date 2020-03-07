@@ -66,7 +66,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1733803553
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300016, guid: 8e4b12dec06195b4183ba3c0741daf5f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -146,7 +146,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1733803553
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300010, guid: 8e4b12dec06195b4183ba3c0741daf5f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -297,11 +297,12 @@ MonoBehaviour:
   HP: 1
   attackPt: 1
   immortalTime: 1.5
-  mustDrop: {fileID: 0}
+  mustDrop: {fileID: 5487253364279819266, guid: f07a5ae6f2e1bf44b8882b06e4cec07e,
+    type: 3}
   dropItem:
   - {fileID: 4621338078245100413, guid: e21913717f54f214aaf9063505212b9e, type: 3}
   dropProba:
-  - 0
+  - 0.43
 --- !u!114 &5969981985473439874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,7 +384,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1733803553
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 8e4b12dec06195b4183ba3c0741daf5f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

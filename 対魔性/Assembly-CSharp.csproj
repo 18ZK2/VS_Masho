@@ -75,6 +75,7 @@
     <Compile Include="Assets\かわべ\素材\プログラム\AlphaVer\GameSpeedChanger.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\Enemy\EnemyContloller.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\Enemy\TumuraContloller.cs" />
+    <Compile Include="Assets\かわべ\素材\プログラム\HahenParticle.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\PixenRenderBase.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\Player\GrabbingBeam.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\Player\GrabbingHead.cs" />

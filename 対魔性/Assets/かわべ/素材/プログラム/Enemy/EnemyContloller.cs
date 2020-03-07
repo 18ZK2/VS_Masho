@@ -61,9 +61,25 @@ public class EnemyContloller : MonoBehaviour
             {
                 int i = Random.Range(0, dropItem.Length);//落とすアイテムの種類を抽選
                 bool isDrop = dropProba[i] > Random.Range(0f, 1f);//落とすかどうかを抽選
-                if (isDrop) Instantiate(dropItem[i], transform);
+                if (isDrop) Instantiate(dropItem[i], transform).transform.parent = null;
             }
-            if (mustDrop != null) Instantiate(mustDrop, transform);
+            if (mustDrop != null)
+            {
+                GameObject g = Instantiate(mustDrop, transform);
+                HahenParticle gh = g.GetComponent<HahenParticle>();
+                g.transform.parent = null;
+                if (gh != null)
+                {
+                    SpriteRenderer[] sps = gameObject.GetComponentsInChildren<SpriteRenderer>();
+                    Sprite[] sprites = new Sprite[sps.Length];
+                    for(int i = 0; i < sps.Length; i++)
+                    {
+                        sprites[i] = sps[i].sprite;
+                    }
+                    gh.Sprites = sprites;
+                    gh.layername = sps[0].sortingLayerName;
+                }
+            }
             Destroy(gameObject);
         }
     }

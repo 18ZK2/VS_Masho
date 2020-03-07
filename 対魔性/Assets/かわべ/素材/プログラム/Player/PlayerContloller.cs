@@ -34,7 +34,6 @@ public class PlayerContloller : MonoBehaviour
     Rigidbody2D rb;
     public IEnumerator stamina_gauge()
     {
-        Debug.Log("stamina");
         yield return new WaitForSeconds(1.0f);
        for(int i = 0; i < 100; i++)
         {
