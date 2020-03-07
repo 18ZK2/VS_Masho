@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/\u304B\u308F\u3079/\u30B7\u30FC\u30F3/Particle.unity"
     guid: e5d0a2bc80114e943b8c1e849b4e3719
+  - enabled: 1
+    path: "Assets/\u304B\u308F\u3079/\u30B7\u30FC\u30F3/Map.unity"
+    guid: 285cce17abed2984282661d9835d1ac6
+  - enabled: 1
+    path: "Assets/\u6570B100\u70B9/\u30B7\u30FC\u30F3/GameOver.unity"
+    guid: f9872e001041d0f44a7036939e0f51ce
   m_configObjects: {}
