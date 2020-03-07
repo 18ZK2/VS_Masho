@@ -6,7 +6,7 @@ public class PixenRenderBase : MonoBehaviour
 {
     private Vector3 cashPos;
 
-    private void Update()
+    private void LateUpdate()
     {
         cashPos = transform.localPosition;
         transform.localPosition = new Vector3(
