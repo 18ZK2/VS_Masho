@@ -6,12 +6,13 @@ using UnityEngine;
 public class PlayerEffectContloller : MonoBehaviour
 {
     public bool isFrip;
-
     [SerializeField] const int effectSize = 3;
     [SerializeField] Color damageColor = Color.white;
     [SerializeField] Transform[] effectPos = new Transform[effectSize];
     [SerializeField] GameObject[] effects = new GameObject[effectSize];
     [SerializeField] AudioClip[] SEs = new AudioClip[effectSize];
+    [SerializeField] GameObject Hahen = null;
+    [SerializeField] Sprite[] deathImage = null;
 
     float beforHP;
 
@@ -67,7 +68,17 @@ public class PlayerEffectContloller : MonoBehaviour
             transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
         }
     }
-
+    private void HahenSetup()
+    {
+        GameObject g = Instantiate(Hahen, transform);
+        HahenParticle gh = g.GetComponent<HahenParticle>();
+        g.transform.parent = null;
+        if (gh != null)
+        {
+            gh.Sprites = deathImage;
+            gh.layername = gameObject.GetComponentInChildren<SpriteRenderer>().sortingLayerName;
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -93,7 +104,13 @@ public class PlayerEffectContloller : MonoBehaviour
         {
             beforHP = pc.PlayerHp;
             anm.SetTrigger("damage");
-        }else if (beforHP < pc.PlayerHp)
+            if (pc.PlayerHp <= 0)
+            {
+                HahenSetup();
+                Destroy(gameObject);
+            }
+        }
+        else if (beforHP < pc.PlayerHp)
         {
             beforHP = pc.PlayerHp;
         }
@@ -109,5 +126,7 @@ public class PlayerEffectContloller : MonoBehaviour
         arm.transform.rotation = Quaternion.Euler(0, 0, pc.armRot.eulerAngles.z) * Quaternion.Euler(0, 0, 90f);
         FlipBody();
         ChangeBodyColor();
+
+        
     } 
 }

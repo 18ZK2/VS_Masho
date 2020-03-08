@@ -7,7 +7,7 @@ public class RecoveryItem : MonoBehaviour
     GameObject Player;
     PlayerContloller PlayerContloller;
     GameManager GameManager;
-    [SerializeField] AudioClip SE1;
+    [SerializeField] AudioClip SE1 = null;
     public int HealPonit = 1; //回復量
     // Start is called before the first frame update
     void Start()
