@@ -6,9 +6,12 @@ public class MKItem : MonoBehaviour
 {
     GameObject Player;
     PlayerContloller PlayerContloller;
+    [SerializeField] AudioClip SE1;
+    AudioSource AudioSource;
     // Start is called before the first frame update
     void Start()
     {
+        AudioSource = GetComponent<AudioSource>();
         Player = GameObject.Find("Player");
         PlayerContloller = Player.GetComponent<PlayerContloller>();
     }

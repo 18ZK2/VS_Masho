@@ -6,12 +6,16 @@ public class RecoveryItem : MonoBehaviour
 {
     GameObject Player;
     PlayerContloller PlayerContloller;
-    int HealPonit = 1; //回復量
+    GameManager GameManager;
+    [SerializeField] AudioClip SE1;
+    public int HealPonit = 1; //回復量
     // Start is called before the first frame update
     void Start()
     {
         Player = GameObject.Find("Player");
         PlayerContloller = Player.GetComponent<PlayerContloller>();
+        GameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        Debug.Log(SE1);
     }
 
     // Update is called once per frame
@@ -26,6 +30,7 @@ public class RecoveryItem : MonoBehaviour
         {
             if (PlayerContloller.PlayerHp < PlayerContloller.MaxPlayerHp) //HPが最大でない
             {
+                GameManager.SoundEffect(SE1);
                 PlayerContloller.PlayerHp += HealPonit;
             }
             Destroy(gameObject);
