@@ -19,7 +19,9 @@ public class EnemyContloller : MonoBehaviour
     //dropProba が ランダムな値0~1より大きいとドロップ
     [SerializeField] float[] dropProba = null;
 
-    
+    [SerializeField] AudioClip SE = null;
+
+    AudioSource asc;
 
     private IEnumerator Immortal()
     {
@@ -40,6 +42,7 @@ public class EnemyContloller : MonoBehaviour
             Debug.Log(attackPow);
             HP -= attackPow;
             HP = Mathf.Round(HP * 10.0f) / 10.0f; //10倍して四捨五入->10で割る
+            if (asc != null) asc.PlayOneShot(SE);
             StartCoroutine(Immortal());
         }
 
@@ -48,7 +51,7 @@ public class EnemyContloller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        asc = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

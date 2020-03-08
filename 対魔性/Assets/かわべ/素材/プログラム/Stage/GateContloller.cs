@@ -4,13 +4,23 @@ using UnityEngine;
 
 public class GateContloller : MonoBehaviour
 {
+    
+    [SerializeField] GameObject pairG = null;
+    [SerializeField] AudioClip[] SEs = new AudioClip[2];
+
     Animator anm, pairAnm;
     Transform exit;
-    [SerializeField] GameObject pairG;
-    //[SerializeField] GateContloller pairGate;
+    AudioSource asc;
+
+    public void SEplay(int i)
+    {
+        if (i < 2) asc.PlayOneShot(SEs[i]);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        asc = GetComponent<AudioSource>();
         anm = GetComponent<Animator>();
         if (pairG != null)
         {
@@ -33,15 +43,16 @@ public class GateContloller : MonoBehaviour
         pairAnm.SetBool("open", true);
         anm.SetBool("close", false);
         pairAnm.SetBool("close", false);
-        yield return new WaitForSeconds(1f);
-        //操作受付
-        pc.enabled = true;
+        yield return new WaitForSeconds(0.5f);
+        //移動
+        t.position = exit.position;
         anm.SetBool("open", false);
         pairAnm.SetBool("open", false);
         anm.SetBool("close", true);
         pairAnm.SetBool("close",true);
-        //移動
-        t.position = exit.position;
+        yield return new WaitForSeconds(2f);
+        //操作受付
+        pc.enabled = true;
         //スタミナ回復
         pc.Dashstamina = pc.MAX_STAMINA;
         StopCoroutine(MovePlayer(t));

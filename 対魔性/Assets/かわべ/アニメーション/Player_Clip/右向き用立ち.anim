@@ -71,7 +71,7 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.24837397, z: 0.33333334}
       - serializedVersion: 3
-        time: 2.0166667
+        time: 2
         value: {x: 2, y: 12, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
@@ -169,6 +169,25 @@ AnimationClip:
     path: "\u4F53"
     classID: 70
     script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: EmissionModule.enabled
+    path: "\u4F53/\u5DE6\u8155/GrabbingBeam_"
+    classID: 198
+    script: {fileID: 0}
   m_PPtrCurves:
   - curve:
     - time: 0
@@ -256,6 +275,13 @@ AnimationClip:
       script: {fileID: 11500000, guid: bd1951cb449d3bb4db7bbdbedb4863e3, type: 3}
       typeID: 114
       customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1728151718
+      attribute: 1087013301
+      script: {fileID: 0}
+      typeID: 198
+      customType: 27
       isPPtrCurve: 0
     - serializedVersion: 2
       path: 298910917
@@ -544,7 +570,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2.0166667
+        time: 2
         value: 2
         inSlope: 0
         outSlope: 0
@@ -581,7 +607,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.24837397
       - serializedVersion: 3
-        time: 2.0166667
+        time: 2
         value: 12
         inSlope: 0
         outSlope: 0
@@ -609,7 +635,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2.0166667
+        time: 2
         value: 0
         inSlope: 0
         outSlope: 0
@@ -623,6 +649,25 @@ AnimationClip:
     attribute: m_LocalPosition.z
     path: "\u4F53/\u5DE6\u8155"
     classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: EmissionModule.enabled
+    path: "\u4F53/\u5DE6\u8155/GrabbingBeam_"
+    classID: 198
     script: {fileID: 0}
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0

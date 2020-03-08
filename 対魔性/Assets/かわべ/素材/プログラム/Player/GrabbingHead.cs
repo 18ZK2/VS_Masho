@@ -5,20 +5,13 @@ using UnityEngine;
 public class GrabbingHead : MonoBehaviour
 {
     [System.NonSerialized] public GameObject touchedObject;
-    [SerializeField] float sleeptime = 0.5f;
+    [SerializeField] AudioClip[] SEs = new AudioClip[2];
 
-    bool isActive = false;
+    bool isActive = true;
     Rigidbody2D rb;
     SpringJoint2D joint;
     ParticleSystem ps;
-
-    IEnumerator SleepHead()
-    {
-        // 発射直後は反応なし
-        yield return new WaitForSeconds(sleeptime);
-        rb.WakeUp();
-        isActive = true;
-    }
+    AudioSource asc;
 
     // Start is called before the first frame update
     void Start()
@@ -26,23 +19,19 @@ public class GrabbingHead : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         joint = GetComponent<SpringJoint2D>();
         ps = GetComponent<ParticleSystem>();
-        StartCoroutine(SleepHead());
+        asc = GetComponent<AudioSource>();
+        asc.PlayOneShot(SEs[0]);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //変数isActiveがfalseならオブジェクトに触れても反応しない
-        if (!isActive) return;
-        else
+        if (isActive)
         {
+            asc.PlayOneShot(SEs[1]);
             isActive = false;
             ps.TriggerSubEmitter(0);
             touchedObject = collision.gameObject;
         }
+
     }
 }

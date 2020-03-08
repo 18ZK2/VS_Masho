@@ -11,6 +11,7 @@ public class PlayerEffectContloller : MonoBehaviour
     [SerializeField] Color damageColor = Color.white;
     [SerializeField] Transform[] effectPos = new Transform[effectSize];
     [SerializeField] GameObject[] effects = new GameObject[effectSize];
+    [SerializeField] AudioClip[] SEs = new AudioClip[effectSize];
 
     float beforHP;
 
@@ -18,6 +19,7 @@ public class PlayerEffectContloller : MonoBehaviour
     Rigidbody2D rb;
     SpriteRenderer armSR;
     SpriteRenderer[] bodyRenderer;
+    AudioSource asc;
 
     Transform arm, body;
     PlayerContloller pc;
@@ -32,7 +34,11 @@ public class PlayerEffectContloller : MonoBehaviour
     }
     private void ParticleShot(int i)
     {
-        if (i < effectSize) Instantiate(effects[i], effectPos[i].position, body.transform.rotation);
+        if (i < effectSize)
+        {
+            asc.PlayOneShot(SEs[i]);
+            Instantiate(effects[i], effectPos[i].position, body.transform.rotation);
+        }
     }
     private void ChangeBodyColor()
     {
@@ -71,6 +77,7 @@ public class PlayerEffectContloller : MonoBehaviour
         bodyRenderer = GetComponentsInChildren<SpriteRenderer>();
         body = transform.Find("体");
         pc = GetComponent<PlayerContloller>();
+        asc = GetComponent<AudioSource>();
 
         beforHP = pc.PlayerHp;
     }

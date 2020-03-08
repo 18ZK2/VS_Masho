@@ -7,15 +7,16 @@ public class HahenParticle : MonoBehaviour
     public string layername;
     public Sprite[] Sprites;
     ParticleSystem ps;
-    new ParticleSystemRenderer renderer;
+    ParticleSystemRenderer rend;
     
     // Start is called before the first frame update
     void Start()
     {
         ps = GetComponent<ParticleSystem>();
-        renderer = GetComponent<ParticleSystemRenderer>();
-        ps.startSize = Sprites[0].bounds.size.x;
-        renderer.sortingLayerName = layername;
+        var mainModule = ps.main;
+        rend = GetComponent<ParticleSystemRenderer>();
+        mainModule.startSize = Sprites[0].bounds.size.x;
+        rend.sortingLayerName = layername;
         foreach (var s in Sprites)
             ps.textureSheetAnimation.AddSprite(s);
         ps.emission.SetBurst(0, new ParticleSystem.Burst(0, Sprites.Length));
