@@ -10,7 +10,7 @@ public class PlayerContloller : MonoBehaviour
     public float PlayerHp=15;
     public float MaxPlayerHp = 40;
     public float speed;
-    public float seconds;
+    public float staminaRecSeconds;
 
     public int MAX_STAMINA = 200;
     public int Dashstamina= 200;
@@ -35,9 +35,15 @@ public class PlayerContloller : MonoBehaviour
     public IEnumerator stamina_gauge()
     {
         yield return new WaitForSeconds(1.0f);
-       for(int i = 0; i < 100; i++)
+        if (MAX_STAMINA < Dashstamina) Dashstamina = MAX_STAMINA;
+       /*for(int i = 0; i < 100; i++)
         {
             yield return new WaitForSeconds(0.02f);
+            Dashstamina = Dashstamina + 2;
+        }*/
+        while (Dashstamina < MAX_STAMINA)
+        {
+            yield return new WaitForSeconds(staminaRecSeconds);
             Dashstamina = Dashstamina + 2;
         }
         
@@ -102,7 +108,7 @@ public class PlayerContloller : MonoBehaviour
         {
             gb.DeleteBeams();
         }
-        if (Dashstamina == MAX_STAMINA || Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) )//|| Dashstamina == MAX_STAMINA)
         {
             StopCoroutine("stamina_gauge");
         }
@@ -132,7 +138,6 @@ public class PlayerContloller : MonoBehaviour
         foreach (var r in hit2Ds){
             if (r.collider != null)
             {
-                
                 rb.AddForce(Vector2.up * rb.mass * rb.gravityScale * 10f, ForceMode2D.Force);
             }
         }

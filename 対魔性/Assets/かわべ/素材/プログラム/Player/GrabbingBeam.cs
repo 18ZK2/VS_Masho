@@ -14,7 +14,7 @@ public class GrabbingBeam : MonoBehaviour
 
     List<GameObject> list = new List<GameObject>();
     GrabbingHead gHead;
-    GameObject touchedEnemy;
+    GameObject touchedEnemy,touchedObj;
 
     bool whipMode = false;
     
@@ -92,6 +92,11 @@ public class GrabbingBeam : MonoBehaviour
             erb.AddForce(pc.bodyVec * shotPow/50f, ForceMode2D.Impulse);
             touchedEnemy = null;
         }
+        else if (touchedObj != null)
+        {
+            touchedObj.GetComponent<Joint2D>().connectedBody = null;
+            touchedObj = null;
+        }
         //ワイヤーを削除
         foreach(GameObject g in list)
         {
@@ -154,13 +159,27 @@ public class GrabbingBeam : MonoBehaviour
                     StartCoroutine(GrabTime());
 
                     break;
+                case "Gimmick":
+                    whipMode = true;
+                    touchedObj = gHead.touchedObject;
+                    Debug.Log(touchedObj);
+                    gHead.touchedObject = null;
+                    //ヘッドの当たり判定をトリガーに
+                    gHead.GetComponent<CircleCollider2D>().isTrigger = true;
+                    //gHead.transform.parent = touchedObj.transform;
+                    //headRigid.bodyType = RigidbodyType2D.Static;
+                    touchedObj.GetComponent<Rigidbody2D>().AddForce(pc.bodyVec * whipPow, ForceMode2D.Force);
+                    //Joint2D j = touchedObj.GetComponent<Joint2D>();
+                    //DistanceJoint2D j = touchedObj.GetComponent<DistanceJoint2D>();
+                    //FixedJoint2D j = touchedObj.GetComponent<FixedJoint2D>();
+                    //j.connectedBody = headRigid;
+                    break;
                 default:
                     break;
 
             }
         }
         //  敵死亡時
-        if (touchedEnemy == null && gHead.GetComponent<CircleCollider2D>().isTrigger) DeleteBeams();
-
+        if (touchedEnemy == null && touchedObj == null && gHead.GetComponent<CircleCollider2D>().isTrigger) DeleteBeams();
     }
 }
