@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/RunRunDeadly/Downloads/Alpha2_5D/対魔性.exe
+C:/Users/RunRunDeadly/Downloads/Alpha2_55D/対魔性.exe
 SceneListBegin?
 Assets/かわべ/シーン/Map.unity
 Assets/数B100点/シーン/GameOver.unity
@@ -118,6 +118,7 @@ ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networki
 9b895dcabbc1faf095c000c32d471fd0 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 5887ef1bc706b22b773d253fd443ceef UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
+afc5b93a7b192de2dcb3832fe35a5c7e Assembly-CSharp.dll:.BackGroundContloller
 852c784f22d49e033ab50a5e565eff5b Assembly-CSharp.dll:.EnemyContloller
 303ad70ce203ad874efe2965d0fbcff9 Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsEventTracker
 7fb9de8dcf73854b6b328eca1f7a6e6d Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsTracker

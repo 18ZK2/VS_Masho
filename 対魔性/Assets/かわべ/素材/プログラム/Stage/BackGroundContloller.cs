@@ -18,7 +18,7 @@ public class BackGroundContloller : MonoBehaviour
     void Update()
     {
 
-        transform.Translate(speed * rb.velocity.x, 0, 0);
+        if (rb != null) transform.Translate(speed * rb.velocity.x, 0, 0);
 
         if (Mathf.Abs(transform.localPosition.x) > 256f)
         {
