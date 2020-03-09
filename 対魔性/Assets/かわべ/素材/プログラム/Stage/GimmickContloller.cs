@@ -5,7 +5,7 @@ using UnityEngine;
 public class GimmickContloller : MonoBehaviour
 {
     public float HP;
-
+    [SerializeField] GameObject hahen = null;
     Rigidbody2D rb;
 
     float dx;//微小距離
@@ -17,21 +17,32 @@ public class GimmickContloller : MonoBehaviour
     }
     private void Update()
     {
-        if (HP <= 0) Destroy(gameObject);
+        if (HP <= 0)
+        {
+            gameObject.AddComponent<EnemyContloller>().MakeHahen(gameObject,hahen);
+            Destroy(gameObject);
+        }
     }
     private void FixedUpdate()
     {
         dx = (beforePos - transform.position).magnitude;
         beforePos = transform.position;
     }
+    float AttackSum = 0;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
             EnemyContloller e = collision.gameObject.GetComponent<EnemyContloller>();
-            float damage = rb.mass * dx / 30f;
-            e.Damage(damage);
-            HP -= damage;
+            float damage = rb.mass * dx / 5f;
+            if (damage > 0.5f)
+            {
+                
+                AttackSum += damage;
+                Debug.Log("GimmickAttack "+AttackSum.ToString());
+                e.Damage(damage);
+                HP -= damage;
+            }
         }
     }
 }

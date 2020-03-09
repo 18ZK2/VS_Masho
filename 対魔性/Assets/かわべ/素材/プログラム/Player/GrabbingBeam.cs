@@ -94,8 +94,6 @@ public class GrabbingBeam : MonoBehaviour
         }
         else if (touchedObj != null)
         {
-            //touchedObj.GetComponent<Joint2D>().connectedBody = null;
-            //touchedObj.GetComponent<Joint2D>()
             touchedObj = null;
         }
         //ワイヤーを削除
@@ -166,10 +164,11 @@ public class GrabbingBeam : MonoBehaviour
                     Debug.Log(touchedObj);
                     gHead.touchedObject = null;
                     //ヘッドの当たり判定をトリガーに
-                    gHead.GetComponent<CircleCollider2D>().isTrigger = true;
+                    Collider2D col = gHead.GetComponent<Collider2D>();
+                    col.isTrigger = true;
+                    col.usedByEffector = true;
                     gHead.GetComponent<CircleCollider2D>().radius *= 20f;
                     Joint2D j = touchedObj.GetComponent<Joint2D>();
-                    //j.connectedBody = headRigid;
                     break;
                 default:
                     break;

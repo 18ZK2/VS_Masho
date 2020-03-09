@@ -69,10 +69,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2.5
+  m_Mass: 30
   m_LinearDrag: 0.05
   m_AngularDrag: 1
-  m_GravityScale: 5
+  m_GravityScale: 25
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -107,6 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 20
+  hahen: {fileID: 5487253364279819266, guid: f07a5ae6f2e1bf44b8882b06e4cec07e, type: 3}
 --- !u!114 &2652080562804539770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,8 +185,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -530296795
+  m_SortingLayer: 2
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300002, guid: f147fa59e6a2a244984a88860064d5a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -263,8 +264,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -530296795
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300034, guid: f147fa59e6a2a244984a88860064d5a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -342,8 +343,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -530296795
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f147fa59e6a2a244984a88860064d5a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
