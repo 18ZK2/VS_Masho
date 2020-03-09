@@ -82,6 +82,7 @@
     <Compile Include="Assets\かわべ\素材\プログラム\Player\PlayerContloller.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\Player\PlayerEffectContloller.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\PostEffect.cs" />
+    <Compile Include="Assets\かわべ\素材\プログラム\Stage\BackGroundContloller.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\Stage\GateContloller.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\Stage\GimmickContloller.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\Stage\Needle.cs" />
@@ -95,6 +96,7 @@
     <None Include="Assets\Tiles\Rule Tile\ScriptTemplates\NewCustomRuleTile.cs.txt" />
     <None Include="Assets\かわべ\素材\プログラム\shader\Water.shader" />
     <None Include="Assets\かわべ\素材\プログラム\shader\Rusty.shader" />
+    <None Include="Assets\かわべ\素材\プログラム\shader\ScrollBackGround.shader" />
     <None Include="Assets\Brushes\Tint Brush Smooth\Shaders\TintedTilemap.shader" />
     <None Include="Assets\かわべ\素材\プログラム\shader\Noise.shader" />
     <None Include="Assets\かわべ\素材\プログラム\shader\monoTone.shader" />
