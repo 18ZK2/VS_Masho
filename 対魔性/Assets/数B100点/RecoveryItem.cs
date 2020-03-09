@@ -15,7 +15,7 @@ public class RecoveryItem : MonoBehaviour
         Player = GameObject.Find("Player");
         PlayerContloller = Player.GetComponent<PlayerContloller>();
         GameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        Debug.Log(SE1);
+        Invoke("Destroy", 10.0f); //10秒後にアイテム削除
     }
 
     // Update is called once per frame
@@ -36,5 +36,9 @@ public class RecoveryItem : MonoBehaviour
             Destroy(gameObject);
         }
         
+    }
+    void Destroy()
+    {
+        Destroy(gameObject);
     }
 }
