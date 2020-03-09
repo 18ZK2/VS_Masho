@@ -2288,6 +2288,28 @@ Transform:
   m_Father: {fileID: 2080217911}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1177347608 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1007542527204838491, guid: d0311d01206d73244a685e1db14a3d41,
+    type: 3}
+  m_PrefabInstance: {fileID: 5868640001423297713}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1177347616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177347608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b2b6b0e926603c4ea736078ef98bab5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetObj: {fileID: 1647658519}
+  distanceUI: 0
+  MAX_DISTANCE: 400
+  tumura: {fileID: 8469106255286831438, guid: f25dbe6ee9131d4409874c5d6131845c, type: 3}
 --- !u!1 &1186056641
 GameObject:
   m_ObjectHideFlags: 0
@@ -3391,6 +3413,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e21913717f54f214aaf9063505212b9e, type: 3}
+--- !u!4 &1647658519 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5684424019440655106, guid: eb5886033ec61c34394f67c1d3f45fb5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1268373744}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1706424755
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4052,6 +4080,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BodyType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8396223491565035879, guid: d0311d01206d73244a685e1db14a3d41,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8396223491565035879, guid: d0311d01206d73244a685e1db14a3d41,
+        type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8396223491565035879, guid: d0311d01206d73244a685e1db14a3d41,
+        type: 3}
+      propertyPath: m_UpdateMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8396223491565035879, guid: d0311d01206d73244a685e1db14a3d41,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8592758720216943170, guid: d0311d01206d73244a685e1db14a3d41,
+        type: 3}
+      propertyPath: MaxDistance
+      value: 484.46524
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0311d01206d73244a685e1db14a3d41, type: 3}
