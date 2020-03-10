@@ -34,7 +34,6 @@ public class Enemyshot : MonoBehaviour
     {
         float distance = 0f;
         if(targetObj!=null)distance = Vector3.Distance(transform.position, targetObj.position);
-        Debug.Log(EnemyCount());
         if (distance <= distance_ani && EnemyCount()<MAX_ENEMY)
         {
             shoter.SetBool("distance", true);
@@ -49,10 +48,12 @@ public class Enemyshot : MonoBehaviour
             EnemyContloller[] childs = enemyList.GetComponentsInChildren<EnemyContloller>();
             foreach (var child in childs) child.transform.parent = null;
         }
+        shoter.SetBool("immortal", !ec.isDamage);
     }
     void animation_event()
     {
-        float x = transform.position.x - targetObj.position.x;
+        float x = 0f;
+        if (targetObj != null)x = transform.position.x - targetObj.position.x;
         GameObject g = Instantiate(tumura, transform);
         g.GetComponent<Rigidbody2D>().AddForce(new Vector2(0,1000),ForceMode2D.Impulse); //ひよこを上向きに発射
         g.transform.parent = enemyList;

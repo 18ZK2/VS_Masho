@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GrabbingHead : MonoBehaviour
 {
-    [System.NonSerialized] public GameObject touchedObject;
+    [System.NonSerialized] public GameObject touchedObject, exitObject;
     [SerializeField] AudioClip[] SEs = new AudioClip[2];
 
     bool isActive = true;
@@ -33,5 +33,12 @@ public class GrabbingHead : MonoBehaviour
             touchedObject = collision.gameObject;
         }
 
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (!isActive)
+        {
+            exitObject = collision.gameObject;
+        }
     }
 }

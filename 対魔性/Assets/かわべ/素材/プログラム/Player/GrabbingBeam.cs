@@ -161,7 +161,6 @@ public class GrabbingBeam : MonoBehaviour
                 case "Gimmick":
                     whipMode = true;
                     touchedObj = gHead.touchedObject;
-                    Debug.Log(touchedObj);
                     gHead.touchedObject = null;
                     //ヘッドの当たり判定をトリガーに
                     Collider2D col = gHead.GetComponent<Collider2D>();
@@ -171,11 +170,13 @@ public class GrabbingBeam : MonoBehaviour
                     Joint2D j = touchedObj.GetComponent<Joint2D>();
                     break;
                 default:
+                    DeleteBeams();
                     break;
 
             }
         }
         //  敵死亡時
-        if (touchedEnemy == null && touchedObj == null && gHead.GetComponent<CircleCollider2D>().isTrigger) DeleteBeams();
+        else if(touchedEnemy == null && touchedObj == null && gHead.GetComponent<CircleCollider2D>().isTrigger) DeleteBeams();
+        else if (gHead.exitObject!=null && gHead.exitObject == touchedObj) DeleteBeams();
     }
 }
