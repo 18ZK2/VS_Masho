@@ -237,5 +237,3 @@ C:\Users\poru\Documents\GitHub\VS_Masho\対魔性\Temp\bin\Debug\nunit.framework
 C:\Users\poru\Documents\GitHub\VS_Masho\対魔性\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\poru\Documents\GitHub\VS_Masho\対魔性\obj\Debug\Assembly-CSharp.dll
 C:\Users\poru\Documents\GitHub\VS_Masho\対魔性\obj\Debug\Assembly-CSharp.pdb
-C:\Users\poru\Documents\GitHub\VS_Masho\対魔性\Temp\bin\Debug\Boo.Lang.dll
-C:\Users\poru\Documents\GitHub\VS_Masho\対魔性\Temp\bin\Debug\UnityEditor.UI.dll
