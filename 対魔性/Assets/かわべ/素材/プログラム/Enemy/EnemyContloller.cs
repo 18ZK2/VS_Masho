@@ -85,6 +85,7 @@ public class EnemyContloller : MonoBehaviour
             }
             if (mustDrop != null)
             {
+
                 MakeHahen(gameObject, mustDrop);
             }
             Destroy(gameObject);

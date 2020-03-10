@@ -4,14 +4,29 @@ using UnityEngine;
 
 public class enemyshot : MonoBehaviour
 {
-    [SerializeField] Transform targetObj;
-    private float colliderOffset = 0f;
+    [SerializeField] const int MAX_ENEMY = 5;
+    private Transform targetObj;
+    private Transform enemyList;
+    //private float colliderOffset = 0f;
     private Animator shoter = null;
+    private EnemyContloller ec;
     public GameObject tumura;
-    float x, y, z;
+    //float x, y, z;
+
+    int EnemyCount()
+    {
+        int count;
+        EnemyContloller[] childs = enemyList.GetComponentsInChildren<EnemyContloller>();
+        count = childs.Length;
+        return count;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        targetObj = GameObject.Find("Player").transform;
+        enemyList = transform.Find("EnemyList");
+        ec = GetComponent<EnemyContloller>();
         /*
          * colliderOffsetで自身の当たり判定を引こうとしている？
          */
@@ -26,24 +41,30 @@ public class enemyshot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var distance = Vector3.Distance(transform.position, targetObj.position) - colliderOffset;
-        //Debug.Log(distance);
-        /*
-         *測定範囲を可変にしたい場合、条件文の400の部分を変数にすればよい 
-         */
-        if (distance <= 400)
+        float distance = 0f;
+        if(targetObj!=null)distance = Vector3.Distance(transform.position, targetObj.position);// - colliderOffset;
+        Debug.Log(EnemyCount());
+        if (distance <= 400 && EnemyCount()<MAX_ENEMY)
         {
             shoter.SetBool("distance", true);
         }
-        else if (distance > 400)
+        else if (distance > 400 || EnemyCount() > MAX_ENEMY)
         {
             shoter.SetBool("distance", false);
+        }
+        if (ec.HP <= 0)
+        {
+            //親が死ぬと子も死ぬので親が死ぬとき子を開放する
+            EnemyContloller[] childs = enemyList.GetComponentsInChildren<EnemyContloller>();
+            foreach (var child in childs) child.transform.parent = null;
         }
     }
     void animation_event()
     {
-        Debug.Log("Shot");
-        Instantiate(tumura, transform);
+        float x = transform.position.x - targetObj.position.x;
+        GameObject g = Instantiate(tumura, transform);
+        g.transform.parent = enemyList;
+        if (x < 0) g.transform.Rotate(0, 180, 0);
         //五連続発射になるのでNG
         //tumuraを入れる配列で管理するとよい
         //倒されるとnullになるのでnullの数を数え、5未満なら生成など
