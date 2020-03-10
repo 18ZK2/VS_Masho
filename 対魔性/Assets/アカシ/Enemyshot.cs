@@ -54,6 +54,7 @@ public class Enemyshot : MonoBehaviour
     {
         float x = transform.position.x - targetObj.position.x;
         GameObject g = Instantiate(tumura, transform);
+        g.GetComponent<Rigidbody2D>().AddForce(new Vector2(0,1000),ForceMode2D.Impulse); //ひよこを上向きに発射
         g.transform.parent = enemyList;
         if (x < 0) g.transform.Rotate(0, 180, 0);
     }
