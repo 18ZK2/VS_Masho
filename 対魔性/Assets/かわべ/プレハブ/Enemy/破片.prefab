@@ -5153,8 +5153,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 100
-      minScalar: 50
+      scalar: 120
+      minScalar: 80
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5844,7 +5844,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 2
+        scalar: 1
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -5895,7 +5895,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
       cycleCount: 3
-      repeatInterval: 0.25
+      repeatInterval: 0.18
       probability: 1
   SizeModule:
     enabled: 1
@@ -5926,8 +5926,8 @@ ParticleSystem:
           inWeight: 0
           outWeight: 0.08889233
         - serializedVersion: 3
-          time: 0.68005717
-          value: 0.61018944
+          time: 0.7292515
+          value: 0.83919334
           inSlope: 1.120577
           outSlope: 1.120577
           tangentMode: 0
@@ -5935,7 +5935,7 @@ ParticleSystem:
           inWeight: 0.17913476
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.8847539
+          time: 1
           value: 0
           inSlope: 0
           outSlope: 0
@@ -5959,8 +5959,8 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.28811526
-          value: 0.67283076
+          time: 0.3529346
+          value: 0.10526484
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -5968,8 +5968,8 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.86554617
-          value: 0.38122338
+          time: 1
+          value: 0.55618066
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -6429,11 +6429,18 @@ ParticleSystem:
     tilesY: 1
     animationType: 0
     rowIndex: 0
-    cycles: 1
+    cycles: 3
     uvChannelMask: -1
     randomRow: 1
     sprites:
-    - sprite: {fileID: 21300000, guid: 2d8bb3508f3bd3240868e7b13baacdba, type: 3}
+    - sprite: {fileID: 21300000, guid: 6a04e8d04792db94586ca26970ea55e0, type: 3}
+    - sprite: {fileID: 21300002, guid: 6a04e8d04792db94586ca26970ea55e0, type: 3}
+    - sprite: {fileID: 21300004, guid: 6a04e8d04792db94586ca26970ea55e0, type: 3}
+    - sprite: {fileID: 21300006, guid: 6a04e8d04792db94586ca26970ea55e0, type: 3}
+    - sprite: {fileID: 21300008, guid: 6a04e8d04792db94586ca26970ea55e0, type: 3}
+    - sprite: {fileID: 21300010, guid: 6a04e8d04792db94586ca26970ea55e0, type: 3}
+    - sprite: {fileID: 21300012, guid: 6a04e8d04792db94586ca26970ea55e0, type: 3}
+    - sprite: {fileID: 21300014, guid: 6a04e8d04792db94586ca26970ea55e0, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6399940258452445077}
   - component: {fileID: 5595662200665415367}
   - component: {fileID: 8592758720216943170}
+  - component: {fileID: 752144598509284176}
   m_Layer: 10
   m_Name: "\u767A\u5C04\u6A5F"
   m_TagString: Enemy
@@ -35,6 +36,7 @@ Transform:
   m_Children:
   - {fileID: 2931011026557562368}
   - {fileID: 4837144279573858419}
+  - {fileID: 7423978737489305737}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -222,6 +224,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &752144598509284176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007542527204838491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 666ebabd65fa8784ea97c4b6a41682c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tumura: {fileID: 8469106255286831438, guid: f25dbe6ee9131d4409874c5d6131845c, type: 3}
 --- !u!1 &1093162877290173893
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,6 +395,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2003686444366844876
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7423978737489305737}
+  m_Layer: 10
+  m_Name: EnemyList
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7423978737489305737
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003686444366844876}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3679366522303090323}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3175819330864278258
 GameObject:
   m_ObjectHideFlags: 0

@@ -304,7 +304,7 @@ MonoBehaviour:
   - {fileID: 4621338078245100413, guid: e21913717f54f214aaf9063505212b9e, type: 3}
   dropProba:
   - 0.43
-  SE: {fileID: 8300000, guid: af685d148445c1446a8bbcc6efe672dd, type: 3}
+  SE: {fileID: 8300000, guid: 55f3bb519058eb54b8fc5b4719042f4e, type: 3}
 --- !u!114 &5969981985473439874
 MonoBehaviour:
   m_ObjectHideFlags: 0
