@@ -132,6 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObj: {fileID: 547306297}
   tumura: {fileID: 8469106255286831438, guid: f25dbe6ee9131d4409874c5d6131845c, type: 3}
+  distance_ani: 400
 --- !u!1 &533651886
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,6 +697,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007542527204838491, guid: d0311d01206d73244a685e1db14a3d41,
+        type: 3}
+      propertyPath: m_TagString
+      value: enemyshot
       objectReference: {fileID: 0}
     - target: {fileID: 3679366522303090323, guid: d0311d01206d73244a685e1db14a3d41,
         type: 3}

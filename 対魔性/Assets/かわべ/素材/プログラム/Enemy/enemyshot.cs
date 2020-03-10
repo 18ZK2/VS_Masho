@@ -5,10 +5,11 @@ using UnityEngine;
 public class enemyshot : MonoBehaviour
 {
     [SerializeField] Transform targetObj;
-    private float colliderOffset = 0f;
     private Animator shoter = null;
     public GameObject tumura;
-    float x, y, z;
+    public float distance_ani;
+    private int numberOfEnemys;
+    private int count;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,40 +18,33 @@ public class enemyshot : MonoBehaviour
          */
         //colliderOffset = GetComponent<CapsuleCollider>().radius + targetObj.GetComponent<CapsuleCollider>().radius;
         shoter = GetComponent<Animator>();
-        //Vector3 respown_t = GameObject.Find("発射機").transform.position;
-        //x = respown_t.x;
-        //y = respown_t.y;
-        //z = respown_t.z;
+        numberOfEnemys = 0;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        var distance = Vector3.Distance(transform.position, targetObj.position) - colliderOffset;
-        //Debug.Log(distance);
-        /*
-         *測定範囲を可変にしたい場合、条件文の400の部分を変数にすればよい 
-         */
-        if (distance <= 400)
+        count = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        Debug.Log(count);
+        var distance = Vector3.Distance(transform.position, targetObj.position);
+        if (distance <= distance_ani)
         {
             shoter.SetBool("distance", true);
         }
-        else if (distance > 400)
+        else if (distance > distance_ani)
         {
             shoter.SetBool("distance", false);
         }
     }
     void animation_event()
     {
-        Debug.Log("Shot");
-        Instantiate(tumura, transform);
-        //五連続発射になるのでNG
-        //tumuraを入れる配列で管理するとよい
         //倒されるとnullになるのでnullの数を数え、5未満なら生成など
-        /*for (int i = 0; i > 5; i++)
+        if(numberOfEnemys<5 ||count<5)
         {
-            GameObject enemy = Instantiate(tumura,transform);
-            //enemy.transform.position = new Vector3(x, y, z);
-        }*/
+            Instantiate(tumura,transform);
+            numberOfEnemys++;
+        }
+        
     }
 }
