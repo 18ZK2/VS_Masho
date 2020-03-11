@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class SoundOption : MonoBehaviour
 {
-    [SerializeField] private AudioMixer audioMixer;
+    [SerializeField] private AudioMixer audioMixer = null;
     Slider VolumeSlider;
     // Start is called before the first frame update
     void Start()

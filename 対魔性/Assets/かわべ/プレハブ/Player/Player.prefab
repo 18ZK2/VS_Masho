@@ -18982,10 +18982,10 @@ GameObject:
   - component: {fileID: 5684424019440655106}
   - component: {fileID: 6130099836784580070}
   - component: {fileID: 3639848490810303892}
+  - component: {fileID: 4635102343465570238}
   - component: {fileID: 3287931504989847173}
   - component: {fileID: 1565937435066247770}
   - component: {fileID: 5392723050264580862}
-  - component: {fileID: 4635102343465570238}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -19048,76 +19048,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &3287931504989847173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5684424019440655109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5608e47eaad1a9544a6a807e58f53a45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1565937435066247770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5684424019440655109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4614439bdb9f1d94bbba161376480876, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerHp: 15
-  MaxPlayerHp: 40
-  speed: 1000
-  staminaRecSeconds: 0
-  MAX_STAMINA: 200
-  Dashstamina: 200
-  camSpeed: 5
-  dashPow: 1000
-  immortalTime: 0.5
-  cam: {fileID: 0}
---- !u!114 &5392723050264580862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5684424019440655109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd1951cb449d3bb4db7bbdbedb4863e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isFrip: 0
-  damageColor: {r: 1, g: 1, b: 1, a: 1}
-  effectPos:
-  - {fileID: 6754370050539322289}
-  - {fileID: 4726007063759300063}
-  - {fileID: 0}
-  effects:
-  - {fileID: 1511305696236708774, guid: 70a4d7c36c5d05d409bf935d41670aa0, type: 3}
-  - {fileID: 1650058989602931172, guid: 7f320da7a9bcc1043a41de77ecf372e4, type: 3}
-  - {fileID: 0}
-  SEs:
-  - {fileID: 8300000, guid: 645b6f5dfba719e4e9bd0add3322dd9b, type: 3}
-  - {fileID: 8300000, guid: 8590722dd890cf34a8b0b5cbcfa3bb6b, type: 3}
-  - {fileID: 0}
-  Hahen: {fileID: 5487253364279819266, guid: f07a5ae6f2e1bf44b8882b06e4cec07e, type: 3}
-  deathImage:
-  - {fileID: 21300000, guid: 88b923d600722354c80b65f671c0fb94, type: 3}
-  - {fileID: 21300002, guid: 88b923d600722354c80b65f671c0fb94, type: 3}
-  - {fileID: 21300004, guid: 88b923d600722354c80b65f671c0fb94, type: 3}
-  - {fileID: 21300006, guid: 88b923d600722354c80b65f671c0fb94, type: 3}
-  - {fileID: 21300008, guid: 88b923d600722354c80b65f671c0fb94, type: 3}
-  - {fileID: 21300010, guid: 88b923d600722354c80b65f671c0fb94, type: 3}
-  - {fileID: 21300012, guid: 88b923d600722354c80b65f671c0fb94, type: 3}
-  - {fileID: 21300014, guid: 88b923d600722354c80b65f671c0fb94, type: 3}
 --- !u!82 &4635102343465570238
 AudioSource:
   m_ObjectHideFlags: 0
@@ -19215,6 +19145,77 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3287931504989847173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5684424019440655109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5608e47eaad1a9544a6a807e58f53a45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1565937435066247770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5684424019440655109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4614439bdb9f1d94bbba161376480876, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerHp: 15
+  MaxPlayerHp: 40
+  speed: 1000
+  staminaRecSeconds: 0
+  MAX_STAMINA: 200
+  Dashstamina: 200
+  camSpeed: 2.5
+  dashPow: 1000
+  immortalTime: 0.5
+  camOffset: {x: 0, y: 16, z: 0}
+  cam: {fileID: 0}
+--- !u!114 &5392723050264580862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5684424019440655109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd1951cb449d3bb4db7bbdbedb4863e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFrip: 0
+  damageColor: {r: 1, g: 1, b: 1, a: 1}
+  effectPos:
+  - {fileID: 6754370050539322289}
+  - {fileID: 4726007063759300063}
+  - {fileID: 0}
+  effects:
+  - {fileID: 1511305696236708774, guid: 70a4d7c36c5d05d409bf935d41670aa0, type: 3}
+  - {fileID: 1650058989602931172, guid: 7f320da7a9bcc1043a41de77ecf372e4, type: 3}
+  - {fileID: 0}
+  SEs:
+  - {fileID: 8300000, guid: 645b6f5dfba719e4e9bd0add3322dd9b, type: 3}
+  - {fileID: 8300000, guid: 8590722dd890cf34a8b0b5cbcfa3bb6b, type: 3}
+  - {fileID: 0}
+  Hahen: {fileID: 5487253364279819266, guid: f07a5ae6f2e1bf44b8882b06e4cec07e, type: 3}
+  deathImage:
+  - {fileID: 21300000, guid: 88b923d600722354c80b65f671c0fb94, type: 3}
+  - {fileID: 21300002, guid: 88b923d600722354c80b65f671c0fb94, type: 3}
+  - {fileID: 21300004, guid: 88b923d600722354c80b65f671c0fb94, type: 3}
+  - {fileID: 21300006, guid: 88b923d600722354c80b65f671c0fb94, type: 3}
+  - {fileID: 21300008, guid: 88b923d600722354c80b65f671c0fb94, type: 3}
+  - {fileID: 21300010, guid: 88b923d600722354c80b65f671c0fb94, type: 3}
+  - {fileID: 21300012, guid: 88b923d600722354c80b65f671c0fb94, type: 3}
+  - {fileID: 21300014, guid: 88b923d600722354c80b65f671c0fb94, type: 3}
 --- !u!1 &5684424019544893743
 GameObject:
   m_ObjectHideFlags: 0

@@ -224,8 +224,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa20d1b140dd0b41909fd85e6700692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageColor: {r: 1, g: 1, b: 1, a: 1}
   mat: {fileID: 2100000, guid: a7ceff9940de8a54a8b2f382e49872be, type: 2}
-  th: 1
+  th: 0
 --- !u!1 &6287966652149791206
 GameObject:
   m_ObjectHideFlags: 0

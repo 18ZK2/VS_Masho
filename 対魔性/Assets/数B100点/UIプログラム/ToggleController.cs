@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ToggleController : MonoBehaviour
 {
-    [SerializeField] GameObject panel,SetOn;
+    [SerializeField] GameObject panel = null, SetOn = null;
     int TimeMax = 1, TimeMin = 0;
     bool Toggle=true;
     // Start is called before the first frame update

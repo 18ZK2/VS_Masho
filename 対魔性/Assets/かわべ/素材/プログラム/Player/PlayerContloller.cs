@@ -23,6 +23,7 @@ public class PlayerContloller : MonoBehaviour
     [SerializeField] float dashPow = 0;
     //ダメージ後の無敵時間
     [SerializeField] float immortalTime = 0.5f;
+    [SerializeField] Vector3 camOffset = Vector3.zero;
     [SerializeField] GameObject cam = null;
 
     GrabbingBeam gb = null;
@@ -125,7 +126,7 @@ public class PlayerContloller : MonoBehaviour
     private void LateUpdate()
     {
         //プレイヤーの移動が終わった後にカメラを移動
-        cam.transform.position = Vector3.Lerp(cam.transform.position, transform.position, camSpeed * Time.deltaTime);
+        cam.transform.position = Vector3.Lerp(cam.transform.position, transform.position + camOffset, camSpeed * Time.deltaTime);
         Vector3 cp = cam.transform.position;
         cam.transform.position = new Vector3(cp.x, cp.y, -10);
     }

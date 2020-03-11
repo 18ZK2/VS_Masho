@@ -203,6 +203,7 @@ GameObject:
   - component: {fileID: 345016702}
   - component: {fileID: 345016701}
   - component: {fileID: 345016704}
+  - component: {fileID: 345016705}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -254,7 +255,7 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
-  m_AllowMSAA: 1
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
@@ -370,6 +371,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &345016705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345016700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b9467f85314c644d86d3e8f2e386b37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wipeCircle: {fileID: 2100000, guid: 545438a9456a2b24c9a7824142fcc810, type: 2}
 --- !u!1 &692641991
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,6 +413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf4b14ac039a75c4cb193d6eeb429e51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneName: Map
 --- !u!4 &692641993
 Transform:
   m_ObjectHideFlags: 0

@@ -5,32 +5,36 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] Material wipe = null;
     PlayerContloller pc;
     AudioSource AudioSource;
+
+    public IEnumerator WipeLoadScene(string sceneName)
+    {
+        //この関数よく使うのでちょっと汚くなたよ
+        PostEffect pe = GameObject.Find("Main Camera").GetComponent<PostEffect>();
+        for (float wipetime = 1f; wipetime > 0f; wipetime -= 0.01f)
+        {
+            if (pe == null) break;
+            pe.wipeCircle.SetFloat("_Radius", wipetime);
+            yield return null;
+        }
+        SceneManager.LoadScene(sceneName);
+        StopAllCoroutines();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         AudioSource = GetComponent<AudioSource>();
-        pc = GameObject.Find("Player").GetComponent<PlayerContloller>();
-        wipe.SetFloat("_Radius", 1f);
+        GameObject player = GameObject.Find("Player");
+        if (player!=null)pc = player.GetComponent<PlayerContloller>();
     }
-    IEnumerator WipeLoadScene()
-    {
-        //Destroy(pc.transform,1);
-        for (float wipetime = 1f; wipetime > 0f; wipetime-=0.01f)
-        {
-            wipe.SetFloat("_Radius", wipetime);
-            yield return null;
-        }
-        SceneManager.LoadScene("GameOver");
-        StopAllCoroutines();
-    }
+    
     // Update is called once per frame
     void Update()
     {
 
-        if (pc.PlayerHp <= 0) StartCoroutine(WipeLoadScene());
+        if (pc!=null && pc.PlayerHp <= 0) StartCoroutine(WipeLoadScene("GameOver"));
     }
 
     public void SoundEffect(AudioClip audioClip)
