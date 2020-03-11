@@ -159,6 +159,10 @@ public class GrabbingBeam : MonoBehaviour
 
                     break;
                 case "Gimmick":
+                    //速度をゼロ
+                    headRigid.velocity = Vector2.zero;
+                    //重くして操作性を上げる
+                    headRigid.mass *= 20f;
                     whipMode = true;
                     touchedObj = gHead.touchedObject;
                     gHead.touchedObject = null;
