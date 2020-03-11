@@ -17,6 +17,10 @@ public class Hiyoko_ballet : MonoBehaviour
         {
             obj.GetComponent<PlayerContloller>().Damage(Hiyo_ballet_damege);
         }
+        else if(obj.tag == "Gimmick")
+        {
+            obj.GetComponent<GimmickContloller>().HP -= Hiyo_ballet_damege;
+        }
         Debug.Log("hitDeath");
         Destroy(gameObject);
     }

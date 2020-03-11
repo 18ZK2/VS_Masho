@@ -19444,8 +19444,8 @@ HingeJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0, y: -64}
-  m_ConnectedAnchor: {x: -1037, y: 930}
+  m_Anchor: {x: 72, y: 0}
+  m_ConnectedAnchor: {x: -1042.6827, y: 926.98413}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -35797,12 +35797,12 @@ PrefabInstance:
     - target: {fileID: 2847040957165558224, guid: 069fde9a72a887e499e532eabe7077d8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -807.2173
+      value: -884.9
       objectReference: {fileID: 0}
     - target: {fileID: 2847040957165558224, guid: 069fde9a72a887e499e532eabe7077d8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 72.91589
+      value: 5.9
       objectReference: {fileID: 0}
     - target: {fileID: 2847040957165558224, guid: 069fde9a72a887e499e532eabe7077d8,
         type: 3}
@@ -36308,6 +36308,11 @@ PrefabInstance:
       propertyPath: preShotPowRate
       value: 1500
       objectReference: {fileID: 0}
+    - target: {fileID: 5684424018835696846, guid: eb5886033ec61c34394f67c1d3f45fb5,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3287931504989847173, guid: eb5886033ec61c34394f67c1d3f45fb5,
         type: 3}
       propertyPath: m_Enabled
@@ -36353,11 +36358,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 5684424018835696846, guid: eb5886033ec61c34394f67c1d3f45fb5,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5684424020108598799, guid: eb5886033ec61c34394f67c1d3f45fb5,
         type: 3}
