@@ -9,8 +9,8 @@ public class Hiyoko_shot : MonoBehaviour
     // Start is called before the first frame update
     private void Shot()
     {
-        Instantiate(bullet, transform.position, transform.rotation);
-        ani.SetTrigger("Shot");
+        Instantiate(bullet, transform);
+        
     }
     void Start()
     {
@@ -26,7 +26,7 @@ public class Hiyoko_shot : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Shot();
+            ani.SetTrigger("Shot");
         }
     }
 }

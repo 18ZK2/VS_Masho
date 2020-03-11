@@ -13,11 +13,11 @@ public class Hiyoko_ballet : MonoBehaviour
     }
     private void OnParticleCollision(GameObject obj)
     {
-        Debug.Log("Hit!!");
         if (obj.tag == "Player")
         {
             obj.GetComponent<PlayerContloller>().Damage(Hiyo_ballet_damege);
         }
+        Debug.Log("hitDeath");
         Destroy(gameObject);
     }
     // Update is called once per frame
