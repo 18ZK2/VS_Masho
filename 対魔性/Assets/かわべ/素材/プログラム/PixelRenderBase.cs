@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PixenRenderBase : MonoBehaviour
+public class PixelRenderBase : MonoBehaviour
 {
     private Vector3 cashPos;
 

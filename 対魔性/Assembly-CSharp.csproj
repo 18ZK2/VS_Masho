@@ -67,7 +67,6 @@
     <Compile Include="Assets\GridInformation\Scripts\GridInformation.cs" />
     <Compile Include="Assets\matsu\Hiyoko_ballet.cs" />
     <Compile Include="Assets\matsu\Hiyoko_shot.cs" />
-    <Compile Include="Assets\NewBehaviourScript.cs" />
     <Compile Include="Assets\Tiles\Animated Tile\Scripts\AnimatedTile.cs" />
     <Compile Include="Assets\Tiles\Hexagonal Rule Tile\HexagonalRuleTile.cs" />
     <Compile Include="Assets\Tiles\Isometric Rule Tile\IsometricRuleTile.cs" />
@@ -83,7 +82,7 @@
     <Compile Include="Assets\かわべ\素材\プログラム\Enemy\EnemyContloller.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\Enemy\HahenParticle.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\Enemy\TumuraContloller.cs" />
-    <Compile Include="Assets\かわべ\素材\プログラム\PixenRenderBase.cs" />
+    <Compile Include="Assets\かわべ\素材\プログラム\PixelRenderBase.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\Player\GrabbingBeam.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\Player\GrabbingHead.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\Player\PlayerContloller.cs" />
