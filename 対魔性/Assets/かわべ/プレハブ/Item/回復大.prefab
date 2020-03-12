@@ -140,7 +140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6344f94d0b082a646a639acaf30805eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SE1: {fileID: 8300000, guid: 044a16604e6419249a640116f7cad4a9, type: 3}
+  SE1: {fileID: 8300000, guid: 71a6c4cad3a62ab41942b433c05ddbe5, type: 3}
+  HealPonit: 1
 --- !u!82 &82210945250722058
 AudioSource:
   m_ObjectHideFlags: 0

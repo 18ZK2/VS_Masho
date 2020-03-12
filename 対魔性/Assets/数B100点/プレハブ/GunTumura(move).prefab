@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 880680737296090185}
   - component: {fileID: 847805046243072542}
   - component: {fileID: 6357843543070692804}
+  - component: {fileID: 1647284988}
   m_Layer: 10
   m_Name: GunTumura(move)
   m_TagString: Enemy
@@ -335,6 +336,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1647284988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3212737286472154066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccfc2e6bbc27b7747988ab8f88f805ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  r1: 50
+  r2: 100
 --- !u!1 &3212737286511683762
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,6 +532,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3212737286472154067}
     m_Modifications:
+    - target: {fileID: 5044269438716282593, guid: 9344d03c8109feb45ac15f9e3bc25272,
+        type: 3}
+      propertyPath: m_Name
+      value: Gun
+      objectReference: {fileID: 0}
     - target: {fileID: 5044269438716282598, guid: 9344d03c8109feb45ac15f9e3bc25272,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -571,11 +591,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5044269438716282593, guid: 9344d03c8109feb45ac15f9e3bc25272,
-        type: 3}
-      propertyPath: m_Name
-      value: Gun
       objectReference: {fileID: 0}
     - target: {fileID: 5044269438716282599, guid: 9344d03c8109feb45ac15f9e3bc25272,
         type: 3}
@@ -706,21 +721,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 1.8133972
-      objectReference: {fileID: 0}
-    - target: {fileID: 8666164898511705691, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8666164898799313416, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8666164898799313416, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d13a3bab17406d4ba9b37c328ffe92f, type: 3}
