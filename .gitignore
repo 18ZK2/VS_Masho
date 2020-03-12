@@ -1,1 +1,10 @@
 /対魔性/Build
+/対魔性/Packages
+/app
+/.vs
+/対魔性/*.collabignore
+/対魔性/obj
+/対魔性/Logs
+/対魔性/Library
+/対魔性/.vs
+/対魔性/ProjectSettings
