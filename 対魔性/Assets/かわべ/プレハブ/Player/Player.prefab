@@ -19061,7 +19061,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -19204,7 +19204,7 @@ MonoBehaviour:
   - {fileID: 0}
   SEs:
   - {fileID: 8300000, guid: 645b6f5dfba719e4e9bd0add3322dd9b, type: 3}
-  - {fileID: 8300000, guid: 8590722dd890cf34a8b0b5cbcfa3bb6b, type: 3}
+  - {fileID: 8300000, guid: 2ab73fbeed6af024593ebc189d49b216, type: 3}
   - {fileID: 0}
   Hahen: {fileID: 5487253364279819266, guid: f07a5ae6f2e1bf44b8882b06e4cec07e, type: 3}
   deathImage:

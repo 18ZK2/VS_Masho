@@ -124,7 +124,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3212737286472154066}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 359.3, y: -308.8, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3212737285831929086}
@@ -348,8 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccfc2e6bbc27b7747988ab8f88f805ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  r1: 50
-  r2: 100
+  r: 300
 --- !u!1 &3212737286511683762
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,11 +531,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3212737286472154067}
     m_Modifications:
-    - target: {fileID: 5044269438716282593, guid: 9344d03c8109feb45ac15f9e3bc25272,
-        type: 3}
-      propertyPath: m_Name
-      value: Gun
-      objectReference: {fileID: 0}
     - target: {fileID: 5044269438716282598, guid: 9344d03c8109feb45ac15f9e3bc25272,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -592,6 +586,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5044269438716282593, guid: 9344d03c8109feb45ac15f9e3bc25272,
+        type: 3}
+      propertyPath: m_Name
+      value: Gun
+      objectReference: {fileID: 0}
     - target: {fileID: 5044269438716282599, guid: 9344d03c8109feb45ac15f9e3bc25272,
         type: 3}
       propertyPath: m_SortingOrder
@@ -612,11 +611,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3212737286472154067}
     m_Modifications:
-    - target: {fileID: 8666164898511705695, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
-        type: 3}
-      propertyPath: m_Name
-      value: EnemyHpCanvas
-      objectReference: {fileID: 0}
     - target: {fileID: 8666164898511705692, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -721,6 +715,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 1.8133972
+      objectReference: {fileID: 0}
+    - target: {fileID: 8666164898511705695, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
+        type: 3}
+      propertyPath: m_Name
+      value: EnemyHpCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8666164898799313416, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8666164898799313416, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d13a3bab17406d4ba9b37c328ffe92f, type: 3}

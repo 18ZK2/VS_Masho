@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class EnemyHpController : MonoBehaviour
 {   
     GameObject Enemy;
-    EnemyContloller EnemyContloller;
+    [SerializeField] EnemyContloller EnemyContloller;
     Slider slider;
     Vector3 def;
     // Start is called before the first frame update
@@ -16,7 +16,7 @@ public class EnemyHpController : MonoBehaviour
         Enemy = transform.root.gameObject; //親オブジェクト取得
         EnemyContloller = Enemy.GetComponent<EnemyContloller>();
         slider = GameObject.Find("EnemyHealth").GetComponent<Slider>();
-        slider.maxValue = EnemyContloller.HP;
+        //slider.maxValue = EnemyContloller.HP;
     }
 
     // Update is called once per frame
@@ -24,6 +24,6 @@ public class EnemyHpController : MonoBehaviour
     {
         Vector3 parent = transform.root.transform.localRotation.eulerAngles;
         transform.parent.transform.localRotation = Quaternion.Euler(def - parent); //子が回転しないよう調整
-        slider.value = EnemyContloller.HP; //EnemyControllerからHPを参照
+        //slider.value = EnemyContloller.HP; //EnemyControllerからHPを参照
     }
 }
