@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class GateContloller : MonoBehaviour
 {
-    
+    [SerializeField] Color disableColor = Color.gray;
     [SerializeField] GameObject pairG = null;
     [SerializeField] AudioClip[] SEs = new AudioClip[2];
 
     Animator anm, pairAnm;
     Transform exit;
     AudioSource asc;
+    SpriteRenderer[] sprites;
 
     public void SEplay(int i)
     {
@@ -22,10 +23,18 @@ public class GateContloller : MonoBehaviour
     {
         asc = GetComponent<AudioSource>();
         anm = GetComponent<Animator>();
+        sprites = GetComponentsInChildren<SpriteRenderer>();
         if (pairG != null)
         {
             pairAnm = pairG.GetComponent<Animator>();
             exit = pairG.transform.Find("pos");
+        }
+        else
+        {
+            foreach(var s in sprites)
+            {
+                s.color = disableColor;
+            }
         }
     }
     IEnumerator MovePlayer(Transform t)

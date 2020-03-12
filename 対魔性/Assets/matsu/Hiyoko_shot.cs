@@ -5,16 +5,19 @@ using UnityEngine;
 public class Hiyoko_shot : MonoBehaviour
 {
     public GameObject bullet;
+    [SerializeField] AudioClip shotSE = null;
     Animator ani;
+    AudioSource ass;
     // Start is called before the first frame update
     private void Shot()
     {
+        ass.PlayOneShot(shotSE);
         Instantiate(bullet, transform);
-        
     }
     void Start()
     {
         ani = GetComponent<Animator>();
+        ass = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
