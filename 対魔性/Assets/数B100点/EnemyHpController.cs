@@ -8,7 +8,6 @@ public class EnemyHpController : MonoBehaviour
     GameObject Enemy;
     EnemyContloller EnemyContloller;
     Slider slider;
-    bool rot = true;
     Vector3 def;
     // Start is called before the first frame update
     void Start()
@@ -25,7 +24,6 @@ public class EnemyHpController : MonoBehaviour
     {
         Vector3 parent = transform.root.transform.localRotation.eulerAngles;
         transform.parent.transform.localRotation = Quaternion.Euler(def - parent); //子が回転しないよう調整
-
         slider.value = EnemyContloller.HP; //EnemyControllerからHPを参照
     }
 }

@@ -33,7 +33,14 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+            #else
+            Application.Quit();
+            #endif
+        }
         if (pc!=null && pc.PlayerHp <= 0) StartCoroutine(WipeLoadScene("GameOver"));
     }
 
