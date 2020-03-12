@@ -12,6 +12,18 @@ public class SoundOption : MonoBehaviour
     void Start()
     {
         VolumeSlider = GetComponent<Slider>();
+        if (this.gameObject.name == "MasterSlider") //初期設定
+        {
+            audioMixer.SetFloat("MasterVol", VolumeSlider.value);
+        }
+        if (this.gameObject.name == "BGMSlider")   //初期設定
+        {
+            audioMixer.SetFloat("BGMVol", VolumeSlider.value);
+        }
+        if (this.gameObject.name == "SESlider")    //初期設定
+        {
+            audioMixer.SetFloat("SEVol", VolumeSlider.value);
+        }
     }
 
     // Update is called once per frame
