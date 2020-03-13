@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TumuraContloller : MonoBehaviour
 {
-    [SerializeField] float walkspeed = -500;
+    public float walkspeed = -500;
     [SerializeField] bool turning = false;
 
     float beforHP;
@@ -19,7 +19,7 @@ public class TumuraContloller : MonoBehaviour
     {
         transform.Rotate(transform.up, 180);
     }
-    private void Turn()
+    public void Turn()
     {
         if (turning) return;
         if (rb.velocity.x > 0f)

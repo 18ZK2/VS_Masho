@@ -21,7 +21,6 @@ public class Hiyoko_ballet : MonoBehaviour
         {
             obj.GetComponent<GimmickContloller>().HP -= Hiyo_ballet_damege;
         }
-        Debug.Log("hitDeath");
         Destroy(gameObject);
     }
     // Update is called once per frame
