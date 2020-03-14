@@ -99,6 +99,7 @@
     <Compile Include="Assets\数B100点\GameManager.cs" />
     <Compile Include="Assets\数B100点\HpBarController.cs" />
     <Compile Include="Assets\数B100点\MKItem.cs" />
+    <Compile Include="Assets\数B100点\MoveObject.cs" />
     <Compile Include="Assets\数B100点\RecoveryItem.cs" />
     <Compile Include="Assets\数B100点\UIプログラム\EnemyJudge.cs" />
     <Compile Include="Assets\数B100点\UIプログラム\SettingImage.cs" />
