@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class EnemyHpController : MonoBehaviour
-{   
+{
     GameObject Enemy;
     [SerializeField] EnemyContloller EnemyContloller;
     Slider slider;
@@ -22,8 +22,15 @@ public class EnemyHpController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 parent = transform.root.transform.localRotation.eulerAngles;
-        transform.parent.transform.localRotation = Quaternion.Euler(def - parent); //子が回転しないよう調整
+        if(Mathf.Abs(transform.root.transform.localRotation.eulerAngles.y)==180) {
+            transform.parent.transform.rotation = Quaternion.Euler(new Vector3(0,0,180));
+        }
+        else
+        {
+            transform.parent.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+        }
+        //Vector3 parent = transform.root.transform.localRotation.eulerAngles;
+        //transform.parent.transform.localRotation = Quaternion.Euler(def - parent); //子が回転しないよう調整
         //slider.value = EnemyContloller.HP; //EnemyControllerからHPを参照
     }
 }

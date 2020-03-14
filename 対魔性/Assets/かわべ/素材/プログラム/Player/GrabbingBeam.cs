@@ -6,7 +6,7 @@ public class GrabbingBeam : MonoBehaviour
 {
     
     [SerializeField] int beamLength = 0;
-    [SerializeField] float shotPow = 0, attackPt = 0.10f, whipPow = 10f, grabTime = 1.5f;
+    [SerializeField] float shotPow = 0, attackPt = 0.10f, whipPow = 10f, grabTime = 1.5f,enemyshotPow=100.0f;
     [SerializeField] GameObject element = null;
     [SerializeField] GameObject head = null;
     [SerializeField] Rigidbody2D armBody = null,playerBody = null;
@@ -89,7 +89,7 @@ public class GrabbingBeam : MonoBehaviour
             Rigidbody2D erb = touchedEnemy.GetComponent<Rigidbody2D>();
             erb.mass *= 10f;
             //エネミー発射
-            erb.AddForce(pc.bodyVec * shotPow/50f, ForceMode2D.Impulse);
+            erb.AddForce(pc.bodyVec * enemyshotPow, ForceMode2D.Impulse);
             touchedEnemy = null;
         }
         else if (touchedObj != null)
