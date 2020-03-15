@@ -9,7 +9,7 @@ public class FlyingTumuraController : MonoBehaviour
     [Header("地上からの距離")][SerializeField] float dis = 100.0f;
     [Header("追従の力の大きさ")] [SerializeField] float f = 13.0f;
 
-    float ve;
+    float ve,maxf=110.0f;
     TumuraContloller TumuraContloller;
     Rigidbody2D rb;
     GameObject player;
@@ -23,18 +23,26 @@ public class FlyingTumuraController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (homing)
+        if (homing && player!=null)
         {
-            diff = (player.transform.position-transform.position); //TumuraからPlayerまでのベクトル
-            rb.AddForce(diff*f);
-            if (diff.x > 0)
+            diff = (player.transform.position - transform.position); //TumuraからPlayerまでのベクトル
+            
+            if (diff.magnitude<2000.0f) //一定範囲内の場合
             {
-                transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-            }
-            else
-            {
-                transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+                if (diff.magnitude > maxf) 
+                {
+                    diff = diff.normalized*maxf; 
+                }
+                rb.AddForce(diff * f);
+                if (diff.x > 0)
+                {
+                    transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+                }
+                else
+                {
+                    transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
 
+                }
             }
         }
         if (transform.eulerAngles.y == 180 && ve < 0 || transform.eulerAngles.y == 0 && ve > 0) //Tumuraが右向きかつveがマイナス または Tumuraが左向きかつveがプラス
@@ -47,7 +55,6 @@ public class FlyingTumuraController : MonoBehaviour
         RaycastHit2D hit2 = Physics2D.Raycast(origin, pos, pos.magnitude*1.2f, LayerMask.GetMask("Stage")); //回転判定用
         Debug.DrawRay(origin,new Vector2(0,-dis),Color.red,0.1f);
         Debug.DrawRay(origin, pos*1.2f, Color.blue, 0.1f);
-
 
         if (hit1.collider)
         {
