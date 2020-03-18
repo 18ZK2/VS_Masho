@@ -11,13 +11,12 @@ public class FireController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player").GetComponent<PlayerContloller>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContloller>();
         for (int i = 0; i < n; i++)
         {
-            GameObject gameObject = Instantiate(thisgo, this.transform.position, Quaternion.identity) as GameObject;
-            FireController fireController = gameObject.GetComponent<FireController>(); //生成したゲームオブジェクトのfirecontroller取得
-            gameObject.transform.parent = this.gameObject.transform; //自分の子供にする
-            gameObject.transform.localPosition = new Vector3(20.0f * (i + 1), 0, 0);
+            GameObject fireball = Instantiate(thisgo, this.transform.position, Quaternion.identity) as GameObject;
+            fireball.transform.parent = gameObject.transform; //自分の子供にする
+            fireball.transform.localPosition = new Vector3(32.0f * (i + 1), 0, 0);
         }
     }
 
@@ -28,10 +27,9 @@ public class FireController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("good");
-        if (collision.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
-            player.PlayerHp -= damage;
+            player.Damage(damage);
         }
     }
 }
