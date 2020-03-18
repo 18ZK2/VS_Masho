@@ -66,7 +66,7 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _NoisePow: 0.03
-    - _NoiseTh: 1.2
+    - _NoiseTh: 2.8199992
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
