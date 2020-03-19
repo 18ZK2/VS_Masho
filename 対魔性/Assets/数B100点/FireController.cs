@@ -5,7 +5,7 @@ using UnityEngine;
 public class FireController : MonoBehaviour
 {
     PlayerContloller player;
-    [SerializeField] GameObject thisgo;
+    [SerializeField] GameObject thisgo = null;
     [Header("個数")] public int n;
     [Header("ダメージ")] [SerializeField] float damage = 0.1f;
     // Start is called before the first frame update

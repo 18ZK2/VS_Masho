@@ -23,14 +23,19 @@ public class EnemyHpController : MonoBehaviour
     void Update()
     {
         if(Mathf.Abs(transform.root.transform.localRotation.eulerAngles.y)==180) {
-            transform.parent.transform.rotation = Quaternion.Euler(new Vector3(0,0,180));
+            //transform.parent.transform.rotation = Quaternion.Euler(new Vector3(0,0,180));
         }
         else
         {
-            transform.parent.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+            //transform.parent.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
         }
         //Vector3 parent = transform.root.transform.localRotation.eulerAngles;
         //transform.parent.transform.localRotation = Quaternion.Euler(def - parent); //子が回転しないよう調整
         //slider.value = EnemyContloller.HP; //EnemyControllerからHPを参照
+    }
+    private void LateUpdate()
+    {
+        //　カメラと同じ向きに設定
+        transform.rotation = Camera.main.transform.rotation;
     }
 }

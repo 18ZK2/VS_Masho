@@ -37,15 +37,10 @@ public class PlayerContloller : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
         if (MAX_STAMINA < Dashstamina) Dashstamina = MAX_STAMINA;
-       /*for(int i = 0; i < 100; i++)
-        {
-            yield return new WaitForSeconds(0.02f);
-            Dashstamina = Dashstamina + 2;
-        }*/
         while (Dashstamina < MAX_STAMINA)
         {
             yield return new WaitForSeconds(staminaRecSeconds);
-            Dashstamina = Dashstamina + 2;
+            Dashstamina += 2;
         }
         
     }

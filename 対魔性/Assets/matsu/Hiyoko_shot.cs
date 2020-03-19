@@ -16,7 +16,7 @@ public class Hiyoko_shot : MonoBehaviour
     private void Shot()
     {
         ass.PlayOneShot(shotSE);
-        Instantiate(bullet, transform);
+        Instantiate(bullet, transform).transform.parent = null;
     }
     void Start()
     {
