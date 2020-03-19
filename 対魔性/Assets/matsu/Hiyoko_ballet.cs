@@ -5,6 +5,7 @@ using UnityEngine;
 public class Hiyoko_ballet : MonoBehaviour
 {
     public float Hiyo_ballet_damege = 1;
+    [SerializeField] bool isEnemyDamage = false;
     // Start is called before the first frame update
 
     void Start()
@@ -21,7 +22,11 @@ public class Hiyoko_ballet : MonoBehaviour
         {
             obj.GetComponent<GimmickContloller>().HP -= Hiyo_ballet_damege;
         }
-        Destroy(gameObject);
+        else if(obj.tag == "Enemy" && isEnemyDamage)
+        {
+            obj.GetComponent<EnemyContloller>().HP -= Hiyo_ballet_damege;
+        }
+        //Destroy(gameObject);
     }
     // Update is called once per frame
     void Update()

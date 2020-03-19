@@ -165,6 +165,8 @@ public class GrabbingBeam : MonoBehaviour
                     headRigid.mass *= 20f;
                     whipMode = true;
                     touchedObj = gHead.touchedObject;
+                    //グラップビーム痛い
+                    gHead.touchedObject.GetComponent<GimmickContloller>().HP -= attackPt;
                     gHead.touchedObject = null;
                     //ヘッドの当たり判定をトリガーに
                     Collider2D col = gHead.GetComponent<Collider2D>();

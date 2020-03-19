@@ -39,10 +39,9 @@ public class GimmickContloller : MonoBehaviour
             {
                 
                 AttackSum += damage;
-                Debug.Log("GimmickAttack "+AttackSum.ToString());
                 e.Damage(damage);
                 if (e.HP < damage) HP -= e.HP;
-                else HP -= damage;
+                else HP -= damage; Debug.Log("Gimmickdamage " + damage.ToString());
             }
         }
     }

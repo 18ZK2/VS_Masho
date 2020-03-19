@@ -50,19 +50,23 @@ public class EnemyContloller : MonoBehaviour
     //破片用に汎用化しました
     public void MakeHahen(GameObject obj,GameObject hahen)
     {
-        GameObject h = Instantiate(hahen, transform);
-        HahenParticle p = h.GetComponent<HahenParticle>();
-        h.transform.parent = null;
-        if (p != null)
+        GameObject h = null;
+        if (hahen != null)
         {
-            SpriteRenderer[] sps = gameObject.GetComponentsInChildren<SpriteRenderer>();
-            Sprite[] sprites = new Sprite[sps.Length];
-            for (int i = 0; i < sps.Length; i++)
+            h = Instantiate(hahen, transform);
+            HahenParticle p = h.GetComponent<HahenParticle>();
+            h.transform.parent = null;
+            if (p != null)
             {
-                sprites[i] = sps[i].sprite;
+                SpriteRenderer[] sps = gameObject.GetComponentsInChildren<SpriteRenderer>();
+                Sprite[] sprites = new Sprite[sps.Length];
+                for (int i = 0; i < sps.Length; i++)
+                {
+                    sprites[i] = sps[i].sprite;
+                }
+                p.Sprites = sprites;
+                p.layername = sps[0].sortingLayerName;
             }
-            p.Sprites = sprites;
-            p.layername = sps[0].sortingLayerName;
         }
     }
     // Start is called before the first frame update
