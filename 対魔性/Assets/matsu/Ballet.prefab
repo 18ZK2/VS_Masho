@@ -41,7 +41,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6447758162702198565}
   serializedVersion: 6
-  lengthInSec: 1
+  lengthInSec: 3
   simulationSpeed: 1
   stopAction: 2
   cullingMode: 0
@@ -1529,12 +1529,12 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    speedRange: {x: 0, y: 1}
+    speedRange: {x: 0, y: 350}
     tilesX: 1
     tilesY: 1
     animationType: 0
     rowIndex: 0
-    cycles: 5
+    cycles: 20
     uvChannelMask: -1
     randomRow: 1
     sprites:

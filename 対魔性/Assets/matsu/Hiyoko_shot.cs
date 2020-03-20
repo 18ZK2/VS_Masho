@@ -14,14 +14,23 @@ public class Hiyoko_shot : MonoBehaviour
     [Header("回転させる場合はRotOriginを代入")][SerializeField] GameObject RotOrigin;
     Animator ani;
     AudioSource ass;
+
+    float bulletSpeed;
     // Start is called before the first frame update
     private void Shot()
     {
         ass.PlayOneShot(shotSE);
-        Instantiate(bullet, transform).transform.parent = null;
+        GameObject b = Instantiate(bullet, transform);
+        var mainModule = b.GetComponent<ParticleSystem>().main;
+        mainModule.startLifetime = dis / bulletSpeed;
+        b.transform.parent = null;
     }
     void Start()
     {
+
+        ParticleSystem ps = bullet.GetComponent<ParticleSystem>();
+        var mainModule = ps.main;
+        bulletSpeed = mainModule.startSpeed.constant;
         EnemyContloller = transform.parent.gameObject.GetComponent<EnemyContloller>(); //if rotより先に書く(親が変わるため)
         if (rot == true) //回転させるとき
         {
