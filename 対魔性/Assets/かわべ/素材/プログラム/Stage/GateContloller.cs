@@ -8,7 +8,6 @@ public class GateContloller : MonoBehaviour
     [SerializeField] Color disableColor = Color.gray;
     [SerializeField] GameObject pairG = null;
     [SerializeField] AudioClip[] SEs = new AudioClip[2];
-
     [SerializeField] bool isSceneChange = false;
     [SerializeField] Color SceneGateColor = Color.red;
     [SerializeField] string sceneName = "";

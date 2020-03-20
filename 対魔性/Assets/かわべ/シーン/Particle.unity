@@ -315,7 +315,7 @@ PrefabInstance:
     - target: {fileID: 686429914854096870, guid: 162a1e623b734d847954655545948143,
         type: 3}
       propertyPath: sceneName
-      value: Particle
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 686429914854096870, guid: 162a1e623b734d847954655545948143,
         type: 3}
@@ -1514,7 +1514,7 @@ PrefabInstance:
     - target: {fileID: 1565937435066247770, guid: eb5886033ec61c34394f67c1d3f45fb5,
         type: 3}
       propertyPath: MaxPlayerHp
-      value: Infinity
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1565937435066247770, guid: eb5886033ec61c34394f67c1d3f45fb5,
         type: 3}
@@ -1529,7 +1529,7 @@ PrefabInstance:
     - target: {fileID: 1565937435066247770, guid: eb5886033ec61c34394f67c1d3f45fb5,
         type: 3}
       propertyPath: PlayerHp
-      value: Infinity
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2518188734018106463, guid: eb5886033ec61c34394f67c1d3f45fb5,
         type: 3}
@@ -3294,11 +3294,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SettingUI
       objectReference: {fileID: 0}
-    - target: {fileID: 9175433257302952352, guid: 28b7675c389a45048bed9f4d07ab7da8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9175433257302952364, guid: 28b7675c389a45048bed9f4d07ab7da8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3478,11 +3473,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9175433258801099413, guid: 28b7675c389a45048bed9f4d07ab7da8,
-        type: 3}
-      propertyPath: m_Type
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28b7675c389a45048bed9f4d07ab7da8, type: 3}

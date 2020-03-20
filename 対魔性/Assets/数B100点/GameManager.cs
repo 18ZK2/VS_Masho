@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     PlayerContloller pc;
     AudioSource AudioSource;
-
+    public static string nowscene;//現在のシーン
     public IEnumerator WipeLoadScene(string sceneName)
     {
         Debug.Log("LoadScene " + sceneName);
@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        nowscene = SceneManager.GetActiveScene().name;
         AudioSource = GetComponent<AudioSource>();
         GameObject player = GameObject.Find("Player");
         if (player!=null)pc = player.GetComponent<PlayerContloller>();
