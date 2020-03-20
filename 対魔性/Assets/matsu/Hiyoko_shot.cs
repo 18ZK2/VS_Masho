@@ -5,7 +5,6 @@ using UnityEngine;
 public class Hiyoko_shot : MonoBehaviour
 {
     EnemyContloller EnemyContloller;
-    Vector3 pos, pla;
     Quaternion quaternion;
     [SerializeField] float dis = 200.0f;
     public GameObject bullet,player;
@@ -47,7 +46,7 @@ public class Hiyoko_shot : MonoBehaviour
     private void FixedUpdate()
     {
         Vector2 origin = new Vector2(transform.position.x, transform.position.y); //Tumuraの場所
-        RaycastHit2D hit = Physics2D.Raycast(origin, (-transform.right),dis); //判定(当たらなければNull)
+        RaycastHit2D hit = Physics2D.Raycast(origin, (-transform.right),dis, LayerMask.GetMask(new string[] { "Player", "Stage" })); //判定(当たらなければNull)
         Debug.DrawRay(origin, dis*(-transform.right), Color.blue, 0.1f);
         if (hit.collider != null)
         {
@@ -60,23 +59,18 @@ public class Hiyoko_shot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (rot == true)
+        if (rot == true&& player != null)
         {
-            if (player != null)
+            var vec = (player.transform.position - transform.parent.parent.position).normalized; //プレイヤーからTumuraへのベクトル parent.parentにする!!!!!(rootではだめ)
+            if (vec.x > 0)
             {
-                var vec = (player.transform.position - transform.parent.parent.position).normalized; //プレイヤーからTumuraへのベクトル parent.parentにする!!!!!(rootではだめ)
-                if (vec.x > 0)
-                {
-
-                    transform.parent.parent.rotation = Quaternion.Euler(new Vector3(0, 180, 0)); //Tumuraを180°回転
-                    transform.parent.transform.rotation = Quaternion.FromToRotation(Vector3.up, vec) * Quaternion.Euler(0, 180, -90);
-
-                }
-                else
-                {
-                    transform.parent.parent.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-                    transform.parent.transform.rotation = Quaternion.FromToRotation(Vector3.up, vec) * Quaternion.Euler(0, 0, -90);
-                }
+                transform.parent.parent.rotation = Quaternion.Euler(new Vector3(0, 180, 0)); //Tumuraを180°回転
+                transform.parent.transform.rotation = Quaternion.FromToRotation(Vector3.up, vec) * Quaternion.Euler(0, 180, -90);
+            }
+            else
+            {
+                transform.parent.parent.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+                transform.parent.transform.rotation = Quaternion.FromToRotation(Vector3.up, vec) * Quaternion.Euler(0, 0, -90);
             }
         }
         //if (EnemyContloller!= null)

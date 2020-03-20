@@ -1,10 +1,11 @@
 Win64
 PlayerPath?
-C:/Users/RunRunDeadly/Downloads/Alpha2_9D/対魔性.exe
+C:/Users/てらぽん/Desktop/Masho/対魔性.exe
 SceneListBegin?
 Assets/かわべ/シーン/Title.unity
 Assets/かわべ/シーン/Map.unity
 Assets/数B100点/シーン/GameOver.unity
+Assets/かわべ/シーン/Particle.unity
 SceneListEnd?
 3c08375166df118bd1801438fc36b92f Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
 3a01bc12e3cd18b19c10a4184fb07a84 Assembly-CSharp.dll:UnityEngine.IsometricRuleTile
@@ -186,7 +187,7 @@ c7e88837f207a8cc5f7ba72a28f64280 Assembly-CSharp.dll:.EnemyJudge
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.HpBarController
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 d91fcd9ac7bd86d3d771dd6171620fad Assembly-CSharp.dll:.StartMenu
-d91fcd9ac7bd86d3d771dd6171620fad Assembly-CSharp.dll:.GameOverManager
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.GameOverManager
 490a4632ae50fb0b65bba5aaaf7edebd Assembly-CSharp.dll:.TintTextureGenerator
 7ba35897a6eb27627ed456c682c34253 Assembly-CSharp.dll:UnityEngine.Tilemaps.TerrainTile
 a5a7c86e5197ec4a069c35addcde74d3 Assembly-CSharp.dll:.RecoveryItem
@@ -200,7 +201,7 @@ df434544c9f7b33d1cc7e635b180d279 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.GameManager
 6009a5637fe8a386c82c9e56a906e3d2 Assembly-CSharp.dll:.NakamaeTumura
-62d0b3b6b47d19fabccb7ce9c6ebc49b Assembly-CSharp.dll:.GateContloller
-637a59cae76ca6301e51f8c2e868e6fd Assembly-CSharp.dll:.Hiyoko_shot
+c78f1b33f3a478df3e2d08e95eca28bb Assembly-CSharp.dll:.GateContloller
+cad640c758a83600d8d3c99634c145da Assembly-CSharp.dll:.Hiyoko_shot
 90f60ec72ee0caf74af46486fda34757 Assembly-CSharp.dll:.GrabbingHead
 6062415d3dde1bf23718f88941386cd3 Assembly-CSharp.dll:.GimmickContloller

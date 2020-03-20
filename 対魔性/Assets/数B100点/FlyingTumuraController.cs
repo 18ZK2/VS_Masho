@@ -49,12 +49,12 @@ public class FlyingTumuraController : MonoBehaviour
         {
             ve = -ve;
         }
-        pos = new Vector2(ve, -1); //反転用の向きを作成
+        pos = new Vector2(ve, -dis); //反転用の向きを作成
         Vector2 origin = new Vector2(transform.position.x, transform.position.y - 16.5f); //FlyingTumuraの場所
         RaycastHit2D hit1 = Physics2D.Raycast(origin, Vector2.down, dis, LayerMask.GetMask("Stage"));
         RaycastHit2D hit2 = Physics2D.Raycast(origin, pos, pos.magnitude*1.2f, LayerMask.GetMask("Stage")); //回転判定用
         Debug.DrawRay(origin,new Vector2(0,-dis),Color.red,0.1f);
-        Debug.DrawRay(origin, pos*1.2f, Color.blue, 0.1f);
+        Debug.DrawRay(origin, pos*1.2f, Color.yellow, 0.1f);
 
         if (hit1.collider)
         {
