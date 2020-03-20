@@ -141,5 +141,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14fa77efb00714b4dadf0fc246cd3321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 0.1
+  HP: 0.05
   hahen: {fileID: 5168089914053114228, guid: a3f099c1e9b68c4418d75ca840329aeb, type: 3}

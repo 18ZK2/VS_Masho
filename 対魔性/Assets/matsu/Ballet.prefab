@@ -3746,7 +3746,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4352
+      m_Bits: 266496
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -4779,3 +4779,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hiyo_ballet_damege: 1
+  isEnemyDamage: 0

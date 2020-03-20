@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator WipeLoadScene(string sceneName)
     {
+        Debug.Log("LoadScene " + sceneName);
         //この関数よく使うのでちょっと汚くなたよ
         PostEffect pe = GameObject.Find("Main Camera").GetComponent<PostEffect>();
         for (float wipetime = 1f; wipetime > 0f; wipetime -= 0.01f)
