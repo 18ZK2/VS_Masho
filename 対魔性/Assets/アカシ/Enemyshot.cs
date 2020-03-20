@@ -18,6 +18,8 @@ public class Enemyshot : MonoBehaviour
     int EnemyCount()
     {
         int count;
+        //子のトランスフォームの数を取得、、、
+        //しかし、子の子のトランスフォームまで取ってくるので、子のトランスフォームの数で最後に割る。
         Transform[] childs = enemyList.GetComponentsInChildren<Transform>();
         count = childs.Length / childPartNum;
         return count;

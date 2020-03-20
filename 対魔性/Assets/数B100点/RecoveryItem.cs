@@ -5,7 +5,7 @@ using UnityEngine;
 public class RecoveryItem : MonoBehaviour
 {
     GameObject Player;
-    PlayerContloller PlayerContloller;
+    //PlayerContloller pc;
     GameManager GameManager;
     [SerializeField] AudioClip SE1 = null;
     public int HealPonit = 1; //回復量
@@ -13,9 +13,10 @@ public class RecoveryItem : MonoBehaviour
     void Start()
     {
         Player = GameObject.Find("Player");
-        PlayerContloller = Player.GetComponent<PlayerContloller>();
+        //pc = Player.GetComponent<PlayerContloller>();
         GameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        Invoke("Destroy", 10.0f); //10秒後にアイテム削除
+        //Invoke("Destroy", 10.0f); //10秒後にアイテム削除
+        Destroy(gameObject, 10f);
     }
 
     // Update is called once per frame
@@ -28,17 +29,14 @@ public class RecoveryItem : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            if (PlayerContloller.PlayerHp < PlayerContloller.MaxPlayerHp) //HPが最大でない
+            PlayerContloller pc = collision.gameObject.GetComponentInParent<PlayerContloller>();
+            if (pc.PlayerHp < pc.MaxPlayerHp) //HPが最大でない
             {
                 GameManager.SoundEffect(SE1);
-                PlayerContloller.PlayerHp += HealPonit;
+                pc.PlayerHp += HealPonit;
             }
             Destroy(gameObject);
         }
         
-    }
-    void Destroy()
-    {
-        Destroy(gameObject);
     }
 }
