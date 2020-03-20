@@ -118,8 +118,19 @@ public class EnemyContloller : MonoBehaviour
         {
             Rigidbody2D rb = GetComponent<Rigidbody2D>();
             float damagePow = rb.mass * dm / 50f;
+            if (collision.gameObject.tag == "Enemy")
+            {
+                Debug.Log("Attack_to_Enemy_From_Enemy");
+                collision.gameObject.GetComponent<EnemyContloller>().Damage(damagePow);
+            }
+            if (collision.gameObject.tag == "Gimmick")
+            {
+                Debug.Log("Attack_to_Gimmick_From_Enemy");
+                GimmickContloller gc = collision.gameObject.GetComponent<GimmickContloller>();
+                if (damagePow > HP) gc.HP -= HP;
+                else gc.HP -= damagePow;
+            }
             Damage(damagePow);
-            if (collision.gameObject.tag == "Enemy") collision.gameObject.GetComponent<EnemyContloller>().Damage(damagePow);
         }
     }
 }

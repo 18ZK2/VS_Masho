@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5119836157746727704}
   - component: {fileID: 8125022525290924563}
   - component: {fileID: 2652080562804539770}
-  m_Layer: 12
+  m_Layer: 18
   m_Name: TestGimmickSword
   m_TagString: Gimmick
   m_Icon: {fileID: 0}

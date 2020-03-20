@@ -28,7 +28,6 @@ public class GimmickContloller : MonoBehaviour
         dx = (beforePos - transform.position).magnitude;
         beforePos = transform.position;
     }
-    float AttackSum = 0;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
@@ -37,11 +36,10 @@ public class GimmickContloller : MonoBehaviour
             float damage = rb.mass * dx / 5f;
             if (damage > 0.5f)
             {
-                
-                AttackSum += damage;
+                Debug.Log("DamageGimmick");
                 e.Damage(damage);
                 if (e.HP < damage) HP -= e.HP;
-                else HP -= damage; Debug.Log("Gimmickdamage " + damage.ToString());
+                else HP -= damage;
             }
         }
     }

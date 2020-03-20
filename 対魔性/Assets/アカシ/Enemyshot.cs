@@ -6,17 +6,20 @@ public class Enemyshot : MonoBehaviour
 {
     const int MAX_ENEMY = 5;
     [SerializeField] float distance_ani = 400f;
+    [SerializeField] float shotPow = 1000;
     private Transform targetObj;
     private Transform enemyList;
     private Animator shoter = null;
     private EnemyContloller ec;
     public GameObject tumura;
 
+    private int childPartNum = 1;
+
     int EnemyCount()
     {
         int count;
-        EnemyContloller[] childs = enemyList.GetComponentsInChildren<EnemyContloller>();
-        count = childs.Length;
+        Transform[] childs = enemyList.GetComponentsInChildren<Transform>();
+        count = childs.Length / childPartNum;
         return count;
     }
 
@@ -27,6 +30,7 @@ public class Enemyshot : MonoBehaviour
         enemyList = transform.Find("EnemyList");
         ec = GetComponent<EnemyContloller>();
         shoter = GetComponent<Animator>();
+        childPartNum = tumura.GetComponentsInChildren<Transform>().Length;
     }
 
     // Update is called once per frame
@@ -55,7 +59,7 @@ public class Enemyshot : MonoBehaviour
         float x = 0f;
         if (targetObj != null)x = transform.position.x - targetObj.position.x;
         GameObject g = Instantiate(tumura, transform);
-        g.GetComponent<Rigidbody2D>().AddForce(new Vector2(0,1000),ForceMode2D.Impulse); //ひよこを上向きに発射
+        g.GetComponent<Rigidbody2D>().AddForce(Vector2.up * shotPow, ForceMode2D.Impulse); //ひよこを上向きに発射
         g.transform.parent = enemyList;
         if (x < 0) g.transform.Rotate(0, 180, 0);
     }

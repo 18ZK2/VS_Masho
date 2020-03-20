@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7012263499581754591}
   - component: {fileID: 420502238968429135}
   - component: {fileID: 4040097323105859162}
-  m_Layer: 12
+  m_Layer: 18
   m_Name: rigidpoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 3880026685386055276}
   - component: {fileID: 2471808772335581362}
   - component: {fileID: 8792821108226071184}
-  m_Layer: 12
+  m_Layer: 18
   m_Name: Hatch
   m_TagString: Gimmick
   m_Icon: {fileID: 0}

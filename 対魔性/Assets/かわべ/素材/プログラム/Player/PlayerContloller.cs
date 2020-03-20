@@ -61,6 +61,7 @@ public class PlayerContloller : MonoBehaviour
     {
         if (isDamage)
         {
+            gb.DeleteBeams();
             PlayerHp -= attackPt;
             StartCoroutine(Immortal());
         }
