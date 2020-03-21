@@ -414,7 +414,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf4b14ac039a75c4cb193d6eeb429e51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Map
 --- !u!4 &692641993
 Transform:
   m_ObjectHideFlags: 0
@@ -628,8 +627,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 250}
-  m_SizeDelta: {x: 631.9, y: 41.4}
+  m_AnchoredPosition: {x: 0, y: 243.6}
+  m_SizeDelta: {x: 865.65, y: 54.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2143727729
 MonoBehaviour:
@@ -650,7 +649,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0665144dbcc3a104b90126d5f6ea251e, type: 3}
     m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
@@ -662,7 +661,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u7D42\u4E86-->ESC\u30AD\u30FC\u3000Continue-->R\u30AD\u30FC"
+  m_Text: "exit-> esc key\u3000  Continue-> r key"
 --- !u!222 &2143727730
 CanvasRenderer:
   m_ObjectHideFlags: 0
