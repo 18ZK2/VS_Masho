@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
             Application.Quit();
             #endif
         }
+        if (Input.GetKey(KeyCode.R)&&pc!=null) SceneManager.LoadScene(nowscene);
         if (pc!=null && pc.PlayerHp <= 0) StartCoroutine(WipeLoadScene("GameOver"));
     }
 

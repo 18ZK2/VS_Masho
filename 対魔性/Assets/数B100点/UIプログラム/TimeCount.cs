@@ -6,10 +6,11 @@ using UnityEngine.UI;
 public class TimeCount : MonoBehaviour
 {
     Text timerText;
-    float timer = 0;
+    public static float timer = 0;
     // Start is called before the first frame update
     void Start()
     {
+        timer = 0;
         timerText = GetComponent<Text>();
     }
 
@@ -17,6 +18,7 @@ public class TimeCount : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        timerText.text = "Time:" + Mathf.Ceil(timer * 1000.0f)/1000.0f;
+        timer = Mathf.Ceil(timer * 1000.0f) / 1000.0f;
+        timerText.text = "Time:" + timer;
     }
 }

@@ -66,7 +66,7 @@ public class GateContloller : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         if (isSceneChange)
         {
-            Debug.Log("fcoh");
+            Debug.Log(TimeCount.timer); //クリア時間
             //SceneManager.LoadScene(sceneName);
             GameManager manager = GameObject.Find("GameManager").GetComponent<GameManager>();
             manager.StartCoroutine(manager.WipeLoadScene(sceneName));
