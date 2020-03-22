@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/てらぽん/Desktop/Masho/対魔性.exe
+C:/Users/RunRunDeadly/Downloads/Alpha3_0D/対魔性.exe
 SceneListBegin?
 Assets/かわべ/シーン/Title.unity
 Assets/かわべ/シーン/Map.unity
@@ -205,3 +205,4 @@ c78f1b33f3a478df3e2d08e95eca28bb Assembly-CSharp.dll:.GateContloller
 cad640c758a83600d8d3c99634c145da Assembly-CSharp.dll:.Hiyoko_shot
 90f60ec72ee0caf74af46486fda34757 Assembly-CSharp.dll:.GrabbingHead
 6062415d3dde1bf23718f88941386cd3 Assembly-CSharp.dll:.GimmickContloller
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.TimeCount

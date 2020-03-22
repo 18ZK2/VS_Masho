@@ -42,7 +42,7 @@ public class EnemyContloller : MonoBehaviour
             Debug.Log(attackPow);
             HP -= attackPow;
             HP = Mathf.Round(HP * 10.0f) / 10.0f; //10倍して四捨五入->10で割る
-            if (asc != null) asc.PlayOneShot(SE);
+            if (asc != null && SE != null) asc.PlayOneShot(SE);
             StartCoroutine(Immortal());
         }
 
@@ -78,7 +78,7 @@ public class EnemyContloller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (HP < 0)
+        if (HP <= 0)
         {
             //死ぬとき
             if (dropItem.Length != 0)//ドロップアイテムが設定されているとき
@@ -89,7 +89,6 @@ public class EnemyContloller : MonoBehaviour
             }
             if (mustDrop != null)
             {
-
                 MakeHahen(gameObject, mustDrop);
             }
             Destroy(gameObject);

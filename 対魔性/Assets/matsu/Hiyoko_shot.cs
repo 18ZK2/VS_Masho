@@ -10,7 +10,7 @@ public class Hiyoko_shot : MonoBehaviour
     public GameObject bullet,player;
     [SerializeField] AudioClip shotSE = null;
     [Header("回転")] [SerializeField] bool rot = false; //銃を回転させたい場合はtrue
-    [Header("回転させる場合はRotOriginを代入")][SerializeField] GameObject RotOrigin;
+    [Header("回転させる場合はRotOriginを代入")][SerializeField] GameObject RotOrigin = null;
     Animator ani;
     AudioSource ass;
 
