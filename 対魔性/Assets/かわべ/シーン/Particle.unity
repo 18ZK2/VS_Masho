@@ -1800,12 +1800,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &857604498 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5582897625209007872, guid: cae2ae5f444254949af6c4653d5b0e19,
-    type: 3}
-  m_PrefabInstance: {fileID: 2008506631}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &865842627
 GameObject:
   m_ObjectHideFlags: 0
@@ -5442,6 +5436,7 @@ PrefabInstance:
         type: 3}
       propertyPath: TumuraBar
       value: 
-      objectReference: {fileID: 857604498}
+      objectReference: {fileID: 5352097325565384194, guid: 3d2ea7a41a479874491e8e03d0e1fffa,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28b7675c389a45048bed9f4d07ab7da8, type: 3}
