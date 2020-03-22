@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ToggleController : MonoBehaviour
 {
-    [SerializeField] GameObject panel = null, SetOn = null;
+    [SerializeField] GameObject panel = null, SetOn = null,TumuraBar=null;
     [SerializeField] AudioClip SE = null;
     GameObject gameManager;
     AudioSource AudioSource;
@@ -13,6 +13,7 @@ public class ToggleController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;//初期速度
         gameManager = GameObject.Find("GameManager");
     }
 
@@ -23,7 +24,10 @@ public class ToggleController : MonoBehaviour
     }
     public void ToggleClicked()
     {
+
+        //せっていを開くとき->toggle=true,隠すとき->false
         gameManager.GetComponent<GameManager>().SoundEffect(SE);
+        TumuraBar.SetActive(!Toggle); //Tumurabarを隠す or 現す
         Time.timeScale = TimeSpeed(); //ゲームスピード変更
         this.gameObject.SetActive(false); //自身を隠す
         panel.SetActive(Toggle);　//パネルを隠す or　現す

@@ -17,10 +17,6 @@ public class GameSpeedChanger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-    }
-    public void ChangeGameSpeed()
-    {
         Time.timeScale = slider.value;
     }
 }
