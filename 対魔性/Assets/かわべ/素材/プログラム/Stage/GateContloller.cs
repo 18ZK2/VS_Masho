@@ -72,7 +72,7 @@ public class GateContloller : MonoBehaviour
             manager.StartCoroutine(manager.WipeLoadScene(sceneName));
             
         }
-        else if (pairG != null)
+        else if (pairG != null && t!=null)
         {
             //移動
             t.position = exit.position;
