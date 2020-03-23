@@ -9,13 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3679366522303090323}
-  - component: {fileID: 810317494896913668}
   - component: {fileID: 5724844756682950596}
   - component: {fileID: 8396223491565035879}
-  - component: {fileID: 6399940258452445077}
   - component: {fileID: 5595662200665415367}
   - component: {fileID: 8592758720216943170}
+  - component: {fileID: 810317494896913668}
   - component: {fileID: 752144598509284176}
+  - component: {fileID: 6399940258452445077}
   m_Layer: 10
   m_Name: "\u767A\u5C04\u6A5F"
   m_TagString: Enemy
@@ -40,26 +40,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &810317494896913668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1007542527204838491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 608aaa94976f1504e972fb09e8dbc636, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HP: 20
-  attackPt: 1
-  immortalTime: 0.5
-  mustDrop: {fileID: 5487253364279819266, guid: f07a5ae6f2e1bf44b8882b06e4cec07e,
-    type: 3}
-  dropItem: []
-  dropProba: []
-  SE: {fileID: 8300000, guid: af685d148445c1446a8bbcc6efe672dd, type: 3}
 --- !u!50 &5724844756682950596
 Rigidbody2D:
   serializedVersion: 4
@@ -100,18 +80,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6399940258452445077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1007542527204838491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5608e47eaad1a9544a6a807e58f53a45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!70 &5595662200665415367
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -225,6 +193,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &810317494896913668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007542527204838491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 608aaa94976f1504e972fb09e8dbc636, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 20
+  attackPt: 1
+  immortalTime: 0.5
+  mustDrop: {fileID: 5487253364279819266, guid: f07a5ae6f2e1bf44b8882b06e4cec07e,
+    type: 3}
+  dropItem: []
+  dropProba: []
+  SE: {fileID: 8300000, guid: af685d148445c1446a8bbcc6efe672dd, type: 3}
 --- !u!114 &752144598509284176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,9 +225,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 666ebabd65fa8784ea97c4b6a41682c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MAX_ENEMY: 5
   distance_ani: 400
   shotPow: 1000
   tumura: {fileID: 8469106255286831438, guid: f25dbe6ee9131d4409874c5d6131845c, type: 3}
+--- !u!114 &6399940258452445077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007542527204838491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5608e47eaad1a9544a6a807e58f53a45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1093162877290173893
 GameObject:
   m_ObjectHideFlags: 0

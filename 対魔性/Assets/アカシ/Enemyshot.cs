@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemyshot : MonoBehaviour
 {
-    const int MAX_ENEMY = 5;
+    [SerializeField] int MAX_ENEMY = 5;
     [SerializeField] float distance_ani = 400f;
     [SerializeField] float shotPow = 1000;
     private Transform targetObj;
@@ -14,16 +14,6 @@ public class Enemyshot : MonoBehaviour
     public GameObject tumura;
 
     private int childPartNum = 1;
-
-    int EnemyCount()
-    {
-        int count;
-        //子のトランスフォームの数を取得、、、
-        //しかし、子の子のトランスフォームまで取ってくるので、子のトランスフォームの数で最後に割る。
-        Transform[] childs = enemyList.GetComponentsInChildren<Transform>();
-        count = childs.Length / childPartNum;
-        return count;
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -39,20 +29,20 @@ public class Enemyshot : MonoBehaviour
     void Update()
     {
         float distance = 0f;
-        if(targetObj!=null)distance = Vector3.Distance(transform.position, targetObj.position);
-        if (distance <= distance_ani && EnemyCount()<MAX_ENEMY)
+        int childCount = enemyList.transform.childCount;
+        if (targetObj!=null)distance = Vector3.Distance(transform.position, targetObj.position);
+        if (distance <= distance_ani && childCount<MAX_ENEMY)
         {
             shoter.SetBool("distance", true);
         }
-        else if (distance > distance_ani || EnemyCount() > MAX_ENEMY)
+        else if (distance > distance_ani || childCount > MAX_ENEMY)
         {
             shoter.SetBool("distance", false);
         }
         if (ec.HP <= 0)
         {
             //親が死ぬと子も死ぬので親が死ぬとき子を開放する
-            EnemyContloller[] childs = enemyList.GetComponentsInChildren<EnemyContloller>();
-            foreach (var child in childs) child.transform.parent = null;
+            foreach (Transform child in enemyList) if (child != enemyList) child.parent = null;
         }
         shoter.SetBool("immortal", !ec.isDamage);
     }
