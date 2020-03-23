@@ -489,7 +489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 25
   attackPt: 0
-  immortalTime: 3
+  immortalTime: 0.5
   mustDrop: {fileID: 7260762372615888295, guid: 27b5cde3b629d83489eb222d2b724fae,
     type: 3}
   dropItem:
@@ -504,6 +504,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1973810434319045973}
     m_Modifications:
+    - target: {fileID: 1511305696236708774, guid: 70a4d7c36c5d05d409bf935d41670aa0,
+        type: 3}
+      propertyPath: m_Name
+      value: Boost
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511305696236708774, guid: 70a4d7c36c5d05d409bf935d41670aa0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1511305696236708779, guid: 70a4d7c36c5d05d409bf935d41670aa0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -558,16 +568,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1511305696236708774, guid: 70a4d7c36c5d05d409bf935d41670aa0,
-        type: 3}
-      propertyPath: m_Name
-      value: Boost
-      objectReference: {fileID: 0}
-    - target: {fileID: 1511305696236708774, guid: 70a4d7c36c5d05d409bf935d41670aa0,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2305280667043360245, guid: 70a4d7c36c5d05d409bf935d41670aa0,
         type: 3}
