@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageColor: {r: 1, g: 1, b: 1, a: 1}
-  mat: {fileID: 2100000, guid: a7ceff9940de8a54a8b2f382e49872be, type: 2}
+  mat: {fileID: 2100000, guid: a7465cc9f4750ab48bce0d2334d10fe9, type: 2}
   th: 0
 --- !u!1 &6287966652149791206
 GameObject:
@@ -275,7 +275,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a7ceff9940de8a54a8b2f382e49872be, type: 2}
+  - {fileID: 2100000, guid: a7465cc9f4750ab48bce0d2334d10fe9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
