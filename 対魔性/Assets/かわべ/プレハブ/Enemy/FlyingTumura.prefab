@@ -9845,9 +9845,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89e28a07f0ccf7c4eb76206d1c0b7417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  homing: 0
+  homing: {fileID: 0}
   dis: 100
-  f: 13
 --- !u!1 &5853866012093427292
 GameObject:
   m_ObjectHideFlags: 0
@@ -14645,11 +14644,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5853866010657339767}
     m_Modifications:
-    - target: {fileID: 5044269438716282593, guid: 9344d03c8109feb45ac15f9e3bc25272,
-        type: 3}
-      propertyPath: m_Name
-      value: Gun (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 5044269438716282598, guid: 9344d03c8109feb45ac15f9e3bc25272,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14705,6 +14699,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 5044269438716282593, guid: 9344d03c8109feb45ac15f9e3bc25272,
+        type: 3}
+      propertyPath: m_Name
+      value: Gun (1)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9344d03c8109feb45ac15f9e3bc25272, type: 3}
 --- !u!4 &5044269439699482865 stripped
@@ -14720,11 +14719,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5853866010657339767}
     m_Modifications:
-    - target: {fileID: 5044269438716282593, guid: 9344d03c8109feb45ac15f9e3bc25272,
-        type: 3}
-      propertyPath: m_Name
-      value: Gun
-      objectReference: {fileID: 0}
     - target: {fileID: 5044269438716282598, guid: 9344d03c8109feb45ac15f9e3bc25272,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14780,6 +14774,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 5044269438716282593, guid: 9344d03c8109feb45ac15f9e3bc25272,
+        type: 3}
+      propertyPath: m_Name
+      value: Gun
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9344d03c8109feb45ac15f9e3bc25272, type: 3}
 --- !u!4 &5044269439981620447 stripped
@@ -14795,11 +14794,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5853866010657339767}
     m_Modifications:
-    - target: {fileID: 8666164898511705695, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
-        type: 3}
-      propertyPath: m_Name
-      value: EnemyHpCanvas
-      objectReference: {fileID: 0}
     - target: {fileID: 8666164898511705692, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14904,6 +14898,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 1.8133972
+      objectReference: {fileID: 0}
+    - target: {fileID: 8666164898511705695, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
+        type: 3}
+      propertyPath: m_Name
+      value: EnemyHpCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 8666164898799313416, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
         type: 3}
