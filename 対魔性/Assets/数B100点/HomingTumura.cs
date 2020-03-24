@@ -59,7 +59,6 @@ public class HomingTumura : MonoBehaviour
                 angle -= 360.0f;
                 dig = true;
             }
-            Debug.Log(angle);
         }
     }
     // Update is called once per frame

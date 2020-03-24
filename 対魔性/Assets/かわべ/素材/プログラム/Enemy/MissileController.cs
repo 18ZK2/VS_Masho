@@ -48,7 +48,6 @@ public class MissileController : MonoBehaviour
     {
         if (collision.gameObject.tag != "PlayerAttack")
         {
-            Debug.Log("collision");
             ec.Damage(ec.HP);
         }
     }
@@ -56,7 +55,6 @@ public class MissileController : MonoBehaviour
     {
         if (collision.gameObject.tag != "PlayerAttack" && gameObject.tag != "PlayerAttack" && collision.gameObject.tag == "Player" && isHorming)
         {
-            Debug.Log("trigger");
             ec.Damage(ec.HP);
         }
     }
