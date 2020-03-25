@@ -52,9 +52,6 @@
     <UnityVersion>2018.4.12f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2018.4.12f1\Editor\Data\Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -78,10 +75,12 @@
     <Compile Include="Assets\Tiles\Weighted Random Tile\WeightedRandomTile.cs" />
     <Compile Include="Assets\アカシ\Enemyshot.cs" />
     <Compile Include="Assets\アカシ\stamina.cs" />
+    <Compile Include="Assets\かわべ\Tube\Tube.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\AlphaVer\GameSpeedChanger.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\Enemy\EnemyContloller.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\Enemy\FenceController.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\Enemy\HahenParticle.cs" />
+    <Compile Include="Assets\かわべ\素材\プログラム\Enemy\LauncherController.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\Enemy\MissileController.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\Enemy\TumuraContloller.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\PixelRenderBase.cs" />
@@ -123,20 +122,22 @@
     <None Include="Assets\かわべ\マテリアル\shader\CullOff.shader" />
     <None Include="Assets\かわべ\マテリアル\フォント\Kawabe.txt" />
     <None Include="Assets\かわべ\マテリアル\shader\TitleText.shader" />
+    <None Include="Assets\かわべ\LICENSE.txt" />
+    <None Include="Assets\かわべ\Tube\Shader\TubeFx.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/てらぽん/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/てらぽん/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/てらぽん/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/てらぽん/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/てらぽん/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -340,13 +341,13 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.12f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>C:/Users/てらぽん/Documents/GitHub/VS_Masho/対魔性/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/てらぽん/Documents/GitHub/VS_Masho/対魔性/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/Users/てらぽん/Documents/GitHub/VS_Masho/対魔性/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.12f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
