@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/RunRunDeadly/Downloads/Alpha3_15D/対魔性.exe
+C:/Users/てらぽん/Desktop/test/対魔性.exe
 SceneListBegin?
 Assets/かわべ/シーン/Title.unity
 Assets/かわべ/シーン/Map.unity
@@ -122,6 +122,7 @@ ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networki
 5887ef1bc706b22b773d253fd443ceef UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 afc5b93a7b192de2dcb3832fe35a5c7e Assembly-CSharp.dll:.BackGroundContloller
+e11d653a2c2e6bfa2cc66b1f6b0865c4 Assembly-CSharp.dll:.HomingTumura
 852c784f22d49e033ab50a5e565eff5b Assembly-CSharp.dll:.EnemyContloller
 303ad70ce203ad874efe2965d0fbcff9 Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsEventTracker
 7fb9de8dcf73854b6b328eca1f7a6e6d Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsTracker
@@ -132,7 +133,7 @@ eda93e9a3c7bff6c58c39b3620caa536 Assembly-CSharp.dll:.ToggleController
 73ed19eb9513f5d0868d2a8bac28a18b Assembly-CSharp.dll:.MoveObject
 b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 b7be66dd132bb3c1610215fb1896c5c6 Assembly-CSharp.dll:.EnemyHpController
-53ed4f73a9344c8d4a240aa0a5218ffb Assembly-CSharp.dll:.FlyingTumuraController
+49896a21ba2a7e78de54aa7c3572a8ed Assembly-CSharp.dll:.FlyingTumuraController
 d835e37be8caf473a0d64dc941f2a2a8 Assembly-CSharp.dll:.SoundOption
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.Analytics.Editor.dll:UnityEditor.Analytics.AnalyticsEventTrackerEditor
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
@@ -142,6 +143,7 @@ afba73b5760bfc33f483b74d15c065ee Assembly-CSharp.dll:UnityEngine.RuleOverrideTil
 25d6a61a60f20a3fbc57140f20663630 Assembly-CSharp.dll:UnityEngine.HexagonalRuleTile
 0d435a2f03daf531156c19bb27a1e434 Assembly-CSharp.dll:.PostEffect
 af51c34a2008a9f2aada7838abc2c52f Assembly-CSharp.dll:.stamina
+bc389582f41325cad753d3e410618b6e Assembly-CSharp.dll:.FenceController
 e6ae40841db498b6e673877ac45ad208 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 1dcb82730d983b77cec736c6ef19f814 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery

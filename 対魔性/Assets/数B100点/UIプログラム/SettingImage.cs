@@ -7,9 +7,13 @@ public class SettingImage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.gameObject.SetActive(false);
+        Invoke("SetFalse",0.05f);//遅らせたほうがいい?
     }
 
+    void SetFalse()
+    {
+        this.gameObject.SetActive(false);
+    }
     // Update is called once per frame
     void Update()
     {

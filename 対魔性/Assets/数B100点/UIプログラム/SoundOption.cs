@@ -25,7 +25,7 @@ public class SoundOption : MonoBehaviour
             {
                 VolumeSlider.value = mas;
             }
-
+            Debug.Log("ok");
             audioMixer.SetFloat("MasterVol", mas);
         }
         if (this.gameObject.name == "BGMSlider")   //初期設定
