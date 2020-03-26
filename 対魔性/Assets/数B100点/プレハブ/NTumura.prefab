@@ -546,6 +546,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1025296211695825388}
     m_Modifications:
+    - target: {fileID: 8666164898511705695, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
+        type: 3}
+      propertyPath: m_Name
+      value: EnemyHpCanvas
+      objectReference: {fileID: 0}
     - target: {fileID: 8666164898511705692, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -651,11 +656,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 1.8133972
       objectReference: {fileID: 0}
-    - target: {fileID: 8666164898511705695, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
+    - target: {fileID: 8666164898626782422, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
         type: 3}
-      propertyPath: m_Name
-      value: EnemyHpCanvas
-      objectReference: {fileID: 0}
+      propertyPath: EnemyContloller
+      value: 
+      objectReference: {fileID: 3357350527337614966}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d13a3bab17406d4ba9b37c328ffe92f, type: 3}
 --- !u!224 &1179149381024734873 stripped

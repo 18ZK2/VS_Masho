@@ -16,10 +16,10 @@ public class MissileController : MonoBehaviour
     IEnumerator RiseMissile()
     {
         yield return new WaitForSeconds(1f);
-        rb.AddForce(Vector2.up * speed, ForceMode2D.Impulse);
+        rb.AddForce(transform.up * speed, ForceMode2D.Impulse);
         for (float t = risingTime; t > 0f; t -= 0.1f)
         {
-            rb.AddForce(Vector2.up * speed, ForceMode2D.Force);
+            rb.AddForce(transform.up * speed, ForceMode2D.Force);
             yield return new WaitForSeconds(0.1f);
         }
         isHorming = true;
@@ -42,7 +42,7 @@ public class MissileController : MonoBehaviour
         Vector2 diff = target.transform.position - transform.position;
         Quaternion targetRot = Quaternion.LookRotation(Vector3.forward,diff);
         transform.rotation = targetRot;
-        rb.AddForce(transform.up * speed/5f, ForceMode2D.Force);
+        if (gameObject.tag == "Enemy") rb.AddForce(transform.up * speed / 5f, ForceMode2D.Force);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

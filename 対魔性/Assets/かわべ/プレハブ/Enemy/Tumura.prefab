@@ -530,6 +530,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8469106255286831439}
     m_Modifications:
+    - target: {fileID: 8666164898511705695, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
+        type: 3}
+      propertyPath: m_Name
+      value: EnemyHpCanvas
+      objectReference: {fileID: 0}
     - target: {fileID: 8666164898511705692, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -635,11 +640,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 1.8133972
       objectReference: {fileID: 0}
-    - target: {fileID: 8666164898511705695, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
-        type: 3}
-      propertyPath: m_Name
-      value: EnemyHpCanvas
-      objectReference: {fileID: 0}
     - target: {fileID: 8666164898799313416, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -650,6 +650,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8666164898626782422, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
+        type: 3}
+      propertyPath: EnemyContloller
+      value: 
+      objectReference: {fileID: 6135431804731668181}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d13a3bab17406d4ba9b37c328ffe92f, type: 3}
 --- !u!224 &7777703504765658682 stripped

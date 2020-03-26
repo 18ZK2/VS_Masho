@@ -6283,6 +6283,21 @@ PrefabInstance:
       propertyPath: m_Motor.m_MotorSpeed
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1162189563560934581, guid: d7a23ed0e62c76040894194fdf94feef,
+        type: 3}
+      propertyPath: HP
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 2027559611469893321, guid: d7a23ed0e62c76040894194fdf94feef,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2027559611469893321, guid: d7a23ed0e62c76040894194fdf94feef,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7a23ed0e62c76040894194fdf94feef, type: 3}
 --- !u!50 &2933124631084740168 stripped
