@@ -33,26 +33,21 @@ public class TumuraContloller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        anm = GetComponent<Animator>();
+        
         rb = GetComponent<Rigidbody2D>();
         em = GetComponent<EnemyContloller>();
-
+        anm = GetComponent<Animator>();
         beforHP = em.HP;
     }
 
     // Update is called once per frame
     void Update()
     {
-
         if (beforHP > em.HP)
         {
             beforHP = em.HP;
             anm.SetTrigger("damage");
         }
-        
-        anm.SetBool("immortal", !em.isDamage);
-
-
     }
     private void FixedUpdate()
     {

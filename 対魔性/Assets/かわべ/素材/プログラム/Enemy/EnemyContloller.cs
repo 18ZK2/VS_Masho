@@ -24,6 +24,7 @@ public class EnemyContloller : MonoBehaviour
     [SerializeField] AudioClip SE = null;
 
     AudioSource asc;
+    Animator anm;
 
     private IEnumerator Immortal()
     {
@@ -75,11 +76,14 @@ public class EnemyContloller : MonoBehaviour
     void Start()
     {
         asc = GetComponent<AudioSource>();
+        anm = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(anm!=null)anm.SetBool("immortal", !isDamage);
         if (HP <= 0)
         {
             //死ぬとき

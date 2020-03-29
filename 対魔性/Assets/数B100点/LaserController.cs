@@ -21,6 +21,17 @@ public class LaserController : MonoBehaviour
     ParticleSystem.EmissionModule fireEmission;
     ParticleSystem ps;
 
+    bool sleeped = false;
+    IEnumerator Heating()
+    {
+        
+        yield return new WaitForSeconds(ps.main.startLifetime.constant);
+        sleeped = true;
+        fire.position = LR.GetPosition(1);
+        yield break;
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,22 +44,32 @@ public class LaserController : MonoBehaviour
 
         angle = preAngle;
         fireCol.enabled = fireEmission.enabled = false;
-            
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        var emission=ps.emission;
-        emission.enabled=isLaunch;
-        LR.enabled=isLaunch;
-        if (!isLaunch) return;
-
-        hitvec.x =Mathf.Cos(angle * Mathf.Deg2Rad);
-        hitvec.y =Mathf.Sin(angle * Mathf.Deg2Rad);
+        var emission = ps.emission;
+        emission.enabled = isLaunch;
+        if (!isLaunch)
+        {
+            LR.enabled = false;
+            angle = preAngle;
+            sleeped = false;
+            return;
+        }
+        else if (!sleeped)
+        {
+            StartCoroutine(Heating());
+            return;
+        }
+        LR.enabled = true;
+        hitvec.x = Mathf.Cos(angle * Mathf.Deg2Rad);
+        hitvec.y = Mathf.Sin(angle * Mathf.Deg2Rad);
         angle += dig;
         if (angle >= 360) angle -= 360.0f;
-        Vector2 origin = new Vector2(transform.position.x, transform.position.y); 
+        Vector2 origin = new Vector2(transform.position.x, transform.position.y);
         RaycastHit2D hit = Physics2D.Raycast(origin, hitvec, mag, LayerMask.GetMask("Stage"));
         Debug.DrawRay(origin, mag * hitvec.normalized, Color.black, 0.1f);
         LR.SetPosition(0, transform.position);
@@ -63,7 +84,7 @@ public class LaserController : MonoBehaviour
             fireCol.enabled = false;
             fireEmission.enabled = false;
             LR.SetPosition(1, origin + hitvec.normalized * mag);
-            
+
         }
 
         fire.position = LR.GetPosition(1);

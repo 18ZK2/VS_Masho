@@ -30,7 +30,6 @@ public class LauncherController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        anm.SetBool("immortal", !em.isDamage);
         anm.SetBool("launch", isLaunch);
         //発射機の角度
         anm.SetFloat("angle", transform.localEulerAngles.z);
