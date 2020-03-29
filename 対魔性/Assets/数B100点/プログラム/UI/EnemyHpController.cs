@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class EnemyHpController : MonoBehaviour
 {
-    [SerializeField] EnemyContloller EnemyContloller;
+    [SerializeField] EnemyContloller EnemyContloller=null;
     Slider slider;
     Vector3 def;
     // Start is called before the first frame update

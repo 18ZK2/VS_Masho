@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5872515297394107450}
   - component: {fileID: 5872515297394107449}
   - component: {fileID: 5872515297394107452}
+  - component: {fileID: 4290508490014176046}
   m_Layer: 11
   m_Name: valcan
   m_TagString: Untagged
@@ -195,3 +196,17 @@ MonoBehaviour:
   dropItem: []
   dropProba: []
   SE: {fileID: 0}
+--- !u!114 &4290508490014176046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5872515297394107448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d4d2f6455e380c48a09d9c8a3bb6ccb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  f: 10
+  Valcan: {fileID: 0}

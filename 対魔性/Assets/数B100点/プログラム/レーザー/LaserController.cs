@@ -11,7 +11,7 @@ public class LaserController : MonoBehaviour
     //dig　角速度　（回る速さ）
     //preAngle 初期角度
     [SerializeField] float mag = 10.0f, dig = 5.0f, preAngle = 0f;
-    [SerializeField] Transform fire;
+    [SerializeField] Transform fire=null;
 
 
     Vector2 hitvec;
