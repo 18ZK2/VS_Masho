@@ -19,10 +19,12 @@ public class LaserController : MonoBehaviour
     LineRenderer LR;
     Collider2D fireCol;
     ParticleSystem.EmissionModule fireEmission;
+    ParticleSystem ps;
 
     // Start is called before the first frame update
     void Start()
     {
+        ps=GetComponent<ParticleSystem>();
         LR = GetComponent<LineRenderer>();
         LR.SetPosition(1, transform.position);
         fireCol = fire.GetComponent<Collider2D>();
@@ -31,11 +33,15 @@ public class LaserController : MonoBehaviour
 
         angle = preAngle;
         fireCol.enabled = fireEmission.enabled = false;
+            
     }
 
     // Update is called once per frame
     void Update()
     {
+        var emission=ps.emission;
+        emission.enabled=isLaunch;
+        LR.enabled=isLaunch;
         if (!isLaunch) return;
 
         hitvec.x =Mathf.Cos(angle * Mathf.Deg2Rad);
