@@ -7,6 +7,8 @@ public class EnemyContloller : MonoBehaviour
     public float HP = 1.0f;
     [System.NonSerialized] public bool isDamage = true;
 
+    //当たり判定がトリガーでもダメージが入るか
+    [SerializeField] bool damageisTrigger = false;
     //接触ダメージ
     [SerializeField] float attackPt = 1f;
     //ダメージ後の無敵時間
@@ -130,6 +132,15 @@ public class EnemyContloller : MonoBehaviour
                 else gc.HP -= damagePow;
             }
             Damage(damagePow);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            Debug.Log(collision.gameObject.name);
+            PlayerContloller pc = collision.gameObject.GetComponentInParent<PlayerContloller>();
+            pc.Damage(attackPt);
         }
     }
 }

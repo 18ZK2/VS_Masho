@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class MissileController : MonoBehaviour
 {
+
     [SerializeField] float speed = 100f;
     [SerializeField] float risingTime = 2.5f;
     [SerializeField] GameObject target = null;

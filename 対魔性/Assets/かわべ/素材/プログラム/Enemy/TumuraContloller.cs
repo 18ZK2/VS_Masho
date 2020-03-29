@@ -13,8 +13,6 @@ public class TumuraContloller : MonoBehaviour
     Rigidbody2D rb;
     EnemyContloller em;
 
-    
-
     private void RotBody()
     {
         transform.Rotate(transform.up, 180);
