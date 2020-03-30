@@ -21,9 +21,7 @@ public class BossFootController : MonoBehaviour
     void Update()
     {
         float l = isLaunch ? 1 : 0;
-        float l_R = !isLaunch ? 1 : 0;
         motor.motorSpeed = jointPow * l;
-        motor.motorSpeed = jointPow * l_R * -jointTrans.rotation.eulerAngles.z / 20f;
         footJoint.motor = motor;
     }
 }

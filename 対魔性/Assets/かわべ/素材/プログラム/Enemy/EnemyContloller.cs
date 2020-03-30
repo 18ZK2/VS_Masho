@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyContloller : MonoBehaviour
 {
     public float HP = 1.0f;
+    [SerializeField] bool isGimickAttack = false;
     [System.NonSerialized] public bool isDamage = true;
 
     //当たり判定がトリガーでもダメージが入るか
@@ -118,6 +119,12 @@ public class EnemyContloller : MonoBehaviour
         {
             PlayerContloller pc = collision.gameObject.GetComponent<PlayerContloller>();
             pc.Damage(attackPt);
+        }
+        else if(isGimickAttack && collision.gameObject.tag == "Gimmick")
+        {
+            GimmickContloller gc = collision.gameObject.GetComponent<GimmickContloller>();
+            Debug.Log("Attack_to_Gimmick_From_Enemy");
+            gc.HP -= attackPt;
         }
         else if (gameObject.tag == "PlayerAttack")
         {

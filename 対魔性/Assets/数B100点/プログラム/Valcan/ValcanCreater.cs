@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class ValcanCreater : MonoBehaviour
 {
+    public bool isLaunch = true;
     float angle, y = 50.0f;
     
     Vector2 rotvec;
-    bool isLaunch = true;
+    
     [Header("連射回数")][SerializeField] int n = 3;
     [Header("パワー")][SerializeField] float f = 2000.0f;
     [Header("連射間隔")] [SerializeField] float delay = 0.2f;

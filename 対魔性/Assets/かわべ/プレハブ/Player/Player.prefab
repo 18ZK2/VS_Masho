@@ -19170,14 +19170,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerHp: 15
-  MaxPlayerHp: 40
+  MaxPlayerHp: 15
   speed: 1000
   staminaRecSeconds: 0
   MAX_STAMINA: 200
   Dashstamina: 200
   camSpeed: 2.5
   dashPow: 1000
-  immortalTime: 0.5
+  immortalTime: 1.2
   camOffset: {x: 0, y: 16, z: 0}
   cam: {fileID: 0}
 --- !u!114 &5392723050264580862

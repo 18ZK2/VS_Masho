@@ -4864,8 +4864,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 1
+  isGimickAttack: 1
   damageisTrigger: 0
-  attackPt: 3
+  attackPt: 1.2
   immortalTime: 0.5
   mustDrop: {fileID: 0}
   dropItem: []
@@ -4957,7 +4958,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8590722dd890cf34a8b0b5cbcfa3bb6b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.542
   m_Pitch: 1
   Loop: 0
   Mute: 0

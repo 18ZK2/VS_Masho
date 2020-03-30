@@ -5,30 +5,44 @@ using UnityEngine;
 public class BossHeadController : MonoBehaviour
 {
     public bool isLaunch = false;
-    [SerializeField] float launchPow = 200f;
+    [SerializeField] float launchPow = 200f, LaunchLate = 5f;
     [SerializeField] GameObject gravitiBall = null, launchPoint = null;
+    [SerializeField] AudioClip SE;
 
     bool sleeped = false;
+    AudioSource ass;
+
     IEnumerator Launch()
     {
         while (true)
         {
             GameObject gb = null;
+            GravityBall b = null;
             if (isLaunch)
             {
                 gb = Instantiate(gravitiBall, launchPoint.transform);
-                Destroy(gb, 10f);
+                b = gb.GetComponent<GravityBall>();
+                b.enabled = false;
+                Destroy(gb, 11.3f);
             }
+
             yield return new WaitForSeconds(2f);
-            Vector2 vec = Random.Range(-1, 1f) * Vector2.right;
-            vec += Random.Range(-1, 1f) * Vector2.up;
-            gb.GetComponent<Rigidbody2D>().AddForce(vec * launchPow, ForceMode2D.Impulse);
+            
+            if (gb != null)
+            {
+                ass.PlayOneShot(SE);
+                b.enabled = true;
+                Vector2 vec = Random.Range(-1, 1f) * Vector2.right;
+                vec += Random.Range(-1, 1f) * Vector2.up;
+                gb.GetComponent<Rigidbody2D>().AddForce(vec * launchPow, ForceMode2D.Impulse);
+            }
+            yield return new WaitForSeconds(5f);
         }
-        
     }
     // Start is called before the first frame update
     void Start()
     {
+        ass = GetComponent<AudioSource>();
         StartCoroutine(Launch());
     }
 }

@@ -289,7 +289,7 @@ Animator:
   m_GameObject: {fileID: 1973810434319045974}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 533c6b720f348fc468e167334bd6b170, type: 2}
+  m_Controller: {fileID: 9100000, guid: 467ff5777a91b0a4e98fe712486fde63, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -488,6 +488,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 25
+  isGimickAttack: 0
+  damageisTrigger: 0
   attackPt: 0
   immortalTime: 1.5
   mustDrop: {fileID: 7260762372615888295, guid: 27b5cde3b629d83489eb222d2b724fae,

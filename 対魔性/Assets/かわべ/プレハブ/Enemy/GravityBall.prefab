@@ -40,13 +40,13 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6169471413609558556}
   serializedVersion: 6
-  lengthInSec: 5
+  lengthInSec: 10
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -4674,7 +4674,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1733803553
   m_SortingLayer: 4
-  m_SortingOrder: 1
+  m_SortingOrder: 24
   m_RenderMode: 1
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -4711,6 +4711,9 @@ GameObject:
   - component: {fileID: 6169471414584783636}
   - component: {fileID: 6169471414584783632}
   - component: {fileID: 6169471414584783633}
+  - component: {fileID: 3202187668136499013}
+  - component: {fileID: 164988632334722069}
+  - component: {fileID: 5393009070048336903}
   m_Layer: 0
   m_Name: GravityBall
   m_TagString: Untagged
@@ -4743,14 +4746,14 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6169471414584783637}
   serializedVersion: 6
-  lengthInSec: 5
+  lengthInSec: 10
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
-  prewarm: 1
+  looping: 0
+  prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -4818,7 +4821,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 2.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -9386,7 +9389,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1733803553
   m_SortingLayer: 4
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_SortMode: 3
   m_MinParticleSize: 0
@@ -9446,6 +9449,163 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 72
+--- !u!50 &3202187668136499013
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6169471414584783637}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 15
+  m_LinearDrag: 0.2
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!82 &164988632334722069
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6169471414584783637}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 243147277672478034, guid: 5d5591056dbbbc941b1160a364e82436,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: c2b58a91b39c2fd479a8e249ec6e9ee3, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &5393009070048336903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6169471414584783637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff99c735d625d26439a4d9f1dcc2be4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hormingPow: 1000
+  distanceLimit: 250
+  SE: {fileID: 8300000, guid: 1a65b352abd234d4f9e84dd31159ee16, type: 3}
+  soundCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.0022626761
+      value: 0.9974021
+      inSlope: 0.1421712
+      outSlope: 0.1421712
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.13053592
+    - serializedVersion: 3
+      time: 0.99772316
+      value: 0.094339624
+      inSlope: -1.0402358
+      outSlope: -1.0402358
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.0678647
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &6169471414743968323
 GameObject:
   m_ObjectHideFlags: 0
@@ -9486,13 +9646,13 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6169471414743968323}
   serializedVersion: 6
-  lengthInSec: 5
+  lengthInSec: 1.5
   simulationSpeed: 1
-  stopAction: 0
+  stopAction: 1
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -9561,8 +9721,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 3.5
-      minScalar: 2.5
+      scalar: 1.5
+      minScalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -10311,7 +10471,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 6
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -10417,7 +10577,7 @@ ParticleSystem:
     m_BurstCount: 0
     m_Bursts: []
   SizeModule:
-    enabled: 0
+    enabled: 1
     curve:
       serializedVersion: 2
       minMaxState: 1
@@ -10428,22 +10588,31 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0
+          value: 1
           inSlope: 0
-          outSlope: 1
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.78048885
+          value: 0.8429866
+          inSlope: -1.2437735
+          outSlope: -1.2437735
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
-          value: 1
-          inSlope: 1
-          outSlope: 0
+          value: 0
+          inSlope: -2
+          outSlope: -2
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
+          inWeight: 0
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
@@ -11145,7 +11314,7 @@ ParticleSystem:
     orbitalY:
       serializedVersion: 2
       minMaxState: 1
-      scalar: 2.5
+      scalar: 6
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -11357,7 +11526,7 @@ ParticleSystem:
     orbitalOffsetZ:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1.14
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -13275,7 +13444,7 @@ ParticleSystem:
     lifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.61
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -14120,7 +14289,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1733803553
   m_SortingLayer: 4
-  m_SortingOrder: -1
+  m_SortingOrder: 2
   m_RenderMode: 5
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -14190,7 +14359,7 @@ ParticleSystem:
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
