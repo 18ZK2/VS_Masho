@@ -67,7 +67,7 @@ public class LaserController : MonoBehaviour
         LR.enabled = true;
         hitvec.x = Mathf.Cos(angle * Mathf.Deg2Rad);
         hitvec.y = Mathf.Sin(angle * Mathf.Deg2Rad);
-        angle += dig;
+        angle += dig*Time.timeScale;
         if (angle >= 360) angle -= 360.0f;
         Vector2 origin = new Vector2(transform.position.x, transform.position.y);
         RaycastHit2D hit = Physics2D.Raycast(origin, hitvec, mag, LayerMask.GetMask("Stage"));
