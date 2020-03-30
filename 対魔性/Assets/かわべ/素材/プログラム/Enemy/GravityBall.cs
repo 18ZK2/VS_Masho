@@ -19,7 +19,8 @@ public class GravityBall : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         ass = GetComponent<AudioSource>();
-        target = GameObject.Find("Player").transform;
+        GameObject t = GameObject.Find("Player");
+        if (t != null) target = t.transform;
         ass.PlayOneShot(SE);
     }
 

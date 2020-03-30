@@ -462,6 +462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 5
+  isGimickAttack: 0
   damageisTrigger: 0
   attackPt: 1
   immortalTime: 3
