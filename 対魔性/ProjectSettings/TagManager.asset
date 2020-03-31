@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Stage
+  - Enemy
+  - PlayerAttack
+  - Gimmick
   layers:
   - Default
   - TransparentFX
@@ -13,17 +17,17 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - PlayerAttack
+  - Enemy
+  - EnemyAttack
+  - Stage
+  - StageDecolation_Front
+  - StageDecolation_Back
+  - Master_Front
+  - Gate
+  - GrabPoint
+  - Gimmick
   - 
   - 
   - 
@@ -40,4 +44,28 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: StageDecolation_Back
+    uniqueID: 2131068893
+    locked: 0
+  - name: Stage
+    uniqueID: 3764670501
+    locked: 0
+  - name: Player
+    uniqueID: 2520486469
+    locked: 0
+  - name: Enemy
+    uniqueID: 1733803553
+    locked: 0
+  - name: GrabPoint
+    uniqueID: 1449386545
+    locked: 0
+  - name: Gate
+    uniqueID: 1501773739
+    locked: 0
+  - name: StageDecolation_Front
+    uniqueID: 1882311813
+    locked: 0
+  - name: Master_Front
+    uniqueID: 678949121
     locked: 0
