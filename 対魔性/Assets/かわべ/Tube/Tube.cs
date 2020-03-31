@@ -18,7 +18,7 @@ namespace Kino
 
         #region Private resources
 
-        [SerializeField] Shader _shader;
+        [SerializeField] Shader _shader = null;
         Material _material;
 
         #endregion

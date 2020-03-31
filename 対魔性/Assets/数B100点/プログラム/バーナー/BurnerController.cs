@@ -6,7 +6,7 @@ public class BurnerController : MonoBehaviour
 {
     public bool isLaunch=false;
 
-    [SerializeField] AudioClip SE;
+    [SerializeField] AudioClip SE = null;
     ParticleSystem ps;
     AudioSource ass;
     bool played = false;

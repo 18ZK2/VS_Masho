@@ -43,8 +43,8 @@ GameObject:
   - component: {fileID: 7430308788351942752}
   - component: {fileID: 1924073318678951290}
   - component: {fileID: 4128268654956561460}
-  - component: {fileID: 595505898891929239}
   - component: {fileID: 9038340878757686400}
+  - component: {fileID: 595505898891929239}
   m_Layer: 10
   m_Name: "\u30DC\u30B9\u3000\u982D"
   m_TagString: Untagged
@@ -194,25 +194,6 @@ FixedJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   m_DampingRatio: 0
   m_Frequency: 0
---- !u!114 &595505898891929239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8905029389572057807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c34269616d3ab8448b8792ba6a340e81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isLaunch: 0
-  launchPow: 1200
-  LaunchLate: 12
-  gravitiBall: {fileID: 6169471414584783637, guid: bbc36e9e3bfb8bb4a978d1a275471c76,
-    type: 3}
-  launchPoint: {fileID: 3238762613608361602}
-  SE: {fileID: 8300000, guid: 8a5456068935ab34fa6f4f84f609916c, type: 3}
 --- !u!82 &9038340878757686400
 AudioSource:
   m_ObjectHideFlags: 0
@@ -310,6 +291,35 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &595505898891929239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8905029389572057807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c34269616d3ab8448b8792ba6a340e81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLaunch: 0
+  launchPow: 1200
+  LaunchLate: 12
+  range: 800
+  gravitiBall: {fileID: 6169471414584783637, guid: bbc36e9e3bfb8bb4a978d1a275471c76,
+    type: 3}
+  launchPoint: {fileID: 3238762613608361602}
+  faceCover: {fileID: 8905029389958262518}
+  SE: {fileID: 8300000, guid: 8a5456068935ab34fa6f4f84f609916c, type: 3}
+  FloorHeight: 0
+  Yrange: 128
+  Xrange: 600
+  launchTime: 3
+  shootProbably:
+  - 0.8
+  - 0.5
+  - 0.6
 --- !u!1 &8905029389958262518
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,15 +471,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 608aaa94976f1504e972fb09e8dbc636, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 5
+  HP: 50
   isGimickAttack: 0
   damageisTrigger: 0
   attackPt: 1
   immortalTime: 3
-  mustDrop: {fileID: 0}
+  mustDrop: {fileID: 5487253364279819266, guid: f07a5ae6f2e1bf44b8882b06e4cec07e,
+    type: 3}
   dropItem: []
   dropProba: []
-  SE: {fileID: 0}
+  SE: {fileID: 8300000, guid: af685d148445c1446a8bbcc6efe672dd, type: 3}
 --- !u!95 &129817133103896387
 Animator:
   serializedVersion: 3

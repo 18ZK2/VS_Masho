@@ -6,22 +6,24 @@ public class LaserController : MonoBehaviour
 {
     // isLaunchで発射！
     public bool isLaunch = false;
+    public float dig = 5.0f;
+
+    [System.NonSerialized] float angle = 0; //大きさ
 
     //mag レーザーの長さ
     //dig　角速度　（回る速さ）
     //preAngle 初期角度
-    [SerializeField] float mag = 10.0f, dig = 5.0f, preAngle = 0f;
+    [SerializeField] float mag = 10.0f, preAngle = 0f;
     [SerializeField] Transform fire=null;
 
-
+    bool sleeped = false;
     Vector2 hitvec;
-    float angle=0; //大きさ
+    
     LineRenderer LR;
     Collider2D fireCol;
     ParticleSystem.EmissionModule fireEmission;
     ParticleSystem ps;
 
-    bool sleeped = false;
     IEnumerator Heating()
     {
         
@@ -54,9 +56,10 @@ public class LaserController : MonoBehaviour
         emission.enabled = isLaunch;
         if (!isLaunch)
         {
-            LR.enabled = false;
             angle = preAngle;
             sleeped = false;
+            LR.enabled = false;
+            fireCol.enabled = false;
             return;
         }
         else if (!sleeped)

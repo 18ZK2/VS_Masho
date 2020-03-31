@@ -6,8 +6,8 @@ public class GravityBall : MonoBehaviour
 {
     [SerializeField] float hormingPow = 1000f,distanceLimit = 500f;
 
-    [SerializeField] AudioClip SE;
-    [Header("音の減衰")][SerializeField] AnimationCurve soundCurve;
+    [SerializeField] AudioClip SE = null;
+    [Header("音の減衰")][SerializeField] AnimationCurve soundCurve = null;
 
     Vector3 diff;
 
