@@ -77,6 +77,7 @@
     <Compile Include="Assets\アカシ\stamina.cs" />
     <Compile Include="Assets\かわべ\Tube\Tube.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\AlphaVer\GameSpeedChanger.cs" />
+    <Compile Include="Assets\かわべ\素材\プログラム\Enemy\BombTumuraController.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\Enemy\BossFootController.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\Enemy\BossHeadController.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\Enemy\EnemyContloller.cs" />

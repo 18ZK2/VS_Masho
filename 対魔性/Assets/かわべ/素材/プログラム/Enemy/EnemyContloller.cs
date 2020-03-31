@@ -57,7 +57,7 @@ public class EnemyContloller : MonoBehaviour
         GameObject h = null;
         if (hahen != null)
         {
-            h = Instantiate(hahen, transform);
+            h = Instantiate(hahen, transform.position, Quaternion.identity);
             HahenParticle p = h.GetComponent<HahenParticle>();
             h.transform.parent = null;
             if (p != null)
