@@ -15,28 +15,44 @@ public class LaserController : MonoBehaviour
     //preAngle 初期角度
     [SerializeField] float mag = 10.0f, preAngle = 0f;
     [SerializeField] Transform fire=null;
+    [SerializeField] AudioClip Charge = null, StartLaser = null,loopLaser = null;
 
+    //レーザーの加熱用（発射時の根本のパーティクルが出きったタイミングを計る）
     bool sleeped = false;
+    //レーザーのチャージ音を再生したか
+    bool playerChargeSound = false;
+    //レーザーの初期発射音を再生したか
+    bool playedFirstLaser = false;
+    float laserplaytime = 0f;
     Vector2 hitvec;
     
     LineRenderer LR;
     Collider2D fireCol;
     ParticleSystem.EmissionModule fireEmission;
     ParticleSystem ps;
+    AudioSource ass;
 
     IEnumerator Heating()
     {
-        
+        //チャージ音再生
+        if(!playerChargeSound)ass.PlayOneShot(Charge);
+        playerChargeSound = true;
+
+        //パーティクルが出切るまで待つ
         yield return new WaitForSeconds(ps.main.startLifetime.constant);
+
+        if (!playedFirstLaser) ass.PlayOneShot(StartLaser);
+        playedFirstLaser = true;
         sleeped = true;
         fire.position = LR.GetPosition(1);
         yield break;
     }
 
-
     // Start is called before the first frame update
     void Start()
     {
+        ass = GetComponent<AudioSource>();
+
         ps=GetComponent<ParticleSystem>();
         LR = GetComponent<LineRenderer>();
         LR.SetPosition(1, transform.position);
@@ -46,7 +62,6 @@ public class LaserController : MonoBehaviour
 
         angle = preAngle;
         fireCol.enabled = fireEmission.enabled = false;
-        
     }
 
     // Update is called once per frame
@@ -54,19 +69,37 @@ public class LaserController : MonoBehaviour
     {
         var emission = ps.emission;
         emission.enabled = isLaunch;
+        //発射状態でない
         if (!isLaunch)
         {
+            //初期化
             angle = preAngle;
             sleeped = false;
+            playerChargeSound = false;
+            playedFirstLaser = false;
             LR.enabled = false;
             fireCol.enabled = false;
+            laserplaytime = 0f;
+            ass.Stop();
             return;
         }
+        //発射体制に移る
         else if (!sleeped)
         {
+            
             StartCoroutine(Heating());
             return;
         }
+        //発射
+        laserplaytime += Time.deltaTime;
+        //レーザー音が終わる寸前
+        if (laserplaytime > loopLaser.length*0.9)
+        {
+            laserplaytime = 0f;
+            ass.PlayOneShot(loopLaser);
+        }
+
+        //レイキャストを回転
         LR.enabled = true;
         hitvec.x = Mathf.Cos(angle * Mathf.Deg2Rad);
         hitvec.y = Mathf.Sin(angle * Mathf.Deg2Rad);
@@ -74,7 +107,7 @@ public class LaserController : MonoBehaviour
         if (angle >= 360) angle -= 360.0f;
         Vector2 origin = new Vector2(transform.position.x, transform.position.y);
         RaycastHit2D hit = Physics2D.Raycast(origin, hitvec, mag, LayerMask.GetMask("Stage"));
-        Debug.DrawRay(origin, mag * hitvec.normalized, Color.black, 0.1f);
+        //Debug.DrawRay(origin, mag * hitvec.normalized, Color.black, 0.1f);
         LR.SetPosition(0, transform.position);
         if (hit.collider != null)
         {

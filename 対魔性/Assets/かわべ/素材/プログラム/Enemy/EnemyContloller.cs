@@ -149,7 +149,6 @@ public class EnemyContloller : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log(collision.gameObject.name);
             PlayerContloller pc = collision.gameObject.GetComponentInParent<PlayerContloller>();
             pc.Damage(attackPt);
         }
