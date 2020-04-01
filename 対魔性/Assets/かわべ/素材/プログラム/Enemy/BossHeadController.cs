@@ -42,7 +42,7 @@ public class BossHeadController : MonoBehaviour
     {
         while (true)
         {
-            if ((target.position - transform.position).magnitude < range)
+            if (target!=null && (target.position - transform.position).magnitude < range)
             {
 
 
