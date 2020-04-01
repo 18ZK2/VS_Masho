@@ -20,6 +20,7 @@ public class PlayerContloller : MonoBehaviour
     [System.NonSerialized] public Quaternion armRot;
 
     [SerializeField] float camSpeed = 0.5f;
+    [SerializeField] bool Xlimit = true, Ylimit = true;
     [SerializeField] float dashPow = 0;
     //ダメージ後の無敵時間
     [SerializeField] float immortalTime = 0.5f;
@@ -121,10 +122,12 @@ public class PlayerContloller : MonoBehaviour
 
     private void LateUpdate()
     {
+        float xlim = Xlimit ? 1 : 0;
+        float ylim = Ylimit ? 1 : 0;
         //プレイヤーの移動が終わった後にカメラを移動
         cam.transform.position = Vector3.Lerp(cam.transform.position, transform.position + camOffset, camSpeed * Time.deltaTime);
         Vector3 cp = cam.transform.position;
-        cam.transform.position = new Vector3(cp.x, cp.y, -10);
+        cam.transform.position = new Vector3(cp.x * xlim, cp.y * ylim, -10);
     }
 
     private void FixedUpdate()

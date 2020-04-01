@@ -34,6 +34,7 @@ public class BossHeadController : MonoBehaviour
             float r = Random.Range(0f, 1f);
             isLaunchLaser = r < probably ? true : false;  
         }
+        Debug.Log("Y " + y.ToString("f1") + "X " + x.ToString("f1"));
         return isLaunchLaser;
     }
 
@@ -41,7 +42,7 @@ public class BossHeadController : MonoBehaviour
     {
         while (true)
         {
-            if ((target.position - transform.position).magnitude < range)
+            if (target!=null && (target.position - transform.position).magnitude < range)
             {
 
 

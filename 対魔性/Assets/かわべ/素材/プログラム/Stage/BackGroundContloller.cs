@@ -5,6 +5,7 @@ using UnityEngine;
 public class BackGroundContloller : MonoBehaviour
 {
     [SerializeField] float speed = 0.5f;
+    [SerializeField] float Yspeed = 0f,YLimit = 256;
     Transform player;
     Rigidbody2D rb;
     // Start is called before the first frame update
@@ -18,9 +19,9 @@ public class BackGroundContloller : MonoBehaviour
     void Update()
     {
 
-        if (rb != null) transform.Translate(speed * rb.velocity.x, 0, 0);
+        if (rb != null) transform.Translate(speed * rb.velocity.x, Yspeed, 0);
 
-        if (Mathf.Abs(transform.localPosition.x) > 256f)
+        if (Mathf.Abs(transform.localPosition.x) > 256f || Mathf.Abs(transform.localPosition.y) > YLimit)
         {
             transform.localPosition = new Vector3(0, 0, 0);
         }
