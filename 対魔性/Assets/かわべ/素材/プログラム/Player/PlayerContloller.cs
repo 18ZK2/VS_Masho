@@ -20,17 +20,24 @@ public class PlayerContloller : MonoBehaviour
     [System.NonSerialized] public Quaternion armRot;
 
     [SerializeField] float camSpeed = 0.5f;
-    [SerializeField] bool Xlimit = true, Ylimit = true;
+    
     [SerializeField] float dashPow = 0;
     //ダメージ後の無敵時間
     [SerializeField] float immortalTime = 0.5f;
-    [SerializeField] Vector3 camOffset = Vector3.zero;
+    
+    [Header("カメラ関係")]
     [SerializeField] GameObject cam = null;
+    [SerializeField] Vector3 camOffset = Vector3.zero;
+    [SerializeField] bool useLimit;
+    [Header("X要素に下限　Y要素に上限")]
+    [SerializeField] Vector2 limitFromFirstPosY = new Vector2(-768, 768);
+    [SerializeField] Vector2 limitFromFirstPosX = new Vector2(0, 0);
 
     GrabbingBeam gb = null;
     bool dash;
     //左右移動用
     Vector2 walkVec;
+    Vector3 firstPos,camBeforePos;
 
     Animator anm;
     Rigidbody2D rb;
@@ -79,6 +86,7 @@ public class PlayerContloller : MonoBehaviour
         anm = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         gb = transform.Find("体/左腕").GetComponentInChildren<GrabbingBeam>();
+        firstPos = transform.position;
         
     }
 
@@ -118,16 +126,19 @@ public class PlayerContloller : MonoBehaviour
        
     }
 
-    
-
     private void LateUpdate()
     {
-        float xlim = Xlimit ? 1 : 0;
-        float ylim = Ylimit ? 1 : 0;
+
         //プレイヤーの移動が終わった後にカメラを移動
-        cam.transform.position = Vector3.Lerp(cam.transform.position, transform.position + camOffset, camSpeed * Time.deltaTime);
-        Vector3 cp = cam.transform.position;
-        cam.transform.position = new Vector3(cp.x * xlim, cp.y * ylim, -10);
+        Vector3 cp = Vector3.Lerp(cam.transform.position, transform.position + camOffset, camSpeed * Time.deltaTime);
+        float xlim = cp.x, ylim = cp.y;
+        if (useLimit)
+        {
+            xlim = (limitFromFirstPosX.x < transform.position.x && transform.position.x < limitFromFirstPosX.y) ? cp.x : camBeforePos.x;
+            ylim = (limitFromFirstPosY.x < transform.position.y && transform.position.y < limitFromFirstPosY.y) ? cp.y : camBeforePos.y;
+        }
+        cam.transform.position = new Vector3(xlim, ylim, -10);
+        camBeforePos = cam.transform.position;
     }
 
     private void FixedUpdate()

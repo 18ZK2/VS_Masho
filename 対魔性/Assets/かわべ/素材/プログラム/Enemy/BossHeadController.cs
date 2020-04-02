@@ -11,11 +11,11 @@ public class BossHeadController : MonoBehaviour
     [SerializeField] AudioClip SE = null;
 
     [Header("レーザー関係")]
-    [SerializeField] float FloorHeight = 0;
     [SerializeField] float Yrange = 128;
     [SerializeField] float Xrange = 600f;
     [SerializeField] float launchTime = 3f;
     [SerializeField] float[] shootProbably = null;
+    [SerializeField] Transform body = null;
 
     bool sleeped = false, changedLaserProperty = false;
     Transform target;
@@ -26,13 +26,18 @@ public class BossHeadController : MonoBehaviour
     {
 
         bool isLaunchLaser = false;
-        float x = Mathf.Abs(target.position.x - transform.position.x);
-        //プレイヤーと床からの高さ　と　許容範囲　の　差
-        float y = Mathf.Abs(target.position.y - FloorHeight);
+        float x = 0;
+        float y = 0;
+        if (target != null)
+        {
+            x = Mathf.Abs(target.position.x - transform.position.x);
+            y = Mathf.Abs(target.position.y - body.position.y);
+        }
+        //プレイヤーと胴体からの高さ　と　許容範囲　の　差
         if (y < Yrange && x < Xrange)
         {
             float r = Random.Range(0f, 1f);
-            isLaunchLaser = r < probably ? true : false;  
+            isLaunchLaser = r < probably ? true : false;
         }
         Debug.Log("Y " + y.ToString("f1") + "X " + x.ToString("f1"));
         return isLaunchLaser;
