@@ -17,10 +17,14 @@ public class BossHeadController : MonoBehaviour
     [SerializeField] float[] shootProbably = null;
     [SerializeField] Transform body = null;
 
+    [Header("全滅時")]
+    [SerializeField] Color deadColor = Color.gray;
+
     bool sleeped = false, changedLaserProperty = false;
     Transform target;
     AudioSource ass;
     LaserController[] lasers;
+    EnemyContloller Glauncher;
 
     bool JudgeLaser(float probably)
     {
@@ -45,9 +49,9 @@ public class BossHeadController : MonoBehaviour
 
     IEnumerator LaunchGravity()
     {
-        while (true)
+        while (Glauncher != null)
         {
-            if (target!=null && (target.position - transform.position).magnitude < range)
+            if (target != null && (target.position - transform.position).magnitude < range)
             {
 
 
@@ -78,12 +82,12 @@ public class BossHeadController : MonoBehaviour
 
     IEnumerator LaserSettings()
     {
-        while (true)
+        while (Glauncher != null)
         {
             for (int i = 0; i < lasers.Length; i++)
             {
                 bool a = JudgeLaser(shootProbably[i]);
-                Debug.Log(a+" "+i.ToString());
+                Debug.Log(a + " " + i.ToString());
                 lasers[i].isLaunch = a;
                 //角速度を計算　一周するまで待機 
                 yield return new WaitForSeconds(launchTime);
@@ -96,6 +100,8 @@ public class BossHeadController : MonoBehaviour
     {
         ass = GetComponent<AudioSource>();
         lasers = GetComponentsInChildren<LaserController>();
+        Glauncher = launchPoint.GetComponentInParent<EnemyContloller>();
+        Glauncher.enabled = false;
         var player = GameObject.Find("Player");
         if (player != null) target = player.transform;
         StartCoroutine(LaunchGravity());
@@ -108,10 +114,20 @@ public class BossHeadController : MonoBehaviour
         {
             
             isLaunch = true;
+            Glauncher.enabled = true;
             changedLaserProperty = true;
+            
             for (int i = 0; i < lasers.Length; i++)
             {
-                shootProbably[i] *= 0.8f;
+                shootProbably[i] *= 0.5f;
+            }
+        }
+        if (Glauncher == null)
+        {
+            GetComponent<SpriteRenderer>().color = deadColor;
+            foreach(var l in lasers)
+            {
+                l.isLaunch = false;
             }
         }
     }
