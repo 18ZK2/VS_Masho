@@ -26,6 +26,7 @@ public class LauncherController : MonoBehaviour
         if (shotPos.childCount >= MaxMissileNum) return;
         GameObject m = Instantiate(missile, shotPos);
         m.GetComponent<Rigidbody2D>().AddForce(shotPowVec * shotPos.up, ForceMode2D.Impulse);
+
     }
     // Update is called once per frame
     void Update()

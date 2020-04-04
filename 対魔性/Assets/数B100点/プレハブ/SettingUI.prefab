@@ -586,7 +586,7 @@ Canvas:
   m_GameObject: {fileID: 9175433257302952352}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -2100,7 +2100,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 9175433257302859447}
   SetOn: {fileID: 9175433258950901592}
-  TumuraBar: {fileID: 0}
   SE: {fileID: 8300000, guid: 5abe240658627f44ba7793237bca9e78, type: 3}
 --- !u!1 &9175433258950901592
 GameObject:
@@ -2209,5 +2208,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 9175433257302859447}
   SetOn: {fileID: 9175433258950901592}
-  TumuraBar: {fileID: 0}
   SE: {fileID: 8300000, guid: 5abe240658627f44ba7793237bca9e78, type: 3}

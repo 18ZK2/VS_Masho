@@ -88,6 +88,7 @@ public class GrabbingBeam : MonoBehaviour
             foreach (var s in sps) Destroy(s);
             Rigidbody2D erb = touchedEnemy.GetComponent<Rigidbody2D>();
             erb.mass *= 10f;
+            erb.collisionDetectionMode = CollisionDetectionMode2D.Discrete;
             //エネミー発射
             erb.AddForce(pc.bodyVec * enemyshotPow, ForceMode2D.Impulse);
             touchedEnemy = null;
@@ -141,7 +142,9 @@ public class GrabbingBeam : MonoBehaviour
                     //攻撃
                     touchedEnemy.GetComponent<EnemyContloller>().Damage(attackPt);
                     //グラップと敵をつなぐ準備
-                    touchedEnemy.GetComponent<Rigidbody2D>().mass /= 10f;
+                    var erb = touchedEnemy.GetComponent<Rigidbody2D>();
+                    erb.mass /= 10f;
+                    erb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
                     SpringJoint2D tsp = touchedEnemy.AddComponent<SpringJoint2D>();
                     tsp.autoConfigureDistance = false;
                     tsp.distance = 0.05f;
