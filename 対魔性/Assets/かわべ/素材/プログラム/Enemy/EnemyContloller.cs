@@ -26,6 +26,7 @@ public class EnemyContloller : MonoBehaviour
 
     AudioSource asc;
     Animator anm;
+    Rigidbody2D rb;
 
     private IEnumerator Immortal()
     {
@@ -78,7 +79,7 @@ public class EnemyContloller : MonoBehaviour
     {
         asc = GetComponent<AudioSource>();
         anm = GetComponent<Animator>();
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -100,6 +101,7 @@ public class EnemyContloller : MonoBehaviour
             }
             Destroy(gameObject);
         }
+        rb.collisionDetectionMode = (gameObject.tag == "PlayerAttack") ? CollisionDetectionMode2D.Continuous : CollisionDetectionMode2D.Discrete;
     }
 
     private float dm;
