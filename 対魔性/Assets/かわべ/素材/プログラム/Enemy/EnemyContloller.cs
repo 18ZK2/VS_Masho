@@ -8,6 +8,8 @@ public class EnemyContloller : MonoBehaviour
     [SerializeField] bool isGimickAttack = false;
     [System.NonSerialized] public bool isDamage = true;
 
+    //当たり判定のモードを設定
+    [SerializeField] bool CollisionMode = false;
     //当たり判定がトリガーでもダメージが入るか
     [SerializeField] bool damageisTrigger = false;
     //接触ダメージ
@@ -101,7 +103,9 @@ public class EnemyContloller : MonoBehaviour
             }
             Destroy(gameObject);
         }
-        rb.collisionDetectionMode = (gameObject.tag == "PlayerAttack") ? CollisionDetectionMode2D.Continuous : CollisionDetectionMode2D.Discrete;
+        rb.collisionDetectionMode = 
+            (gameObject.tag == "PlayerAttack"　|| CollisionMode) ?
+            CollisionDetectionMode2D.Continuous : CollisionDetectionMode2D.Discrete;
     }
 
     private float dm;

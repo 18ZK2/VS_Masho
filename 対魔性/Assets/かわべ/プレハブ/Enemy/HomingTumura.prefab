@@ -5115,6 +5115,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 20
+  isGimickAttack: 0
+  CollisionMode: 0
+  damageisTrigger: 0
   attackPt: 1
   immortalTime: 1.5
   mustDrop: {fileID: 5487253364279819266, guid: f07a5ae6f2e1bf44b8882b06e4cec07e,
