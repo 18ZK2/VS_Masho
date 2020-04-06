@@ -5,13 +5,17 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class SoundOption : MonoBehaviour
-{
+{   
+    private bool isShotMas=false, isShotSe = false;
     public static float mas=100.0f, se=100.0f, bgm=100.0f; //初期値(適当)
     [SerializeField] private AudioMixer audioMixer = null;
+    [SerializeField] private AudioClip se1=null;
+    AudioSource audiosource;
     Slider VolumeSlider;
     // Start is called before the first frame update
     void Start()
     {
+        audiosource = GetComponent<AudioSource>();
         VolumeSlider = GetComponent<Slider>();
         if (this.gameObject.name == "MasterSlider") //初期設定
         {
@@ -59,22 +63,37 @@ public class SoundOption : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //音鳴らす用
+        if (isShotSe && Input.GetMouseButtonUp(0))
+        {
+            if (audiosource != null) audiosource.PlayOneShot(se1);
+            isShotSe = false;
+        }
+        if (isShotMas && Input.GetMouseButtonUp(0))
+        {
+            if (audiosource != null) audiosource.PlayOneShot(se1);
+            isShotMas = false;
+        }
+
     }
     public void SetMaster()
     {
         mas = VolumeSlider.value;
         audioMixer.SetFloat("MasterVol", VolumeSlider.value);
+        isShotMas = true;
     }
 
     public void SetBGM()
     {
         bgm = VolumeSlider.value;
         audioMixer.SetFloat("BGMVol", VolumeSlider.value);
+
     }
 
     public void SetSE()
     {
         se = VolumeSlider.value;
         audioMixer.SetFloat("SEVol", VolumeSlider.value);
+        isShotSe = true;
     }
 }
