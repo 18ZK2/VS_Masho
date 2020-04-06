@@ -2851,11 +2851,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8832935418258300923, guid: d65ec4eb877476a489c7be0bf24df2dc,
-        type: 3}
-      propertyPath: MinDistance
-      value: 15.025116
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d65ec4eb877476a489c7be0bf24df2dc, type: 3}
 --- !u!1 &400933102
@@ -3785,7 +3780,7 @@ Tilemap:
   - first: {x: -20, y: -6, z: 0}
     second:
       m_TileIndex: 0
-      m_TileSpriteIndex: 8
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 3
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -4037,7 +4032,7 @@ Tilemap:
   - first: {x: 8, y: -6, z: 0}
     second:
       m_TileIndex: 0
-      m_TileSpriteIndex: 5
+      m_TileSpriteIndex: 4
       m_TileMatrixIndex: 1
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -4841,16 +4836,16 @@ Tilemap:
     m_Data: {fileID: 21300016, guid: e69a1001e276b904a98879893fa57f9d, type: 3}
   - m_RefCount: 6
     m_Data: {fileID: 21300006, guid: e69a1001e276b904a98879893fa57f9d, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 21300012, guid: e69a1001e276b904a98879893fa57f9d, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300014, guid: e69a1001e276b904a98879893fa57f9d, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 21300002, guid: e69a1001e276b904a98879893fa57f9d, type: 3}
   - m_RefCount: 20
     m_Data: {fileID: 21300004, guid: e69a1001e276b904a98879893fa57f9d, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 21300014, guid: e69a1001e276b904a98879893fa57f9d, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 71
     m_Data:
@@ -33510,6 +33505,12 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9175433258950901573, guid: 28b7675c389a45048bed9f4d07ab7da8,
+        type: 3}
+      propertyPath: TumuraBar
+      value: 
+      objectReference: {fileID: 5352097325565384194, guid: 3d2ea7a41a479874491e8e03d0e1fffa,
+        type: 3}
     - target: {fileID: 9175433257302952365, guid: 28b7675c389a45048bed9f4d07ab7da8,
         type: 3}
       propertyPath: m_RenderMode
@@ -33530,11 +33531,5 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 9175433258950901573, guid: 28b7675c389a45048bed9f4d07ab7da8,
-        type: 3}
-      propertyPath: TumuraBar
-      value: 
-      objectReference: {fileID: 5352097325565384194, guid: 3d2ea7a41a479874491e8e03d0e1fffa,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28b7675c389a45048bed9f4d07ab7da8, type: 3}

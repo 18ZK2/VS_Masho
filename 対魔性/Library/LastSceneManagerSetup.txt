@@ -1,4 +1,4 @@
 sceneSetups:
-- path: "Assets/\u304B\u308F\u3079/\u30B7\u30FC\u30F3/Particle.unity"
+- path: "Assets/\u304B\u308F\u3079/\u30B7\u30FC\u30F3/Title.unity"
   isLoaded: 1
   isActive: 1
