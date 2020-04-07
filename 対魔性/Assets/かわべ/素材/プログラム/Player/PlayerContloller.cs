@@ -28,7 +28,7 @@ public class PlayerContloller : MonoBehaviour
     [Header("カメラ関係")]
     [SerializeField] GameObject cam = null;
     [SerializeField] Vector3 camOffset = Vector3.zero;
-    [SerializeField] bool useLimit;
+    [SerializeField] bool useLimit = false;
     [Header("X要素に下限　Y要素に上限")]
     [SerializeField] Vector2 limitFromFirstPosY = new Vector2(-768, 768);
     [SerializeField] Vector2 limitFromFirstPosX = new Vector2(0, 0);

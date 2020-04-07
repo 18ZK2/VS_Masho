@@ -32988,15 +32988,15 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 678949121
       objectReference: {fileID: 0}
-    - target: {fileID: 2587424639158002482, guid: cae2ae5f444254949af6c4653d5b0e19,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7910937167912694797, guid: cae2ae5f444254949af6c4653d5b0e19,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587424639158002482, guid: cae2ae5f444254949af6c4653d5b0e19,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5582897626193492169, guid: cae2ae5f444254949af6c4653d5b0e19,
         type: 3}

@@ -10,16 +10,18 @@ public class FenceController : MonoBehaviour
     [SerializeField] FenceController pair = null;
 
 
-    bool broken = false,brokenPair = false;
+    bool broken = false;
     Transform capcel,brokenCap, particle,Player;
     Transform pairCapcel;
     LineRenderer line;
     PolygonCollider2D polygon;
+    EnemyContloller pairCapcelE;
     Bounds b;
     // Start is called before the first frame update
     void Start()
     {
         capcel = transform.Find("カプセル");
+        
         brokenCap = transform.Find("割れたカプセル");
         particle = transform.Find("カプセルの破片");
         Player = GameObject.Find("Player").transform;
@@ -35,11 +37,8 @@ public class FenceController : MonoBehaviour
         if (pair != null)
         {
             pairCapcel = pair.transform.Find("カプセル");
+            pairCapcelE = pairCapcel.GetComponent<EnemyContloller>();
             line.SetPosition(1, pair.transform.position);
-        }
-        else
-        {
-            Destroy(capcel);
         }
         //当たり判定をラインから取得　　　斜めとかにするの厳禁
         b = line.bounds;
@@ -80,14 +79,9 @@ public class FenceController : MonoBehaviour
         {
             //こっちがやられた
             broken = true;
+            pairCapcelE.HP -= pairCapcelE.HP;
             brokenCap.gameObject.SetActive(true);
             particle.gameObject.SetActive(true);
-        }
-        if(pairCapcel == null && capcel!=null && !brokenPair)
-        {
-            //向こうがやられた
-            brokenPair = true;
-            Destroy(capcel.gameObject);
         }
     }
     void OnDrawGizmos()

@@ -581,7 +581,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.47
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -680,14 +680,11 @@ MonoBehaviour:
   HP: 5
   isGimickAttack: 0
   CollisionMode: 0
-  damageisTrigger: 0
   attackPt: 1
   immortalTime: 0.5
   mustDrop: {fileID: 0}
-  dropItem:
-  - {fileID: 4621338078245100413, guid: e21913717f54f214aaf9063505212b9e, type: 3}
-  dropProba:
-  - 1
+  dropItem: []
+  dropProba: []
   SE: {fileID: 8300000, guid: 044a16604e6419249a640116f7cad4a9, type: 3}
   hitEffect: {fileID: 0}
 --- !u!1 &4715740426431961924
@@ -5579,6 +5576,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7925121652240968794}
     m_Modifications:
+    - target: {fileID: 8666164898511705695, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
+        type: 3}
+      propertyPath: m_Name
+      value: EnemyHpCanvas
+      objectReference: {fileID: 0}
     - target: {fileID: 8666164898511705692, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5683,11 +5685,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8666164898511705695, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
-        type: 3}
-      propertyPath: m_Name
-      value: EnemyHpCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 8666164898626782422, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
         type: 3}

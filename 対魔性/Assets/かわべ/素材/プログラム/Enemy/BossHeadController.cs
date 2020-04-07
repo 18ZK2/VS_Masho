@@ -20,7 +20,7 @@ public class BossHeadController : MonoBehaviour
     [Header("全滅時")]
     [SerializeField] Color deadColor = Color.gray;
 
-    bool sleeped = false, changedLaserProperty = false;
+    bool changedLaserProperty = false;
     Transform target;
     AudioSource ass;
     LaserController[] lasers;
@@ -76,7 +76,7 @@ public class BossHeadController : MonoBehaviour
                     gb.GetComponent<Rigidbody2D>().AddForce(vec * launchPow, ForceMode2D.Impulse);
                 }
             }
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(LaunchLate);
         }
     }
 

@@ -7,7 +7,7 @@ public class BossFootController : MonoBehaviour
     public bool isLaunch = false;
     [SerializeField] float jointPow = 10000f;
     [SerializeField] HingeJoint2D footJoint = null;
-    [SerializeField] Transform jointTrans,bodyTrans;
+    [SerializeField] Transform jointTrans, bodyTrans = null;
 
     JointMotor2D motor;
     Transform player;

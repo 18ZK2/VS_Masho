@@ -11,7 +11,7 @@ public class EnemyContloller : MonoBehaviour
     //当たり判定のモードを設定
     [SerializeField] bool CollisionMode = false;
     //当たり判定がトリガーでもダメージが入るか
-    [SerializeField] bool damageisTrigger = false;
+    //[SerializeField] bool damageisTrigger = false;
     //接触ダメージ
     [SerializeField] float attackPt = 1f;
     //ダメージ後の無敵時間
@@ -167,12 +167,12 @@ public class EnemyContloller : MonoBehaviour
             Damage(damagePow);
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && damageisTrigger)
         {
             PlayerContloller pc = collision.gameObject.GetComponentInParent<PlayerContloller>();
             pc.Damage(attackPt);
         }
-    }
+    }*/
 }
