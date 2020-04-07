@@ -26,9 +26,12 @@ public class EnemyContloller : MonoBehaviour
 
     [SerializeField] AudioClip SE = null;
 
+    [SerializeField] GameObject hitEffect;
+
     AudioSource asc;
     Animator anm;
     Rigidbody2D rb;
+    float maxHp;
 
     private IEnumerator Immortal()
     {
@@ -43,10 +46,22 @@ public class EnemyContloller : MonoBehaviour
     //呼び出される
     public void Damage(float attackPow)
     {
-        
+
         if (isDamage)
         {
             Debug.Log(attackPow);
+            /*} if (hitEffect != null)
+            {
+                float mult = attackPow / HP;
+                GameObject effect = Instantiate(hitEffect, transform.position, transform.rotation);
+                effect.transform.parent = null;
+                var p = effect.GetComponent<ParticleSystem>();
+                var m = p.main;
+                m.startSize = 25 * mult;
+                m.startSpeed = 100 * mult;
+                var b = p.emission;
+                b.rateOverTime = (int)mult * 100;
+            }*/
             HP -= attackPow;
             HP = Mathf.Round(HP * 10.0f) / 10.0f; //10倍して四捨五入->10で割る
             if (asc != null && SE != null) asc.PlayOneShot(SE);
@@ -82,6 +97,7 @@ public class EnemyContloller : MonoBehaviour
         asc = GetComponent<AudioSource>();
         anm = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        maxHp = HP;
     }
 
     // Update is called once per frame

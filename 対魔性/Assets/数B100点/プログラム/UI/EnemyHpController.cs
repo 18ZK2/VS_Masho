@@ -8,6 +8,7 @@ public class EnemyHpController : MonoBehaviour
     [SerializeField] EnemyContloller EnemyContloller=null;
     Slider slider;
     Vector3 def;
+
     // Start is called before the first frame update
     void Start()
     {

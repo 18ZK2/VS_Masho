@@ -421,6 +421,8 @@ MonoBehaviour:
   dropProba:
   - 0.43
   SE: {fileID: 8300000, guid: 55f3bb519058eb54b8fc5b4719042f4e, type: 3}
+  hitEffect: {fileID: 5605953819951564369, guid: 6c0d02aabb836f146b1ba62b4ffe0269,
+    type: 3}
 --- !u!114 &2984611945021689889
 MonoBehaviour:
   m_ObjectHideFlags: 0

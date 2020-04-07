@@ -207,6 +207,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 20
+  isGimickAttack: 0
+  CollisionMode: 0
+  damageisTrigger: 0
   attackPt: 1
   immortalTime: 0.5
   mustDrop: {fileID: 5487253364279819266, guid: f07a5ae6f2e1bf44b8882b06e4cec07e,
@@ -214,6 +217,8 @@ MonoBehaviour:
   dropItem: []
   dropProba: []
   SE: {fileID: 8300000, guid: af685d148445c1446a8bbcc6efe672dd, type: 3}
+  hitEffect: {fileID: 5605953819951564369, guid: 6c0d02aabb836f146b1ba62b4ffe0269,
+    type: 3}
 --- !u!114 &752144598509284176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1027,6 +1032,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8666164898626782422, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
+        type: 3}
+      propertyPath: EnemyContloller
+      value: 
+      objectReference: {fileID: 810317494896913668}
     - target: {fileID: 8666164898799313416, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1037,11 +1047,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8666164898626782422, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
-        type: 3}
-      propertyPath: EnemyContloller
-      value: 
-      objectReference: {fileID: 810317494896913668}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d13a3bab17406d4ba9b37c328ffe92f, type: 3}
 --- !u!224 &6461769577196690260 stripped

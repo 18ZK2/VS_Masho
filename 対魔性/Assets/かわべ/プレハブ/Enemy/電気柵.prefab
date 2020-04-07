@@ -446,7 +446,6 @@ Transform:
   m_Children:
   - {fileID: 7065219161469001974}
   - {fileID: 5302622997532146940}
-  - {fileID: 4125445529633163195}
   m_Father: {fileID: 7925121652240968794}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -578,10 +577,11 @@ AudioSource:
   m_GameObject: {fileID: 3728257384179543225}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243147277672478034, guid: 5d5591056dbbbc941b1160a364e82436,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.47
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -678,6 +678,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 5
+  isGimickAttack: 0
+  CollisionMode: 0
+  damageisTrigger: 0
   attackPt: 1
   immortalTime: 0.5
   mustDrop: {fileID: 0}
@@ -686,6 +689,7 @@ MonoBehaviour:
   dropProba:
   - 1
   SE: {fileID: 8300000, guid: 044a16604e6419249a640116f7cad4a9, type: 3}
+  hitEffect: {fileID: 0}
 --- !u!1 &4715740426431961924
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,6 +723,7 @@ Transform:
   - {fileID: 5482476159523105232}
   - {fileID: 4587151437742781246}
   - {fileID: 5198856929539503438}
+  - {fileID: 4125445529633163195}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -808,9 +813,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcade65912f0a2d468a3d606480bb595, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFence: 1
   damage: 2.5
-  burstPow: 2
+  burstPow: 850
   pair: {fileID: 0}
 --- !u!1 &7435602595673718032
 GameObject:
@@ -5573,13 +5577,8 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 5482476159523105232}
+    m_TransformParent: {fileID: 7925121652240968794}
     m_Modifications:
-    - target: {fileID: 8666164898511705695, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
-        type: 3}
-      propertyPath: m_Name
-      value: EnemyHpCanvas
-      objectReference: {fileID: 0}
     - target: {fileID: 8666164898511705692, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5618,7 +5617,7 @@ PrefabInstance:
     - target: {fileID: 8666164898511705692, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8666164898511705692, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
         type: 3}
@@ -5638,12 +5637,12 @@ PrefabInstance:
     - target: {fileID: 8666164898511705692, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 8666164898511705692, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 32
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8666164898511705692, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
         type: 3}
@@ -5685,6 +5684,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8666164898511705695, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
+        type: 3}
+      propertyPath: m_Name
+      value: EnemyHpCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8666164898626782422, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
+        type: 3}
+      propertyPath: EnemyContloller
+      value: 
+      objectReference: {fileID: 9214524750132330336}
     - target: {fileID: 8666164898799313416, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -5695,11 +5704,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8666164898626782422, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
-        type: 3}
-      propertyPath: EnemyContloller
-      value: 
-      objectReference: {fileID: 9214524750132330336}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d13a3bab17406d4ba9b37c328ffe92f, type: 3}
 --- !u!224 &4125445529633163195 stripped

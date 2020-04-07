@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FenceController : MonoBehaviour
 {
-    public bool isFence = true;
+    //public bool isFence = true;
 
     [SerializeField] float damage = 2.5f, burstPow = 1000f;
     [SerializeField] FenceController pair = null;
@@ -48,7 +48,7 @@ public class FenceController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (capcel != null && b.Contains(Player.position))
+        if (capcel != null &&Player!=null && b.Contains(Player.position))
         {
             //プレイヤーが当たった
 
