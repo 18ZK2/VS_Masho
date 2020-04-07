@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 17.452, y: -5}
+  m_AnchoredPosition: {x: 17.452, y: -4.999999}
   m_SizeDelta: {x: -127.2, y: 0.4}
   m_Pivot: {x: 0.36280257, y: 0.00000010430813}
 --- !u!222 &65532594
@@ -1582,7 +1582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 5d5591056dbbbc941b1160a364e82436, type: 2}
-  se1: {fileID: 8300000, guid: 76ba9bad819dcd743a5d788b4b960a27, type: 3}
+  se1: {fileID: 8300000, guid: 13e03a6006edd514aa194619717ca058, type: 3}
 --- !u!82 &935555121
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1936,7 +1936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 5d5591056dbbbc941b1160a364e82436, type: 2}
-  se1: {fileID: 8300000, guid: 76ba9bad819dcd743a5d788b4b960a27, type: 3}
+  se1: {fileID: 8300000, guid: 13e03a6006edd514aa194619717ca058, type: 3}
 --- !u!82 &1450125571
 AudioSource:
   m_ObjectHideFlags: 0

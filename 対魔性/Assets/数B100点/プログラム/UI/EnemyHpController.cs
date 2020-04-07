@@ -7,12 +7,9 @@ public class EnemyHpController : MonoBehaviour
 {
     [SerializeField] EnemyContloller EnemyContloller=null;
     Slider slider;
-    Vector3 def;
-
     // Start is called before the first frame update
     void Start()
     {
-        def = transform.parent.transform.localRotation.eulerAngles;
         slider = transform.GetComponentInChildren<Slider>();
         slider.maxValue = EnemyContloller.HP;
     }
