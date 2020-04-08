@@ -11,7 +11,7 @@ public class EnemyContloller : MonoBehaviour
     //当たり判定のモードを設定
     [SerializeField] bool CollisionMode = false;
     //当たり判定がトリガーでもダメージが入るか
-    //[SerializeField] bool damageisTrigger = false;
+    [SerializeField] bool damageisTrigger = false;
     //接触ダメージ
     [SerializeField] float attackPt = 1f;
     //ダメージ後の無敵時間
@@ -50,18 +50,6 @@ public class EnemyContloller : MonoBehaviour
         if (isDamage)
         {
             Debug.Log(attackPow);
-            /*} if (hitEffect != null)
-            {
-                float mult = attackPow / HP;
-                GameObject effect = Instantiate(hitEffect, transform.position, transform.rotation);
-                effect.transform.parent = null;
-                var p = effect.GetComponent<ParticleSystem>();
-                var m = p.main;
-                m.startSize = 25 * mult;
-                m.startSpeed = 100 * mult;
-                var b = p.emission;
-                b.rateOverTime = (int)mult * 100;
-            }*/
             HP -= attackPow;
             HP = Mathf.Round(HP * 10.0f) / 10.0f; //10倍して四捨五入->10で割る
             if (asc != null && SE != null) asc.PlayOneShot(SE);
@@ -119,9 +107,12 @@ public class EnemyContloller : MonoBehaviour
             }
             Destroy(gameObject);
         }
-        rb.collisionDetectionMode = 
-            (gameObject.tag == "PlayerAttack"　|| CollisionMode) ?
-            CollisionDetectionMode2D.Continuous : CollisionDetectionMode2D.Discrete;
+        if (rb != null)
+        {
+            rb.collisionDetectionMode =
+                (gameObject.tag == "PlayerAttack" || CollisionMode) ?
+                CollisionDetectionMode2D.Continuous : CollisionDetectionMode2D.Discrete;
+        }
     }
 
     private float dm;
@@ -167,12 +158,12 @@ public class EnemyContloller : MonoBehaviour
             Damage(damagePow);
         }
     }
-    /*private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player" && damageisTrigger)
         {
             PlayerContloller pc = collision.gameObject.GetComponentInParent<PlayerContloller>();
             pc.Damage(attackPt);
         }
-    }*/
+    }
 }

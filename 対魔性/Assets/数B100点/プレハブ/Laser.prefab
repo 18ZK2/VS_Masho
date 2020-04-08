@@ -4730,6 +4730,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 1
   isGimickAttack: 0
+  CollisionMode: 0
   damageisTrigger: 1
   attackPt: 1
   immortalTime: 0.5
@@ -4737,6 +4738,7 @@ MonoBehaviour:
   dropItem: []
   dropProba: []
   SE: {fileID: 0}
+  hitEffect: {fileID: 0}
 --- !u!1 &6919429751739177843
 GameObject:
   m_ObjectHideFlags: 0
