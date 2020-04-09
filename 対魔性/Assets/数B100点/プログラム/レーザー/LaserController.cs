@@ -59,9 +59,8 @@ public class LaserController : MonoBehaviour
         fireCol = fire.GetComponent<Collider2D>();
         ParticleSystem fireP = fire.GetComponent<ParticleSystem>();
         fireEmission = fireP.emission;
-
-        angle = preAngle;
         fireCol.enabled = fireEmission.enabled = false;
+        angle = preAngle;
     }
 
     // Update is called once per frame
@@ -120,9 +119,8 @@ public class LaserController : MonoBehaviour
             fireCol.enabled = false;
             fireEmission.enabled = false;
             LR.SetPosition(1, origin + hitvec.normalized * mag);
-
         }
-
         fire.position = LR.GetPosition(1);
+
     }
 }

@@ -4731,7 +4731,7 @@ MonoBehaviour:
   HP: 1
   isGimickAttack: 0
   CollisionMode: 0
-  damageisTrigger: 1
+  damageisTrigger: 0
   attackPt: 1
   immortalTime: 0.5
   mustDrop: {fileID: 0}
@@ -9643,7 +9643,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLaunch: 1
   dig: 2
-  mag: 400
+  mag: 600
   preAngle: 0
   fire: {fileID: 6383299207633878786}
   Charge: {fileID: 8300000, guid: d8db78e8aede0d649a609a4dbf854223, type: 3}

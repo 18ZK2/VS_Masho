@@ -29140,6 +29140,36 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1874396595151960875, guid: 2967b27d80bfa18439e62f7d5b574d8b,
+        type: 3}
+      propertyPath: mag
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 3300970939364187161, guid: 2967b27d80bfa18439e62f7d5b574d8b,
+        type: 3}
+      propertyPath: mag
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 9129353690262448375, guid: 2967b27d80bfa18439e62f7d5b574d8b,
+        type: 3}
+      propertyPath: mag
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728682718581350769, guid: 2967b27d80bfa18439e62f7d5b574d8b,
+        type: 3}
+      propertyPath: damageisTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4936823279075448223, guid: 2967b27d80bfa18439e62f7d5b574d8b,
+        type: 3}
+      propertyPath: damageisTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308939880220635821, guid: 2967b27d80bfa18439e62f7d5b574d8b,
+        type: 3}
+      propertyPath: damageisTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2967b27d80bfa18439e62f7d5b574d8b, type: 3}
 --- !u!4 &2054505082 stripped
