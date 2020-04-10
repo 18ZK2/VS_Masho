@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: 33f76105d8bd36d439f95e9a1abaaff5
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: "\u80CC\u666F1_0"
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -34,15 +35,15 @@ TextureImporter:
     filterMode: 0
     aniso: -1
     mipBias: -100
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 1
@@ -93,7 +94,62 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: "\u80CC\u666F1_0"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 123, y: -69}
+        - {x: 107, y: -56}
+        - {x: 105, y: -56}
+        - {x: 103, y: -58}
+        - {x: 99, y: -76}
+        - {x: 101, y: -71}
+        - {x: 96, y: -68}
+        - {x: 94, y: -68}
+        - {x: 92, y: -69}
+        - {x: 91, y: -72}
+        - {x: 93, y: -65}
+        - {x: 93, y: -63}
+        - {x: 89, y: -41}
+        - {x: -108, y: -41}
+        - {x: -128, y: -50}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+        - {x: 128, y: -72}
+        - {x: 125, y: -69}
+      - - {x: 45, y: -84}
+        - {x: 44, y: -84}
+        - {x: 44, y: -88}
+        - {x: 45, y: -88}
+      - - {x: 32, y: -84}
+        - {x: 34, y: -83}
+        - {x: 32, y: -85}
+        - {x: 32, y: -87}
+      - - {x: -50, y: -78}
+        - {x: -46, y: -78}
+        - {x: -46, y: -84}
+        - {x: -49, y: -84}
+      - - {x: -63, y: -79}
+        - {x: -63, y: -80}
+        - {x: -64, y: -81}
+        - {x: -63, y: -81}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf87c87777347154284910dfd232c6b5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
