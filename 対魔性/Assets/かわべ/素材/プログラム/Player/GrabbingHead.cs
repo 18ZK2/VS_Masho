@@ -24,23 +24,25 @@ public class GrabbingHead : MonoBehaviour
         asc.PlayOneShot(SEs[0]);
         touched = false;
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
+
         if (isActive)
         {
+            touchedObject = collision.gameObject;
             asc.PlayOneShot(SEs[1]);
             isActive = false;
             touched = true;
             ps.TriggerSubEmitter(0);
-            touchedObject = collision.gameObject;
+
         }
+
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnCollisionExit2D(Collision2D collision)
     {
         if (!isActive)
         {
             exitObject = collision.gameObject;
-            //Debug.Log(exitObject);
         }
     }
 }

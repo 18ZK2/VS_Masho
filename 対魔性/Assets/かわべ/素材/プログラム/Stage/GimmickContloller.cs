@@ -36,7 +36,6 @@ public class GimmickContloller : MonoBehaviour
             float damage = rb.mass * dx / 5f;
             if (damage > 0.5f)
             {
-                Debug.Log("DamageGimmick");
                 e.Damage(damage);
                 if (e.HP < damage) HP -= e.HP;
                 else HP -= damage;

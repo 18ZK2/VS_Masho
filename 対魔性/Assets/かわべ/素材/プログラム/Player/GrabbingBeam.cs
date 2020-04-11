@@ -25,7 +25,6 @@ public class GrabbingBeam : MonoBehaviour
     IEnumerator GrabTime()
     {
         yield return new WaitForSeconds(grabTime);
-        Debug.Log("TimeOver");
         DeleteBeams();
         yield break;
     }
@@ -134,7 +133,8 @@ public class GrabbingBeam : MonoBehaviour
                     //ステージとキャラを固定する
                     list[0].GetComponent<SpringJoint2D>().connectedBody = playerBody;
                     //末端を固定
-                    list[beamLength].GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+                    headRigid.velocity = Vector2.zero;
+                    headRigid.bodyType = RigidbodyType2D.Kinematic;
                     break;
                 case "Enemy":
 
@@ -177,13 +177,12 @@ public class GrabbingBeam : MonoBehaviour
                     gHead.touchedObject = null;
                     //ヘッドの当たり判定をトリガーに
                     Collider2D col = gHead.GetComponent<Collider2D>();
-                    //col.isTrigger = true;
+                    col.isTrigger = true;
                     col.usedByEffector = true;
                     gHead.GetComponent<CircleCollider2D>().radius *= 20f;
                     Joint2D j = touchedObj.GetComponent<Joint2D>();
                     break;
                 default:
-                    Debug.Log("Default");
                     DeleteBeams();
                     break;
 
@@ -192,12 +191,10 @@ public class GrabbingBeam : MonoBehaviour
         //  敵死亡時
         else if (touchedEnemy == null && touchedObj == null && gHead.touched)
         {
-            Debug.Log("Enemy dead");
             DeleteBeams();
         }
         else if (gHead.exitObject != null && gHead.exitObject == touchedObj)
         {
-            Debug.Log("Enemy Rereased");
             DeleteBeams();
         }
     }

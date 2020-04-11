@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/RunRunDeadly/Downloads/Alpha3_3_2D/対魔性.exe
+C:/Users/RunRunDeadly/Downloads/Alpha3_3_3D/対魔性.exe
 SceneListBegin?
 Assets/かわべ/シーン/Title.unity
 Assets/かわべ/シーン/Map.unity
