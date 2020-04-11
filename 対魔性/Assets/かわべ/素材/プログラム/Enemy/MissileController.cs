@@ -44,6 +44,10 @@ public class MissileController : MonoBehaviour
         Quaternion targetRot = Quaternion.LookRotation(Vector3.forward,diff);
         transform.rotation = targetRot;
         if (gameObject.tag == "Enemy") rb.AddForce(transform.up * speed / 5f, ForceMode2D.Force);
+        if (diff.magnitude < 64 && gameObject.tag != "PlayerAttack" && isHorming)
+        {
+            ec.Damage(ec.HP);
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -52,13 +56,4 @@ public class MissileController : MonoBehaviour
             ec.Damage(ec.HP);
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag != "PlayerAttack" && gameObject.tag != "PlayerAttack" && collision.gameObject.tag == "Player" && isHorming)
-        {
-            ec.Damage(ec.HP);
-        }
-    }
-
-
 }

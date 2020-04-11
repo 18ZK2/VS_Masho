@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1973810433605302616}
   - component: {fileID: 1973810433605302615}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: "\u3064\u304F\u3068\u3053\u308D"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,85 +158,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1973810433987756560
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1973810433987756559}
-  - component: {fileID: 1973810433987756558}
-  m_Layer: 10
-  m_Name: "\u96FB\u64831"
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1973810433987756559
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1973810433987756560}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 20, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1973810434319045973}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1973810433987756558
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1973810433987756560}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1733803553
-  m_SortingLayer: 4
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.32, y: 0.64}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &1973810434319045974
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,7 +170,6 @@ GameObject:
   - component: {fileID: 1973810434319045972}
   - component: {fileID: 2591384208601912515}
   - component: {fileID: 3160507567456764265}
-  - component: {fileID: 6046886170043740660}
   - component: {fileID: 4825446824781009799}
   - component: {fileID: 5200313887947105452}
   - component: {fileID: 1667870770996186195}
@@ -274,7 +194,6 @@ Transform:
   m_Children:
   - {fileID: 1973810433399384279}
   - {fileID: 1973810433605302616}
-  - {fileID: 1973810433987756559}
   - {fileID: 3128498875925429678}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -335,22 +254,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 16}
   m_Size: {x: 16, y: 64}
   m_Direction: 0
---- !u!58 &6046886170043740660
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1973810434319045974}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 64
 --- !u!82 &4825446824781009799
 AudioSource:
   m_ObjectHideFlags: 0
@@ -489,6 +392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 25
   isGimickAttack: 0
+  CollisionMode: 0
   damageisTrigger: 0
   attackPt: 0
   immortalTime: 1.5
@@ -499,6 +403,7 @@ MonoBehaviour:
   dropProba:
   - 0.8
   SE: {fileID: 0}
+  hitEffect: {fileID: 0}
 --- !u!1001 &4581169764428733957
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -554,7 +459,7 @@ PrefabInstance:
     - target: {fileID: 1511305696236708779, guid: 70a4d7c36c5d05d409bf935d41670aa0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1511305696236708779, guid: 70a4d7c36c5d05d409bf935d41670aa0,
         type: 3}

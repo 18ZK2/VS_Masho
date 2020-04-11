@@ -41,7 +41,6 @@ public class BossHeadController : MonoBehaviour
             float r = Random.Range(0f, 1f);
             isLaunchLaser = r < probably ? true : false;
         }
-        Debug.Log("Y " + y.ToString("f1") + "X " + x.ToString("f1"));
         return isLaunchLaser;
     }
 
@@ -85,7 +84,6 @@ public class BossHeadController : MonoBehaviour
             for (int i = 0; i < lasers.Length; i++)
             {
                 bool a = JudgeLaser(shootProbably[i]);
-                Debug.Log(a + " " + i.ToString());
                 lasers[i].isLaunch = a;
                 //角速度を計算　一周するまで待機 
                 yield return new WaitForSeconds(launchTime);

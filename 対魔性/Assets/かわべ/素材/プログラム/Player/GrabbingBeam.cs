@@ -20,11 +20,14 @@ public class GrabbingBeam : MonoBehaviour
     
     Rigidbody2D headRigid;
 
+    IEnumerator gt;
+
     IEnumerator GrabTime()
     {
         yield return new WaitForSeconds(grabTime);
+        Debug.Log("TimeOver");
         DeleteBeams();
-        StopCoroutine(GrabTime());
+        yield break;
     }
     public void MakeBeams(Vector2 vec)
     {
@@ -78,6 +81,8 @@ public class GrabbingBeam : MonoBehaviour
         if (list.Count < 1) return;
         whipMode = false;
         headRigid = null;
+        StopCoroutine(gt);
+        gt = null;gt = GrabTime();
         
         //エネミーの後処理
         if (touchedEnemy != null)
@@ -108,6 +113,7 @@ public class GrabbingBeam : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gt = GrabTime();
     }
 
     // Update is called once per frame
@@ -151,14 +157,12 @@ public class GrabbingBeam : MonoBehaviour
                     tsp.frequency = gHead.GetComponent<SpringJoint2D>().frequency;
                     //グラップと敵を接続
                     tsp.connectedBody = headRigid;
-                    //ヘッドの当たり判定をトリガーに
-                    gHead.GetComponent<CircleCollider2D>().isTrigger = true;
                     //アニメーションを止める
                     //目的はマヒさせたいだけ
                     //もっと普遍的な方法求む
                     touchedEnemy.GetComponent<Animator>().enabled = false;
                     //掴み可能時間設定
-                    StartCoroutine(GrabTime());
+                    StartCoroutine(gt);
 
                     break;
                 case "Gimmick":
@@ -173,19 +177,28 @@ public class GrabbingBeam : MonoBehaviour
                     gHead.touchedObject = null;
                     //ヘッドの当たり判定をトリガーに
                     Collider2D col = gHead.GetComponent<Collider2D>();
-                    col.isTrigger = true;
+                    //col.isTrigger = true;
                     col.usedByEffector = true;
                     gHead.GetComponent<CircleCollider2D>().radius *= 20f;
                     Joint2D j = touchedObj.GetComponent<Joint2D>();
                     break;
                 default:
+                    Debug.Log("Default");
                     DeleteBeams();
                     break;
 
             }
         }
         //  敵死亡時
-        else if(touchedEnemy == null && touchedObj == null && gHead.GetComponent<CircleCollider2D>().isTrigger) DeleteBeams();
-        else if (gHead.exitObject!=null && gHead.exitObject == touchedObj) DeleteBeams();
+        else if (touchedEnemy == null && touchedObj == null && gHead.touched)
+        {
+            Debug.Log("Enemy dead");
+            DeleteBeams();
+        }
+        else if (gHead.exitObject != null && gHead.exitObject == touchedObj)
+        {
+            Debug.Log("Enemy Rereased");
+            DeleteBeams();
+        }
     }
 }

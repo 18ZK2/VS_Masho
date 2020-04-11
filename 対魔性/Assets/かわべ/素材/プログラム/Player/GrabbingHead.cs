@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GrabbingHead : MonoBehaviour
 {
-    [System.NonSerialized] public GameObject touchedObject, exitObject;
+    [System.NonSerialized] public bool touched;
+    [System.NonSerialized] public GameObject touchedObject = null, exitObject = null;
     [SerializeField] AudioClip[] SEs = new AudioClip[2];
 
     bool isActive = true;
@@ -21,24 +22,25 @@ public class GrabbingHead : MonoBehaviour
         ps = GetComponent<ParticleSystem>();
         asc = GetComponent<AudioSource>();
         asc.PlayOneShot(SEs[0]);
+        touched = false;
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (isActive)
         {
             asc.PlayOneShot(SEs[1]);
             isActive = false;
+            touched = true;
             ps.TriggerSubEmitter(0);
             touchedObject = collision.gameObject;
         }
-
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (!isActive)
         {
             exitObject = collision.gameObject;
+            //Debug.Log(exitObject);
         }
     }
 }

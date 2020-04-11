@@ -49,7 +49,6 @@ public class EnemyContloller : MonoBehaviour
 
         if (isDamage)
         {
-            Debug.Log(attackPow);
             HP -= attackPow;
             HP = Mathf.Round(HP * 10.0f) / 10.0f; //10倍して四捨五入->10で割る
             if (asc != null && SE != null) asc.PlayOneShot(SE);
@@ -136,7 +135,6 @@ public class EnemyContloller : MonoBehaviour
         else if(isGimickAttack && collision.gameObject.tag == "Gimmick")
         {
             GimmickContloller gc = collision.gameObject.GetComponent<GimmickContloller>();
-            Debug.Log("Attack_to_Gimmick_From_Enemy");
             gc.HP -= attackPt;
         }
         else if (gameObject.tag == "PlayerAttack")
@@ -145,12 +143,10 @@ public class EnemyContloller : MonoBehaviour
             float damagePow = rb.mass * dm / 50f;
             if (collision.gameObject.tag == "Enemy")
             {
-                Debug.Log("Attack_to_Enemy_From_Enemy");
                 collision.gameObject.GetComponent<EnemyContloller>().Damage(damagePow);
             }
             if (collision.gameObject.tag == "Gimmick")
             {
-                Debug.Log("Attack_to_Gimmick_From_Enemy");
                 GimmickContloller gc = collision.gameObject.GetComponent<GimmickContloller>();
                 if (damagePow > HP) gc.HP -= HP;
                 else gc.HP -= damagePow;

@@ -69,6 +69,7 @@ public class PlayerContloller : MonoBehaviour
     {
         if (isDamage)
         {
+            Debug.Log("DamageBeam");
             gb.DeleteBeams();
             PlayerHp -= attackPt;
             StartCoroutine(Immortal());
@@ -112,6 +113,7 @@ public class PlayerContloller : MonoBehaviour
         }
         else if (Input.GetMouseButtonUp(0))
         {
+            Debug.Log("ButtonUp");
             gb.DeleteBeams();
         }
         if (Input.GetMouseButtonDown(1) )//|| Dashstamina == MAX_STAMINA)

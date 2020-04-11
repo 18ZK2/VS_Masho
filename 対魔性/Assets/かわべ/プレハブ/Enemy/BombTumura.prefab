@@ -4920,6 +4920,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 0.2
   isGimickAttack: 0
+  CollisionMode: 0
   damageisTrigger: 0
   attackPt: 1
   immortalTime: 2.5
@@ -4930,6 +4931,7 @@ MonoBehaviour:
   dropProba:
   - 0.8
   SE: {fileID: 8300000, guid: 55f3bb519058eb54b8fc5b4719042f4e, type: 3}
+  hitEffect: {fileID: 0}
 --- !u!114 &8683107727862942601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5043,7 +5045,7 @@ GameObject:
   - component: {fileID: 6904429179325659428}
   - component: {fileID: 6904429179325659431}
   - component: {fileID: 8502153466450644777}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
