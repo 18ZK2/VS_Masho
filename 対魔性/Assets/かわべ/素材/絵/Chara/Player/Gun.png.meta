@@ -12,6 +12,7 @@ TextureImporter:
     21300014: Gun_2
     21300016: Gun_3
     21300018: Gun_4
+    21300020: Gun_5
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -119,7 +120,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2a3da65d2511474a83846da4747ea21
+      spriteID: 13a8e5c4ef6f0004e91a7e47d2e95da6
       vertices: []
       indices: 
       edges: []
@@ -139,7 +140,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14ba92a8044c5d448963b9ccdfe280a0
+      spriteID: d4e18ff322979c0499dd4bf37f12ba73
       vertices: []
       indices: 
       edges: []
@@ -159,7 +160,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bdad081a0f2b02a4c8aaac6f295d73ee
+      spriteID: 793ccc367c0e30d4da813bdb0a46f6f5
       vertices: []
       indices: 
       edges: []
@@ -179,7 +180,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40da4fabc5e5bf643b87ea101cf6e4c8
+      spriteID: 9d6c6d8f48b8c3d41a4b86d5e6c9688f
       vertices: []
       indices: 
       edges: []
@@ -199,7 +200,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06c3f442f041b2f41afe75c7646c2054
+      spriteID: cd4bc8a00ec3a7248a656766afbbdc4b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gun_5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 275f27db9101c2e4cadc24a28f16522f
       vertices: []
       indices: 
       edges: []
