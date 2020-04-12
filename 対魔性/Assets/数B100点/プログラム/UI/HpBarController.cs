@@ -15,23 +15,22 @@ public class HpBarController : MonoBehaviour
     {
         Player = GameObject.Find("Player");
         PlayerContloller = Player.GetComponent<PlayerContloller>();
-        ThisgameObject = GameObject.Find("PlayerHealth");
-        slider = GameObject.Find("PlayerHealth").GetComponent<Slider>();
+        slider = GetComponent<Slider>();
         slider.maxValue = PlayerContloller.MaxPlayerHp;
-        Width = 800.0f;
+        Width = 400.0f;
     }
     
     // Update is called once per frame
     void Update()
     {
         slider.maxValue = PlayerContloller.MaxPlayerHp;
-        if (PlayerContloller.MaxPlayerHp < PlayerContloller.PlayerHp) //最大体力変更時max<NowHpとなったとき
-        {
-            PlayerContloller.PlayerHp = PlayerContloller.MaxPlayerHp;
-        }
+        //if (PlayerContloller.MaxPlayerHp < PlayerContloller.PlayerHp) //最大体力変更時max<NowHpとなったとき
+        //{
+        //    PlayerContloller.PlayerHp = PlayerContloller.MaxPlayerHp;
+        //}
 
-        Width = 19.0f * Mathf.Log(PlayerContloller.MaxPlayerHp + 5.0f, 1.10f);  //横幅=最大体力かけ20
-        ThisgameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(Width,30); //HPサイズ変更
+        //Width = 10.0f * PlayerContloller.MaxPlayerHp + 5.0f;//Mathf.Log(PlayerContloller.MaxPlayerHp + 5.0f, 1.0f);  //横幅=最大体力かけ20
+        //ThisgameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(Width,30); //HPサイズ変更
         slider.value = PlayerContloller.PlayerHp;
     }
 }

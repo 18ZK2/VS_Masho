@@ -14,8 +14,7 @@ public class stamina : MonoBehaviour
     {
         Player = GameObject.Find("Player");
         PlayerContloller = Player.GetComponent<PlayerContloller>();
-        ThisgameObject = GameObject.Find("stamina");
-        slider = GameObject.Find("stamina").GetComponent<Slider>();
+        slider = GetComponent<Slider>();
         slider.maxValue = PlayerContloller.MAX_STAMINA;
         Width = 200.0f;
     }
@@ -23,8 +22,8 @@ public class stamina : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        slider.maxValue = PlayerContloller.MAX_STAMINA;
-        ThisgameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(Width, 30);
+        //slider.maxValue = PlayerContloller.MAX_STAMINA;
+        //GetComponent<RectTransform>().sizeDelta = new Vector2(Width, 30);
         slider.value = PlayerContloller.Dashstamina;
     }
 }
