@@ -147,6 +147,7 @@ public class EnemyContloller : MonoBehaviour
             }
             if (collision.gameObject.tag == "Gimmick")
             {
+                
                 GimmickContloller gc = collision.gameObject.GetComponent<GimmickContloller>();
                 if (damagePow > HP) gc.HP -= HP;
                 else gc.HP -= damagePow;
