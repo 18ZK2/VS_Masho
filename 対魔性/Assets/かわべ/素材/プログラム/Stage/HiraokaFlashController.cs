@@ -43,7 +43,6 @@ public class HiraokaFlashController : MonoBehaviour
         map = GetComponent<Tilemap>();
         //タイルマップがある範囲を取得
         bound = map.cellBounds;
-        Debug.Log(bound.size);
         StartCoroutine(flashJudge());
     }
 

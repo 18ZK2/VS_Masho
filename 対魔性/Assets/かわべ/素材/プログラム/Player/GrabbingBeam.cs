@@ -99,6 +99,7 @@ public class GrabbingBeam : MonoBehaviour
         }
         else if (touchedObj != null)
         {
+            touchedObj.layer = 18;
             touchedObj = null;
         }
         //ワイヤーを削除
@@ -172,9 +173,11 @@ public class GrabbingBeam : MonoBehaviour
                     headRigid.mass *= 20f;
                     whipMode = true;
                     touchedObj = gHead.touchedObject;
-                    //グラップビーム痛い
-                    gHead.touchedObject.GetComponent<GimmickContloller>().HP -= attackPt;
                     gHead.touchedObject = null;
+                    //ギミックへダメージ
+                    touchedObj.GetComponent<GimmickContloller>().HP -= attackPt;
+                    //触れた物だけ引き寄せられる
+                    touchedObj.layer = 19;
                     //ヘッドの当たり判定をトリガーに
                     Collider2D col = gHead.GetComponent<Collider2D>();
                     col.isTrigger = true;

@@ -99,6 +99,7 @@
     <Compile Include="Assets\かわべ\素材\プログラム\Stage\GimmickContloller.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\Stage\HiraokaFlashController.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\Stage\Needle.cs" />
+    <Compile Include="Assets\かわべ\素材\プログラム\Stage\TreasureBoxController.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\StartMenu.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\TitleTextContloller.cs" />
     <Compile Include="Assets\数B100点\GameManager.cs" />
