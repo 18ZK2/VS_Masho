@@ -14,7 +14,7 @@ public class PlayerContloller : MonoBehaviour
 
     public int MAX_STAMINA = 200;
     public int Dashstamina= 200;
-
+    private GameObject Gun=null;
     [System.NonSerialized] public bool isDamage = true;
     [System.NonSerialized] public Vector3 bodyVec;
     [System.NonSerialized] public Quaternion armRot;
@@ -87,10 +87,11 @@ public class PlayerContloller : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         gb = transform.Find("体/左腕").GetComponentInChildren<GrabbingBeam>();
         firstPos = transform.position;
-        
+        Gun = gameObject.transform.Find("Gun").gameObject; //銃
     }
 
     // Update is called once per frame
+    [Obsolete]
     void Update()
     {
         //横方向入力
@@ -122,8 +123,16 @@ public class PlayerContloller : MonoBehaviour
         {
             StartCoroutine("stamina_gauge");
         }
-        
-       
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Gun.SetActive(true);
+            Gun.GetComponent<GunController>().isShot = true;
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            Gun.SetActive(false);
+        }
     }
 
     private void LateUpdate()
