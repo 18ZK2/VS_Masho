@@ -5,12 +5,12 @@ using UnityEngine;
 public class BulletControler : MonoBehaviour
 {
     [SerializeField] float AttackP=0.5f;
+    [SerializeField] GameObject hiteffect;
     private EnemyContloller ec;
     // Start is called before the first frame update
     void Start()
     {
         Destroy(gameObject, 3.0f);
-
     }
 
     // Update is called once per frame
@@ -23,11 +23,14 @@ public class BulletControler : MonoBehaviour
         {
             ec = collision.gameObject.GetComponent<EnemyContloller>();
             if(ec!=null) ec.HP -= AttackP;
+            Instantiate(hiteffect, transform.position, Quaternion.identity).transform.parent = null;
             Destroy(gameObject);
         }
         if (collision.gameObject.CompareTag("Gimmick"))
         {
             collision.gameObject.GetComponent<GimmickContloller>().HP -= AttackP;
+            Instantiate(hiteffect, transform.position, Quaternion.identity).transform.parent = null;
+            Destroy(gameObject);
         }
         if (collision.gameObject.CompareTag("Stage"))
         {

@@ -53,7 +53,7 @@ Rigidbody2D:
   m_Mass: 0.5
   m_LinearDrag: 0.2
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -4923,7 +4923,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243147277672478034, guid: 5d5591056dbbbc941b1160a364e82436,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: c2ec53ae20675314ca5a262c2b0cd1fa, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8590722dd890cf34a8b0b5cbcfa3bb6b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.542
   m_Pitch: 1
@@ -5022,6 +5022,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackP: 0.5
+  hiteffect: {fileID: 4549386515681576440, guid: 81ae3ddc1fac53448afbf658e31dd185,
+    type: 3}
 --- !u!1 &7357217163846584331
 GameObject:
   m_ObjectHideFlags: 0
@@ -9761,8 +9763,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1733803553
-  m_SortingLayer: 4
+  m_SortingLayerID: -1774480827
+  m_SortingLayer: 3
   m_SortingOrder: 4
   m_RenderMode: 0
   m_SortMode: 0

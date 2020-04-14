@@ -41,6 +41,9 @@ public class PlayerContloller : MonoBehaviour
 
     Animator anm;
     Rigidbody2D rb;
+
+    //銃
+    GunController gun;
     public IEnumerator stamina_gauge()
     {
         yield return new WaitForSeconds(1.0f);
@@ -88,6 +91,7 @@ public class PlayerContloller : MonoBehaviour
         gb = transform.Find("体/左腕").GetComponentInChildren<GrabbingBeam>();
         firstPos = transform.position;
         Gun = gameObject.transform.Find("Gun").gameObject; //銃
+        gun = Gun.GetComponent<GunController>();
     }
 
     // Update is called once per frame
@@ -127,9 +131,9 @@ public class PlayerContloller : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Gun.SetActive(true);
-            Gun.GetComponent<GunController>().isShot = true;
+            gun.isShot = true;
         }
-        if (Input.GetKeyUp(KeyCode.Space))
+        else if (Input.GetKeyUp(KeyCode.Space) && gun.magazine >= 0)
         {
             Gun.SetActive(false);
         }
