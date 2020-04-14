@@ -18986,6 +18986,7 @@ GameObject:
   - component: {fileID: 3287931504989847173}
   - component: {fileID: 1565937435066247770}
   - component: {fileID: 5392723050264580862}
+  - component: {fileID: 6834999308649352914}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -19221,6 +19222,18 @@ MonoBehaviour:
   - {fileID: 21300012, guid: 88b923d600722354c80b65f671c0fb94, type: 3}
   - {fileID: 21300014, guid: 88b923d600722354c80b65f671c0fb94, type: 3}
   myMat: {fileID: 2100000, guid: a7465cc9f4750ab48bce0d2334d10fe9, type: 2}
+--- !u!114 &6834999308649352914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5684424019440655109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7698f40e8577b304aa33c2b0b1e057a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5684424019544893743
 GameObject:
   m_ObjectHideFlags: 0
@@ -19829,15 +19842,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cab8858e268af564fb06f94ebd27e255, type: 3}
---- !u!1 &1826230867192144667 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1006819893550268539, guid: cab8858e268af564fb06f94ebd27e255,
-    type: 3}
-  m_PrefabInstance: {fileID: 1486436468112696160}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1826230867192144665 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1006819893550268537, guid: cab8858e268af564fb06f94ebd27e255,
+    type: 3}
+  m_PrefabInstance: {fileID: 1486436468112696160}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1826230867192144667 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1006819893550268539, guid: cab8858e268af564fb06f94ebd27e255,
     type: 3}
   m_PrefabInstance: {fileID: 1486436468112696160}
   m_PrefabAsset: {fileID: 0}
@@ -19930,15 +19943,15 @@ PrefabInstance:
       objectReference: {fileID: 1565937435066247770}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56a4d0e1d0709134b8ef8f3f18bcc419, type: 3}
---- !u!1 &2518188734018106461 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4346594741461253139, guid: 56a4d0e1d0709134b8ef8f3f18bcc419,
-    type: 3}
-  m_PrefabInstance: {fileID: 2206855818092660814}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2518188734018106460 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4346594741461253138, guid: 56a4d0e1d0709134b8ef8f3f18bcc419,
+    type: 3}
+  m_PrefabInstance: {fileID: 2206855818092660814}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2518188734018106461 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4346594741461253139, guid: 56a4d0e1d0709134b8ef8f3f18bcc419,
     type: 3}
   m_PrefabInstance: {fileID: 2206855818092660814}
   m_PrefabAsset: {fileID: 0}
@@ -19949,16 +19962,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5684424019440655106}
     m_Modifications:
-    - target: {fileID: 2512134101365992271, guid: 2b723f3587f455245808a7aef26f9184,
-        type: 3}
-      propertyPath: m_Name
-      value: Gun
-      objectReference: {fileID: 0}
-    - target: {fileID: 2512134101365992271, guid: 2b723f3587f455245808a7aef26f9184,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2512134101365992268, guid: 2b723f3587f455245808a7aef26f9184,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20012,6 +20015,16 @@ PrefabInstance:
     - target: {fileID: 2512134101365992268, guid: 2b723f3587f455245808a7aef26f9184,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2512134101365992271, guid: 2b723f3587f455245808a7aef26f9184,
+        type: 3}
+      propertyPath: m_Name
+      value: Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 2512134101365992271, guid: 2b723f3587f455245808a7aef26f9184,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
