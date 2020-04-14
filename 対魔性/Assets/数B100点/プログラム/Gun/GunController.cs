@@ -54,7 +54,7 @@ public class GunController : MonoBehaviour
     void Update()
     {
         anim.SetBool("isShot", isShot);
-        if (magazine <= 0)
+        if (magazine <= 0 && isShot)
         {
             anim.SetTrigger("Reload");
             isShot = false;
