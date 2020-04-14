@@ -78,6 +78,7 @@ public class LaserController : MonoBehaviour
             playedFirstLaser = false;
             LR.enabled = false;
             fireCol.enabled = false;
+            fireEmission.enabled = false;
             laserplaytime = 0f;
             ass.Stop();
             return;

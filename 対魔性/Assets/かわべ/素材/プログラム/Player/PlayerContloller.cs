@@ -128,14 +128,14 @@ public class PlayerContloller : MonoBehaviour
             StartCoroutine("stamina_gauge");
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && gun.magazine > 0)
         {
-            Gun.SetActive(true);
             gun.isShot = true;
         }
-        else if (Input.GetKeyUp(KeyCode.Space) && gun.magazine >= 0)
+        else
         {
-            Gun.SetActive(false);
+            gun.isShot = false;
+            //Gun.SetActive(false);
         }
     }
 

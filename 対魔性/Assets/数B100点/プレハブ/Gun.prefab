@@ -169,8 +169,9 @@ GameObject:
   - component: {fileID: 2512134101365992268}
   - component: {fileID: 2512134101365992269}
   - component: {fileID: 6193042991243212542}
+  - component: {fileID: 2508003432500382465}
   - component: {fileID: 2512134101365992270}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,7 +231,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -314,6 +315,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!70 &2508003432500382465
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2512134101365992271}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -32, y: 0}
+  m_Size: {x: 64, y: 16}
+  m_Direction: 1
 --- !u!114 &2512134101365992270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,14 +343,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a574cba62f361cf47a4faa731ca38147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isShot: 1
+  isShot: 0
   magazine: 0
   magazineSize: 25
-  shotSE: {fileID: 0}
-  ReloadSE: {fileID: 8300000, guid: f849a9ae6e8693a4eaa07a6de8f570d0, type: 3}
+  ReloadSE: {fileID: 8300000, guid: 35ab0d195167bc147845144e0410b9c0, type: 3}
+  shotSE: {fileID: 8300000, guid: 895310663a64255478e99a0bb889f9cb, type: 3}
   f: 400
   Valcan: {fileID: 5510860579912867027, guid: ff5db64eb312cfc4c96552e793c4b919, type: 3}
-  delay: 0.1
 --- !u!1 &2512134101884700369
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,7 +723,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5994983860867087310}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: -58.5, y: -0.3, z: 0.78125}
+  m_LocalPosition: {x: -6, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2512134101365992268}

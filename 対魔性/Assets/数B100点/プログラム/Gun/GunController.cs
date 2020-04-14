@@ -9,34 +9,48 @@ public class GunController : MonoBehaviour
     public int magazine = 0;
 
     [SerializeField] int magazineSize = 25;
-    [SerializeField] AudioClip ReloadSE = null;
+    [SerializeField] AudioClip ReloadSE = null,shotSE = null;
     [SerializeField] float f = 100.0f;
     [SerializeField] GameObject Valcan = null;
-    [Header("連射間隔")] [SerializeField] float delay = 0.2f;
+    //[Header("連射間隔")] [SerializeField] float delay = 0.2f;
 
     private GameObject hassya;
     private Animator anim = null;
     private AudioSource ass;
     private Vector2 vec;
-    
-    public IEnumerator CreateBullet()
+
+    /*public IEnumerator CreateBullet()
     {
+        yield return new WaitForSeconds(delay);
         magazine--;
+        ass.PlayOneShot(shotSE);
         GameObject preval = Instantiate(Valcan, vec, transform.rotation) as GameObject;
         preval.GetComponent<Rigidbody2D>().AddForce(f * -transform.right, ForceMode2D.Impulse);
-        yield return new WaitForSeconds(delay);
+        
+        isShot = true;
+    }*/
+    void Shot()
+    {
+        magazine--;
+        ass.PlayOneShot(shotSE);
+        GameObject preval = Instantiate(Valcan, vec, transform.rotation) as GameObject;
+        preval.GetComponent<Rigidbody2D>().AddForce(f * -transform.right, ForceMode2D.Impulse);
+
         isShot = true;
     }
-    public void Reload()
+    void Reload()
+    {
+        magazine = magazineSize;
+        //gameObject.SetActive(false);
+    }
+    public void ReloadSound()
     {
         ass.PlayOneShot(ReloadSE);
-        magazine = magazineSize;
-        gameObject.SetActive(false);
     }
     // Start is called before the first frame update
     void Start()
     {
-        
+
         hassya = gameObject.transform.Find("hassya").gameObject;
         anim = GetComponent<Animator>();
         ass = GetComponent<AudioSource>();
@@ -47,16 +61,16 @@ public class GunController : MonoBehaviour
     void Update()
     {
         vec = hassya.transform.position;
-        if(magazine < 0 && isShot)
+        anim.SetBool("isShot", isShot);
+        if (magazine <= 0 && isShot)
         {
             anim.SetTrigger("Reload");
             isShot = false;
         }
-        else if (Input.GetKey(KeyCode.Space) && isShot)
-        {
-            StartCoroutine("CreateBullet");
-            isShot = false;
-        }
-        anim.SetBool("isShot",isShot);
+        
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        isShot = false;
     }
 }

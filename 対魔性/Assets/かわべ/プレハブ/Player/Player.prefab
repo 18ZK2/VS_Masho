@@ -19171,7 +19171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4614439bdb9f1d94bbba161376480876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerHp: 810
+  PlayerHp: 15
   MaxPlayerHp: 15
   speed: 1000
   staminaRecSeconds: 0
@@ -19182,7 +19182,7 @@ MonoBehaviour:
   immortalTime: 1.2
   cam: {fileID: 0}
   camOffset: {x: 0, y: 16, z: 0}
-  useLimit: 1
+  useLimit: 0
   limitFromFirstPosY: {x: -64, y: 768}
   limitFromFirstPosX: {x: 0, y: 0}
 --- !u!114 &5392723050264580862
@@ -19962,6 +19962,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5684424019440655106}
     m_Modifications:
+    - target: {fileID: 2512134101365992271, guid: 2b723f3587f455245808a7aef26f9184,
+        type: 3}
+      propertyPath: m_Name
+      value: Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 2512134101365992271, guid: 2b723f3587f455245808a7aef26f9184,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2512134101365992268, guid: 2b723f3587f455245808a7aef26f9184,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20015,16 +20025,6 @@ PrefabInstance:
     - target: {fileID: 2512134101365992268, guid: 2b723f3587f455245808a7aef26f9184,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2512134101365992271, guid: 2b723f3587f455245808a7aef26f9184,
-        type: 3}
-      propertyPath: m_Name
-      value: Gun
-      objectReference: {fileID: 0}
-    - target: {fileID: 2512134101365992271, guid: 2b723f3587f455245808a7aef26f9184,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
