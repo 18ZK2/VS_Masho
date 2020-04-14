@@ -32,9 +32,5 @@ public class BulletControler : MonoBehaviour
             Instantiate(hiteffect, transform.position, Quaternion.identity).transform.parent = null;
             Destroy(gameObject);
         }
-        if (collision.gameObject.CompareTag("Stage"))
-        {
-            Destroy(gameObject);
-        }
     }
 }

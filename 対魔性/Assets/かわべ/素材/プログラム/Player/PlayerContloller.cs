@@ -14,7 +14,6 @@ public class PlayerContloller : MonoBehaviour
 
     public int MAX_STAMINA = 200;
     public int Dashstamina= 200;
-    private GameObject Gun=null;
     [System.NonSerialized] public bool isDamage = true;
     [System.NonSerialized] public Vector3 bodyVec;
     [System.NonSerialized] public Quaternion armRot;
@@ -33,6 +32,8 @@ public class PlayerContloller : MonoBehaviour
     [SerializeField] Vector2 limitFromFirstPosY = new Vector2(-768, 768);
     [SerializeField] Vector2 limitFromFirstPosX = new Vector2(0, 0);
 
+    [Header("サブウェポン")]
+    [SerializeField] GameObject Gun = null;
     GrabbingBeam gb = null;
     bool dash;
     //左右移動用
@@ -43,6 +44,7 @@ public class PlayerContloller : MonoBehaviour
     Rigidbody2D rb;
 
     //銃
+    GameObject gunObj;
     GunController gun;
     public IEnumerator stamina_gauge()
     {
@@ -90,8 +92,8 @@ public class PlayerContloller : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         gb = transform.Find("体/左腕").GetComponentInChildren<GrabbingBeam>();
         firstPos = transform.position;
-        Gun = gameObject.transform.Find("Gun").gameObject; //銃
-        gun = Gun.GetComponent<GunController>();
+        gunObj = Instantiate(Gun, transform.position, transform.rotation);
+        gun = gunObj.GetComponent<GunController>();
     }
 
     // Update is called once per frame
@@ -135,8 +137,9 @@ public class PlayerContloller : MonoBehaviour
         else
         {
             gun.isShot = false;
-            //Gun.SetActive(false);
+            gunObj.transform.rotation = transform.localRotation;
         }
+        gunObj.transform.position = transform.position;
     }
 
     private void LateUpdate()

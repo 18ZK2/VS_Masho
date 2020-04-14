@@ -10,31 +10,24 @@ public class GunController : MonoBehaviour
 
     [SerializeField] int magazineSize = 25;
     [SerializeField] AudioClip ReloadSE = null,shotSE = null;
-    [SerializeField] float f = 100.0f;
+    [SerializeField] float f = 100.0f, accuracy = 15f;
     [SerializeField] GameObject Valcan = null;
     //[Header("連射間隔")] [SerializeField] float delay = 0.2f;
 
     private GameObject hassya;
     private Animator anim = null;
     private AudioSource ass;
-    private Vector2 vec;
 
-    /*public IEnumerator CreateBullet()
-    {
-        yield return new WaitForSeconds(delay);
-        magazine--;
-        ass.PlayOneShot(shotSE);
-        GameObject preval = Instantiate(Valcan, vec, transform.rotation) as GameObject;
-        preval.GetComponent<Rigidbody2D>().AddForce(f * -transform.right, ForceMode2D.Impulse);
-        
-        isShot = true;
-    }*/
     void Shot()
     {
         magazine--;
         ass.PlayOneShot(shotSE);
-        GameObject preval = Instantiate(Valcan, vec, transform.rotation) as GameObject;
-        preval.GetComponent<Rigidbody2D>().AddForce(f * -transform.right, ForceMode2D.Impulse);
+
+        float rand = Random.Range(-accuracy, accuracy);
+        Quaternion q = Quaternion.Euler(0, 0, rand);
+
+        GameObject preval = Instantiate(Valcan, hassya.transform.position, transform.rotation * q) as GameObject;
+        preval.GetComponent<Rigidbody2D>().AddForce(f * preval.transform.right, ForceMode2D.Impulse);
 
         isShot = true;
     }
@@ -60,9 +53,8 @@ public class GunController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        vec = hassya.transform.position;
         anim.SetBool("isShot", isShot);
-        if (magazine <= 0 && isShot)
+        if (magazine <= 0)
         {
             anim.SetTrigger("Reload");
             isShot = false;
