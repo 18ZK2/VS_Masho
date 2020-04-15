@@ -69,6 +69,7 @@ public class GateContloller : MonoBehaviour
             Debug.Log(TimeCount.timer); //クリア時間
             //SceneManager.LoadScene(sceneName);
             GameManager manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+            GameManager.LoadHP = pc.PlayerHp;
             manager.StartCoroutine(manager.WipeLoadScene(sceneName));
             
         }

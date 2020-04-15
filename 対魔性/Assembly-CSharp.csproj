@@ -96,6 +96,7 @@
     <Compile Include="Assets\かわべ\素材\プログラム\Player\PlayerEffectContloller.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\PostEffect.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\Stage\BackGroundContloller.cs" />
+    <Compile Include="Assets\かわべ\素材\プログラム\Stage\ElebatorController.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\Stage\GateContloller.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\Stage\GimmickContloller.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\Stage\HiraokaFlashController.cs" />

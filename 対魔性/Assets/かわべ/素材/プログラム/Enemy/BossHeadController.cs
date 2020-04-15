@@ -98,6 +98,7 @@ public class BossHeadController : MonoBehaviour
         lasers = GetComponentsInChildren<LaserController>();
         Glauncher = launchPoint.GetComponentInParent<EnemyContloller>();
         Glauncher.enabled = false;
+        Glauncher.GetComponent<Collider2D>().enabled = false;
         var player = GameObject.Find("Player");
         if (player != null) target = player.transform;
         StartCoroutine(LaunchGravity());
@@ -112,7 +113,8 @@ public class BossHeadController : MonoBehaviour
             isLaunch = true;
             Glauncher.enabled = true;
             changedLaserProperty = true;
-            
+            Glauncher.GetComponent<Collider2D>().enabled = true;
+
             for (int i = 0; i < lasers.Length; i++)
             {
                 shootProbably[i] *= 0.5f;

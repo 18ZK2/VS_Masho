@@ -34,6 +34,10 @@ public class PlayerContloller : MonoBehaviour
 
     [Header("サブウェポン")]
     [SerializeField] GameObject Gun = null;
+    [System.NonSerialized] public GameObject gunObj;
+    GunController gun;
+
+
     GrabbingBeam gb = null;
     bool dash;
     //左右移動用
@@ -43,9 +47,6 @@ public class PlayerContloller : MonoBehaviour
     Animator anm;
     Rigidbody2D rb;
 
-    //銃
-    GameObject gunObj;
-    GunController gun;
     public IEnumerator stamina_gauge()
     {
         yield return new WaitForSeconds(1.0f);
@@ -140,6 +141,7 @@ public class PlayerContloller : MonoBehaviour
             gunObj.transform.rotation = transform.localRotation;
         }
         gunObj.transform.position = transform.position;
+
     }
 
     private void LateUpdate()

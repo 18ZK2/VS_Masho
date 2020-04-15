@@ -108,6 +108,7 @@ public class PlayerEffectContloller : MonoBehaviour
             if (pc.PlayerHp <= 0)
             {
                 HahenSetup();
+                Destroy(pc.gunObj);
                 Destroy(gameObject);
             }
         }

@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 9049453745033030197}
   - component: {fileID: 2021888277683804894}
   - component: {fileID: 5246031404361136404}
+  - component: {fileID: 4772104874188897377}
   m_Layer: 18
   m_Name: "\u5B9D\u7BB1"
   m_TagString: Gimmick
@@ -4928,3 +4929,19 @@ MonoBehaviour:
   SE: {fileID: 8300000, guid: c2ec53ae20675314ca5a262c2b0cd1fa, type: 3}
   close: {fileID: 21300010, guid: b19bc228ebddb574db6a783dbe0482a9, type: 3}
   open: {fileID: 21300026, guid: b19bc228ebddb574db6a783dbe0482a9, type: 3}
+--- !u!58 &4772104874188897377
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2535043397765544278}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 48

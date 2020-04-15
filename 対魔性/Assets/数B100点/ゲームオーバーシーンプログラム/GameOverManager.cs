@@ -5,17 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class GameOverManager : MonoBehaviour
 {
+    GameManager gm;
     // Start is called before the first frame update
     void Start()
     {
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R)) {
-            if (GameManager.nowscene != null) SceneManager.LoadScene(GameManager.nowscene);
-            else SceneManager.LoadScene("Title");
+            if (GameManager.nowscene != null) gm.StartCoroutine(gm.WipeLoadScene(GameManager.nowscene));//SceneManager.LoadScene(GameManager.nowscene);
+            else gm.StartCoroutine(gm.WipeLoadScene("Title"));
         }
         if (Input.GetKey(KeyCode.Escape))
         {

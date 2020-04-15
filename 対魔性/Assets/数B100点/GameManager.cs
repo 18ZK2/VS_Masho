@@ -8,9 +8,11 @@ public class GameManager : MonoBehaviour
     PlayerContloller pc;
     AudioSource AudioSource;
     public static string nowscene;//現在のシーン
+    public static float LoadHP = 15f;
+
+    GameObject player;
     public IEnumerator WipeLoadScene(string sceneName)
     {
-        Debug.Log("LoadScene " + sceneName);
         //この関数よく使うのでちょっと汚くなたよ
         PostEffect pe = GameObject.Find("Main Camera").GetComponent<PostEffect>();
         for (float wipetime = 1f; wipetime > 0f; wipetime -= 0.01f)
@@ -20,16 +22,22 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
         SceneManager.LoadScene(sceneName);
-        StopAllCoroutines();
+        
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        nowscene = SceneManager.GetActiveScene().name;
+
         AudioSource = GetComponent<AudioSource>();
         GameObject player = GameObject.Find("Player");
-        if (player!=null)pc = player.GetComponent<PlayerContloller>();
+
+        if (player != null)
+        {
+            pc = player.GetComponent<PlayerContloller>();
+            pc.PlayerHp = LoadHP;
+        }
+
     }
     
     // Update is called once per frame
@@ -44,7 +52,11 @@ public class GameManager : MonoBehaviour
             #endif
         }
         if (Input.GetKey(KeyCode.R)&&pc!=null) SceneManager.LoadScene(nowscene);
-        if (pc!=null && pc.PlayerHp <= 0) StartCoroutine(WipeLoadScene("GameOver"));
+        if (pc != null && pc.PlayerHp <= 0)
+        {
+            nowscene = SceneManager.GetActiveScene().name;
+            StartCoroutine(WipeLoadScene("GameOver"));
+        }
     }
 
     public void SoundEffect(AudioClip audioClip)

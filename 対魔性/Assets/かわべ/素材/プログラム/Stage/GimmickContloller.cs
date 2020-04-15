@@ -43,7 +43,6 @@ public class GimmickContloller : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("HP");
                     HP -= e.HP;
                 }
                 e.Damage(damage);

@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/\u304B\u308F\u3079/\u30B7\u30FC\u30F3/Particle.unity"
     guid: e5d0a2bc80114e943b8c1e849b4e3719
+  - enabled: 1
+    path: "Assets/\u304B\u308F\u3079/\u30B7\u30FC\u30F3/Before_Boss.unity"
+    guid: 7e0f1bdbbad1c954d8b7f5af0c7813c5
   m_configObjects: {}

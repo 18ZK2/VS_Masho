@@ -6,7 +6,7 @@ public class TreasureBoxController : MonoBehaviour
 {
     public bool canOpen = false;
     public GameObject Treasure = null;
-    [SerializeField] AudioClip SE;
+    [SerializeField] AudioClip SE = null;
     [SerializeField] Sprite close = null, open = null;
 
     bool opened = false;
@@ -42,14 +42,14 @@ public class TreasureBoxController : MonoBehaviour
             emmision.enabled = true;
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!opened && collision.gameObject.tag == "Player")
+        if (canOpen && collision.gameObject.tag == "Player")
         {
-            opened = true;
             gc.HP = 1;
-            if (Treasure != null)
+            if (!opened && Treasure != null)
             {
+                opened = true;
                 ass.PlayOneShot(SE);
                 Vector3 pos = transform.position + Vector3.up * 32;
                 GameObject t = Instantiate(Treasure, pos, Quaternion.identity);
