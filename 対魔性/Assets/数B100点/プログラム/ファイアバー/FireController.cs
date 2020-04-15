@@ -7,7 +7,7 @@ public class FireController : MonoBehaviour
     PlayerContloller player;
     [SerializeField] GameObject thisgo = null;
     [Header("個数")] public int n;
-    [Header("ダメージ")] [SerializeField] float damage = 0.1f;
+    //[Header("ダメージ")] [SerializeField] float damage = 0.1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,11 +25,11 @@ public class FireController : MonoBehaviour
     {
 
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            player.Damage(damage);
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Player")
+    //    {
+    //        player.Damage(damage);
+    //    }
+    //}
 }

@@ -8,8 +8,9 @@ public class TreasureBoxController : MonoBehaviour
     public GameObject Treasure = null;
     [SerializeField] AudioClip SE = null;
     [SerializeField] Sprite close = null, open = null;
-
+    [Header("ボタンと連動")][SerializeField] GameObject button = null; 
     bool opened = false;
+    ButtonController bc;
     SpriteRenderer sr;
     ParticleSystem ps;
     ParticleSystem.EmissionModule emmision;
@@ -19,6 +20,12 @@ public class TreasureBoxController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (button == null) canOpen = true;
+        else
+        {
+            canOpen = false;
+            bc = button.GetComponent<ButtonController>();
+        }
         sr = GetComponent<SpriteRenderer>();
         ps = GetComponent<ParticleSystem>();
         ass = GetComponent<AudioSource>();
@@ -32,6 +39,7 @@ public class TreasureBoxController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (bc != null && bc.on == true) canOpen = true;
         if (opened)
         {
             emmision.enabled = false;

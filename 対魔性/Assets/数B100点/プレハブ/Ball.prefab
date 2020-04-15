@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3012368507384021214}
   - component: {fileID: 3012368507384021208}
   - component: {fileID: 6592684207921631407}
+  - component: {fileID: 114311976187468058}
   m_Layer: 11
   m_Name: Ball
   m_TagString: Enemy
@@ -67,8 +68,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1733803553
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f5fbcc13d2e720b4c839c606f3799ac8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -116,3 +117,26 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 11.391151
+--- !u!114 &114311976187468058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3012368507384021213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 608aaa94976f1504e972fb09e8dbc636, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: Infinity
+  isGimickAttack: 0
+  CollisionMode: 0
+  damageisTrigger: 1
+  attackPt: 3
+  immortalTime: 0.5
+  mustDrop: {fileID: 0}
+  dropItem: []
+  dropProba: []
+  SE: {fileID: 0}
+  hitEffect: {fileID: 0}

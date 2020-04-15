@@ -28,12 +28,11 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         AudioSource = GetComponent<AudioSource>();
         GameObject player = GameObject.Find("Player");
-
         if (player != null)
         {
+            nowscene = SceneManager.GetActiveScene().name;
             pc = player.GetComponent<PlayerContloller>();
             pc.PlayerHp = LoadHP;
         }
@@ -43,6 +42,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(nowscene);
         if (Input.GetKey(KeyCode.Escape))
         {
             #if UNITY_EDITOR
@@ -54,7 +54,6 @@ public class GameManager : MonoBehaviour
         if (Input.GetKey(KeyCode.R)&&pc!=null) SceneManager.LoadScene(nowscene);
         if (pc != null && pc.PlayerHp <= 0)
         {
-            nowscene = SceneManager.GetActiveScene().name;
             StartCoroutine(WipeLoadScene("GameOver"));
         }
     }
