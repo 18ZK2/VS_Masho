@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameOverManager : MonoBehaviour
 {
     GameManager gm;
+    bool loaded = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,11 +16,13 @@ public class GameOverManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R)) {
+        if (Input.GetKeyDown(KeyCode.R) && !loaded)
+        {
+            loaded = true;
             if (GameManager.nowscene != null) gm.StartCoroutine(gm.WipeLoadScene(GameManager.nowscene));//SceneManager.LoadScene(GameManager.nowscene);
             else gm.StartCoroutine(gm.WipeLoadScene("Title"));
         }
-        if (Input.GetKey(KeyCode.Escape))
+        else if (Input.GetKey(KeyCode.Escape))
         {
             #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
