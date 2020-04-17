@@ -23,14 +23,14 @@ public class BossFootController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         bool launchMissile = false;
-        
+
         motor.motorSpeed = jointPow;
         footJoint.motor = motor;
         footJoint.useMotor = isLaunch;
         //ボスの体より高いところだとミサイル
-        if (player != null && player.position.y > bodyTrans.position.y) launchMissile = true;
+        if (player != null && bodyTrans != null && player.position.y > bodyTrans.position.y) launchMissile = true;
         if (launcher != null) launcher.isLaunch = launchMissile;
     }
 }

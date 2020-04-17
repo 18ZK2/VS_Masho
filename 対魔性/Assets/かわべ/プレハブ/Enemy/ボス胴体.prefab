@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4793331907959396310}
   - component: {fileID: 7450682377156316999}
   - component: {fileID: 8686345144840549088}
+  - component: {fileID: 3327117776591889648}
   m_Layer: 10
   m_Name: "\u30DC\u30B9\u80F4\u4F53"
   m_TagString: Untagged
@@ -133,6 +134,24 @@ CapsuleCollider2D:
   m_Offset: {x: -33, y: 52}
   m_Size: {x: 135, y: 72}
   m_Direction: 1
+--- !u!114 &3327117776591889648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629236075554602373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9169418157a091c4688fabb0b5d76997, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  huwa: 0.2
+  MoveRange: 10
+  bakuha: {fileID: 5168089914053114228, guid: a3f099c1e9b68c4418d75ca840329aeb, type: 3}
+  pikadon: {fileID: 4273188554525331103, guid: ef119d1663b7bea44bec3f568c0fbc83, type: 3}
+  head: {fileID: 0}
+  missile: {fileID: 0}
 --- !u!1 &3696796256191085944
 GameObject:
   m_ObjectHideFlags: 0

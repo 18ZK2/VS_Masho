@@ -4926,9 +4926,10 @@ MonoBehaviour:
   canOpen: 0
   Treasure: {fileID: 1307013320256197413, guid: f63a1e4cd58ed01468bad0c35321d2a4,
     type: 3}
-  SE: {fileID: 8300000, guid: c2ec53ae20675314ca5a262c2b0cd1fa, type: 3}
+  SE: {fileID: 8300000, guid: 9ccd388e2e0ef5c41b9c4a5f085721e2, type: 3}
   close: {fileID: 21300010, guid: b19bc228ebddb574db6a783dbe0482a9, type: 3}
   open: {fileID: 21300026, guid: b19bc228ebddb574db6a783dbe0482a9, type: 3}
+  button: {fileID: 0}
 --- !u!58 &4772104874188897377
 CircleCollider2D:
   m_ObjectHideFlags: 0

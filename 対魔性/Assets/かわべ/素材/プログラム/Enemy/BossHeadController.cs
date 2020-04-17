@@ -18,8 +18,9 @@ public class BossHeadController : MonoBehaviour
 
     [Header("全滅時")]
     [SerializeField] Color deadColor = Color.gray;
+    [SerializeField] LauncherController missile = null;
 
-    bool changedLaserProperty = false;
+    bool changedLaserProperty = false,deadAll = false;
     Transform target;
     AudioSource ass;
     LaserController[] lasers;
@@ -120,9 +121,12 @@ public class BossHeadController : MonoBehaviour
                 shootProbably[i] *= 0.5f;
             }
         }
-        if (Glauncher == null)
+        if (Glauncher == null && !deadAll)
         {
+            deadAll = true;
             GetComponent<SpriteRenderer>().color = deadColor;
+            EnemyContloller missileE = missile.GetComponent<EnemyContloller>();
+            missileE.Damage(missileE.HP);
             foreach(var l in lasers)
             {
                 l.isLaunch = false;

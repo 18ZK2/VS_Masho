@@ -42,7 +42,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(nowscene);
         if (Input.GetKey(KeyCode.Escape))
         {
             #if UNITY_EDITOR
