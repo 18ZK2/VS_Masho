@@ -23,11 +23,12 @@ public class huwahuwa : MonoBehaviour
             yield return new WaitForSeconds(0.25f);
         }
         Instantiate(pikadon, transform).transform.parent = null;
-        Destroy(transform.parent.gameObject);
+        
         GameManager game = GameObject.Find("GameManager").GetComponent<GameManager>();
         yield return new WaitForSeconds(5f);
         game.StartCoroutine( game.WipeLoadScene("Title"));
-        
+        Destroy(transform.parent.gameObject);
+
     }
     // Start is called before the first frame update
     void Start()
