@@ -10,9 +10,11 @@ public class GameManager : MonoBehaviour
     public static string nowscene;//現在のシーン
     public static float LoadHP = 15f;
 
+    bool loading = false;
     GameObject player;
     public IEnumerator WipeLoadScene(string sceneName)
     {
+        loading = true;
         //この関数よく使うのでちょっと汚くなたよ
         PostEffect pe = GameObject.Find("Main Camera").GetComponent<PostEffect>();
         for (float wipetime = 1f; wipetime > 0f; wipetime -= 0.01f)
@@ -22,7 +24,7 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
         SceneManager.LoadScene(sceneName);
-        
+        loading = false;
     }
 
     // Start is called before the first frame update
@@ -50,7 +52,7 @@ public class GameManager : MonoBehaviour
             Application.Quit();
             #endif
         }
-        if (Input.GetKey(KeyCode.R)&&pc!=null) SceneManager.LoadScene(nowscene);
+        if (Input.GetKey(KeyCode.R)&&pc!=null &&!loading) SceneManager.LoadScene(nowscene);
         if (pc != null && pc.PlayerHp <= 0)
         {
             StartCoroutine(WipeLoadScene("GameOver"));

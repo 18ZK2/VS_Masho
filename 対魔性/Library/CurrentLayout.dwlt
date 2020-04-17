@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 950, y: 398}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -44,10 +44,10 @@ MonoBehaviour:
     y: 30
     width: 1536
     height: 740
-  m_MinSize: {x: 683, y: 348}
-  m_MaxSize: {x: 12008, y: 8048}
+  m_MinSize: {x: 683, y: 498}
+  m_MaxSize: {x: 14004, y: 14048}
   vertical: 0
-  controlID: 30
+  controlID: 99
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -120,15 +120,15 @@ MonoBehaviour:
     y: 448
     width: 1074
     height: 292
-  m_MinSize: {x: 102, y: 124}
-  m_MaxSize: {x: 4002, y: 4024}
-  m_ActualView: {fileID: 21}
+  m_MinSize: {x: 232, y: 274}
+  m_MaxSize: {x: 10002, y: 10024}
+  m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
   - {fileID: 21}
   - {fileID: 12}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -217,10 +217,10 @@ MonoBehaviour:
     y: 0
     width: 1074
     height: 740
-  m_MinSize: {x: 406, y: 348}
-  m_MaxSize: {x: 8006, y: 8048}
+  m_MinSize: {x: 406, y: 498}
+  m_MaxSize: {x: 10002, y: 14048}
   vertical: 1
-  controlID: 31
+  controlID: 100
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 224}
   m_MaxSize: {x: 8006, y: 4024}
   vertical: 0
-  controlID: 32
+  controlID: 49
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -303,7 +303,7 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -1984
+  m_LastSelectedObjectID: -1094
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -531,20 +531,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - "Assets/\u304B\u308F\u3079/\u30D7\u30EC\u30CF\u30D6/Stage"
+    - "Assets/\u304B\u308F\u3079/\u30B7\u30FC\u30F3"
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - "Assets/\u304B\u308F\u3079/\u30D7\u30EC\u30CF\u30D6/Stage"
+  - "Assets/\u304B\u308F\u3079/\u30B7\u30FC\u30F3"
   m_LastFoldersGridSize: -1
   m_LastProjectPath: "C:\\Users\\RunRunDeadly\\Documents\\GitHub\\VS_Masho\\\u5BFE\u9B54\u6027"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 365}
-    m_SelectedIDs: ce280000
-    m_LastClickedID: 10446
-    m_ExpandedIDs: 0000000040070000b00a0000c80a00000e0b00005a0b0000080c0000a20c00001a0d0000360d00006a0d00001c0e0000600e00007e0e0000da0e00007a0f00007c0f0000a80f0000ac0f0000ec0f00000e1000001c100000e41000004611000070110000a4110000a6110000ee110000b8120000d8120000f61300001a1400008a14000090140000
+    m_SelectedIDs: 180e0000
+    m_LastClickedID: 3608
+    m_ExpandedIDs: 0000000040070000b00a0000c80a00000e0b00005a0b0000080c0000a20c00001a0d0000360d00006a0d00001c0e0000600e00007e0e0000da0e00007a0f00007c0f0000a80f0000ac0f0000ec0f00000e1000001c100000e41000004611000070110000a4110000a6110000ee110000b8120000d8120000f61300001a1400008a1400009014000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -560,7 +560,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 5}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -691,9 +691,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 40f8ffff
-      m_LastClickedID: -1984
-      m_ExpandedIDs: 7ef9ffffbcfbffffd4160000
+      m_SelectedIDs: 4c0f0000
+      m_LastClickedID: 0
+      m_ExpandedIDs: e8ebffffc2f3ffffd6f4ffffbcfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -855,18 +855,18 @@ MonoBehaviour:
       y: 17
       width: 804
       height: 411
-    m_Scale: {x: 0.6931788, y: 0.69317883}
-    m_Translation: {x: 401.99997, y: 205.43488}
+    m_Scale: {x: 0.6689453, y: 0.6689453}
+    m_Translation: {x: 402, y: 205.50002}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -579.93695
-      y: -296.36633
-      width: 1159.8739
-      height: 592.9206
+      x: -600.946
+      y: -307.2
+      width: 1201.892
+      height: 614.4
     m_MinimalGUI: 1
   m_defaultScale: 0.6689453
   m_TargetTexture: {fileID: 0}
