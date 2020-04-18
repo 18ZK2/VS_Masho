@@ -5116,7 +5116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 20
   isGimickAttack: 0
-  CollisionMode: 0
+  CollisionMode: 1
   damageisTrigger: 0
   attackPt: 1
   immortalTime: 1.5
