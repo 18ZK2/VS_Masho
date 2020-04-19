@@ -131,13 +131,12 @@ public class PlayerContloller : MonoBehaviour
             StartCoroutine("stamina_gauge");
         }
 
-        if (Input.GetKey(KeyCode.Space) && gun.magazine >= 0)
+        if (Input.GetKey(KeyCode.Space) && gun.magazine > 0)
         {
             gun.isShot = true;
         }
         else
         {
-            gun.isShot = false;
             gunObj.transform.rotation = transform.localRotation;
         }
         gunObj.transform.position = transform.position;
