@@ -7,25 +7,28 @@ using UnityEngine.UI;
 //プレイヤーの操作について
 public class PlayerContloller : MonoBehaviour
 {
+
+    public bool canUseGun = false;
+
     public float PlayerHp=15;
     public float MaxPlayerHp = 40;
-    public float speed;
-    public float staminaRecSeconds;
+    public float speed = 1000;
+    public float dashPow = 1000;
 
-    public int MAX_STAMINA = 200;
-    public int Dashstamina= 200;
+    public float MAX_STAMINA = 200;
+    public float Dashstamina= 200;
+    public float recoverySpeed = 2f;
+
     [System.NonSerialized] public bool isDamage = true;
     [System.NonSerialized] public Vector3 bodyVec;
     [System.NonSerialized] public Quaternion armRot;
 
     [SerializeField] float camSpeed = 0.5f;
-    
-    [SerializeField] float dashPow = 0;
+
     //ダメージ後の無敵時間
     [SerializeField] float immortalTime = 0.5f;
     
     [Header("カメラ関係")]
-    [SerializeField] GameObject cam = null;
     [SerializeField] Vector3 camOffset = Vector3.zero;
     [SerializeField] bool useLimit = false;
     [Header("X要素に下限　Y要素に上限")]
@@ -37,28 +40,27 @@ public class PlayerContloller : MonoBehaviour
     [System.NonSerialized] public GameObject gunObj;
     GunController gun;
 
-
-    GrabbingBeam gb = null;
     bool dash;
     //左右移動用
     Vector2 walkVec;
     Vector3 firstPos,camBeforePos;
 
+    GameObject cam;
     Animator anm;
     Rigidbody2D rb;
+    GrabbingBeam gb = null;
 
-    public IEnumerator stamina_gauge()
+    public IEnumerator StaninaRecovery()
     {
         yield return new WaitForSeconds(1.0f);
         if (MAX_STAMINA < Dashstamina) Dashstamina = MAX_STAMINA;
         while (Dashstamina < MAX_STAMINA)
         {
-            yield return new WaitForSeconds(staminaRecSeconds);
-            Dashstamina += 2;
+            yield return null;
+            Dashstamina += recoverySpeed;
         }
         
     }
-
     private IEnumerator Immortal()
     {
         isDamage = false;
@@ -70,7 +72,6 @@ public class PlayerContloller : MonoBehaviour
     {
         rb.velocity = Vector2.zero;
     }
-
     public void Damage(float attackPt)
     {
         if (isDamage)
@@ -89,12 +90,17 @@ public class PlayerContloller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cam = Camera.main.gameObject;
         anm = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         gb = transform.Find("体/左腕").GetComponentInChildren<GrabbingBeam>();
         firstPos = transform.position;
-        gunObj = Instantiate(Gun, transform.position, transform.rotation);
-        gun = gunObj.GetComponent<GunController>();
+        if (canUseGun)
+        {
+            gunObj = Instantiate(Gun, transform.position, transform.rotation);
+            gun = gunObj.GetComponent<GunController>();
+        }
+        Dashstamina = MAX_STAMINA;
     }
 
     // Update is called once per frame
@@ -128,19 +134,21 @@ public class PlayerContloller : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(1))
         {
-            StartCoroutine("stamina_gauge");
+            StartCoroutine(StaninaRecovery());
         }
 
-        if (Input.GetKey(KeyCode.Space) && gun.magazine > 0)
+        if (canUseGun)
         {
-            gun.isShot = true;
+            if (Input.GetKey(KeyCode.Space) && gun.magazine > 0)
+            {
+                gun.isShot = true;
+            }
+            else
+            {
+                gunObj.transform.rotation = transform.localRotation;
+            }
+            gunObj.transform.position = transform.position;
         }
-        else
-        {
-            gunObj.transform.rotation = transform.localRotation;
-        }
-        gunObj.transform.position = transform.position;
-
     }
 
     private void LateUpdate()

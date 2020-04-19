@@ -18,7 +18,7 @@ public class GunController : MonoBehaviour
     private GameObject hassya;
     private Animator anim = null;
     private AudioSource ass;
-    private Text ammo;
+    public Text ammo;
 
     void Shot()
     {

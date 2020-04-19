@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Text;
+using System.IO;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +15,9 @@ public class GameManager : MonoBehaviour
 
     bool loading = false;
     GameObject player;
+    StreamWriter sw;
+    StreamReader sr;
+
     public IEnumerator WipeLoadScene(string sceneName)
     {
         loading = true;
@@ -26,10 +32,88 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(sceneName);
         loading = false;
     }
-
-    // Start is called before the first frame update
-    void Start()
+    public void Save(int index, string value)
     {
+        // 引数説明：第1引数→ファイル読込先, 第2引数→エンコード
+        sr = new StreamReader(@"saveData.csv", Encoding.GetEncoding("Shift_JIS"));
+        int i = 0;
+        string line = "";
+        string[] data = null;
+        List<string[]> vs = new List<string[]>();
+        while ((line = sr.ReadLine()) != null)
+        {
+            // コンソールに出力
+            var arr = line.Split(',');
+            vs.Add(arr);
+            if (i == index)
+            {
+                arr[1] = value;
+                data = arr;
+                Debug.Log(data);
+            }
+            i++;
+        }
+        sr.Close();
+        sw = new StreamWriter(@"saveData.csv", false, Encoding.GetEncoding("Shift_JIS"));
+        foreach(string[] v in vs)
+        {
+            string a = "";
+            if (v[0] == data[0])
+            {
+                a = string.Join(",", data);
+            }
+            else
+            {
+                a = string.Join(",", v);
+            }
+            sw.WriteLine(a);
+            Debug.Log(a);
+        }
+        sw.Close();
+    }
+    public void Load()
+    {
+        // 引数説明：第1引数→ファイル読込先, 第2引数→エンコード
+        sr = new StreamReader(@"saveData.csv", Encoding.GetEncoding("Shift_JIS"));
+        string line = "";
+        List<string[]> vs = new List<string[]>();
+        while ((line = sr.ReadLine()) != null)
+        {
+            var arr = line.Split(',');
+            if (arr[0] == "CanUseGun") pc.canUseGun = System.Convert.ToBoolean(arr[1]);
+            else if (arr[0] == "MaxHp") pc.MaxPlayerHp = (float)System.Convert.ToDouble(arr[1]);
+            else if (arr[0] == "speed") pc.speed = (float)System.Convert.ToDouble(arr[1]);
+            else if (arr[0] == "dashPow") pc.dashPow = (float)System.Convert.ToDouble(arr[1]);
+            else if (arr[0] == "MaxStamina") pc.MAX_STAMINA = (float)System.Convert.ToDouble(arr[1]);
+            else if (arr[0] == "recovSpeed") pc.recoverySpeed = (float)System.Convert.ToDouble(arr[1]);
+        }
+        sr.Close();
+    }
+    public void Setup()
+    {
+        // ファイル書き出し
+        // 現在のフォルダにsaveData.csvを出力する(決まった場所に出力したい場合は絶対パスを指定してください)
+        // 引数説明：第1引数→ファイル出力先, 第2引数→ファイルに追記(true)or上書き(false), 第3引数→エンコード
+        sw = new StreamWriter(@"saveData.csv", false, Encoding.GetEncoding("Shift_JIS"));
+        string[] s1 = { "PlayerValue", "Value" };
+        string[] makedData = { "makedData", "" + true };
+        string[] canUseGun = { "CanUseGun", "" + false };
+        string[] MaxHp = { "MaxHp", "" + 15 };
+        string[] speed = { "speed", "" + 1000 };
+        string[] dashPow = { "dashPow", "" + 1000 };
+        string[] MaxStamina = { "MaxStamina", "" + 200 };
+        string[] recovSpeed = { "recovSpeed", "" + 2 };
+        string[][] a = { s1,makedData, canUseGun, MaxHp, speed, dashPow, MaxStamina, recovSpeed };
+        foreach(string[] s in a)
+        {
+            sw.WriteLine(string.Join(",", s));
+        }
+        sw.Close();
+    }
+
+    private void Awake()
+    {
+        Save(1, "" + true);
         AudioSource = GetComponent<AudioSource>();
         GameObject player = GameObject.Find("Player");
         if (player != null)
@@ -37,7 +121,14 @@ public class GameManager : MonoBehaviour
             nowscene = SceneManager.GetActiveScene().name;
             pc = player.GetComponent<PlayerContloller>();
             pc.PlayerHp = LoadHP;
+            Load();
         }
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+        //Setup();
+        
 
     }
     

@@ -22,8 +22,6 @@ public class stamina : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //slider.maxValue = PlayerContloller.MAX_STAMINA;
-        //GetComponent<RectTransform>().sizeDelta = new Vector2(Width, 30);
         slider.value = PlayerContloller.Dashstamina;
     }
 }

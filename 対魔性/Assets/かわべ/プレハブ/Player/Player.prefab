@@ -19170,16 +19170,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4614439bdb9f1d94bbba161376480876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerHp: 15
-  MaxPlayerHp: 15
-  speed: 1000
-  staminaRecSeconds: 0
-  MAX_STAMINA: 200
-  Dashstamina: 200
+  canUseGun: 0
+  PlayerHp: 0
+  MaxPlayerHp: 0
+  speed: 0
+  dashPow: 0
+  MAX_STAMINA: 0
+  Dashstamina: 0
+  recoverySpeed: 0
   camSpeed: 2.5
-  dashPow: 1000
   immortalTime: 1.2
-  cam: {fileID: 0}
   camOffset: {x: 0, y: 16, z: 0}
   useLimit: 0
   limitFromFirstPosY: {x: -64, y: 768}
