@@ -1,13 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GunController : MonoBehaviour
 {
 
     public bool isShot = true;
     public int magazine = 0;
-
+    public Text ammo;
+    public Text MAX_ammo;
+  
     [SerializeField] int magazineSize = 25;
     [SerializeField] AudioClip ReloadSE = null,shotSE = null;
     [SerializeField] float f = 100.0f, accuracy = 15f;
@@ -30,6 +33,7 @@ public class GunController : MonoBehaviour
         preval.GetComponent<Rigidbody2D>().AddForce(f * preval.transform.right, ForceMode2D.Impulse);
 
         isShot = true;
+       
     }
     void Reload()
     {
@@ -48,6 +52,8 @@ public class GunController : MonoBehaviour
         anim = GetComponent<Animator>();
         ass = GetComponent<AudioSource>();
         magazine = magazineSize;
+        ammo.text = magazine.ToString();
+        MAX_ammo.text= "/" + magazineSize.ToString();
     }
 
     // Update is called once per frame
@@ -59,7 +65,8 @@ public class GunController : MonoBehaviour
             anim.SetTrigger("Reload");
             isShot = false;
         }
-        
+        ammo.text = magazine.ToString() ;
+        MAX_ammo.text = "/" + magazineSize.ToString();
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
