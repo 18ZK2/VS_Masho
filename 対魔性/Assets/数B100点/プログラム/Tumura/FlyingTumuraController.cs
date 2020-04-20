@@ -36,10 +36,7 @@ public class FlyingTumuraController : MonoBehaviour
         {
             rb.AddForce(new Vector2(0.0f, 1.0f) * rb.mass * rb.gravityScale * 16f, ForceMode2D.Force); //重力を打ち消す
         }
-        if (hit2.collider &&homing==null)
-        {
-            exit = hit2;
-        }
+        if (hit2.collider &&homing==null) exit = hit2;
         else if (exit == true && homing==null &&!CompareTag("PlayerAttack")) //homingのときは使わない 一度だけ実行(OnCollisionExitみたいな)
         {
             exit = hit2;
