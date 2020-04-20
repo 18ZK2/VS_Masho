@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/RunRunDeadly/Downloads/Alpha3_8_3D/対魔性.exe
+C:/Users/RunRunDeadly/Downloads/Alpha3_9D/対魔性.exe
 SceneListBegin?
 Assets/かわべ/シーン/Title.unity
 Assets/かわべ/シーン/Map.unity
@@ -62,8 +62,6 @@ aa165095bcf0f4d99594ea33df01c81b UnityEngine.UI.dll:UnityEngine.UI.Slider
 abf1930d8126d0b2e00e9449129a0190 UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 64e54c0cbb0177c5ea26f340efb9ff85 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
 d3c76b14a25eebd3a3323dd43297919c Unity.TextMeshPro.dll:TMPro.TMP_InputField
-71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
-71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
 cf9f5cf2c3145a37ac07f00e50e460f9 UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 507174d46dacbc5fe45e28485db5dd1e UnityEngine.UI.dll:UnityEngine.UI.Button
@@ -135,6 +133,7 @@ d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.Spa
 6d984672e986fc085f57dfdaaa1f4138 Assembly-CSharp.dll:.BackGroundContloller
 e11d653a2c2e6bfa2cc66b1f6b0865c4 Assembly-CSharp.dll:.HomingTumura
 90fdd057aab8b3118a8d74ffcfa1cbc7 Assembly-CSharp.dll:.EnemyContloller
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.AmmoUI
 303ad70ce203ad874efe2965d0fbcff9 Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsEventTracker
 7fb9de8dcf73854b6b328eca1f7a6e6d Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsTracker
 7e6635c22fcf708da8c17908b1e4e2a8 Assembly-CSharp.dll:.HahenParticle
@@ -146,7 +145,7 @@ eda93e9a3c7bff6c58c39b3620caa536 Assembly-CSharp.dll:.ToggleController
 2e6532fed148b864d5204f57225fe086 Assembly-CSharp.dll:.BurnerController
 b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 67a8dd09c9be70a4e6bdaee32cb72318 Assembly-CSharp.dll:.HiraokaFlashController
-28b94a7d41ad14d43103d4d6c6a52002 Assembly-CSharp.dll:.GunController
+a7fb4323149badf306261f28735ed8dc Assembly-CSharp.dll:.GunController
 4186d0efeaee5b3aa4d3f16ffb75e4df Assembly-CSharp.dll:.LauncherController
 b7be66dd132bb3c1610215fb1896c5c6 Assembly-CSharp.dll:.EnemyHpController
 49896a21ba2a7e78de54aa7c3572a8ed Assembly-CSharp.dll:.FlyingTumuraController
@@ -199,7 +198,7 @@ fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEng
 5b0391b7e3d9ea9db6c0a8fbd0ca23f6 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
 21f4a4d3f4fa1eb726d36055d6341ec5 Assembly-CSharp.dll:.MKItem
 c7e88837f207a8cc5f7ba72a28f64280 Assembly-CSharp.dll:.EnemyJudge
-e557b6826d1e009a1790fa719edc303c Assembly-CSharp.dll:.PlayerContloller
+e7aec510f69ca6705fcb4907491a6e0c Assembly-CSharp.dll:.PlayerContloller
 679cafb5933489986ba79eec0918bd97 Assembly-CSharp.dll:.PlayerEffectContloller
 3b3bf14021899a113dbb5c9e4f0d86ad Assembly-CSharp.dll:UnityEngine.Tilemaps.GridInformation
 3b760e6526e13f7504f59e210145899a Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
@@ -212,6 +211,7 @@ d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.Spa
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.GameOverManager
 490a4632ae50fb0b65bba5aaaf7edebd Assembly-CSharp.dll:.TintTextureGenerator
 7ba35897a6eb27627ed456c682c34253 Assembly-CSharp.dll:UnityEngine.Tilemaps.TerrainTile
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.UIFindCam
 b6655facfc69c02c069a450634e7e800 Assembly-CSharp.dll:Kino.Tube
 a5a7c86e5197ec4a069c35addcde74d3 Assembly-CSharp.dll:.RecoveryItem
 d791aa6007fa3640be1164ea75bb087d Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet

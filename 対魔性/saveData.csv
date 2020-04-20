@@ -1,6 +1,6 @@
-PlayerValue,Value
+﻿PlayerValue,Value
 makedData,True
-CanUseGun,True
+CanUseGun,False
 MaxHp,15
 speed,1000
 dashPow,1000

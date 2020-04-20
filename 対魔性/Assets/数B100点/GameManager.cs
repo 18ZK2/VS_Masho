@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
     public void Save(int index, string value)
     {
         // 引数説明：第1引数→ファイル読込先, 第2引数→エンコード
-        sr = new StreamReader(@"saveData.csv", Encoding.GetEncoding("Shift_JIS"));
+        sr = new StreamReader(@"saveData.csv", Encoding.GetEncoding("UTF-8"));
         int i = 0;
         string line = "";
         string[] data = null;
@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
             i++;
         }
         sr.Close();
-        sw = new StreamWriter(@"saveData.csv", false, Encoding.GetEncoding("Shift_JIS"));
+        sw = new StreamWriter(@"saveData.csv", false, Encoding.GetEncoding("UTF-8"));
         foreach(string[] v in vs)
         {
             string a = "";
@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
     public void Load()
     {
         // 引数説明：第1引数→ファイル読込先, 第2引数→エンコード
-        sr = new StreamReader(@"saveData.csv", Encoding.GetEncoding("Shift_JIS"));
+        sr = new StreamReader(@"saveData.csv", Encoding.GetEncoding("UTF-8"));
         string line = "";
         List<string[]> vs = new List<string[]>();
         while ((line = sr.ReadLine()) != null)
@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
         // ファイル書き出し
         // 現在のフォルダにsaveData.csvを出力する(決まった場所に出力したい場合は絶対パスを指定してください)
         // 引数説明：第1引数→ファイル出力先, 第2引数→ファイルに追記(true)or上書き(false), 第3引数→エンコード
-        sw = new StreamWriter(@"saveData.csv", false, Encoding.GetEncoding("Shift_JIS"));
+        sw = new StreamWriter(@"saveData.csv", false, Encoding.GetEncoding("UTF-8"));
         string[] s1 = { "PlayerValue", "Value" };
         string[] makedData = { "makedData", "" + true };
         string[] canUseGun = { "CanUseGun", "" + false };
