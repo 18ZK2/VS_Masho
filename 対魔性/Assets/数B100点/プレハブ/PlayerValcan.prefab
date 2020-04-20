@@ -4923,7 +4923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afe8b9a3b366be34cb21380456cd124e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackP: 0.5
+  AttackP: 1
   hiteffect: {fileID: 4549386515681576440, guid: 81ae3ddc1fac53448afbf658e31dd185,
     type: 3}
 --- !u!1 &7357217163846584331
