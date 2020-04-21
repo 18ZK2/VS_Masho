@@ -244,6 +244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkspeed: -500
   turning: 0
+  st: 1
 --- !u!82 &6357843543070692804
 AudioSource:
   m_ObjectHideFlags: 0

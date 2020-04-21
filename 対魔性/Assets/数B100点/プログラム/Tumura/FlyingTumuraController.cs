@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FlyingTumuraController : MonoBehaviour
 {
-    public HomingTumura homing;
+    [System.NonSerialized] public HomingTumura homing;
     [Header("地上からの距離")][SerializeField] float dis = 100.0f;
     bool exit = true;
     TumuraContloller TumuraContloller;

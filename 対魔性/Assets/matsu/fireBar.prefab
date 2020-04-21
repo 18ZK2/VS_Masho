@@ -58,5 +58,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisgo: {fileID: 3012368507384021213, guid: 9214fa65c340b2445a89a37affdd0415, type: 3}
-  n: 100
-  damage: 0.1
+  n: 10

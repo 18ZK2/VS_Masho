@@ -423,6 +423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkspeed: -500
   turning: 0
+  st: 1
 --- !u!114 &4638196347143516190
 MonoBehaviour:
   m_ObjectHideFlags: 0
