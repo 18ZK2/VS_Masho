@@ -13,7 +13,6 @@ public class PlayerEffectContloller : MonoBehaviour
     [SerializeField] AudioClip[] SEs = new AudioClip[effectSize];
     [SerializeField] GameObject Hahen = null;
     [SerializeField] Sprite[] deathImage = null;
-    [SerializeField] Material myMat = null;
 
     float beforHP;
 
@@ -99,7 +98,12 @@ public class PlayerEffectContloller : MonoBehaviour
     {
         //無敵判定の点滅
         anm.SetBool("immortal", !pc.isDamage);
-        myMat.SetFloat("_NoiseTh", pc.PlayerHp*3 / pc.MaxPlayerHp);
+
+        foreach (var b in bodyRenderer)
+        {
+            b.material.SetFloat("_NoiseTh", pc.PlayerHp * 3 / pc.MaxPlayerHp);
+        }
+
         //ノックバック
         if (beforHP > pc.PlayerHp)
         {
