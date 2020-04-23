@@ -5028,6 +5028,7 @@ GameObject:
   - component: {fileID: 3626268015798374569}
   - component: {fileID: 7267628678403634672}
   - component: {fileID: 6543181724405649634}
+  - component: {fileID: 5092543844605288238}
   m_Layer: 9
   m_Name: "\u5F53\u305F\u308A\u5224\u5B9A"
   m_TagString: PlayerAttack
@@ -5209,3 +5210,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 37.7
+--- !u!114 &5092543844605288238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6309816764500289019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75be4b0eb2c0bd5409dccf49d1bccaf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chinori: {fileID: 4738731139442587046, guid: dd846b75f27f7b9429ced4e7704f4d48, type: 3}
+  chishibuki: {fileID: 6649699721624709712, guid: 6595522b5137c084582791512e064d74,
+    type: 3}

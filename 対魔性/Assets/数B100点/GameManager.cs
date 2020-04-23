@@ -49,7 +49,6 @@ public class GameManager : MonoBehaviour
             {
                 arr[1] = value;
                 data = arr;
-                Debug.Log(data);
             }
             i++;
         }
@@ -67,7 +66,6 @@ public class GameManager : MonoBehaviour
                 a = string.Join(",", v);
             }
             sw.WriteLine(a);
-            Debug.Log(a);
         }
         sw.Close();
     }

@@ -94,6 +94,7 @@
     <Compile Include="Assets\かわべ\素材\プログラム\PixelRenderBase.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\Player\GrabbingBeam.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\Player\GrabbingHead.cs" />
+    <Compile Include="Assets\かわべ\素材\プログラム\Player\HitominController.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\Player\PlayerContloller.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\Player\PlayerEffectContloller.cs" />
     <Compile Include="Assets\かわべ\素材\プログラム\PostEffect.cs" />
