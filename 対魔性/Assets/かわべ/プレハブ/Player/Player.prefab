@@ -19171,6 +19171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canUseGun: 0
+  canUseAx: 0
   PlayerHp: 0
   MaxPlayerHp: 0
   speed: 0
@@ -19185,6 +19186,7 @@ MonoBehaviour:
   limitFromFirstPosY: {x: -64, y: 768}
   limitFromFirstPosX: {x: 0, y: 0}
   Gun: {fileID: 2512134101365992271, guid: 2b723f3587f455245808a7aef26f9184, type: 3}
+  Ax: {fileID: 1024963277785788602, guid: 0823c60826f112545a945419b498377c, type: 3}
 --- !u!114 &5392723050264580862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19221,7 +19223,6 @@ MonoBehaviour:
   - {fileID: 21300010, guid: 88b923d600722354c80b65f671c0fb94, type: 3}
   - {fileID: 21300012, guid: 88b923d600722354c80b65f671c0fb94, type: 3}
   - {fileID: 21300014, guid: 88b923d600722354c80b65f671c0fb94, type: 3}
-  myMat: {fileID: 2100000, guid: a7465cc9f4750ab48bce0d2334d10fe9, type: 2}
 --- !u!114 &6834999308649352914
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -79,6 +79,7 @@ public class GameManager : MonoBehaviour
         {
             var arr = line.Split(',');
             if (arr[0] == "CanUseGun") pc.canUseGun = System.Convert.ToBoolean(arr[1]);
+            if (arr[0] == "CanUseAx") pc.canUseAx = System.Convert.ToBoolean(arr[1]);
             else if (arr[0] == "MaxHp") pc.MaxPlayerHp = (float)System.Convert.ToDouble(arr[1]);
             else if (arr[0] == "speed") pc.speed = (float)System.Convert.ToDouble(arr[1]);
             else if (arr[0] == "dashPow") pc.dashPow = (float)System.Convert.ToDouble(arr[1]);
@@ -96,12 +97,13 @@ public class GameManager : MonoBehaviour
         string[] s1 = { "PlayerValue", "Value" };
         string[] makedData = { "makedData", "" + true };
         string[] canUseGun = { "CanUseGun", "" + false };
+        string[] canUseAx = { "CanUseAx", "" + false };
         string[] MaxHp = { "MaxHp", "" + 15 };
         string[] speed = { "speed", "" + 1000 };
         string[] dashPow = { "dashPow", "" + 1000 };
         string[] MaxStamina = { "MaxStamina", "" + 200 };
         string[] recovSpeed = { "recovSpeed", "" + 2 };
-        string[][] a = { s1,makedData, canUseGun, MaxHp, speed, dashPow, MaxStamina, recovSpeed };
+        string[][] a = { s1, makedData, canUseGun, canUseAx, MaxHp, speed, dashPow, MaxStamina, recovSpeed };
         foreach(string[] s in a)
         {
             sw.WriteLine(string.Join(",", s));

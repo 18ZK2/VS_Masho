@@ -5035,7 +5035,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5364841909030270084
 Transform:
   m_ObjectHideFlags: 0
@@ -5058,7 +5058,7 @@ TrailRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6309816764500289019}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 0
@@ -5201,7 +5201,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6309816764500289019}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -5222,6 +5222,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75be4b0eb2c0bd5409dccf49d1bccaf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackPt: 0
+  charged: 0
   chinori: {fileID: 4738731139442587046, guid: dd846b75f27f7b9429ced4e7704f4d48, type: 3}
   chishibuki: {fileID: 6649699721624709712, guid: 6595522b5137c084582791512e064d74,
     type: 3}

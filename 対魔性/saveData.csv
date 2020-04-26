@@ -1,6 +1,7 @@
 ﻿PlayerValue,Value
 makedData,True
 CanUseGun,True
+CanUseAx,True
 MaxHp,15
 speed,1000
 dashPow,1000

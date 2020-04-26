@@ -9,6 +9,7 @@ public class PlayerContloller : MonoBehaviour
 {
 
     public bool canUseGun = false;
+    public bool canUseAx = false;
 
     public float PlayerHp=15;
     public float MaxPlayerHp = 40;
@@ -37,10 +38,15 @@ public class PlayerContloller : MonoBehaviour
 
     [Header("サブウェポン")]
     [SerializeField] GameObject Gun = null;
+    [SerializeField] GameObject Ax = null;
     [System.NonSerialized] public GameObject gunObj;
+    [System.NonSerialized] public GameObject axObj;
     GunController gun;
+    HitominController hitomin;
+    Animator axanm;
 
     bool dash;
+    int weaponNum = 0;
     //左右移動用
     Vector2 walkVec;
     Vector3 firstPos,camBeforePos;
@@ -49,6 +55,7 @@ public class PlayerContloller : MonoBehaviour
     Animator anm;
     Rigidbody2D rb;
     GrabbingBeam gb = null;
+    Text ammo;
 
     public IEnumerator StaninaRecovery()
     {
@@ -94,13 +101,16 @@ public class PlayerContloller : MonoBehaviour
         anm = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         gb = transform.Find("体/左腕").GetComponentInChildren<GrabbingBeam>();
+        ammo = GameObject.Find("Ammo").GetComponent<Text>();
         firstPos = transform.position;
-        if (canUseGun)
-        {
-            gunObj = Instantiate(Gun, transform.position, transform.rotation);
-            gun = gunObj.GetComponent<GunController>();
-        }
         Dashstamina = MAX_STAMINA;
+
+        gunObj = Instantiate(Gun, transform.position, transform.rotation);
+        gun = gunObj.GetComponent<GunController>();
+
+        axObj = Instantiate(Ax, transform.position, transform.rotation);
+        hitomin = axObj.GetComponentInChildren<HitominController>();
+        axanm = axObj.GetComponentInParent<Animator>();
     }
 
     // Update is called once per frame
@@ -110,7 +120,7 @@ public class PlayerContloller : MonoBehaviour
         //横方向入力
         walkVec = Vector2.right * Input.GetAxis("Horizontal");
         dash = (Input.GetMouseButton(1) || Input.GetMouseButtonDown(1))&& Dashstamina >=100;
-
+        
         //マウスの入力から向かうべき向きを作る
         //bodyVecが向かうべきベクトル
         Vector3 mousePos = Input.mousePosition;
@@ -137,17 +147,69 @@ public class PlayerContloller : MonoBehaviour
             StartCoroutine(StaninaRecovery());
         }
 
-        if (canUseGun)
+
+        //武器切り替え
+        weaponNum += Input.GetKeyDown(KeyCode.W) ? 1 : Input.GetKeyDown(KeyCode.S) ? -1 : 0;
+        //武器のアニメーション制御
+        switch (weaponNum)
         {
-            if (Input.GetKey(KeyCode.Space) && gun.magazine > 0)
-            {
-                gun.isShot = true;
-            }
-            else
-            {
-                gunObj.transform.rotation = transform.localRotation;
-            }
-            gunObj.transform.position = transform.position;
+            case -1:
+                if (canUseAx) weaponNum = 2;
+                else if (canUseGun) weaponNum = 1;
+                else weaponNum = 0;
+                break;
+            case 0:
+                ammo.text = "No Weapon";
+                gunObj.SetActive(false);
+                axObj.SetActive(false);
+                break;
+            case 1:
+                if (!canUseGun)
+                {
+                    weaponNum = 0;
+                }
+                else
+                {
+                    if (!gunObj.activeInHierarchy) gunObj.SetActive(true);
+                    if (Input.GetKey(KeyCode.Space) && gun.magazine > 0)
+                    {
+                        gun.isShot = true;
+                    }
+                    else
+                    {
+                        gunObj.transform.rotation = transform.localRotation;
+                    }
+                    gunObj.transform.position = transform.position;
+                    axObj.SetActive(false);
+                }
+                break;
+            case 2:
+                if (!canUseAx)
+                {
+                    weaponNum = 0;
+                }
+                else
+                {
+                    if (!axObj.activeInHierarchy) axObj.SetActive(true);
+                    ammo.text = "sm-zico-nkn";
+                    axObj.transform.root.position = transform.position;
+                    axanm.SetBool("charge", Input.GetKey(KeyCode.Space));
+                    
+                    if (Input.GetKeyUp(KeyCode.Space) && hitomin.charged)
+                    {
+                        axanm.SetTrigger("attack");
+                    }
+                    //攻撃中は回転しない
+                    if(!hitomin.attacking)axObj.transform.root.rotation = transform.localRotation * Quaternion.Euler(0, 180, 0);
+                    gunObj.SetActive(false);
+                }
+                break;
+            case 3:
+                weaponNum = 0;
+                break;
+            default:
+                break;
+
         }
     }
 

@@ -18,7 +18,7 @@ public class GunController : MonoBehaviour
     private GameObject hassya;
     private Animator anim = null;
     private AudioSource ass;
-    public Text ammo;
+    Text ammo;
 
     void Shot()
     {
@@ -59,6 +59,7 @@ public class GunController : MonoBehaviour
         ass = GetComponent<AudioSource>();
         magazine = magazineSize;
         ammo = GameObject.Find("Ammo").GetComponent<Text>();
+        anim.keepAnimatorControllerStateOnDisable = true;
         ammo.text = magazine.ToString()+ "/" + magazineSize.ToString();
     }
 
@@ -70,5 +71,9 @@ public class GunController : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         isShot = false;
+    }
+    private void OnEnable()
+    {
+        if(ammo!=null)ammo.text = "m-m5";
     }
 }
