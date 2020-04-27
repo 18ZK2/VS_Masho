@@ -26,7 +26,6 @@ public class huwahuwa : MonoBehaviour
         
         GameManager game = GameObject.Find("GameManager").GetComponent<GameManager>();
         yield return new WaitForSeconds(5f);
-        game.Save(2, "" + true);
         game.StartCoroutine( game.WipeLoadScene("Title"));
         Destroy(transform.parent.gameObject);
 

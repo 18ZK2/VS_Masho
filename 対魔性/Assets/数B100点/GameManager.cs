@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
             var arr = line.Split(',');
             if (arr[0] == "CanUseGun") pc.canUseGun = System.Convert.ToBoolean(arr[1]);
             if (arr[0] == "CanUseAx") pc.canUseAx = System.Convert.ToBoolean(arr[1]);
-            else if (arr[0] == "MaxHp") pc.MaxPlayerHp = (float)System.Convert.ToDouble(arr[1]);
+            else if (arr[0] == "MaxHp") { pc.MaxPlayerHp = (float)System.Convert.ToDouble(arr[1]); pc.PlayerHp = pc.MaxPlayerHp; }
             else if (arr[0] == "speed") pc.speed = (float)System.Convert.ToDouble(arr[1]);
             else if (arr[0] == "dashPow") pc.dashPow = (float)System.Convert.ToDouble(arr[1]);
             else if (arr[0] == "MaxStamina") pc.MAX_STAMINA = (float)System.Convert.ToDouble(arr[1]);

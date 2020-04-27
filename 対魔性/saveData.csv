@@ -1,8 +1,8 @@
 ﻿PlayerValue,Value
 makedData,True
-CanUseGun,True
-CanUseAx,True
-MaxHp,15
+CanUseGun,False
+CanUseAx,False
+MaxHp,21
 speed,1000
 dashPow,1000
 MaxStamina,200
