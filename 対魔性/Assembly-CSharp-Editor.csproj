@@ -68,12 +68,12 @@
     <Compile Include="Assets\Brushes\Random Brush\Scripts\Editor\RandomBrush.cs" />
     <Compile Include="Assets\Brushes\Tint Brush Smooth\Scripts\Editor\TintBrushSmooth.cs" />
     <Compile Include="Assets\Brushes\Tint Brush\Scripts\Editor\TintBrush.cs" />
+    <Compile Include="Assets\K2\Tube\Editor\TubeEditor.cs" />
     <Compile Include="Assets\Tiles\Hexagonal Rule Tile\Editor\HexagonalRuleTileEditor.cs" />
     <Compile Include="Assets\Tiles\Isometric Rule Tile\Editor\IsometricRuleTileEditor.cs" />
     <Compile Include="Assets\Tiles\Rule Override Tile\Scripts\Editor\RuleOverrideTileEditor.cs" />
     <Compile Include="Assets\Tiles\Rule Tile\Scripts\Editor\CustomRuleTileMenu.cs" />
     <Compile Include="Assets\Tiles\Rule Tile\Scripts\Editor\RuleTileEditor.cs" />
-    <Compile Include="Assets\かわべ\Tube\Editor\TubeEditor.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
