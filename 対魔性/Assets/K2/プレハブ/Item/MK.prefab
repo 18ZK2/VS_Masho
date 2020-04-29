@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1591637978693831964}
   - component: {fileID: 1591637978693831965}
-  - component: {fileID: 1591637978693831966}
   - component: {fileID: 1591637978693831967}
+  - component: {fileID: 1591637978693831966}
+  - component: {fileID: 4181473596060942793}
   m_Layer: 0
   m_Name: MK
   m_TagString: Untagged
@@ -81,21 +82,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1591637978693831966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1591637978693831954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29ea5e2b9415bdf449246cecd5db67a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  saveIndex: 4
-  value: 3
-  SE1: {fileID: 8300000, guid: c2ec53ae20675314ca5a262c2b0cd1fa, type: 3}
 --- !u!70 &1591637978693831967
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -112,3 +98,33 @@ CapsuleCollider2D:
   m_Offset: {x: 0.16281128, y: 0.32544708}
   m_Size: {x: 13.451172, y: 28.094955}
   m_Direction: 0
+--- !u!114 &1591637978693831966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591637978693831954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29ea5e2b9415bdf449246cecd5db67a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveIndex: 4
+  value: 3
+  SE1: {fileID: 8300000, guid: c2ec53ae20675314ca5a262c2b0cd1fa, type: 3}
+--- !u!114 &4181473596060942793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591637978693831954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6344f94d0b082a646a639acaf30805eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SE1: {fileID: 8300000, guid: c2ec53ae20675314ca5a262c2b0cd1fa, type: 3}
+  group: {fileID: 243147277672478034, guid: 5d5591056dbbbc941b1160a364e82436, type: 2}
+  HealPonit: 3

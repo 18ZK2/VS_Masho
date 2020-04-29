@@ -1,21 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class RecoveryItem : MonoBehaviour
 {
-    GameObject Player;
-    //PlayerContloller pc;
     GameManager GameManager;
     [SerializeField] AudioClip SE1 = null;
+    [SerializeField] AudioMixerGroup group = null;
     public int HealPonit = 1; //回復量
     // Start is called before the first frame update
     void Start()
     {
-        Player = GameObject.Find("Player");
-        //pc = Player.GetComponent<PlayerContloller>();
-        GameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        //Invoke("Destroy", 10.0f); //10秒後にアイテム削除
         Destroy(gameObject, 10f);
     }
 
@@ -32,7 +28,12 @@ public class RecoveryItem : MonoBehaviour
             PlayerContloller pc = collision.gameObject.GetComponentInParent<PlayerContloller>();
             if (pc.PlayerHp < pc.MaxPlayerHp) //HPが最大でない
             {
-                GameManager.SoundEffect(SE1);
+                GameObject soundEffect = Instantiate(new GameObject(), transform);
+                soundEffect.transform.parent = null;
+                AudioSource ass = soundEffect.AddComponent<AudioSource>();
+                ass.outputAudioMixerGroup = group;
+                ass.PlayOneShot(SE1);
+                Destroy(soundEffect, 3f);
                 pc.PlayerHp += HealPonit;
             }
             Destroy(gameObject);

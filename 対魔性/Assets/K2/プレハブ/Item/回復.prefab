@@ -237,4 +237,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SE1: {fileID: 8300000, guid: 71a6c4cad3a62ab41942b433c05ddbe5, type: 3}
+  group: {fileID: 243147277672478034, guid: 5d5591056dbbbc941b1160a364e82436, type: 2}
   HealPonit: 1

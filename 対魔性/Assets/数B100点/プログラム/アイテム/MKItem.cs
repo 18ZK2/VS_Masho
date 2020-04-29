@@ -12,16 +12,13 @@ public class MKItem : MonoBehaviour
     [Header("2,3版はbool その他はfloat")]
     [Header("valueには書き換えたい値を入力")]
     [SerializeField] string value = "";
-    [SerializeField] AudioClip SE1;
+    [SerializeField] AudioClip SE1 = null;
 
     PlayerContloller pc;
-    AudioSource AudioSource;
     GameManager gm;
     // Start is called before the first frame update
     void Start()
-    {
-        AudioSource = GetComponent<AudioSource>();
-        
+    {        
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 

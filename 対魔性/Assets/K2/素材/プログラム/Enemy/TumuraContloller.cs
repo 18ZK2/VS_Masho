@@ -5,7 +5,7 @@ using UnityEngine;
 public class TumuraContloller : MonoBehaviour
 {
     RaycastHit2D hit3D, hit4D;
-    FlyingTumuraController ftc = null;
+    //FlyingTumuraController ftc = null;
     public float walkspeed = -500;
     [SerializeField] bool turning = false;
     [Header("反転と坂")] [SerializeField] bool st = false; 

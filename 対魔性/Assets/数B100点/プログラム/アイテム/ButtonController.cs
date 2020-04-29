@@ -5,7 +5,7 @@ using UnityEngine;
 public class ButtonController : MonoBehaviour
 {
     [System.NonSerialized] public bool on=false;
-    [SerializeField] Sprite button1;
+    [SerializeField] Sprite button1 = null;
     private SpriteRenderer sr;
     // Start is called before the first frame update
     void Start()

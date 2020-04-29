@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 1307013320256197422}
   - component: {fileID: 1307013320256197409}
   - component: {fileID: 1307013320256197408}
-  - component: {fileID: 1307013320256197411}
   - component: {fileID: 1307013320256197410}
+  - component: {fileID: 1307013320256197411}
   m_Layer: 0
   m_Name: "\u56DE\u5FA95"
   m_TagString: Untagged
@@ -148,20 +148,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1307013320256197411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1307013320256197413}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6344f94d0b082a646a639acaf30805eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SE1: {fileID: 8300000, guid: 71a6c4cad3a62ab41942b433c05ddbe5, type: 3}
-  HealPonit: 5
 --- !u!95 &1307013320256197410
 Animator:
   serializedVersion: 3
@@ -181,6 +167,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1307013320256197411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307013320256197413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6344f94d0b082a646a639acaf30805eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SE1: {fileID: 8300000, guid: 71a6c4cad3a62ab41942b433c05ddbe5, type: 3}
+  group: {fileID: 243147277672478034, guid: 5d5591056dbbbc941b1160a364e82436, type: 2}
+  HealPonit: 5
 --- !u!1 &1307013320898363780
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,7 +9,6 @@ public class HpBarController : MonoBehaviour
     GameObject Player,ThisgameObject;
     PlayerContloller PlayerContloller;
     Slider slider;
-    float Width; //HPバーのサイズ
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +16,6 @@ public class HpBarController : MonoBehaviour
         PlayerContloller = Player.GetComponent<PlayerContloller>();
         slider = GetComponent<Slider>();
         slider.maxValue = PlayerContloller.MaxPlayerHp;
-        Width = 400.0f;
     }
     
     // Update is called once per frame

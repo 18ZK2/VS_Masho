@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletControler : MonoBehaviour
 {
     [SerializeField] float AttackP=0.5f;
-    [SerializeField] GameObject hiteffect;
+    [SerializeField] GameObject hiteffect = null;
     private EnemyContloller ec;
     // Start is called before the first frame update
     void Start()
