@@ -74,6 +74,9 @@
     <Compile Include="Assets\Tiles\Rule Override Tile\Scripts\Editor\RuleOverrideTileEditor.cs" />
     <Compile Include="Assets\Tiles\Rule Tile\Scripts\Editor\CustomRuleTileMenu.cs" />
     <Compile Include="Assets\Tiles\Rule Tile\Scripts\Editor\RuleTileEditor.cs" />
+    <Reference Include="Unity.2D.SpriteShape.Editor">
+      <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -82,15 +85,6 @@
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Editor">
-      <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InternalAPIEngineBridge.001">
       <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll</HintPath>
@@ -101,8 +95,14 @@
     <Reference Include="Unity.2D.SpriteShape.Runtime">
       <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.Common.Editor">
       <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.DataPrivacy">
+      <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InternalAPIEditorBridge.001">
       <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
@@ -341,6 +341,9 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="NSubstitute">
+      <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/PackageCache/com.unity.2d.common@1.0.11-preview.1/Tests/Editor/Lib/NSubstitute/NSubstitute.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
@@ -355,9 +358,6 @@
     </Reference>
     <Reference Include="UnityEditor.Purchasing">
       <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
-    </Reference>
-    <Reference Include="NSubstitute">
-      <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/PackageCache/com.unity.2d.common@1.0.11-preview.1/Tests/Editor/Lib/NSubstitute/NSubstitute.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

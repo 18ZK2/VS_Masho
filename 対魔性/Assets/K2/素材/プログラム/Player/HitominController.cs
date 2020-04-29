@@ -9,37 +9,41 @@ public class HitominController : MonoBehaviour
 
     [SerializeField] GameObject chinori = null;
     [SerializeField] GameObject chishibuki = null;
+    [SerializeField] AudioClip SE = null;
+
+    bool enabledTrigger = false;
     Text ammo;
     Animator anm;
-    IEnumerator colutine;
-    IEnumerator CleanUpBlade()
+    AudioSource ass;
+    Collider2D col;
+
+
+    private void Sound()
     {
-        while (true)
-        {
-            foreach (var c in GetComponentsInChildren<Transform>())
-            {
-                if (c != transform) Destroy(c.gameObject);
-                yield return new WaitForSeconds(0.8f);
-            }
-        }
+        ass.PlayOneShot(SE);
     }
     // Start is called before the first frame update
     void Start()
     {
+        
         ammo = GameObject.Find("Ammo").GetComponent<Text>();
         ammo.text = attackPt.ToString("f1");
-        anm = GetComponentInParent<Animator>();
+        anm = GetComponent<Animator>();
         anm.keepAnimatorControllerStateOnDisable = true;
+        ass = GetComponent<AudioSource>();
+        col = GetComponentInChildren<Collider2D>();
     }
-    private void OnEnable()
+    private void Update()
     {
-        colutine = CleanUpBlade();
-        StartCoroutine(colutine);
-    }
-    private void OnDisable()
-    {
-        StopCoroutine(colutine);
-        colutine = null;
+        if (col.enabled && !enabledTrigger)
+        {
+            enabledTrigger = true;
+            ass.PlayOneShot(SE);
+        }else if (!col.enabled)
+        {
+            enabledTrigger = false;
+        }
+        
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -54,7 +58,10 @@ public class HitominController : MonoBehaviour
 
                 obj.transform.parent = null;
                 if (collision.gameObject != null) obj.transform.parent = collision.gameObject.transform;
-                Instantiate(chinori, p.point, transform.rotation).transform.parent = transform;
+                Transform c = Instantiate(chinori, p.point, transform.rotation).transform;
+                Destroy(c.gameObject, 2);
+                c.parent = col.transform;
+
             }
         }
         

@@ -110,7 +110,7 @@ public class PlayerContloller : MonoBehaviour
 
         axObj = Instantiate(Ax, transform.position, transform.rotation);
         hitomin = axObj.GetComponentInChildren<HitominController>();
-        axanm = axObj.GetComponentInParent<Animator>();
+        axanm = axObj.GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame

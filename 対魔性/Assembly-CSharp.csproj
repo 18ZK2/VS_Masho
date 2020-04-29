@@ -146,6 +146,9 @@
     <None Include="Assets\K2\マテリアル\shader\TitleText.shader" />
     <None Include="Assets\K2\LICENSE.txt" />
     <None Include="Assets\K2\Tube\Shader\TubeFx.shader" />
+    <Reference Include="Unity.2D.SpriteShape.Editor">
+      <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -154,15 +157,6 @@
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Editor">
-      <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InternalAPIEngineBridge.001">
       <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll</HintPath>
@@ -173,8 +167,14 @@
     <Reference Include="Unity.2D.SpriteShape.Runtime">
       <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.Common.Editor">
       <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.DataPrivacy">
+      <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InternalAPIEditorBridge.001">
       <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
