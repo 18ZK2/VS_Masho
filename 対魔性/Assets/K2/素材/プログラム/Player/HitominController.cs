@@ -5,13 +5,13 @@ using UnityEngine.UI;
 public class HitominController : MonoBehaviour
 {
     public float attackPt = 0f;
-    public bool charged = false,attacking = false;
+    public bool immrtalDamage = false;
+    public bool charged = false, attacking = false;
 
     [SerializeField] GameObject chinori = null;
     [SerializeField] GameObject chishibuki = null;
     [SerializeField] AudioClip SE = null;
 
-    bool enabledTrigger = false;
     Text ammo;
     Animator anm;
     AudioSource ass;
@@ -35,14 +35,6 @@ public class HitominController : MonoBehaviour
     }
     private void Update()
     {
-        if (col.enabled && !enabledTrigger)
-        {
-            enabledTrigger = true;
-            ass.PlayOneShot(SE);
-        }else if (!col.enabled)
-        {
-            enabledTrigger = false;
-        }
         
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -53,7 +45,11 @@ public class HitominController : MonoBehaviour
             if (collision.gameObject.tag == "Enemy")
             {
                 EnemyContloller ec = collision.gameObject.GetComponent<EnemyContloller>();
-                if (ec != null) ec.Damage(attackPt);
+                if (ec != null)
+                {
+                    if (immrtalDamage) ec.HP -= attackPt;
+                    else ec.Damage(attackPt);
+                }
                 var obj = Instantiate(chishibuki, p.point, transform.rotation);
 
                 obj.transform.parent = null;

@@ -164,11 +164,8 @@ public class PlayerContloller : MonoBehaviour
                 axObj.SetActive(false);
                 break;
             case 1:
-                if (!canUseGun)
-                {
-                    weaponNum = 0;
-                }
-                else
+                
+                if (canUseGun)
                 {
                     if (!gunObj.activeInHierarchy) gunObj.SetActive(true);
                     if (Input.GetKey(KeyCode.Space) && gun.magazine > 0)
@@ -182,26 +179,41 @@ public class PlayerContloller : MonoBehaviour
                     gunObj.transform.position = transform.position;
                     axObj.SetActive(false);
                 }
-                break;
-            case 2:
-                if (!canUseAx)
+                else if (canUseAx)
+                {
+                    weaponNum = 2;
+                    if (axObj.activeInHierarchy) weaponNum = 0;
+                }
+                else
                 {
                     weaponNum = 0;
                 }
-                else
+                break;
+            case 2:
+                if (canUseAx)
                 {
                     if (!axObj.activeInHierarchy) axObj.SetActive(true);
                     ammo.text = "sm-zico-nkn";
                     axObj.transform.root.position = transform.position;
                     axanm.SetBool("charge", Input.GetKey(KeyCode.Space));
-                    
+
                     if (Input.GetKeyUp(KeyCode.Space) && hitomin.charged)
                     {
                         axanm.SetTrigger("attack");
                     }
                     //攻撃中は回転しない
-                    if(!hitomin.attacking)axObj.transform.root.rotation = transform.localRotation * Quaternion.Euler(0, 180, 0);
+                    if (!hitomin.attacking) axObj.transform.root.rotation = transform.localRotation * Quaternion.Euler(0, 180, 0);
                     gunObj.SetActive(false);
+                    
+                }
+                else if (canUseGun)
+                {
+                    weaponNum = 1;
+                    if (gunObj.activeInHierarchy) weaponNum = 0;
+                }
+                else
+                {
+                    weaponNum = 0;
                 }
                 break;
             case 3:
