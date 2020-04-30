@@ -12,7 +12,8 @@ public class GameManager : MonoBehaviour
     AudioSource AudioSource;
     public static string nowscene;//現在のシーン
     public static float LoadHP = 15f;
-
+    List<GameObject> gameObjects = new List<GameObject>();
+    public List<string[]> vs = new List<string[]>();
     bool loading = false;
     GameObject player;
     StreamWriter sw;
@@ -74,7 +75,7 @@ public class GameManager : MonoBehaviour
         // 引数説明：第1引数→ファイル読込先, 第2引数→エンコード
         sr = new StreamReader(@"saveData.csv", Encoding.GetEncoding("UTF-8"));
         string line = "";
-        List<string[]> vs = new List<string[]>();
+        //List<string[]> vs = new List<string[]>();
         while ((line = sr.ReadLine()) != null)
         {
             var arr = line.Split(',');
@@ -103,6 +104,11 @@ public class GameManager : MonoBehaviour
         string[] dashPow = { "dashPow", "" + 1000 };
         string[] MaxStamina = { "MaxStamina", "" + 200 };
         string[] recovSpeed = { "recovSpeed", "" + 2 };
+        for(int i=0; i < gameObjects.Count;i++)
+        {
+            string[] tre = { "Treasure" + i, "" + false };
+            vs.Add(tre);
+        }
         string[][] a = { s1, makedData, canUseGun, canUseAx, MaxHp, speed, dashPow, MaxStamina, recovSpeed };
         foreach(string[] s in a)
         {
@@ -113,6 +119,22 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        Transform tr=GameObject.Find("Treasures").transform;
+        foreach(Transform child in tr)
+        {
+            if (child.GetComponent<TreasureBoxController>().oneOpen == true)
+            {
+                gameObjects.Add(child.gameObject);
+            }
+        }
+
+        for (int i = 0; i < gameObjects.Count; i++)
+        {
+            string[] tre = { "Treasure" + i, "" + false };
+            vs.Add(tre);
+        }
+        string[] str1 = vs[0];
+        Debug.Log(vs);
         Save(1, "" + true);
         AudioSource = GetComponent<AudioSource>();
         GameObject player = GameObject.Find("Player");
@@ -128,10 +150,10 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         //Setup();
-        
+
 
     }
-    
+
     // Update is called once per frame
     void Update()
     {

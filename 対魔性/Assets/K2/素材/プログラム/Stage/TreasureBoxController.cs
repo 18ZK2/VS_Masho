@@ -8,7 +8,8 @@ public class TreasureBoxController : MonoBehaviour
     public GameObject Treasure = null;
     [SerializeField] AudioClip SE = null;
     [SerializeField] Sprite close = null, open = null;
-    [Header("ボタンと連動")][SerializeField] GameObject button = null; 
+    [Header("ボタンと連動")][SerializeField] GameObject button = null;
+    [Header("一度だけ")] public bool oneOpen = false;
     bool opened = false;
     ButtonController bc;
     SpriteRenderer sr;
