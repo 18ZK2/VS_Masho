@@ -3810,7 +3810,7 @@ PrefabInstance:
     - target: {fileID: 2997429866074024774, guid: e57c5acdfec0a5042858bf207704d415,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2997429866074024774, guid: e57c5acdfec0a5042858bf207704d415,
         type: 3}
@@ -27780,7 +27780,7 @@ Transform:
   - {fileID: 684714663}
   - {fileID: 1223680122}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1507108423
 PrefabInstance:
@@ -29323,7 +29323,7 @@ PrefabInstance:
     - target: {fileID: 5582897626913619590, guid: cae2ae5f444254949af6c4653d5b0e19,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5582897626913619590, guid: cae2ae5f444254949af6c4653d5b0e19,
         type: 3}
@@ -29400,11 +29400,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5582897626913619585, guid: cae2ae5f444254949af6c4653d5b0e19,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 959317737}
     - target: {fileID: 6670099425070852909, guid: cae2ae5f444254949af6c4653d5b0e19,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -29415,6 +29410,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5582897626913619585, guid: cae2ae5f444254949af6c4653d5b0e19,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 959317737}
     - target: {fileID: 4618936021997992902, guid: cae2ae5f444254949af6c4653d5b0e19,
         type: 3}
       propertyPath: m_AnchorMin.x
@@ -29629,7 +29629,7 @@ Transform:
   - {fileID: 365225872}
   - {fileID: 233931421}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2040278193 stripped
 Transform:

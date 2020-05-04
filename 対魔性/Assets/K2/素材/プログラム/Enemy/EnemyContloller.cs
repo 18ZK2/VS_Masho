@@ -127,7 +127,24 @@ public class EnemyContloller : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (gameObject.tag == "PlayerAttack")
+        {
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            float damagePow = rb.mass * dm / 50f;
+            if (collision.gameObject.tag == "Enemy")
+            {
+                collision.gameObject.GetComponent<EnemyContloller>().Damage(damagePow);
+            }
+            else if (collision.gameObject.tag == "Gimmick")
+            {
+
+                GimmickContloller gc = collision.gameObject.GetComponent<GimmickContloller>();
+                if (damagePow > HP) gc.HP -= HP;
+                else gc.HP -= damagePow;
+            }
+            Damage(damagePow);
+        }
+        else if (collision.gameObject.tag == "Player")
         {
             PlayerContloller pc = collision.gameObject.GetComponent<PlayerContloller>();
             pc.Damage(attackPt);
@@ -136,23 +153,6 @@ public class EnemyContloller : MonoBehaviour
         {
             GimmickContloller gc = collision.gameObject.GetComponent<GimmickContloller>();
             gc.HP -= attackPt;
-        }
-        else if (gameObject.tag == "PlayerAttack")
-        {
-            Rigidbody2D rb = GetComponent<Rigidbody2D>();
-            float damagePow = rb.mass * dm / 50f;
-            if (collision.gameObject.tag == "Enemy")
-            {
-                collision.gameObject.GetComponent<EnemyContloller>().Damage(damagePow);
-            }
-            if (collision.gameObject.tag == "Gimmick")
-            {
-                
-                GimmickContloller gc = collision.gameObject.GetComponent<GimmickContloller>();
-                if (damagePow > HP) gc.HP -= HP;
-                else gc.HP -= damagePow;
-            }
-            Damage(damagePow);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
