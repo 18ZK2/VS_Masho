@@ -1452,6 +1452,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Normal
       objectReference: {fileID: 0}
+    - target: {fileID: 3248121428767978019, guid: 497738fd2a47d4f49a04986e9b5bb92c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 3524522682234235650, guid: 497738fd2a47d4f49a04986e9b5bb92c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1516,6 +1521,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4201195453529862237, guid: 497738fd2a47d4f49a04986e9b5bb92c,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 862
+      objectReference: {fileID: 0}
+    - target: {fileID: 4201195453529862237, guid: 497738fd2a47d4f49a04986e9b5bb92c,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 394
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 497738fd2a47d4f49a04986e9b5bb92c, type: 3}

@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3750529336601576747}
   - component: {fileID: 1762343674762443209}
   - component: {fileID: 6878886045626346950}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Sword
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
