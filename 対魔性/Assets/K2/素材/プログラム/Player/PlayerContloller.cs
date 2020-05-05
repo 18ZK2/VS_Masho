@@ -56,8 +56,8 @@ public class PlayerContloller : MonoBehaviour
     Rigidbody2D rb;
     GrabbingBeam gb = null;
     Text ammo;
-
-    public IEnumerator StaninaRecovery()
+    IEnumerator _stamina;
+    private IEnumerator StaninaRecovery()
     {
         yield return new WaitForSeconds(1.0f);
         if (MAX_STAMINA < Dashstamina) Dashstamina = MAX_STAMINA;
@@ -111,6 +111,7 @@ public class PlayerContloller : MonoBehaviour
         axObj = Instantiate(Ax, transform.position, transform.rotation);
         hitomin = axObj.GetComponentInChildren<HitominController>();
         axanm = axObj.GetComponentInChildren<Animator>();
+        _stamina = StaninaRecovery();
     }
 
     // Update is called once per frame
@@ -140,11 +141,13 @@ public class PlayerContloller : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(1) )//|| Dashstamina == MAX_STAMINA)
         {
-            StopCoroutine("stamina_gauge");
+            StopCoroutine(_stamina);
+            _stamina = null;
         }
         if (Input.GetMouseButtonUp(1))
         {
-            StartCoroutine(StaninaRecovery());
+            _stamina = StaninaRecovery();
+            StartCoroutine(_stamina);
         }
 
 

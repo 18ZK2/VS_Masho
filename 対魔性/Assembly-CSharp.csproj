@@ -107,6 +107,8 @@
     <Compile Include="Assets\Tiles\Rule Tile\Scripts\RuleTile.cs" />
     <Compile Include="Assets\Tiles\Terrain Tile\Scripts\TerrainTile.cs" />
     <Compile Include="Assets\Tiles\Weighted Random Tile\WeightedRandomTile.cs" />
+    <Compile Include="Assets\Water-RW\Sample\ForceMovement.cs" />
+    <Compile Include="Assets\Water-RW\Scripts\WaterRWaver.cs" />
     <Compile Include="Assets\yujan\cursorlocker.cs" />
     <Compile Include="Assets\yujan\Hiyoko_ballet.cs" />
     <Compile Include="Assets\yujan\Hiyoko_shot.cs" />
@@ -144,9 +146,16 @@
     <None Include="Assets\K2\マテリアル\shader\monoTone.shader" />
     <None Include="Assets\K2\マテリアル\shader\CullOff.shader" />
     <None Include="Assets\K2\マテリアル\フォント\Kawabe.txt" />
+    <None Include="Assets\Water-RW\Shaders\Water-RW.shader" />
     <None Include="Assets\K2\マテリアル\shader\TitleText.shader" />
     <None Include="Assets\K2\LICENSE.txt" />
     <None Include="Assets\K2\Tube\Shader\TubeFx.shader" />
+    <Reference Include="Unity.Burst">
+      <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Editor">
+      <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.SpriteShape.Editor">
       <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
     </Reference>
@@ -159,6 +168,9 @@
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.InternalAPIEngineBridge.001">
       <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll</HintPath>
     </Reference>
@@ -167,6 +179,9 @@
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Runtime">
       <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics.Editor">
+      <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
@@ -389,6 +404,9 @@
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Unsafe">
+      <HintPath>C:/Users/RunRunDeadly/Documents/GitHub/VS_Masho/対魔性/Library/PackageCache/com.unity.burst@1.2.3/Unity.Burst.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
