@@ -26,8 +26,6 @@ public class EnemyContloller : MonoBehaviour
 
     [SerializeField] AudioClip SE = null;
 
-    [SerializeField] GameObject hitEffect;
-
     AudioSource asc;
     Animator anm;
     Rigidbody2D rb;

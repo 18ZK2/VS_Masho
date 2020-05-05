@@ -78,6 +78,7 @@
     <Compile Include="Assets\K2\素材\プログラム\Enemy\HahenParticle.cs" />
     <Compile Include="Assets\K2\素材\プログラム\Enemy\LauncherController.cs" />
     <Compile Include="Assets\K2\素材\プログラム\Enemy\MissileController.cs" />
+    <Compile Include="Assets\K2\素材\プログラム\Enemy\NormalController.cs" />
     <Compile Include="Assets\K2\素材\プログラム\Enemy\TumuraContloller.cs" />
     <Compile Include="Assets\K2\素材\プログラム\PixelRenderBase.cs" />
     <Compile Include="Assets\K2\素材\プログラム\Player\GrabbingBeam.cs" />
