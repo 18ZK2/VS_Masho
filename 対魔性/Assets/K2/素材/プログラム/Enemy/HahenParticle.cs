@@ -15,7 +15,7 @@ public class HahenParticle : MonoBehaviour
         ps = GetComponent<ParticleSystem>();
         var mainModule = ps.main;
         rend = GetComponent<ParticleSystemRenderer>();
-        mainModule.startSize = Sprites[0].bounds.size.x;
+        //mainModule.startSize = Sprites[0].bounds.size.x;
         rend.sortingLayerName = layername;
         foreach (var s in Sprites)
             ps.textureSheetAnimation.AddSprite(s);
