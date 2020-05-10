@@ -9,8 +9,10 @@ public class TreasureBoxController : MonoBehaviour
     [SerializeField] AudioClip SE = null;
     [SerializeField] Sprite close = null, open = null;
     [Header("ボタンと連動")][SerializeField] GameObject button = null;
-    [Header("一度だけ")] public bool oneOpen = false;
+    [Header("管理番号(大切なアイテム以外は0)")] public int num = 0;
+    [Header("代わりのアイテム")] [SerializeField] GameObject Tr = null;
     bool opened = false;
+    [System.NonSerialized] public bool oneopened = false;
     ButtonController bc;
     SpriteRenderer sr;
     ParticleSystem ps;
@@ -21,6 +23,11 @@ public class TreasureBoxController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        if (oneopened&&Tr!=null) 
+        {
+            Treasure = Tr;//代わりのアイテムを代入
+        }
         if (button == null) canOpen = true;
         else
         {
@@ -58,6 +65,12 @@ public class TreasureBoxController : MonoBehaviour
             gc.HP = 1;
             if (!opened && Treasure != null)
             {
+                if (num != 0&&!oneopened) //管理番号が0でなく一度も開いていない場合
+                {
+                    GameManager gm= GameObject.Find("GameManager").GetComponent<GameManager>();
+                    gm.Save(num+8,"True");
+                    oneopened = true;
+                }
                 opened = true;
                 ass.PlayOneShot(SE);
                 Vector3 pos = transform.position + Vector3.up * 32;

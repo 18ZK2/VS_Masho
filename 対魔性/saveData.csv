@@ -2,8 +2,9 @@
 makedData,True
 CanUseGun,False
 CanUseAx,False
-MaxHp,21
+MaxHp,15
 speed,1000
 dashPow,1000
 MaxStamina,200
 recovSpeed,2
+Treasure1,True
