@@ -195,10 +195,10 @@ Rigidbody2D:
   m_LinearDrag: 0.4
   m_AngularDrag: 0.05
   m_GravityScale: 20
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f3b2dddb109c9dc43a861b8240977b53, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &5817050412312889570
 CapsuleCollider2D:
@@ -330,7 +330,7 @@ MonoBehaviour:
   CollisionMode: 0
   damageisTrigger: 0
   attackPt: 1
-  immortalTime: 0.5
+  immortalTime: 2
   mustDrop: {fileID: 5487253364279819266, guid: f07a5ae6f2e1bf44b8882b06e4cec07e,
     type: 3}
   dropItem:
@@ -15186,11 +15186,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 8666164898626782422, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
-        type: 3}
-      propertyPath: EnemyContloller
-      value: 
-      objectReference: {fileID: 7507995908621931270}
     - target: {fileID: 8666164898799313416, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -15201,6 +15196,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8666164898626782422, guid: 1d13a3bab17406d4ba9b37c328ffe92f,
+        type: 3}
+      propertyPath: EnemyContloller
+      value: 
+      objectReference: {fileID: 7507995908621931270}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d13a3bab17406d4ba9b37c328ffe92f, type: 3}
 --- !u!224 &2072609741961984545 stripped

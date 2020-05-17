@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5537746846472319340}
   m_Layer: 9
   m_Name: GrabbingBeamElement
-  m_TagString: PlayerAttack
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

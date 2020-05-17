@@ -31,6 +31,8 @@ public class EnemyContloller : MonoBehaviour
     Rigidbody2D rb;
     float maxHp;
 
+    IEnumerator imm;
+
     private IEnumerator Immortal()
     {
         isDamage = false;
@@ -38,7 +40,8 @@ public class EnemyContloller : MonoBehaviour
         isDamage = true;
         gameObject.tag = "Enemy";
         gameObject.layer = 10;
-        StopCoroutine(Immortal());
+        StopCoroutine(imm);
+        imm = null;
     }
 
     //呼び出される
@@ -50,7 +53,8 @@ public class EnemyContloller : MonoBehaviour
             HP -= attackPow;
             HP = Mathf.Round(HP * 10.0f) / 10.0f; //10倍して四捨五入->10で割る
             if (asc != null && SE != null) asc.PlayOneShot(SE);
-            StartCoroutine(Immortal());
+            imm = Immortal();
+            StartCoroutine(imm);
         }
 
     }
@@ -81,6 +85,7 @@ public class EnemyContloller : MonoBehaviour
     {
         asc = GetComponent<AudioSource>();
         anm = GetComponent<Animator>();
+        if(anm!=null)anm.keepAnimatorControllerStateOnDisable = true;
         rb = GetComponent<Rigidbody2D>();
         maxHp = HP;
     }
