@@ -72,6 +72,7 @@
     <Compile Include="Assets\K2\素材\プログラム\Enemy\BombTumuraController.cs" />
     <Compile Include="Assets\K2\素材\プログラム\Enemy\BossFootController.cs" />
     <Compile Include="Assets\K2\素材\プログラム\Enemy\BossHeadController.cs" />
+    <Compile Include="Assets\K2\素材\プログラム\Enemy\ChocominController.cs" />
     <Compile Include="Assets\K2\素材\プログラム\Enemy\EnemyContloller.cs" />
     <Compile Include="Assets\K2\素材\プログラム\Enemy\FenceController.cs" />
     <Compile Include="Assets\K2\素材\プログラム\Enemy\GravityBall.cs" />

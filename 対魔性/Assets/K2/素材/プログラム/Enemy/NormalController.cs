@@ -6,11 +6,12 @@ using UnityEngine.Animations;
 public class NormalController : MonoBehaviour
 {
     [SerializeField] float jumpPower = 1000f;
+    [SerializeField] bool isground = false;
     Rigidbody2D rb;
     Animator anm;
     EnemyContloller em;
     float beforHP;
-    bool isground = false;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,7 @@ public class NormalController : MonoBehaviour
     void Jump()
     {
         rb.AddForce(transform.up * jumpPower, ForceMode2D.Impulse);
+        isground = false;
     }
     // Update is called once per frame
     void Update()
@@ -31,25 +33,14 @@ public class NormalController : MonoBehaviour
             beforHP = em.HP;
             anm.SetTrigger("damage");
         }
-    }
-    private void FixedUpdate()
-    {
+        anm.SetBool("tyakuchi", isground);
         anm.SetFloat("yspeed", rb.velocity.y);
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        isground = false;
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
         AnimatorStateInfo stateInfo = anm.GetCurrentAnimatorStateInfo(0);
         //stateInfo.IsName("fall") || stateInfo.IsName("fallStart")
-        //Debug.Log(rb.velocity.y);
-        if (rb.velocity.y == 0f && !isground)
-        {
-            isground = true;
-            anm.SetTrigger("tyakuchi");
-        }
+        if (collision.gameObject.tag == "Stage" && Mathf.Abs(rb.velocity.y) < 1e-5) isground = true;
 
     }
 }

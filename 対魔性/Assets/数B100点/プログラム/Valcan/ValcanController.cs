@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ValcanController : MonoBehaviour
 {
-    
+    [SerializeField] bool colDead = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +18,10 @@ public class ValcanController : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player") Destroy(gameObject);
+        if (collision.gameObject.tag == "Player" || colDead)
+        {
+            var e = GetComponent<EnemyContloller>();
+            e.Damage(e.HP);
+        }
     }
 }
