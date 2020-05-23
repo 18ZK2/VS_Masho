@@ -299,8 +299,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 243147277672478034, guid: 5d5591056dbbbc941b1160a364e82436,
     type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 0.6
+  m_PlayOnAwake: 0
+  m_Volume: 0.405
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -415,20 +415,22 @@ MonoBehaviour:
     bullet: {fileID: 4852193082596964212, guid: 1dcb7db94c0ee2c46a68968f70e3e81c,
       type: 3}
     useLarm: 1
-    SE: {fileID: 8300000, guid: b81cc5217a4f5ef42b981dcc010a3767, type: 3}
+    SE: {fileID: 8300000, guid: 04d9a4a4bc0cc944b9017823c8866646, type: 3}
   - speed: 500
     bullet: {fileID: 4852193082596964212, guid: 1dcb7db94c0ee2c46a68968f70e3e81c,
       type: 3}
     useLarm: 0
-    SE: {fileID: 8300000, guid: b81cc5217a4f5ef42b981dcc010a3767, type: 3}
-  - speed: 0
-    bullet: {fileID: 0}
+    SE: {fileID: 8300000, guid: 04d9a4a4bc0cc944b9017823c8866646, type: 3}
+  - speed: 600
+    bullet: {fileID: 8513286242506307393, guid: b4ef4e3037302db4097b04f84366b664,
+      type: 3}
+    useLarm: 1
+    SE: {fileID: 8300000, guid: 9f24125001e12894e961e45188537c11, type: 3}
+  - speed: 750
+    bullet: {fileID: 3953771255153292806, guid: 996bc391c65cf2b45824a765306511f8,
+      type: 3}
     useLarm: 0
-    SE: {fileID: 0}
-  - speed: 0
-    bullet: {fileID: 0}
-    useLarm: 0
-    SE: {fileID: 0}
+    SE: {fileID: 8300000, guid: 04d9a4a4bc0cc944b9017823c8866646, type: 3}
   - speed: 0
     bullet: {fileID: 0}
     useLarm: 0
