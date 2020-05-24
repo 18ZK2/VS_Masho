@@ -2500,6 +2500,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 527fb9eb27b14544f9f2c0943b9f45bd, type: 3}
+--- !u!1 &984167312 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3248121428767978019, guid: 497738fd2a47d4f49a04986e9b5bb92c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1357675082}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &984167313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984167312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d31acb086fbc1b4ba339c151e8def8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  span: 3
+  Dest_time: 5
+  boul: {fileID: 0}
+  speed: 1000
 --- !u!1001 &1167082036
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3036,7 +3058,7 @@ PrefabInstance:
     - target: {fileID: 3248121428767978019, guid: 497738fd2a47d4f49a04986e9b5bb92c,
         type: 3}
       propertyPath: m_Name
-      value: Normal (1)
+      value: Sanami
       objectReference: {fileID: 0}
     - target: {fileID: 3524522682234235650, guid: 497738fd2a47d4f49a04986e9b5bb92c,
         type: 3}
