@@ -5,10 +5,12 @@ using UnityEngine;
 public class ValcanController : MonoBehaviour
 {
     [SerializeField] bool colDead = false;
+    EnemyContloller ec;
     // Start is called before the first frame update
     void Start()
     {
         Destroy(gameObject, 3.0f);
+        ec = GetComponent<EnemyContloller>();
     }
 
     // Update is called once per frame
