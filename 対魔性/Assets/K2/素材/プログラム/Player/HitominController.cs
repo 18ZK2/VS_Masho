@@ -47,11 +47,11 @@ public class HitominController : MonoBehaviour
                 EnemyContloller ec = collision.gameObject.GetComponent<EnemyContloller>();
                 if (ec != null)
                 {
-                    if (immrtalDamage) ec.HP -= attackPt;
-                    else ec.Damage(attackPt);
+                    if (immrtalDamage) ec.HP -= attackPt;//連続ダメージはいる
+                    else ec.Damage(attackPt);//無敵時間がつく
                 }
+                //エフェクト
                 var obj = Instantiate(chishibuki, p.point, transform.rotation);
-
                 obj.transform.parent = null;
                 if (collision.gameObject != null) obj.transform.parent = collision.gameObject.transform;
                 Transform c = Instantiate(chinori, p.point, transform.rotation).transform;

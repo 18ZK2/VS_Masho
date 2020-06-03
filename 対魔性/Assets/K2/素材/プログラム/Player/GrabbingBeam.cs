@@ -20,6 +20,8 @@ public class GrabbingBeam : MonoBehaviour
     
     Rigidbody2D headRigid;
 
+    SpringJoint2D enemyJoint;
+
     IEnumerator gt;
 
     IEnumerator GrabTime()
@@ -88,16 +90,12 @@ public class GrabbingBeam : MonoBehaviour
         {
             touchedEnemy.GetComponent<Animator>().enabled = true;
             touchedEnemy.GetComponent<EnemyContloller>().isDamage = true;
-            SpringJoint2D[] sps = touchedEnemy.GetComponents<SpringJoint2D>();
-            foreach (var s in sps) Destroy(s);
-            Rigidbody2D erb = touchedEnemy.GetComponent<Rigidbody2D>();
-            //触れた敵はレイヤー、タグを元に戻す
-            //erb.mass *= 10f;
-            //erb.collisionDetectionMode = CollisionDetectionMode2D.Discrete;
+            Destroy(enemyJoint);
             //エネミー発射
-            erb.AddForce(pc.bodyVec * enemyshotPow, ForceMode2D.Impulse);
+            touchedEnemy.GetComponent<Rigidbody2D>().AddForce(pc.bodyVec * enemyshotPow, ForceMode2D.Impulse);
             touchedEnemy = null;
         }
+        //ギミックギミックの後処理
         else if (touchedObj != null)
         {
             touchedObj.layer = 18;
@@ -128,6 +126,7 @@ public class GrabbingBeam : MonoBehaviour
         }
         if (gHead.touchedObject != null)
         {
+            //グラップのヘッドは触れたゲームオブジェクトを送ってくる
             switch (gHead.touchedObject.tag)
             {
                 //以下にワイヤーの末端が触れた時の挙動
@@ -150,14 +149,12 @@ public class GrabbingBeam : MonoBehaviour
                     //攻撃
                     touchedEnemy.GetComponent<EnemyContloller>().Damage(attackPt);
                     //グラップと敵をつなぐ準備
-                    //var erb = touchedEnemy.GetComponent<Rigidbody2D>();
-                    //erb.mass /= 10f;
-                    SpringJoint2D tsp = touchedEnemy.AddComponent<SpringJoint2D>();
-                    tsp.autoConfigureDistance = false;
-                    tsp.distance = 0.05f;
-                    tsp.frequency = gHead.GetComponent<SpringJoint2D>().frequency;
+                    enemyJoint = touchedEnemy.AddComponent<SpringJoint2D>();
+                    enemyJoint.autoConfigureDistance = false;
+                    enemyJoint.distance = 0.05f;
+                    enemyJoint.frequency = gHead.GetComponent<SpringJoint2D>().frequency;
                     //グラップと敵を接続
-                    tsp.connectedBody = headRigid;
+                    enemyJoint.connectedBody = headRigid;
                     //アニメーションを止める
                     //目的はマヒさせたいだけ
                     //もっと普遍的な方法求む
@@ -176,9 +173,9 @@ public class GrabbingBeam : MonoBehaviour
                     gHead.touchedObject = null;
                     //ギミックへダメージ
                     touchedObj.GetComponent<GimmickContloller>().HP -= attackPt;
-                    //触れた物だけ引き寄せられる
+                    //触れた物だけ引き寄せられるレイヤーに
                     touchedObj.layer = 19;
-                    //ヘッドの当たり判定をトリガーに
+                    //ヘッドの当たり判定をトリガーにして引き寄せるように
                     Collider2D col = gHead.GetComponent<Collider2D>();
                     col.isTrigger = true;
                     col.usedByEffector = true;

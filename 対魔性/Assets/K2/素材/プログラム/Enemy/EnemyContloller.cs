@@ -33,6 +33,7 @@ public class EnemyContloller : MonoBehaviour
 
     IEnumerator imm;
 
+    //無敵時間
     private IEnumerator Immortal()
     {
         isDamage = false;
@@ -44,7 +45,7 @@ public class EnemyContloller : MonoBehaviour
         imm = null;
     }
 
-    //呼び出される
+    //呼び出されるとダメージ+無敵時間発生
     public void Damage(float attackPow)
     {
 
@@ -61,6 +62,7 @@ public class EnemyContloller : MonoBehaviour
     //破片用に汎用化しました
     public void MakeHahen(GameObject obj,GameObject hahen)
     {
+        //自分の画像をすべて取得し、パーティクルとしてばらまく
         GameObject h = null;
         if (hahen != null)
         {
@@ -123,17 +125,19 @@ public class EnemyContloller : MonoBehaviour
     {
         if (isDamage)
         {
-            //微小距離
+            //微小距離　ぶつかったときの衝撃を計算するときに使う
             dm = (transform.position - beforePos).magnitude;
             beforePos = transform.position;
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //グラップに捕まった時
         if (gameObject.tag == "PlayerAttack")
         {
             Rigidbody2D rb = GetComponent<Rigidbody2D>();
-            float damagePow = rb.mass * dm / 50f;
+            //衝撃は1/25されています
+            float damagePow = rb.mass * dm / 25f;
             if (collision.gameObject.tag == "Enemy")
             {
                 collision.gameObject.GetComponent<EnemyContloller>().Damage(damagePow);
@@ -147,11 +151,13 @@ public class EnemyContloller : MonoBehaviour
             }
             Damage(damagePow);
         }
+        //接触ダメージ
         else if (collision.gameObject.tag == "Player")
         {
             PlayerContloller pc = collision.gameObject.GetComponent<PlayerContloller>();
             pc.Damage(attackPt);
         }
+        //ギミックにダメージが入る設定
         else if(isGimickAttack && collision.gameObject.tag == "Gimmick")
         {
             GimmickContloller gc = collision.gameObject.GetComponent<GimmickContloller>();
@@ -160,6 +166,7 @@ public class EnemyContloller : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //当たり判定がトリガーでもダメージが入るとき
         if (collision.gameObject.tag == "Player" && damageisTrigger)
         {
             PlayerContloller pc = collision.gameObject.GetComponentInParent<PlayerContloller>();

@@ -57,20 +57,27 @@ public class PlayerContloller : MonoBehaviour
     GrabbingBeam gb = null;
     Text ammo;
     IEnumerator _stamina;
+
+    //スタミナを回復させる
     private IEnumerator StaninaRecovery()
     {
         yield return new WaitForSeconds(1.0f);
+        //増えすぎたらリセット
         if (MAX_STAMINA < Dashstamina) Dashstamina = MAX_STAMINA;
-        while (Dashstamina < MAX_STAMINA)
+        while (Dashstamina < MAX_STAMINA)//完全回復するまで
         {
             yield return null;
             Dashstamina += recoverySpeed;
         }
+
         
     }
+    //無敵
     private IEnumerator Immortal()
     {
+        //ダメージ受けるかの変数[isDamage]を否定
         isDamage = false;
+        //無敵時間が終わるとダメージ受けるように
         yield return new WaitForSeconds(immortalTime);
         isDamage = true;
         StopCoroutine(Immortal());
@@ -79,15 +86,20 @@ public class PlayerContloller : MonoBehaviour
     {
         rb.velocity = Vector2.zero;
     }
+    //ダメージ
     public void Damage(float attackPt)
     {
         if (isDamage)
         {
+            //グラップビームを消す
+            //体力減らす
+            //無敵時間
             gb.DeleteBeams();
             PlayerHp -= attackPt;
             StartCoroutine(Immortal());
         }
     }
+    //空中ダッシュ
     private void Dash()
     {
         rb.AddForce(bodyVec.normalized * dashPow, ForceMode2D.Impulse);
@@ -97,6 +109,8 @@ public class PlayerContloller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //getComponentとか
+        
         cam = Camera.main.gameObject;
         anm = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -105,6 +119,7 @@ public class PlayerContloller : MonoBehaviour
         firstPos = transform.position;
         Dashstamina = MAX_STAMINA;
 
+        //サブウェポンを生成
         gunObj = Instantiate(Gun, transform.position, transform.rotation);
         gun = gunObj.GetComponent<GunController>();
 
@@ -128,6 +143,8 @@ public class PlayerContloller : MonoBehaviour
         Vector3 pos = Camera.main.WorldToScreenPoint(transform.position);
 
         bodyVec = mousePos - pos;
+
+        //腕の回転用クォータニオン
         armRot = Quaternion.LookRotation(Vector3.forward, bodyVec);
 
         //マウスを押すとビーム発射
@@ -139,7 +156,7 @@ public class PlayerContloller : MonoBehaviour
         {
             gb.DeleteBeams();
         }
-        if (Input.GetMouseButtonDown(1) )//|| Dashstamina == MAX_STAMINA)
+        if (Input.GetMouseButtonDown(1) )
         {
             StopCoroutine(_stamina);
             _stamina = null;
@@ -151,11 +168,11 @@ public class PlayerContloller : MonoBehaviour
         }
 
 
-        //武器切り替え
+        //武器切り替え　数字を+-させる
         weaponNum += Input.GetKeyDown(KeyCode.W) ? 1 : Input.GetKeyDown(KeyCode.S) ? -1 : 0;
-        //武器のアニメーション制御
         switch (weaponNum)
         {
+            //下に行くと持ってる武器に切り替え  斧優先
             case -1:
                 if (canUseAx) weaponNum = 2;
                 else if (canUseGun) weaponNum = 1;

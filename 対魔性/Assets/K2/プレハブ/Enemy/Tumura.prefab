@@ -394,10 +394,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 608aaa94976f1504e972fb09e8dbc636, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 3
+  HP: 1.5
   isGimickAttack: 0
   CollisionMode: 0
-  damageisTrigger: 0
+  damageisTrigger: 1
   attackPt: 1
   immortalTime: 1.5
   mustDrop: {fileID: 5487253364279819266, guid: f07a5ae6f2e1bf44b8882b06e4cec07e,
@@ -407,8 +407,6 @@ MonoBehaviour:
   dropProba:
   - 0.43
   SE: {fileID: 8300000, guid: 55f3bb519058eb54b8fc5b4719042f4e, type: 3}
-  hitEffect: {fileID: 5605953819951564369, guid: 6c0d02aabb836f146b1ba62b4ffe0269,
-    type: 3}
 --- !u!114 &5969981985473439874
 MonoBehaviour:
   m_ObjectHideFlags: 0
