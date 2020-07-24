@@ -13,9 +13,11 @@ public class LaserController : MonoBehaviour
     //mag レーザーの長さ
     //dig　角速度　（回る速さ）
     //preAngle 初期角度
+    //body 振り向いたときに回転の向きを変える
     [SerializeField] float mag = 10.0f, preAngle = 0f;
     [SerializeField] Transform fire=null;
     [SerializeField] AudioClip Charge = null, StartLaser = null,loopLaser = null;
+    [SerializeField] Transform body = null;
 
     //レーザーの加熱用（発射時の根本のパーティクルが出きったタイミングを計る）
     bool sleeped = false;
@@ -66,6 +68,7 @@ public class LaserController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float r = dig;
         var emission = ps.emission;
         emission.enabled = isLaunch;
         //発射状態でない
@@ -103,8 +106,15 @@ public class LaserController : MonoBehaviour
         LR.enabled = true;
         hitvec.x = Mathf.Cos(angle * Mathf.Deg2Rad);
         hitvec.y = Mathf.Sin(angle * Mathf.Deg2Rad);
-        angle += dig*Time.timeScale;
-        if (angle >= 360) angle -= 360.0f;
+        if (body != null)
+        {
+            angle += (body.rotation.eulerAngles.y != 0) ? -r * Time.timeScale : r * Time.timeScale;
+        }
+        else
+        {
+            angle += r * Time.timeScale;
+        }
+        //if (angle >= 360) angle -= 360.0f;
         Vector2 origin = new Vector2(transform.position.x, transform.position.y);
         RaycastHit2D hit = Physics2D.Raycast(origin, hitvec, mag, LayerMask.GetMask("Stage"));
         //Debug.DrawRay(origin, mag * hitvec.normalized, Color.black, 0.1f);
