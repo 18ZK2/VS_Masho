@@ -33,7 +33,7 @@ public class GimmickContloller : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             EnemyContloller e = collision.gameObject.GetComponent<EnemyContloller>();
-            float damage = rb.mass * dx / 5f;
+            float damage = rb.mass * dx / 100f;
             if (damage > 0.5f)
             {
                 if (e.HP > damage)
