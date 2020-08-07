@@ -752,7 +752,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 95.717155
+      value: 55.85
       mode: 0
       spread: 0
       speed:
@@ -1604,7 +1604,7 @@ ParticleSystem:
     y:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 600
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -3742,7 +3742,7 @@ ParticleSystem:
     radiusScale: 1.2
     collidesWith:
       serializedVersion: 2
-      m_Bits: 263424
+      m_Bits: 5376
     maxCollisionShapes: 512
     quality: 0
     voxelSize: 0.5
@@ -3771,11 +3771,6 @@ ParticleSystem:
       type: 0
       properties: 0
       emitProbability: 0.5
-    - serializedVersion: 3
-      emitter: {fileID: 0}
-      type: 0
-      properties: 0
-      emitProbability: 0.2
   LightsModule:
     enabled: 0
     ratio: 0
@@ -6474,12 +6469,12 @@ ParticleSystem:
     flipU: 0
     flipV: 0
   VelocityModule:
-    enabled: 0
+    enabled: 1
     x:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
-      minScalar: 0
+      minMaxState: 3
+      scalar: 500
+      minScalar: -500
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -6530,7 +6525,7 @@ ParticleSystem:
         m_RotationOrder: 4
     y:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -6583,7 +6578,7 @@ ParticleSystem:
         m_RotationOrder: 4
     z:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:

@@ -44,6 +44,7 @@ public class MissileController : MonoBehaviour
         Quaternion targetRot = Quaternion.LookRotation(Vector3.forward,diff);
         transform.rotation = targetRot;
         if (gameObject.tag == "Enemy") rb.AddForce(transform.up * speed / 5f, ForceMode2D.Force);
+        else speed = 0;
         if (diff.magnitude < 64 && gameObject.tag != "PlayerAttack" && isHorming)
         {
             ec.Damage(ec.HP);

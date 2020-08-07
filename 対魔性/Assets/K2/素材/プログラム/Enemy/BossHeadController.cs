@@ -31,13 +31,11 @@ public class BossHeadController : MonoBehaviour
 
         bool isLaunchLaser = false;
         float x = 0;
-        float y = 0;
         if (target != null)
         {
             x = Mathf.Abs(target.position.x - transform.position.x);
-            y = (target.position.y - body.position.y);
         }
-        if (y < 0 && x < Xrange)
+        if ( x < Xrange)
         {
             float r = Random.Range(0f, 1f);
             isLaunchLaser = r < probably ? true : false;

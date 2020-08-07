@@ -158,7 +158,7 @@ public class PlayerContloller : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(1) )
         {
-            StopCoroutine(_stamina);
+            if (_stamina != null) StopCoroutine(_stamina);
             _stamina = null;
         }
         if (Input.GetMouseButtonUp(1))
