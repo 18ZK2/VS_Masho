@@ -13,13 +13,28 @@ public class GunController : MonoBehaviour
     [SerializeField] int magazineSize = 25;
     [SerializeField] AudioClip ReloadSE = null,shotSE = null;
     [SerializeField] float f = 100.0f, accuracy = 15f;
-    [SerializeField] GameObject Valcan = null;
+    [SerializeField] GameObject Valcan = null, magazineObj = null;
+    [SerializeField] Gradient grad = null;
 
+    [SerializeField]float heatGrad;
     private GameObject hassya;
     private Animator anim = null;
     private AudioSource ass;
-    Text ammo;
+    private Text ammo;
+    private SpriteRenderer heatBullel;
 
+    IEnumerator cd;
+    IEnumerator CoolDown()
+    {
+        while (true)
+        {
+
+            //Debug.Log(heatGrad);
+            heatBullel.color = grad.Evaluate(heatGrad);
+            if (heatGrad > 0) heatGrad -= 0.01f;
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
     void Shot()
     {
         
@@ -38,6 +53,7 @@ public class GunController : MonoBehaviour
         {
             anim.SetTrigger("Reload");
         }
+        if (heatGrad < 1) heatGrad += (float)1 / magazineSize;
         
         
     }
@@ -45,6 +61,12 @@ public class GunController : MonoBehaviour
     {
         magazine = magazineSize;
         ammo.text = magazine.ToString() + "/" + magazineSize.ToString();
+    }
+    void DropMagazine()
+    {
+        GameObject m = Instantiate(magazineObj, transform.position, transform.rotation);
+        Destroy(m, 5);
+        m.transform.parent = null;
     }
     public void ReloadSound()
     {
@@ -61,12 +83,27 @@ public class GunController : MonoBehaviour
         ammo = GameObject.Find("Ammo").GetComponent<Text>();
         anim.keepAnimatorControllerStateOnDisable = true;
         ammo.text = magazine.ToString()+ "/" + magazineSize.ToString();
+
+        heatBullel = transform.Find("赤熱部").GetComponent<SpriteRenderer>();
+        //StartCoroutine(CoolDown());
+        cd = CoolDown();
+        StartCoroutine(cd);
     }
 
     // Update is called once per frame
     void Update()
     {
         anim.SetBool("isShot", isShot);
+        if (cd == null)
+        {
+            cd = CoolDown();
+            StartCoroutine(cd);
+        }
+    }
+    private void OnDisable()
+    {
+        if (cd != null) StopCoroutine(cd);
+        cd = null;
     }
     private void OnTriggerStay2D(Collider2D collision)
     {

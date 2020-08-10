@@ -23,7 +23,14 @@ public class GrabbingBeam : MonoBehaviour
     SpringJoint2D enemyJoint;
 
     IEnumerator gt;
-
+    IEnumerator ad;
+    IEnumerator AfterDamage(EnemyContloller enemy)
+    {
+        yield return new WaitForSeconds(1.5f);
+        enemy.Damage(attackPt);
+        StopCoroutine(ad);
+        ad = null;
+    }
     IEnumerator GrabTime()
     {
         yield return new WaitForSeconds(grabTime);
@@ -91,9 +98,13 @@ public class GrabbingBeam : MonoBehaviour
             touchedEnemy.GetComponent<Animator>().enabled = true;
             touchedEnemy.GetComponent<EnemyContloller>().isDamage = true;
             Destroy(enemyJoint);
+            //攻撃
+            ad = AfterDamage(touchedEnemy.GetComponent<EnemyContloller>());
+            StartCoroutine(ad);
             //エネミー発射
             touchedEnemy.GetComponent<Rigidbody2D>().AddForce(pc.bodyVec * enemyshotPow, ForceMode2D.Impulse);
             touchedEnemy = null;
+            
         }
         //ギミックギミックの後処理
         else if (touchedObj != null)
@@ -139,15 +150,17 @@ public class GrabbingBeam : MonoBehaviour
                     break;
                 case "Enemy":
 
-                    whipMode = true;
+                    whipMode = false;
 
                     touchedEnemy = gHead.touchedObject;
                     gHead.touchedObject = null;
                     //触れた敵は自身の攻撃に
                     touchedEnemy.layer = 9;
                     touchedEnemy.tag = "PlayerAttack";
-                    //攻撃
-                    touchedEnemy.GetComponent<EnemyContloller>().Damage(attackPt);
+                    //エフェクト有効化
+                    var p = touchedEnemy.GetComponent<EnemyContloller>().playerAttackEffect.GetComponent<ParticleSystem>();
+                    var e = p.emission;
+                    e.enabled = true;
                     //グラップと敵をつなぐ準備
                     enemyJoint = touchedEnemy.AddComponent<SpringJoint2D>();
                     enemyJoint.autoConfigureDistance = false;
@@ -166,11 +179,12 @@ public class GrabbingBeam : MonoBehaviour
                 case "Gimmick":
                     //速度をゼロ
                     headRigid.velocity = Vector2.zero;
-                    //重くして操作性を上げる
-                    headRigid.mass *= 20f;
                     whipMode = true;
                     touchedObj = gHead.touchedObject;
                     gHead.touchedObject = null;
+                    //重くして操作性を上げる 重さは物による
+                    Rigidbody2D r = touchedObj.GetComponent<Rigidbody2D>();
+                    headRigid.mass *= r.mass;
                     //ギミックへダメージ
                     touchedObj.GetComponent<GimmickContloller>().HP -= attackPt;
                     //触れた物だけ引き寄せられるレイヤーに

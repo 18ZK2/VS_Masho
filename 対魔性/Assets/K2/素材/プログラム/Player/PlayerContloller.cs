@@ -121,6 +121,7 @@ public class PlayerContloller : MonoBehaviour
 
         //サブウェポンを生成
         gunObj = Instantiate(Gun, transform.position, transform.rotation);
+        gunObj.transform.parent = transform.Find("体/左腕");
         gun = gunObj.GetComponent<GunController>();
 
         axObj = Instantiate(Ax, transform.position, transform.rotation);
@@ -130,7 +131,7 @@ public class PlayerContloller : MonoBehaviour
     }
 
     // Update is called once per frame
-    [Obsolete]
+    //[Obsolete]
     void Update()
     {
         //横方向入力
@@ -147,15 +148,6 @@ public class PlayerContloller : MonoBehaviour
         //腕の回転用クォータニオン
         armRot = Quaternion.LookRotation(Vector3.forward, bodyVec);
 
-        //マウスを押すとビーム発射
-        if (Input.GetMouseButtonDown(0))
-        {
-            gb.MakeBeams(bodyVec.normalized);
-        }
-        else if (Input.GetMouseButtonUp(0))
-        {
-            gb.DeleteBeams();
-        }
         if (Input.GetMouseButtonDown(1) )
         {
             if (_stamina != null) StopCoroutine(_stamina);
@@ -179,7 +171,16 @@ public class PlayerContloller : MonoBehaviour
                 else weaponNum = 0;
                 break;
             case 0:
-                ammo.text = "No Weapon";
+                ammo.text = "grap-beam";
+                //マウスを押すとビーム発射
+                if (Input.GetMouseButtonDown(0))
+                {
+                    gb.MakeBeams(bodyVec.normalized);
+                }
+                else if (Input.GetMouseButtonUp(0))
+                {
+                    gb.DeleteBeams();
+                }
                 gunObj.SetActive(false);
                 axObj.SetActive(false);
                 break;
@@ -188,15 +189,15 @@ public class PlayerContloller : MonoBehaviour
                 if (canUseGun)
                 {
                     if (!gunObj.activeInHierarchy) gunObj.SetActive(true);
-                    if (Input.GetKey(KeyCode.Space) && gun.magazine > 0)
+                    if (Input.GetMouseButtonDown(0) && gun.magazine > 0)
                     {
                         gun.isShot = true;
                     }
                     else
                     {
-                        gunObj.transform.rotation = transform.localRotation;
+                        //gunObj.transform.rotation = transform.localRotation;
                     }
-                    gunObj.transform.position = transform.position;
+                    //gunObj.transform.position = transform.position;
                     axObj.SetActive(false);
                 }
                 else if (canUseAx)

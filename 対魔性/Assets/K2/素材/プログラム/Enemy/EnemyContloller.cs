@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class EnemyContloller : MonoBehaviour
 {
     public float HP = 1.0f;
     [SerializeField] bool isGimickAttack = false;
     [System.NonSerialized] public bool isDamage = true;
+    [System.NonSerialized] public GameObject playerAttackEffect;
 
     //当たり判定のモードを設定
     [SerializeField] bool CollisionMode = false;
@@ -41,8 +43,12 @@ public class EnemyContloller : MonoBehaviour
         isDamage = true;
         gameObject.tag = "Enemy";
         gameObject.layer = 10;
+        var p = playerAttackEffect.GetComponent<ParticleSystem>();
+        var e = p.emission;
+        e.enabled = false;
         StopCoroutine(imm);
         imm = null;
+        
     }
 
     //呼び出されるとダメージ+無敵時間発生
@@ -90,6 +96,8 @@ public class EnemyContloller : MonoBehaviour
         if(anm!=null)anm.keepAnimatorControllerStateOnDisable = true;
         rb = GetComponent<Rigidbody2D>();
         maxHp = HP;
+        playerAttackEffect = Instantiate((GameObject)Resources.Load("弾丸化エフェクト"), transform.position, Quaternion.identity);
+        playerAttackEffect.transform.parent = transform;
     }
 
     // Update is called once per frame
@@ -99,6 +107,8 @@ public class EnemyContloller : MonoBehaviour
         if (HP <= 0)
         {
             //死ぬとき
+            Destroy(playerAttackEffect, 3f);
+            playerAttackEffect.transform.parent = null;
             if (dropItem.Length != 0)//ドロップアイテムが設定されているとき
             {
                 int i = Random.Range(0, dropItem.Length);//落とすアイテムの種類を抽選
@@ -132,6 +142,7 @@ public class EnemyContloller : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log(collision.gameObject.tag == "Player");
         //グラップに捕まった時
         if (gameObject.tag == "PlayerAttack")
         {
@@ -156,6 +167,8 @@ public class EnemyContloller : MonoBehaviour
         {
             PlayerContloller pc = collision.gameObject.GetComponent<PlayerContloller>();
             pc.Damage(attackPt);
+            Debug.Log("attack");
+            
         }
         //ギミックにダメージが入る設定
         else if(isGimickAttack && collision.gameObject.tag == "Gimmick")
@@ -167,8 +180,9 @@ public class EnemyContloller : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //当たり判定がトリガーでもダメージが入るとき
-        if (collision.gameObject.tag == "Player" && damageisTrigger)
+        if (damageisTrigger && collision.gameObject.tag == "Player")
         {
+            Debug.Log("koko");
             PlayerContloller pc = collision.gameObject.GetComponentInParent<PlayerContloller>();
             pc.Damage(attackPt);
         }

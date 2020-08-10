@@ -5,12 +5,13 @@ using UnityEngine;
 public class BulletControler : MonoBehaviour
 {
     [SerializeField] float AttackP=0.5f;
+    [SerializeField] float lifeTime = 0.25f;
     [SerializeField] GameObject hiteffect = null;
     private EnemyContloller ec;
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(gameObject, 3.0f);
+        Destroy(gameObject, lifeTime);
     }
 
     // Update is called once per frame

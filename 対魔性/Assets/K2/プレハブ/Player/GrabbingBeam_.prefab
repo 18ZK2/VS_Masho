@@ -4715,8 +4715,8 @@ MonoBehaviour:
   shotPow: 650
   attackPt: 0.1
   whipPow: 15
-  grabTime: 1.5
-  enemyshotPow: 1
+  grabTime: 5
+  enemyshotPow: 50
   element: {fileID: 6766992695889908129, guid: 08111be2dc6b08f4686380da8687994b, type: 3}
   head: {fileID: 8304747799941178365, guid: 78ae403398cab464482c901b74150969, type: 3}
   armBody: {fileID: 0}

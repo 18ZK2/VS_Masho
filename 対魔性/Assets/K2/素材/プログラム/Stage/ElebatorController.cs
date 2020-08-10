@@ -23,7 +23,7 @@ public class ElebatorController : MonoBehaviour
     {
         if (!box.isTrigger) rb.velocity = transform.up * velocity;
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player")box.isTrigger = false;
     }

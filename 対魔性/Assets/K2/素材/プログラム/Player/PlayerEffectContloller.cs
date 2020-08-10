@@ -59,12 +59,21 @@ public class PlayerEffectContloller : MonoBehaviour
             else anm.SetBool("isLeft", false);
             armSR.flipY = true;
             transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
+            //銃の反転
+            foreach(var s in pc.gunObj.GetComponentsInChildren<SpriteRenderer>())
+            {
+                s.flipY = true;
+            }
         }
         else
         {
             if (rb.velocity.x < 0) anm.SetBool("isLeft", true);
             else anm.SetBool("isLeft", false);
             armSR.flipY = false;
+            foreach (var s in pc.gunObj.GetComponentsInChildren<SpriteRenderer>())
+            {
+                s.flipY = false;
+            }
             transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
         }
     }
