@@ -28,10 +28,8 @@ public class GunController : MonoBehaviour
     {
         while (true)
         {
-
-            //Debug.Log(heatGrad);
-            heatBullel.color = grad.Evaluate(heatGrad);
-            if (heatGrad > 0) heatGrad -= 0.01f;
+            Debug.Log(heatGrad);
+            if (heatGrad > 0) heatGrad -= 0.03f;
             yield return new WaitForSeconds(0.1f);
         }
     }
@@ -99,6 +97,7 @@ public class GunController : MonoBehaviour
             cd = CoolDown();
             StartCoroutine(cd);
         }
+        heatBullel.color = grad.Evaluate(heatGrad);
     }
     private void OnDisable()
     {

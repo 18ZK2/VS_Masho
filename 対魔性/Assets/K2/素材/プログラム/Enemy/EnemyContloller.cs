@@ -142,7 +142,6 @@ public class EnemyContloller : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.gameObject.tag == "Player");
         //グラップに捕まった時
         if (gameObject.tag == "PlayerAttack")
         {
