@@ -13,12 +13,14 @@ public class NormalController : MonoBehaviour
     [SerializeField] float attackRange = 64f;
     [SerializeField] bool isground = false, laser = false;
     [SerializeField] GameObject mnk;
+    [SerializeField] AudioClip[] clips;
 
     bool playing = true;
     IEnumerator e;
     Transform player; 
     Rigidbody2D rb;
     Animator anm;
+    AudioSource ass;
     Vector3 vec;
     EnemyContloller em;
     //行動パターン
@@ -84,6 +86,10 @@ public class NormalController : MonoBehaviour
     }
     float beforHP;
     float maxHP;
+    void Sounds(int i)
+    {
+        ass.PlayOneShot(clips[i]);
+    }
     void Jump()
     {
         rb.AddForce(transform.up * jumpPower, ForceMode2D.Impulse);
@@ -100,6 +106,7 @@ public class NormalController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anm = GetComponent<Animator>();
         em = GetComponent<EnemyContloller>();
+        ass = GetComponent<AudioSource>();
         player = GameObject.Find("Player").transform;
         vec = transform.position - player.position;
         if (em != null)

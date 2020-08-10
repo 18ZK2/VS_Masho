@@ -5100,6 +5100,10 @@ MonoBehaviour:
   isground: 0
   laser: 0
   mnk: {fileID: 0}
+  clips:
+  - {fileID: 8300000, guid: de89960e7adbcc140ac8a3b18e3f77e7, type: 3}
+  - {fileID: 8300000, guid: 64878055ffb939640805d21eb3275672, type: 3}
+  - {fileID: 8300000, guid: dab0572bf0b166646bc2e8e02a81ba15, type: 3}
 --- !u!198 &1081351176534734146
 ParticleSystem:
   m_ObjectHideFlags: 0

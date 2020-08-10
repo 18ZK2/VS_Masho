@@ -108,11 +108,11 @@ public class LaserController : MonoBehaviour
         hitvec.y = Mathf.Sin(angle * Mathf.Deg2Rad);
         if (body != null)
         {
-            angle += (body.rotation.eulerAngles.y != 0) ? -r * Time.timeScale : r * Time.timeScale;
+            angle += (body.rotation.eulerAngles.y != 0) ? -r * Time.deltaTime : r * Time.deltaTime;
         }
         else
         {
-            angle += r * Time.timeScale;
+            angle += r * Time.deltaTime;
         }
         //if (angle >= 360) angle -= 360.0f;
         Vector2 origin = new Vector2(transform.position.x, transform.position.y);

@@ -29974,15 +29974,30 @@ PrefabInstance:
       propertyPath: mag
       value: 800
       objectReference: {fileID: 0}
+    - target: {fileID: 1874396595151960875, guid: 2967b27d80bfa18439e62f7d5b574d8b,
+        type: 3}
+      propertyPath: dig
+      value: -133.33333
+      objectReference: {fileID: 0}
     - target: {fileID: 3300970939364187161, guid: 2967b27d80bfa18439e62f7d5b574d8b,
+        type: 3}
+      propertyPath: mag
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 3300970939364187161, guid: 2967b27d80bfa18439e62f7d5b574d8b,
+        type: 3}
+      propertyPath: dig
+      value: 66.666664
+      objectReference: {fileID: 0}
+    - target: {fileID: 9129353690262448375, guid: 2967b27d80bfa18439e62f7d5b574d8b,
         type: 3}
       propertyPath: mag
       value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 9129353690262448375, guid: 2967b27d80bfa18439e62f7d5b574d8b,
         type: 3}
-      propertyPath: mag
-      value: 800
+      propertyPath: dig
+      value: 133.33333
       objectReference: {fileID: 0}
     - target: {fileID: 1728682718581350769, guid: 2967b27d80bfa18439e62f7d5b574d8b,
         type: 3}
@@ -31000,11 +31015,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9175433257302859447, guid: 28b7675c389a45048bed9f4d07ab7da8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9175433257302952365, guid: 28b7675c389a45048bed9f4d07ab7da8,
         type: 3}
       propertyPath: m_RenderMode
@@ -31019,6 +31029,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingLayerID
       value: 678949121
+      objectReference: {fileID: 0}
+    - target: {fileID: 9175433257302859447, guid: 28b7675c389a45048bed9f4d07ab7da8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9175433258950901573, guid: 28b7675c389a45048bed9f4d07ab7da8,
         type: 3}

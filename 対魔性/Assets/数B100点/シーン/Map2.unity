@@ -568,11 +568,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5969981985473439874, guid: f25dbe6ee9131d4409874c5d6131845c,
-        type: 3}
-      propertyPath: walkspeed
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7777703504474641006, guid: f25dbe6ee9131d4409874c5d6131845c,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -583,11 +578,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6135431804731668181, guid: f25dbe6ee9131d4409874c5d6131845c,
-        type: 3}
-      propertyPath: HP
-      value: Infinity
-      objectReference: {fileID: 0}
     - target: {fileID: 7395419039824419354, guid: f25dbe6ee9131d4409874c5d6131845c,
         type: 3}
       propertyPath: m_BodyType
@@ -597,6 +587,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6135431804731668181, guid: f25dbe6ee9131d4409874c5d6131845c,
+        type: 3}
+      propertyPath: HP
+      value: Infinity
+      objectReference: {fileID: 0}
+    - target: {fileID: 5969981985473439874, guid: f25dbe6ee9131d4409874c5d6131845c,
+        type: 3}
+      propertyPath: walkspeed
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f25dbe6ee9131d4409874c5d6131845c, type: 3}

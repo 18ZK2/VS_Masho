@@ -84756,7 +84756,7 @@ PrefabInstance:
     - target: {fileID: 5396544339267550021, guid: 497738fd2a47d4f49a04986e9b5bb92c,
         type: 3}
       propertyPath: dig
-      value: -5
+      value: -150
       objectReference: {fileID: 0}
     - target: {fileID: 5396544339267550021, guid: 497738fd2a47d4f49a04986e9b5bb92c,
         type: 3}
