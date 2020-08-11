@@ -59,33 +59,20 @@ public class Hiyoko_shot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (rot == true&& player != null)
+        if (rot == true && player != null)
         {
             var vec = (player.transform.position - transform.parent.parent.position).normalized; //プレイヤーからTumuraへのベクトル parent.parentにする!!!!!(rootではだめ)
             if (vec.x > 0)
             {
                 transform.parent.parent.rotation = Quaternion.Euler(new Vector3(0, 180, 0)); //Tumuraを180°回転
-                transform.parent.transform.rotation = Quaternion.FromToRotation(Vector3.up, vec) * Quaternion.Euler(0, 180, -90);
+                transform.parent.rotation = Quaternion.FromToRotation(Vector3.up, vec) * Quaternion.Euler(0, 180, -90);
             }
             else
             {
                 transform.parent.parent.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-                transform.parent.transform.rotation = Quaternion.FromToRotation(Vector3.up, vec) * Quaternion.Euler(0, 0, -90);
+                transform.parent.rotation = Quaternion.FromToRotation(Vector3.up, vec) * Quaternion.Euler(0, 0, -90);
             }
         }
-        //if (EnemyContloller!= null)
-        //{
-        //    if (EnemyContloller.HP <= 0) //親(Tumura)の体力が0以下になったとき
-        //    {
-        //        Debug.Log("g");
-        //        transform.parent = null; //親と関係を解除
-        //        Destroy(gameObject);
-        //    }
-        //}
-        //else
-        //{
-        //    Debug.Log("ありえない話し！");
-        //}
     }
     
 }

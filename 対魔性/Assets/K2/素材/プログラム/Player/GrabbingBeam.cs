@@ -26,7 +26,7 @@ public class GrabbingBeam : MonoBehaviour
     IEnumerator ad;
     IEnumerator AfterDamage(EnemyContloller enemy)
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
         enemy.Damage(attackPt);
         StopCoroutine(ad);
         ad = null;

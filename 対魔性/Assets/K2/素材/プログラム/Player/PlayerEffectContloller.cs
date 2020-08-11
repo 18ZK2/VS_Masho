@@ -38,7 +38,7 @@ public class PlayerEffectContloller : MonoBehaviour
         if (i < effectSize)
         {
             asc.PlayOneShot(SEs[i]);
-            Instantiate(effects[i], effectPos[i].position, body.transform.rotation);
+            Instantiate(effects[i], effectPos[i].position, body.rotation);
         }
     }
     private void ChangeBodyColor()
@@ -50,6 +50,7 @@ public class PlayerEffectContloller : MonoBehaviour
     }
     private void FlipBody()
     {
+        float z = Quaternion.FromToRotation(Vector3.up, pc.bodyVec).eulerAngles.z;
         if (!isFrip) return;
         //体の反転
         if (pc.bodyVec.x < 0f)
@@ -57,24 +58,26 @@ public class PlayerEffectContloller : MonoBehaviour
             //左向き
             if (rb.velocity.x > 0) anm.SetBool("isLeft", true);
             else anm.SetBool("isLeft", false);
-            armSR.flipY = true;
-            transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
+            body.localRotation = Quaternion.Euler(0f, 180f, 0f);
+            arm.rotation = Quaternion.Euler(0,0, z) * Quaternion.Euler(0f, 180f, 90f);
+            /* armSR.flipY = true;
             //銃の反転
             foreach(var s in pc.gunObj.GetComponentsInChildren<SpriteRenderer>())
             {
                 s.flipY = true;
-            }
+            }*/
         }
         else
         {
             if (rb.velocity.x < 0) anm.SetBool("isLeft", true);
             else anm.SetBool("isLeft", false);
-            armSR.flipY = false;
+            body.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+            arm.rotation = Quaternion.Euler(0, 0, z) * Quaternion.Euler(0f, 0f, 90f);
+            /*armSR.flipY = false;
             foreach (var s in pc.gunObj.GetComponentsInChildren<SpriteRenderer>())
             {
                 s.flipY = false;
-            }
-            transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+            }*/
         }
     }
     private void HahenSetup()
@@ -137,9 +140,6 @@ public class PlayerEffectContloller : MonoBehaviour
         else anm.SetFloat("armState", 0);
         
         anm.SetFloat("speed", Mathf.Abs(rb.velocity.x) / pc.speed);
-
-        //腕を回す
-        arm.transform.rotation = Quaternion.Euler(0, 0, pc.armRot.eulerAngles.z) * Quaternion.Euler(0, 0, 90f);
         FlipBody();
         ChangeBodyColor();
 

@@ -107,7 +107,7 @@ public class EnemyContloller : MonoBehaviour
         if (HP <= 0)
         {
             //死ぬとき
-            Destroy(playerAttackEffect, 3f);
+            Destroy(playerAttackEffect, 0.5f);
             playerAttackEffect.transform.parent = null;
             if (dropItem.Length != 0)//ドロップアイテムが設定されているとき
             {

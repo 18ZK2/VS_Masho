@@ -98,7 +98,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 30
+  m_Mass: 10
   m_LinearDrag: 0.05
   m_AngularDrag: 1
   m_GravityScale: 25
@@ -179,12 +179,12 @@ PrefabInstance:
     - target: {fileID: 2454449839362322139, guid: 2c47c8d9ff6726e4f8daa295264c3135,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 121.6
+      value: 127
       objectReference: {fileID: 0}
     - target: {fileID: 2454449839362322139, guid: 2c47c8d9ff6726e4f8daa295264c3135,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14.1
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 2454449839362322139, guid: 2c47c8d9ff6726e4f8daa295264c3135,
         type: 3}
@@ -244,12 +244,12 @@ PrefabInstance:
     - target: {fileID: 35046680721992629, guid: 2c47c8d9ff6726e4f8daa295264c3135,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: 60.8
+      value: 63.5
       objectReference: {fileID: 0}
     - target: {fileID: 35046680721992629, guid: 2c47c8d9ff6726e4f8daa295264c3135,
         type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -7.05
+      value: 24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c47c8d9ff6726e4f8daa295264c3135, type: 3}
@@ -369,12 +369,12 @@ PrefabInstance:
     - target: {fileID: 2454449839362322139, guid: 2c47c8d9ff6726e4f8daa295264c3135,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -87.1
+      value: -119
       objectReference: {fileID: 0}
     - target: {fileID: 2454449839362322139, guid: 2c47c8d9ff6726e4f8daa295264c3135,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -41
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 2454449839362322139, guid: 2c47c8d9ff6726e4f8daa295264c3135,
         type: 3}
@@ -434,12 +434,12 @@ PrefabInstance:
     - target: {fileID: 35046680721992629, guid: 2c47c8d9ff6726e4f8daa295264c3135,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -43.55
+      value: -59.5
       objectReference: {fileID: 0}
     - target: {fileID: 35046680721992629, guid: 2c47c8d9ff6726e4f8daa295264c3135,
         type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -20.5
+      value: 9.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c47c8d9ff6726e4f8daa295264c3135, type: 3}
