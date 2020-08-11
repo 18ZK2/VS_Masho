@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/RunRunDeadly/Downloads/beta1_4/対魔性.exe
+C:/Users/RunRunDeadly/Downloads/beta1_5/対魔性.exe
 SceneListBegin?
 Assets/K2/シーン/Title.unity
 Assets/K2/シーン/Map.unity
