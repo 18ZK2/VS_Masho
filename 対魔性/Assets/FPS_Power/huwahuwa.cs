@@ -8,6 +8,7 @@ public class huwahuwa : MonoBehaviour
     [SerializeField] float MoveRange = 10f;
     [SerializeField] GameObject bakuha = null,pikadon = null;
     [SerializeField] GameObject head = null, missile = null;
+    [SerializeField] string scene ="Test2";
     Rigidbody2D rb;
     bool dead = false;
     IEnumerator Dead()
@@ -26,7 +27,7 @@ public class huwahuwa : MonoBehaviour
         
         GameManager game = GameObject.Find("GameManager").GetComponent<GameManager>();
         yield return new WaitForSeconds(5f);
-        game.StartCoroutine( game.WipeLoadScene("Title"));
+        game.StartCoroutine( game.WipeLoadScene(scene));
         Destroy(transform.parent.gameObject);
 
     }

@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/K2/\u30B7\u30FC\u30F3/stage1.unity"
     guid: 6ebb1647a01d6b447aa89833d2d4912d
+  - enabled: 1
+    path: "Assets/K2/\u30B7\u30FC\u30F3/Test2.unity"
+    guid: 587afb5dfad8ff4499b7f084638c3c7d
   m_configObjects: {}
