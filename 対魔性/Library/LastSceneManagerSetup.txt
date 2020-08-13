@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< Updated upstream
-- path: "Assets/K2/\u30B7\u30FC\u30F3/Test2.unity"
-=======
-- path: "Assets/K2/\u30B7\u30FC\u30F3/stage1.unity"
->>>>>>> Stashed changes
+- path: "Assets/K2/\u30B7\u30FC\u30F3/Map.unity"
   isLoaded: 1
   isActive: 1
