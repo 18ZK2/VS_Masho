@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class SakuraRenderController : MonoBehaviour
 {
-    [SerializeField] ParticleSystem ps;
-    [SerializeField]Renderer r;
+    ParticleSystem ps;
+    Renderer r;
     // Start is called before the first frame update
     void Start()
     {
