@@ -116,7 +116,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 60
+      scalar: 4
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -169,7 +169,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.16
+      scalar: 100
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -660,11 +660,11 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 10
+    type: 12
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 1
+    radiusThickness: 0.27
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
@@ -866,7 +866,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2.5
+      scalar: 12
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1541,7 +1541,7 @@ ParticleSystem:
     y:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 11
+      scalar: 200
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -2569,11 +2569,11 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
   NoiseModule:
-    enabled: 1
+    enabled: 0
     strength:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.45
+      scalar: 4.82
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -3899,9 +3899,9 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.096273564, g: 0.4811321, b: 0.03404236, a: 0.70980394}
+        key0: {r: 0.096273564, g: 0.4811321, b: 0.03404236, a: 0.0627451}
         key1: {r: 0.60898006, g: 1, b: 0.5235849, a: 0.77254903}
-        key2: {r: 0.60898006, g: 1, b: 0.5235849, a: 0}
+        key2: {r: 0.60898006, g: 1, b: 0.5235849, a: 0.9372549}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
@@ -3916,16 +3916,16 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 46260
-        atime2: 65535
-        atime3: 0
+        atime1: 8867
+        atime2: 46260
+        atime3: 65535
         atime4: 0
         atime5: 0
         atime6: 0
         atime7: 0
         m_Mode: 0
         m_NumColorKeys: 2
-        m_NumAlphaKeys: 3
+        m_NumAlphaKeys: 4
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -3958,7 +3958,7 @@ ParticleSystem:
     widthOverTrail:
       serializedVersion: 2
       minMaxState: 1
-      scalar: 48
+      scalar: 64
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4666,7 +4666,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1882311813
   m_SortingLayer: 7
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_RenderMode: 0
   m_SortMode: 3
   m_MinParticleSize: 0
