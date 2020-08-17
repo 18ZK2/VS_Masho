@@ -86332,7 +86332,7 @@ PrefabInstance:
     - target: {fileID: 686429914854096870, guid: 162a1e623b734d847954655545948143,
         type: 3}
       propertyPath: sceneName
-      value: Map
+      value: stage2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 162a1e623b734d847954655545948143, type: 3}
