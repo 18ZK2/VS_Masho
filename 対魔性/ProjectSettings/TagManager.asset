@@ -48,6 +48,9 @@ TagManager:
   - name: StageDecolation_Back
     uniqueID: 2131068893
     locked: 0
+  - name: PlayerAttack
+    uniqueID: 2104625999
+    locked: 0
   - name: Stage
     uniqueID: 3764670501
     locked: 0

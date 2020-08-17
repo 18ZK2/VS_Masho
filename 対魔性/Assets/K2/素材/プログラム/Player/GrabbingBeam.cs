@@ -193,7 +193,9 @@ public class GrabbingBeam : MonoBehaviour
                     Collider2D col = gHead.GetComponent<Collider2D>();
                     col.isTrigger = true;
                     col.usedByEffector = true;
-                    gHead.GetComponent<CircleCollider2D>().radius *= 20f;
+                    //巨大化+エフェクト追加
+                    gHead.gimmickEffect.SetActive(true);
+                    gHead.GetComponent<CircleCollider2D>().radius *= 12f;
                     Joint2D j = touchedObj.GetComponent<Joint2D>();
                     break;
                 default:

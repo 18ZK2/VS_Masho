@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GrabbingHead : MonoBehaviour
 {
+    public GameObject gimmickEffect;
     [System.NonSerialized] public bool touched;
     [System.NonSerialized] public GameObject touchedObject = null, exitObject = null;
     [SerializeField] AudioClip[] SEs = new AudioClip[2];
