@@ -20056,7 +20056,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084452854}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -408, z: 0}
+  m_LocalPosition: {x: 0, y: 60, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -20398,7 +20398,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1167647578}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -359, z: 0}
+  m_LocalPosition: {x: 0, y: 101, z: 0}
   m_LocalScale: {x: 5000, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -21562,6 +21562,26 @@ PrefabInstance:
     - target: {fileID: 1565937435066247770, guid: eb5886033ec61c34394f67c1d3f45fb5,
         type: 3}
       propertyPath: canUseGun
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1565937435066247770, guid: eb5886033ec61c34394f67c1d3f45fb5,
+        type: 3}
+      propertyPath: limitFromFirstPosY.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1565937435066247770, guid: eb5886033ec61c34394f67c1d3f45fb5,
+        type: 3}
+      propertyPath: limitFromFirstPosY.y
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1565937435066247770, guid: eb5886033ec61c34394f67c1d3f45fb5,
+        type: 3}
+      propertyPath: limitFromFirstPosX.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1565937435066247770, guid: eb5886033ec61c34394f67c1d3f45fb5,
+        type: 3}
+      propertyPath: limitFromFirstPosX.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -30353,7 +30373,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2142798615}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1718, z: -10}
+  m_LocalPosition: {x: 0, y: 565, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2054505082}
@@ -31020,6 +31040,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9175433257302859447, guid: 28b7675c389a45048bed9f4d07ab7da8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9175433257302952365, guid: 28b7675c389a45048bed9f4d07ab7da8,
         type: 3}
       propertyPath: m_RenderMode
@@ -31034,11 +31059,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingLayerID
       value: 678949121
-      objectReference: {fileID: 0}
-    - target: {fileID: 9175433257302859447, guid: 28b7675c389a45048bed9f4d07ab7da8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9175433258950901573, guid: 28b7675c389a45048bed9f4d07ab7da8,
         type: 3}

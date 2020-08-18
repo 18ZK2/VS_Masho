@@ -32,6 +32,7 @@ public class PlayerContloller : MonoBehaviour
     [Header("カメラ関係")]
     [SerializeField] Vector3 camOffset = Vector3.zero;
     [SerializeField] bool useLimit = false;
+    [SerializeField] bool useLimitY = false; //マリオみたいな
     [Header("X要素に下限　Y要素に上限")]
     [SerializeField] Vector2 limitFromFirstPosY = new Vector2(-768, 768);
     [SerializeField] Vector2 limitFromFirstPosX = new Vector2(0, 0);
@@ -49,7 +50,7 @@ public class PlayerContloller : MonoBehaviour
     int weaponNum = 0;
     //左右移動用
     Vector2 walkVec;
-    Vector3 firstPos,camBeforePos;
+    Vector3 firstPos,camBeforePos,camFirstPos;
 
     GameObject cam;
     Animator anm;
@@ -118,7 +119,8 @@ public class PlayerContloller : MonoBehaviour
         ammo = GameObject.Find("Ammo").GetComponent<Text>();
         firstPos = transform.position;
         Dashstamina = MAX_STAMINA;
-
+        camFirstPos = cam.transform.position;
+        camBeforePos = camFirstPos;
         //サブウェポンを生成
         gunObj = Instantiate(Gun, transform.position, transform.rotation);
         gunObj.transform.parent = transform.Find("体/左腕");
@@ -254,10 +256,16 @@ public class PlayerContloller : MonoBehaviour
         float xlim = cp.x, ylim = cp.y;
         if (useLimit)
         {
-            xlim = (limitFromFirstPosX.x < transform.position.x && transform.position.x < limitFromFirstPosX.y) ? cp.x : camBeforePos.x;
-            ylim = (limitFromFirstPosY.x < transform.position.y && transform.position.y < limitFromFirstPosY.y) ? cp.y : camBeforePos.y;
+            //バグあり
+            xlim = (limitFromFirstPosX.x+ camFirstPos.x < transform.position.x && transform.position.x < limitFromFirstPosX.y+ camFirstPos.x) ? cp.x : camBeforePos.x;
+            ylim = (limitFromFirstPosY.x+ camFirstPos.y < transform.position.y && transform.position.y < limitFromFirstPosY.y+ camFirstPos.y) ? cp.y : camBeforePos.y;
+        }
+        if (useLimitY)
+        {
+            ylim = (camBeforePos.y< transform.position.y) ? cp.y : camBeforePos.y;
         }
         cam.transform.position = new Vector3(xlim, ylim, -10);
+        Debug.Log(cam.transform.position);
         camBeforePos = cam.transform.position;
     }
 
