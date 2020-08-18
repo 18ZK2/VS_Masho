@@ -13,8 +13,6 @@ public class Enemyshot : MonoBehaviour
     private EnemyContloller ec;
     public GameObject tumura;
 
-    private int childPartNum = 1;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -22,14 +20,13 @@ public class Enemyshot : MonoBehaviour
         enemyList = transform.Find("EnemyList");
         ec = GetComponent<EnemyContloller>();
         shoter = GetComponent<Animator>();
-        childPartNum = tumura.GetComponentsInChildren<Transform>().Length;
     }
 
     // Update is called once per frame
     void Update()
     {
         float distance = 0f;
-        int childCount = enemyList.transform.childCount;
+        int childCount = enemyList.childCount;
         if (targetObj!=null)distance = Vector3.Distance(transform.position, targetObj.position);
         if (distance <= distance_ani && childCount<MAX_ENEMY)
         {
@@ -42,7 +39,19 @@ public class Enemyshot : MonoBehaviour
         if (ec.HP <= 0)
         {
             //親が死ぬと子も死ぬので親が死ぬとき子を開放する
-            foreach (Transform child in enemyList) if (child != enemyList) child.parent = null;
+            int childC = enemyList.childCount;
+            List<Transform> childs = new List<Transform>();
+            Debug.Log(enemyList.childCount);
+            foreach (Transform child in enemyList)
+            {
+                Debug.Log(child.name);
+                childs.Add(child);
+
+            }
+            foreach(Transform c in childs)
+            {
+                c.parent = null;
+            }
         }
         shoter.SetBool("immortal", !ec.isDamage);
     }

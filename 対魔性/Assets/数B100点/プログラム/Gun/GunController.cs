@@ -28,7 +28,6 @@ public class GunController : MonoBehaviour
     {
         while (true)
         {
-            Debug.Log(heatGrad);
             if (heatGrad > 0) heatGrad -= 0.03f;
             yield return new WaitForSeconds(0.1f);
         }
