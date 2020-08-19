@@ -11991,12 +11991,12 @@ PrefabInstance:
     - target: {fileID: 5684424019440655106, guid: eb5886033ec61c34394f67c1d3f45fb5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -267
+      value: 4520
       objectReference: {fileID: 0}
     - target: {fileID: 5684424019440655106, guid: eb5886033ec61c34394f67c1d3f45fb5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 24
+      value: 1410
       objectReference: {fileID: 0}
     - target: {fileID: 5684424019440655106, guid: eb5886033ec61c34394f67c1d3f45fb5,
         type: 3}
@@ -85018,6 +85018,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7507995908621931270, guid: 497738fd2a47d4f49a04986e9b5bb92c,
+        type: 3}
+      propertyPath: CollisionMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 418608351062200006, guid: 497738fd2a47d4f49a04986e9b5bb92c,
         type: 3}
       propertyPath: laserCurve.m_Curve.Array.size
@@ -85133,6 +85138,11 @@ PrefabInstance:
       propertyPath: mnk
       value: 
       objectReference: {fileID: 823683638}
+    - target: {fileID: 418608351062200006, guid: 497738fd2a47d4f49a04986e9b5bb92c,
+        type: 3}
+      propertyPath: hitlength
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 5396544339267550021, guid: 497738fd2a47d4f49a04986e9b5bb92c,
         type: 3}
       propertyPath: dig
@@ -85156,11 +85166,6 @@ PrefabInstance:
     - target: {fileID: 2569331581310513859, guid: 497738fd2a47d4f49a04986e9b5bb92c,
         type: 3}
       propertyPath: damageisTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7507995908621931270, guid: 497738fd2a47d4f49a04986e9b5bb92c,
-        type: 3}
-      propertyPath: CollisionMode
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

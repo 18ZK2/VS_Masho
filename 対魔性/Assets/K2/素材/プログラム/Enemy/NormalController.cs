@@ -11,11 +11,13 @@ public class NormalController : MonoBehaviour
     [SerializeField] float jumpPower = 1000f;
     [SerializeField] float dashPower = 2000f;
     [SerializeField] float attackRange = 64f;
-    [SerializeField] bool isground = false, laser = false;
-    [SerializeField] GameObject mnk;
-    [SerializeField] AudioClip[] clips;
+    [SerializeField] float hitlength = 75;
+    [SerializeField] bool isground;
+    [SerializeField] GameObject mnk = null;
+    [SerializeField] AudioClip[] clips = null;
 
     bool playing = true;
+    float dashPowTmp;
     IEnumerator e;
     Transform player; 
     Rigidbody2D rb;
@@ -23,6 +25,21 @@ public class NormalController : MonoBehaviour
     AudioSource ass;
     Vector3 vec;
     EnemyContloller em;
+    RaycastHit2D hit;
+    RaycastHit2D hit2;
+    Quaternion RotJudge(bool reburse)
+    {
+        Quaternion q;
+        if (reburse)
+        {
+            q = (vec.x > 0) ? Quaternion.Euler(0, 180, 0) : Quaternion.Euler(0, 0, 0);
+        }
+        else
+        {
+            q = (vec.x > 0) ? Quaternion.Euler(0, 0, 0) : Quaternion.Euler(0, 180, 0);
+        }
+        return q;
+    }
     //行動パターン
     IEnumerator Enum()
     {
@@ -30,22 +47,24 @@ public class NormalController : MonoBehaviour
         {
 
             float rnd = Random.Range(0f, 1f);
+            //プレイヤーと距離が遠いと何もしない
             if (attackRange < vec.magnitude) yield return null;
+            //レーザー
             else if (laserCurve.Evaluate(em.HP / maxHP) > rnd)
             {
-                //レーザー発振
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, 200, LayerMask.GetMask("Stage"));
-                RaycastHit2D hit2 = Physics2D.Raycast(transform.position, -transform.right, 200, LayerMask.GetMask("Stage"));
-                Debug.Log(hit.collider != null);
-                if (hit.collider != null)
+                Debug.Log("レーザー");
+                
+                if (hit2.collider != null)
                 {
                     //逃げる
-                    transform.rotation = (vec.x < 0) ? Quaternion.Euler(0, 0, 0) : Quaternion.Euler(0, 180, 0);
+                    Debug.Log("逃げる");
+                    transform.rotation = RotJudge(true);
                 }
-                else if (hit2.collider != null)
+                else if (hit.collider != null)
                 {
                     //逃げない
-                    transform.rotation = (vec.x > 0) ? Quaternion.Euler(0, 0, 0) : Quaternion.Euler(0, 180, 0);
+                    Debug.Log("逃げない");
+                    transform.rotation = RotJudge(false);
                 }
                 anm.SetTrigger("jump");
                 yield return new WaitForSeconds(0.5f);
@@ -53,8 +72,8 @@ public class NormalController : MonoBehaviour
                 dashPower /= 2;
                 yield return new WaitForSeconds(1.5f);
                 dashPower *= 2;
+                transform.rotation = RotJudge(false);
                 anm.SetTrigger("laser");
-                transform.rotation = (vec.x > 0) ? Quaternion.Euler(0, 0, 0) : Quaternion.Euler(0, 180, 0);
                 yield return new WaitForSeconds(5f);
 
             }
@@ -62,12 +81,11 @@ public class NormalController : MonoBehaviour
             {
                 for (int i = 0; i < maxSlashCount; i++)
                 {
-                    Debug.Log(vec.y);
                     if (Mathf.Abs( vec.y)<  50)
                     {
                         anm.SetTrigger("attack");
                         yield return new WaitForSeconds(0.5f);
-                        transform.rotation = (vec.x > 0) ? Quaternion.Euler(0, 0, 0) : Quaternion.Euler(0, 180, 0);
+                        transform.rotation = RotJudge(false);
                         yield return new WaitForSeconds(1.5f);
                     }
                     else
@@ -75,7 +93,7 @@ public class NormalController : MonoBehaviour
                         anm.SetTrigger("jump");
                         yield return new WaitForSeconds(0.5f);
                         anm.SetTrigger("attack");
-                        transform.rotation = (vec.x > 0) ? Quaternion.Euler(0, 0, 0) : Quaternion.Euler(0, 180, 0);
+                        transform.rotation = RotJudge(false);
                         yield return new WaitForSeconds(1.5f);
                     }
 
@@ -99,6 +117,10 @@ public class NormalController : MonoBehaviour
     {
         rb.AddForce(-transform.right * dashPower, ForceMode2D.Impulse);
     }
+    void dashPowReset()
+    {
+        if (dashPower != dashPowTmp) dashPower = dashPowTmp;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -116,6 +138,8 @@ public class NormalController : MonoBehaviour
         }
         e = Enum();
         StartCoroutine(e);
+        isground = false;
+        dashPowTmp = dashPower;
     }
     // Update is called once per frame
     void Update()
@@ -142,6 +166,14 @@ public class NormalController : MonoBehaviour
             StartCoroutine(e);
             playing = true;
         }
+
+        //レーザー発振
+        hit = Physics2D.Raycast(transform.position, transform.right, hitlength, LayerMask.GetMask("Stage"));
+        hit2 = Physics2D.Raycast(transform.position, -transform.right, hitlength, LayerMask.GetMask("Stage"));
+        Debug.DrawRay(transform.position, transform.right * hitlength, Color.red);
+        Debug.DrawRay(transform.position, -transform.right * hitlength, Color.blue);
+        Debug.Log("右" + (hit.collider != null).ToString());
+        Debug.Log("左" + (hit2.collider != null).ToString());
 
     }
     private void OnCollisionStay2D(Collision2D collision)

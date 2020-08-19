@@ -17,6 +17,7 @@ public class ChocominController : MonoBehaviour
     public Bullets[] bullets = new Bullets[5];
     [SerializeField] float jumpPower = 1000;
     [SerializeField] float xspeed = 0f;
+    [SerializeField] float landingLim = 5f;
     bool isground;
     bool running;
 
@@ -61,16 +62,19 @@ public class ChocominController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        anm.SetFloat("yspeed", rb.velocity.y);
+        if (!isground) anm.SetFloat("yspeed", rb.velocity.y);
     }
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         //地面についた！
-        if (collision.gameObject.tag == "Stage" && Mathf.Abs(rb.velocity.y) < 1e-5) isground = true;
+        anm.SetFloat("yspeed", 0f);
+        if (collision.gameObject.tag == "Stage") isground = true;
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
+        float yvel = Mathf.Abs(rb.velocity.y);
+        Debug.Log(yvel);
         //地面から離れた！
-        if (collision.gameObject.tag == "Stage") isground = false;
+        if (collision.gameObject.tag == "Stage" && yvel > landingLim) isground = false;
     }
 }

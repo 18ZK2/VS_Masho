@@ -181,7 +181,6 @@ public class EnemyContloller : MonoBehaviour
         //当たり判定がトリガーでもダメージが入るとき
         if (damageisTrigger && collision.gameObject.tag == "Player")
         {
-            Debug.Log("koko");
             PlayerContloller pc = collision.gameObject.GetComponentInParent<PlayerContloller>();
             pc.Damage(attackPt);
         }

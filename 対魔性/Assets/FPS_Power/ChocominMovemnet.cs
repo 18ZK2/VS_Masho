@@ -52,7 +52,7 @@ public class ChocominMovemnet : MonoBehaviour
     void Update()
     {
         speed = rigid.velocity.magnitude;
-        Vector2 P_posi = GameObject.Find("Player").transform.position;
+        Vector2 P_posi = player.transform.position;
         Vector2 My_posi = this.transform.position;
         StartCoroutine("Ransu");
         float Stamina = script.Dashstamina;

@@ -265,7 +265,7 @@ public class PlayerContloller : MonoBehaviour
             ylim = (camBeforePos.y< transform.position.y) ? cp.y : camBeforePos.y;
         }
         cam.transform.position = new Vector3(xlim, ylim, -10);
-        Debug.Log(cam.transform.position);
+        //Debug.Log(cam.transform.position);
         camBeforePos = cam.transform.position;
     }
 
