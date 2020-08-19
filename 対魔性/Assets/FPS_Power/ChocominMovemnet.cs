@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChocominMovemnet : MonoBehaviour
 {
- 
+
     float speed;
     public Animator anim;
     public float Zekkatime;
@@ -13,25 +13,28 @@ public class ChocominMovemnet : MonoBehaviour
     public float knifet;
     PlayerContloller script;
     int ava;
-    //乱数生成
+    //乱数生成(1or2)
     private IEnumerator Ransu()
     {
         ava = UnityEngine.Random.Range(1, 3);
-        yield return new WaitForSeconds(10000f);
+        yield return new WaitForSeconds(1000f);
 
     }
-    
+    //必殺のコルーチン
     private IEnumerator Modori()
     {
         yield return new WaitForSeconds(Zekkatime);
         anim.SetTrigger("zekka");
     }
-
+    //斜め打ちと走り切りのコルーチン
     private IEnumerator Movet()
     {
         yield return new WaitForSeconds(knifet);
         anim.SetBool("running", speed > 100 && ava == 1);
-        anim.SetBool("dcWave", speed > 100 && ava == 2);
+        if (ava == 2)
+        {
+            anim.SetTrigger("jump");
+        }
         Debug.Log("うんち");
     }
 
@@ -53,13 +56,19 @@ public class ChocominMovemnet : MonoBehaviour
         Vector2 My_posi = this.transform.position;
         StartCoroutine("Ransu");
         float Stamina = script.Dashstamina;
-        Debug.Log(ava);
 
+
+        //チョコミンよりy高くなったら必殺
         if (P_posi.y >= My_posi.y + 350)
         {
             StartCoroutine("Modori");
 
         }
+        else
+        {
+            StopCoroutine("Modori");
+        }
+        //動いていたら走り切りor空中斜めうち
         if (speed > 100.0)
         {
             StartCoroutine("Movet");
@@ -68,9 +77,9 @@ public class ChocominMovemnet : MonoBehaviour
         else
         {
             StopCoroutine("Movet");
-            anim.SetBool("dcWabe", false);
             anim.SetBool("running", false);
         }
+        //プレイヤーのスタミナがゼロになればナイフ投げ
         if (Stamina == 0)
         {
             anim.SetTrigger("throw3");
