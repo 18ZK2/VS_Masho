@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class ChocominMovemnet : MonoBehaviour
 {
-
+    [SerializeField] float movetJudge = 100f;
+    [SerializeField] float ZekkaYJudge = 350f;
+    [SerializeField] float knifeJudege = 100f;
     float speed;
     public Animator anim;
     public float Zekkatime;
@@ -12,7 +14,23 @@ public class ChocominMovemnet : MonoBehaviour
     Rigidbody2D rigid;
     public float knifet;
     PlayerContloller script;
-    int ava;
+    [SerializeField] int ava;
+
+    Quaternion RotJudge(bool reburse)
+    {
+        Quaternion q;
+        float x = player.transform.position.x - transform.position.x;
+        if (reburse)
+        {
+            q = (x > 0) ? Quaternion.Euler(0, 180, 0) : Quaternion.Euler(0, 0, 0);
+        }
+        else
+        {
+            q = (x > 0) ? Quaternion.Euler(0, 0, 0) : Quaternion.Euler(0, 180, 0);
+        }
+        return q;
+    }
+
     //乱数生成(1or2)
     private IEnumerator Ransu()
     {
@@ -29,12 +47,16 @@ public class ChocominMovemnet : MonoBehaviour
     //斜め打ちと走り切りのコルーチン
     private IEnumerator Movet()
     {
+        
+        //anim.SetBool("running", speed > movetJudge && ava == 1);
+        anim.SetBool("running", true);
         yield return new WaitForSeconds(knifet);
-        anim.SetBool("running", speed > 100 && ava == 1);
         if (ava == 2)
         {
             anim.SetTrigger("jump");
         }
+        anim.SetBool("running", false);
+        yield return new WaitForSeconds(knifet);
         Debug.Log("うんち");
     }
 
@@ -51,7 +73,9 @@ public class ChocominMovemnet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.rotation = RotJudge(false);
         speed = rigid.velocity.magnitude;
+        Debug.Log("PlayerSpeed"+speed.ToString("0000.0"));
         Vector2 P_posi = player.transform.position;
         Vector2 My_posi = this.transform.position;
         StartCoroutine("Ransu");
@@ -59,7 +83,7 @@ public class ChocominMovemnet : MonoBehaviour
 
 
         //チョコミンよりy高くなったら必殺
-        if (P_posi.y >= My_posi.y + 350)
+        if (P_posi.y >= My_posi.y + ZekkaYJudge)
         {
             StartCoroutine("Modori");
 
@@ -69,7 +93,7 @@ public class ChocominMovemnet : MonoBehaviour
             StopCoroutine("Modori");
         }
         //動いていたら走り切りor空中斜めうち
-        if (speed > 100.0)
+        if (speed > movetJudge)
         {
             StartCoroutine("Movet");
 
@@ -80,7 +104,7 @@ public class ChocominMovemnet : MonoBehaviour
             anim.SetBool("running", false);
         }
         //プレイヤーのスタミナがゼロになればナイフ投げ
-        if (Stamina == 0)
+        if (Stamina < knifeJudege)
         {
             anim.SetTrigger("throw3");
         }

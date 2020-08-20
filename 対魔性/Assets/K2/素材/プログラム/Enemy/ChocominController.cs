@@ -36,7 +36,6 @@ public class ChocominController : MonoBehaviour
         ass.PlayOneShot(bullets[i].SE);
         
     }
-
     void Jump()
     {
         rb.AddForce(transform.up * jumpPower, ForceMode2D.Impulse);
