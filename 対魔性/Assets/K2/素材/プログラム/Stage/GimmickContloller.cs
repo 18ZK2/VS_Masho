@@ -5,6 +5,7 @@ using UnityEngine;
 public class GimmickContloller : MonoBehaviour
 {
     public float HP;
+    [SerializeField] float damageModifer = 0.1f;
     [SerializeField] GameObject hahen = null;
     Rigidbody2D rb;
 
@@ -33,7 +34,7 @@ public class GimmickContloller : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             EnemyContloller e = collision.gameObject.GetComponent<EnemyContloller>();
-            float damage = rb.mass * dx / 100f;
+            float damage = rb.mass * dx * damageModifer;
             if (damage > 0.5f)
             {
                 if (e.HP > damage)

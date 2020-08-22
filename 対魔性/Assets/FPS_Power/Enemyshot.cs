@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemyshot : MonoBehaviour
 {
     [SerializeField] int MAX_ENEMY = 5;
+    [SerializeField] float childDeadTime = 0;
     [SerializeField] float distance_ani = 400f;
     [SerializeField] float shotPow = 1000;
     private Transform targetObj;
@@ -21,7 +22,23 @@ public class Enemyshot : MonoBehaviour
         ec = GetComponent<EnemyContloller>();
         shoter = GetComponent<Animator>();
     }
+    void DestroyChildrens()
+    {
+        //親が死ぬと子も死ぬので親が死ぬとき子を開放する
+        int childC = enemyList.childCount;
+        List<Transform> childs = new List<Transform>();
+        Debug.Log(enemyList.childCount);
+        foreach (Transform child in enemyList)
+        {
+            Debug.Log(child.name);
+            childs.Add(child);
 
+        }
+        foreach (Transform c in childs)
+        {
+            c.parent = null;
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -38,20 +55,7 @@ public class Enemyshot : MonoBehaviour
         }
         if (ec.HP <= 0)
         {
-            //親が死ぬと子も死ぬので親が死ぬとき子を開放する
-            int childC = enemyList.childCount;
-            List<Transform> childs = new List<Transform>();
-            Debug.Log(enemyList.childCount);
-            foreach (Transform child in enemyList)
-            {
-                Debug.Log(child.name);
-                childs.Add(child);
-
-            }
-            foreach(Transform c in childs)
-            {
-                c.parent = null;
-            }
+            DestroyChildrens();
         }
         shoter.SetBool("immortal", !ec.isDamage);
     }
@@ -60,6 +64,7 @@ public class Enemyshot : MonoBehaviour
         float x = 0f;
         if (targetObj != null)x = transform.position.x - targetObj.position.x;
         GameObject g = Instantiate(tumura, transform.position, Quaternion.identity);
+        if (childDeadTime != 0) Destroy(g, childDeadTime);
         g.GetComponent<Rigidbody2D>().AddForce(transform.up * shotPow, ForceMode2D.Impulse); //ひよこを上向きに発射
         g.transform.parent = enemyList;
         if (x < 0) g.transform.Rotate(0, 180, 0);
