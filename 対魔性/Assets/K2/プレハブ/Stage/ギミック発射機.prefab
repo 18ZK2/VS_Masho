@@ -445,6 +445,7 @@ GameObject:
   - component: {fileID: 2470503878090565226}
   - component: {fileID: 6847517837328910200}
   - component: {fileID: 983549942712531901}
+  - component: {fileID: 114371258671384914}
   m_Layer: 0
   m_Name: "\u30AE\u30DF\u30C3\u30AF\u767A\u5C04\u6A5F"
   m_TagString: Untagged
@@ -635,6 +636,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5608e47eaad1a9544a6a807e58f53a45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114371258671384914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6380721202752594035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 608aaa94976f1504e972fb09e8dbc636, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 1
+  isGimickAttack: 0
+  CollisionMode: 0
+  damageisTrigger: 0
+  attackPt: 1
+  immortalTime: 0.5
+  mustDrop: {fileID: 0}
+  dropItem: []
+  dropProba: []
+  SE: {fileID: 0}
 --- !u!1 &6511311638530734573
 GameObject:
   m_ObjectHideFlags: 0
