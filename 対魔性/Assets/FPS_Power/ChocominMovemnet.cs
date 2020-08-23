@@ -4,18 +4,33 @@ using UnityEngine;
 
 public class ChocominMovemnet : MonoBehaviour
 {
+    public Animator anim;
+    [SerializeField] AnimationCurve throwTypeCurve = new AnimationCurve();
     [SerializeField] float movetJudge = 100f;
     [SerializeField] float ZekkaYJudge = 350f;
-    [SerializeField] float knifeJudege = 100f;
-    float speed;
-    public Animator anim;
-    public float Zekkatime;
-    private GameObject player;
-    Rigidbody2D rigid;
-    public float knifet;
-    PlayerContloller script;
-    [SerializeField] int ava;
+    [SerializeField] float airAttackYjudge = 100;
+    [SerializeField] float zankuJudge = 50f;
+    [SerializeField] float sufleTime  = 15f;
+    [SerializeField] float closeSlashJudge = 64f;
+    [SerializeField] float Zekkatime = 20f;
+    [SerializeField] float knifet = 20f;
+    [SerializeField] float barrierTime = 5f;
 
+
+    bool isAction = false;
+    Vector2 P_posi;
+    Vector2 My_posi;
+    GameObject player;
+    [SerializeField] Transform sphere;
+    Rigidbody2D rigid;
+    PlayerContloller script;
+    IEnumerator tmp = null;
+    void StopIEnum()
+    {
+        isAction = false;
+        StopCoroutine(tmp);
+        tmp = null;
+    }
     Quaternion RotJudge(bool reburse)
     {
         Quaternion q;
@@ -31,83 +46,120 @@ public class ChocominMovemnet : MonoBehaviour
         return q;
     }
 
-    //乱数生成(1or2)
-    private IEnumerator Ransu()
-    {
-        ava = UnityEngine.Random.Range(1, 3);
-        yield return new WaitForSeconds(1000f);
-
-    }
     //必殺のコルーチン
     private IEnumerator Modori()
     {
+        Debug.Log("Zekka");
+        isAction = true;
+        anim.SetBool("running", true);
         yield return new WaitForSeconds(Zekkatime);
+        anim.SetBool("running", false);
         anim.SetTrigger("zekka");
+        yield return new WaitForSeconds(Zekkatime);
+        StopIEnum();
     }
     //斜め打ちと走り切りのコルーチン
     private IEnumerator Movet()
     {
-        
-        //anim.SetBool("running", speed > movetJudge && ava == 1);
+        isAction = true;
         anim.SetBool("running", true);
-        yield return new WaitForSeconds(knifet);
-        if (ava == 2)
+        float t = 0;
+        while (t < knifet)
         {
-            anim.SetTrigger("jump");
+            //超高いところにいたら
+            if (P_posi.y >= My_posi.y + ZekkaYJudge)
+            {
+                
+                tmp = Modori();
+                StartCoroutine(Modori());
+                StopIEnum();
+                yield break;
+            }
+            //ダッシュできないと,または高いところにいる　空中攻撃
+            else if (zankuJudge > script.Dashstamina || P_posi.y >= My_posi.y + airAttackYjudge)
+            {
+                int ava = UnityEngine.Random.Range(0, 2);
+                Debug.Log("Air attack");
+                anim.SetTrigger("jump");
+                yield return new WaitForSeconds(0.5f);
+                //x軸に近いと　波動　遠いと　ナイフ投げ
+                if (closeSlashJudge > Mathf.Abs(P_posi.x - My_posi.x))
+                {
+                    anim.SetTrigger("zanku");
+                }
+                else if (ava == 0)
+                {
+                    anim.SetTrigger("throw");
+                }
+                else if (ava == 1)
+                {
+                    anim.SetTrigger("throw1");
+                }
+                yield return new WaitForSeconds(0.5f);
+            }
+            //近づくと切りつけ
+            else if (closeSlashJudge > Mathf.Abs(P_posi.x - My_posi.x))
+            {
+                anim.SetTrigger("slash");
+                yield return new WaitForSeconds(0.5f);
+                t += 0.5f;
+                break;
+            }
+            t += Time.deltaTime;
+            yield return new WaitForSeconds(Time.deltaTime);
         }
         anim.SetBool("running", false);
-        yield return new WaitForSeconds(knifet);
-        Debug.Log("うんち");
+        StopIEnum();
     }
+    //バリア
+    IEnumerator Barrier()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(barrierTime);
+            sphere.gameObject.SetActive(true);
+            yield return new WaitForSeconds(1.5f * barrierTime);
+            sphere.gameObject.SetActive(false);
 
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
+        sphere = transform.Find("Sphere");
         anim = GetComponent<Animator>();
         player = GameObject.Find("Player");
         rigid = player.GetComponent<Rigidbody2D>();
         script = player.GetComponent<PlayerContloller>();
+        StartCoroutine(Barrier());
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.rotation = RotJudge(false);
-        speed = rigid.velocity.magnitude;
-        Debug.Log("PlayerSpeed"+speed.ToString("0000.0"));
-        Vector2 P_posi = player.transform.position;
-        Vector2 My_posi = this.transform.position;
-        StartCoroutine("Ransu");
+        float speed = rigid.velocity.magnitude;
+        P_posi = (player != null) ? player.transform.position : Vector3.zero;
+        My_posi = this.transform.position;
+        
         float Stamina = script.Dashstamina;
 
+        if (tmp == null)
+        {
+            //チョコミンよりy高くなったら必殺
+            if (P_posi.y >= My_posi.y + ZekkaYJudge)
+            {
+                tmp = Modori();
+            }
+            //動いていたら走り切りor空中斜めうち
+            else if (speed > movetJudge)
+            {
+                tmp = Movet();
 
-        //チョコミンよりy高くなったら必殺
-        if (P_posi.y >= My_posi.y + ZekkaYJudge)
-        {
-            StartCoroutine("Modori");
-
+            }
         }
-        else
-        {
-            StopCoroutine("Modori");
-        }
-        //動いていたら走り切りor空中斜めうち
-        if (speed > movetJudge)
-        {
-            StartCoroutine("Movet");
-
-        }
-        else
-        {
-            StopCoroutine("Movet");
-            anim.SetBool("running", false);
-        }
-        //プレイヤーのスタミナがゼロになればナイフ投げ
-        if (Stamina < knifeJudege)
-        {
-            anim.SetTrigger("throw3");
-        }
+        else if (!isAction) StartCoroutine(tmp);
 
     }
 

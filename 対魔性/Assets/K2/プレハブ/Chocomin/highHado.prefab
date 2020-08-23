@@ -4696,7 +4696,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1733803553
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 3
   m_RenderMode: 1
   m_SortMode: 3
@@ -4780,7 +4780,7 @@ MonoBehaviour:
     type: 3}
   dropItem: []
   dropProba: []
-  SE: {fileID: 8300000, guid: 9f24125001e12894e961e45188537c11, type: 3}
+  SE: {fileID: 8300000, guid: dbcfda3a2eec3bf45bd9f38251c531a4, type: 3}
 --- !u!114 &2916913622794901983
 MonoBehaviour:
   m_ObjectHideFlags: 0

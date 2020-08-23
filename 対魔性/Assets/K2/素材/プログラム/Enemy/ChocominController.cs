@@ -15,16 +15,20 @@ public class ChocominController : MonoBehaviour
 {
 
     public Bullets[] bullets = new Bullets[5];
+    [SerializeField] AnimationCurve anmSpeedCurve = new AnimationCurve();
     [SerializeField] float jumpPower = 1000;
     [SerializeField] float xspeed = 0f;
     [SerializeField] float landingLim = 5f;
+    [SerializeField] string sceneName = "";
     bool isground;
     bool running;
 
+    float maxHP;
     AudioSource ass;
     Transform Larm, Rarm;
     Rigidbody2D rb;
     Animator anm;
+    EnemyContloller ec;
 
     void ShootBullet(int i)
     {
@@ -52,12 +56,20 @@ public class ChocominController : MonoBehaviour
         ass = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         anm = GetComponent<Animator>();
+        ec = GetComponent<EnemyContloller>();
+        maxHP = ec.HP;
     }
 
     // Update is called once per frame
     void Update()
     {
         anm.SetBool("tyakuchi", isground);
+        anm.speed = anmSpeedCurve.Evaluate((ec.HP) / maxHP);
+        if (ec.HP <= 0)
+        {
+            GameObject manager = GameObject.Find("GameManager");
+            manager.GetComponent<GameManager>().WipeLoadScene(sceneName);
+        }
     }
     private void FixedUpdate()
     {
@@ -72,7 +84,6 @@ public class ChocominController : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         float yvel = Mathf.Abs(rb.velocity.y);
-        Debug.Log(yvel);
         //地面から離れた！
         if (collision.gameObject.tag == "Stage" && yvel > landingLim) isground = false;
     }
