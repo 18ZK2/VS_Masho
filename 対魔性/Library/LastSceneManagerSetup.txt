@@ -1,4 +1,7 @@
 sceneSetups:
-- path: "Assets/K2/\u30B7\u30FC\u30F3/Boss3.unity"
+- path: "Assets/K2/\u30B7\u30FC\u30F3/Title.unity"
+  isLoaded: 0
+  isActive: 0
+- path: "Assets/K2/\u30B7\u30FC\u30F3/stage3.unity"
   isLoaded: 1
   isActive: 1

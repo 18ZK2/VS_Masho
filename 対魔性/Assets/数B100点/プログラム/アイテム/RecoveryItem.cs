@@ -35,6 +35,7 @@ public class RecoveryItem : MonoBehaviour
                 ass.PlayOneShot(SE1);
                 Destroy(soundEffect, 3f);
                 pc.PlayerHp += HealPonit;
+                if (pc.PlayerHp > pc.MaxPlayerHp) pc.PlayerHp = pc.MaxPlayerHp;
             }
             Destroy(gameObject);
         }

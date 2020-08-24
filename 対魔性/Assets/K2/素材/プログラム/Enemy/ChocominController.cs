@@ -29,7 +29,6 @@ public class ChocominController : MonoBehaviour
     Rigidbody2D rb;
     Animator anm;
     EnemyContloller ec;
-
     void ShootBullet(int i)
     {
         Quaternion q = (bullets[i].useLarm) ? Larm.rotation : Rarm.rotation;
@@ -65,11 +64,11 @@ public class ChocominController : MonoBehaviour
     {
         anm.SetBool("tyakuchi", isground);
         anm.speed = anmSpeedCurve.Evaluate((ec.HP) / maxHP);
-        if (ec.HP <= 0)
-        {
-            GameObject manager = GameObject.Find("GameManager");
-            manager.GetComponent<GameManager>().WipeLoadScene(sceneName);
-        }
+    }
+    private void OnDestroy()
+    {
+        GameManager game = GameObject.Find("GameManager").GetComponent<GameManager>();
+        game.StartCoroutine(game.WipeLoadScene(sceneName));
     }
     private void FixedUpdate()
     {
