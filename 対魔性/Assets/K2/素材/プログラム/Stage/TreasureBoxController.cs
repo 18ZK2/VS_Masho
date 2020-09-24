@@ -67,7 +67,7 @@ public class TreasureBoxController : MonoBehaviour
             {
                 if (num != 0&&!oneopened) //管理番号が0でなく一度も開いていない場合
                 {
-                    GameManager gm= GameObject.Find("GameManager").GetComponent<GameManager>();
+                    GameManager_ gm= GameObject.Find("GameManager").GetComponent<GameManager_>();
                     gm.Save(num+8,"True");
                     oneopened = true;
                 }

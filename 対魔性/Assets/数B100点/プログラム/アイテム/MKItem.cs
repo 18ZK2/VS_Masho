@@ -15,11 +15,11 @@ public class MKItem : MonoBehaviour
     [SerializeField] AudioClip SE1 = null;
 
     PlayerContloller pc;
-    GameManager gm;
+    GameManager_ gm;
     // Start is called before the first frame update
     void Start()
     {        
-        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        gm = GameObject.Find("GameManager").GetComponent<GameManager_>();
     }
 
     // Update is called once per frame

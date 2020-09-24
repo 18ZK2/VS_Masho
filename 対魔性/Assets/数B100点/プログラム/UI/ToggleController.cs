@@ -27,7 +27,7 @@ public class ToggleController : MonoBehaviour
     {
 
         //せっていを開くとき->toggle=true,隠すとき->false
-        gameManager.GetComponent<GameManager>().SoundEffect(SE);
+        gameManager.GetComponent<GameManager_>().SoundEffect(SE);
         if(TumuraBar!=null) TumuraBar.SetActive(!Toggle); //Tumurabarを隠す or 現す
         Time.timeScale = TimeSpeed(); //ゲームスピード変更
         this.gameObject.SetActive(false); //自身を隠す

@@ -25,7 +25,7 @@ public class huwahuwa : MonoBehaviour
         }
         Instantiate(pikadon, transform).transform.parent = null;
         
-        GameManager game = GameObject.Find("GameManager").GetComponent<GameManager>();
+        GameManager_ game = GameObject.Find("GameManager").GetComponent<GameManager_>();
         yield return new WaitForSeconds(5f);
         game.StartCoroutine( game.WipeLoadScene(scene));
         Destroy(transform.parent.gameObject);

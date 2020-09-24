@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class StartMenu : MonoBehaviour
 {
-    GameManager gm;
+    GameManager_ gm;
     bool isPlayed = false;
     private void Start()
     {
-        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        gm = GameObject.Find("GameManager").GetComponent<GameManager_>();
     }
     public void GoToScene(string sceneName)
     {

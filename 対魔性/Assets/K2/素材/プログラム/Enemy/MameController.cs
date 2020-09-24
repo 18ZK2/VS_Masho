@@ -24,7 +24,7 @@ public class MameController : MonoBehaviour
     {
         if (gimmick != null)
         {
-            if (ec.HP < 0)
+            if (ec.HP <= 0)
             {
                 gimmick.enabled = true;
                 gimmick.tag = "Gimmick";

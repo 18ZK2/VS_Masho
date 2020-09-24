@@ -5,6 +5,7 @@ using UnityEngine;
 public class BossFootController : MonoBehaviour
 {
     public bool isLaunch = false;
+    [SerializeField] float missileYrange = -500f;
     [SerializeField] float jointPow = 10000f;
     [SerializeField] HingeJoint2D footJoint = null;
     [SerializeField] Transform jointTrans, bodyTrans = null;
@@ -30,7 +31,7 @@ public class BossFootController : MonoBehaviour
         footJoint.motor = motor;
         footJoint.useMotor = isLaunch;
         //ボスの体より高いところだとミサイル
-        if (player != null && bodyTrans != null && player.position.y > bodyTrans.position.y) launchMissile = true;
+        if (player != null && bodyTrans != null && player.position.y > bodyTrans.position.y + missileYrange) launchMissile = true;
         if (launcher != null) launcher.isLaunch = launchMissile;
     }
 }

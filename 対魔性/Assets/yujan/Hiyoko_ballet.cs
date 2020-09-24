@@ -24,7 +24,7 @@ public class Hiyoko_ballet : MonoBehaviour
         }
         else if(obj.tag == "Enemy" && isEnemyDamage)
         {
-            obj.GetComponent<EnemyContloller>().HP -= Hiyo_ballet_damege;
+            obj.GetComponent<EnemyContloller>().Damage(Hiyo_ballet_damege);
         }
         //Destroy(gameObject);
     }

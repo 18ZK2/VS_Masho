@@ -10,7 +10,7 @@ public class ChocominMovemnet : MonoBehaviour
     [SerializeField] float ZekkaYJudge = 350f;
     [SerializeField] float airAttackYjudge = 100;
     [SerializeField] float zankuJudge = 50f;
-    [SerializeField] float sufleTime  = 15f;
+    //[SerializeField] float sufleTime  = 15f;
     [SerializeField] float closeSlashJudge = 64f;
     [SerializeField] float Zekkatime = 20f;
     [SerializeField] float knifet = 20f;
@@ -33,15 +33,19 @@ public class ChocominMovemnet : MonoBehaviour
     }
     Quaternion RotJudge(bool reburse)
     {
-        Quaternion q;
-        float x = player.transform.position.x - transform.position.x;
-        if (reburse)
+        Quaternion q = transform.rotation;
+        if (player != null)
         {
-            q = (x > 0) ? Quaternion.Euler(0, 180, 0) : Quaternion.Euler(0, 0, 0);
-        }
-        else
-        {
-            q = (x > 0) ? Quaternion.Euler(0, 0, 0) : Quaternion.Euler(0, 180, 0);
+            float x = player.transform.position.x - transform.position.x;
+            if (reburse)
+            {
+                q = (x > 0) ? Quaternion.Euler(0, 180, 0) : Quaternion.Euler(0, 0, 0);
+            }
+            else
+            {
+                q = (x > 0) ? Quaternion.Euler(0, 0, 0) : Quaternion.Euler(0, 180, 0);
+            }
+            
         }
         return q;
     }
@@ -139,11 +143,18 @@ public class ChocominMovemnet : MonoBehaviour
     void Update()
     {
         transform.rotation = RotJudge(false);
-        float speed = rigid.velocity.magnitude;
-        P_posi = (player != null) ? player.transform.position : Vector3.zero;
-        My_posi = this.transform.position;
+        float speed = 0;
+        float stamn = 0;
+        if (player != null)
+        {
+            stamn = script.Dashstamina;
+            speed = rigid.velocity.magnitude;
+            P_posi = (player != null) ? player.transform.position : Vector3.zero;
+        }
         
-        float Stamina = script.Dashstamina;
+        My_posi = transform.position;
+        
+        
 
         if (tmp == null)
         {

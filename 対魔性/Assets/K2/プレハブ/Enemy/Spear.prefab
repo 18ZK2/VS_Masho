@@ -66,7 +66,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1733803553
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3440125dd96341e4298e9e139d27809b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -145,7 +145,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1733803553
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300002, guid: 3440125dd96341e4298e9e139d27809b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -252,7 +252,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 16}
-  m_Size: {x: 16, y: 64}
+  m_Size: {x: 64, y: 64}
   m_Direction: 0
 --- !u!82 &4825446824781009799
 AudioSource:
@@ -403,7 +403,6 @@ MonoBehaviour:
   dropProba:
   - 0.8
   SE: {fileID: 0}
-  hitEffect: {fileID: 0}
 --- !u!1001 &4581169764428733957
 PrefabInstance:
   m_ObjectHideFlags: 0

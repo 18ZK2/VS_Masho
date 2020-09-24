@@ -5,7 +5,7 @@ using UnityEngine.Audio;
 
 public class RecoveryItem : MonoBehaviour
 {
-    GameManager GameManager;
+    //GameManager_ GameManager;
     [SerializeField] AudioClip SE1 = null;
     [SerializeField] AudioMixerGroup group = null;
     public int HealPonit = 1; //回復量

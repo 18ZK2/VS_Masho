@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/K2/\u30B7\u30FC\u30F3/Boss3.unity"
     guid: f578df1186bdaea4d98dea23d7498db5
+  - enabled: 1
+    path: "Assets/K2/\u30B7\u30FC\u30F3/Ending.unity"
+    guid: a16b00ab0fd41ea4db47744e1e1457b2
   m_configObjects: {}
