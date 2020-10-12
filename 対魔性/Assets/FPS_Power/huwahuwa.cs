@@ -24,7 +24,6 @@ public class huwahuwa : MonoBehaviour
             yield return new WaitForSeconds(0.25f);
         }
         Instantiate(pikadon, transform).transform.parent = null;
-        
         GameManager_ game = GameObject.Find("GameManager").GetComponent<GameManager_>();
         yield return new WaitForSeconds(5f);
         game.StartCoroutine( game.WipeLoadScene(scene));
@@ -51,7 +50,7 @@ public class huwahuwa : MonoBehaviour
             StartCoroutine(Dead());
         }
         else {
-            Vector3 pos = new Vector3(0, MoveRange * Mathf.Sin(Time.time * huwa), 0);
+            Vector3 pos = new Vector3(MoveRange/2 * Mathf.Cos(Time.time * huwa), MoveRange * Mathf.Sin(Time.time * huwa), 0);
             rb.MovePosition(pos + transform.position);
         }
     }

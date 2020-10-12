@@ -40,6 +40,7 @@ public class PlayerContloller : MonoBehaviour
     [Header("サブウェポン")]
     [SerializeField] GameObject Gun = null;
     [SerializeField] GameObject Ax = null;
+    [SerializeField] GameObject barrier;
     [System.NonSerialized] public GameObject gunObj;
     [System.NonSerialized] public GameObject axObj;
     GunController gun;
@@ -62,7 +63,7 @@ public class PlayerContloller : MonoBehaviour
     //スタミナを回復させる
     private IEnumerator StaninaRecovery()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.7f);
         //増えすぎたらリセット
         if (MAX_STAMINA < Dashstamina) Dashstamina = MAX_STAMINA;
         while (Dashstamina < MAX_STAMINA)//完全回復するまで
@@ -78,9 +79,11 @@ public class PlayerContloller : MonoBehaviour
     {
         //ダメージ受けるかの変数[isDamage]を否定
         isDamage = false;
+        barrier.SetActive(true);
         //無敵時間が終わるとダメージ受けるように
         yield return new WaitForSeconds(immortalTime);
         isDamage = true;
+        barrier.SetActive(false);
         StopCoroutine(Immortal());
     }
     private void VecZero()
@@ -150,12 +153,12 @@ public class PlayerContloller : MonoBehaviour
         //腕の回転用クォータニオン
         armRot = Quaternion.LookRotation(Vector3.forward, bodyVec);
 
-        if (Input.GetMouseButtonDown(1) )
+        if (Input.GetMouseButtonDown(1) && Dashstamina > 100)
         {
             if (_stamina != null) StopCoroutine(_stamina);
             _stamina = null;
         }
-        if (Input.GetMouseButtonUp(1))
+        if (Input.GetMouseButtonUp(1)&&_stamina == null)
         {
             _stamina = StaninaRecovery();
             StartCoroutine(_stamina);
@@ -202,45 +205,10 @@ public class PlayerContloller : MonoBehaviour
                     //gunObj.transform.position = transform.position;
                     axObj.SetActive(false);
                 }
-                else if (canUseAx)
-                {
-                    weaponNum = 2;
-                    if (axObj.activeInHierarchy) weaponNum = 0;
-                }
                 else
                 {
                     weaponNum = 0;
                 }
-                break;
-            case 2:
-                if (canUseAx)
-                {
-                    if (!axObj.activeInHierarchy) axObj.SetActive(true);
-                    ammo.text = "sm-zico-nkn";
-                    axObj.transform.root.position = transform.position;
-                    axanm.SetBool("charge", Input.GetKey(KeyCode.Space));
-
-                    if (Input.GetKeyUp(KeyCode.Space) && hitomin.charged)
-                    {
-                        axanm.SetTrigger("attack");
-                    }
-                    //攻撃中は回転しない
-                    if (!hitomin.attacking) axObj.transform.root.rotation = transform.localRotation * Quaternion.Euler(0, 180, 0);
-                    gunObj.SetActive(false);
-                    
-                }
-                else if (canUseGun)
-                {
-                    weaponNum = 1;
-                    if (gunObj.activeInHierarchy) weaponNum = 0;
-                }
-                else
-                {
-                    weaponNum = 0;
-                }
-                break;
-            case 3:
-                weaponNum = 0;
                 break;
             default:
                 break;

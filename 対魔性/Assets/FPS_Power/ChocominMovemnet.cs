@@ -15,13 +15,13 @@ public class ChocominMovemnet : MonoBehaviour
     [SerializeField] float Zekkatime = 20f;
     [SerializeField] float knifet = 20f;
     [SerializeField] float barrierTime = 5f;
-
+    [SerializeField] Transform sphere;
 
     bool isAction = false;
     Vector2 P_posi;
     Vector2 My_posi;
     GameObject player;
-    [SerializeField] Transform sphere;
+    EnemyContloller ec;
     Rigidbody2D rigid;
     PlayerContloller script;
     IEnumerator tmp = null;
@@ -127,6 +127,13 @@ public class ChocominMovemnet : MonoBehaviour
 
         }
     }
+    //即時バリア
+    IEnumerator M_Barrier()
+    {
+        sphere.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2.5f);
+        sphere.gameObject.SetActive(false);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -136,6 +143,7 @@ public class ChocominMovemnet : MonoBehaviour
         player = GameObject.Find("Player");
         rigid = player.GetComponent<Rigidbody2D>();
         script = player.GetComponent<PlayerContloller>();
+        ec = GetComponent<EnemyContloller>();
         StartCoroutine(Barrier());
     }
 
@@ -151,11 +159,8 @@ public class ChocominMovemnet : MonoBehaviour
             speed = rigid.velocity.magnitude;
             P_posi = (player != null) ? player.transform.position : Vector3.zero;
         }
-        
+        if (!ec.isDamage && sphere.gameObject.activeSelf) StartCoroutine(M_Barrier());
         My_posi = transform.position;
-        
-        
-
         if (tmp == null)
         {
             //チョコミンよりy高くなったら必殺
