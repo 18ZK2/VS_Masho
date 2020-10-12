@@ -18,6 +18,7 @@ public class ChocominMovemnet : MonoBehaviour
     [SerializeField] Transform sphere;
 
     bool isAction = false;
+    float beforeHp;
     Vector2 P_posi;
     Vector2 My_posi;
     GameObject player;
@@ -130,8 +131,9 @@ public class ChocominMovemnet : MonoBehaviour
     //即時バリア
     IEnumerator M_Barrier()
     {
+        Debug.Log("acton");
         sphere.gameObject.SetActive(true);
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(1.5f);
         sphere.gameObject.SetActive(false);
     }
 
@@ -159,7 +161,7 @@ public class ChocominMovemnet : MonoBehaviour
             speed = rigid.velocity.magnitude;
             P_posi = (player != null) ? player.transform.position : Vector3.zero;
         }
-        if (!ec.isDamage && sphere.gameObject.activeSelf) StartCoroutine(M_Barrier());
+        if (beforeHp != ec.HP) StartCoroutine(M_Barrier());
         My_posi = transform.position;
         if (tmp == null)
         {
@@ -176,7 +178,7 @@ public class ChocominMovemnet : MonoBehaviour
             }
         }
         else if (!isAction) StartCoroutine(tmp);
-
+        beforeHp = ec.HP;
     }
 
 
