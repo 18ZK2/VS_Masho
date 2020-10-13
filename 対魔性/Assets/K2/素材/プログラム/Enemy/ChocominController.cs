@@ -67,8 +67,14 @@ public class ChocominController : MonoBehaviour
     }
     private void OnDestroy()
     {
-        GameManager_ game = GameObject.Find("GameManager").GetComponent<GameManager_>();
-        game.StartCoroutine(game.WipeLoadScene(sceneName));
+        GameObject game = GameObject.Find("GameManager");
+        GameManager_ gm;
+
+        if (game != null)
+        {
+            gm = game.GetComponent<GameManager_>();
+            gm.StartCoroutine(gm.WipeLoadScene(sceneName));
+        }
     }
     private void FixedUpdate()
     {

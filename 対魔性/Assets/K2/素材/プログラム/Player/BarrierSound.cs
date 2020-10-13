@@ -16,18 +16,8 @@ public class BarrierSound : MonoBehaviour
         ass.volume = 0.5f;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if (played == false)
-        {
-            ass.PlayOneShot(se);
-            played = true;
-        }
-    }
-    private void OnDisable()
-    {
-        played = false;
-        Debug.Log("aaa");
+        ass.PlayOneShot(se);
     }
 }
