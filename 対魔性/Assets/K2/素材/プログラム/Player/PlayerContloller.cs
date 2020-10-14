@@ -210,6 +210,9 @@ public class PlayerContloller : MonoBehaviour
                     weaponNum = 0;
                 }
                 break;
+            case 2:
+                weaponNum = 0;
+                break;
             default:
                 break;
 
